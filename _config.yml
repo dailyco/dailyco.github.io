@@ -13,10 +13,11 @@ sass:
   sass_dir: _sass
 plainwhite:
   navigation:
-    - title: My Work
-      url: "/my-work"
-    - title: Resume
-      url: "/resume"
+    - title: POST
+      url: "/_post"
+    # - title: ABOUT
+    #  url: "/resume"
+
   name: YuJin Kim
   tagline: SW Engineer
   date_format: "%b %-d, %Y"
