@@ -17,7 +17,7 @@ plainwhite:
     - title: POST
       url: "/post"
     
-
+  avartar: /assets/profile.png
   name: YuJin Kim
   tagline: SW Engineer
   date_format: "%b %-d, %Y"
