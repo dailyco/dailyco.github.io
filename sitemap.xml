@@ -17,7 +17,11 @@ layout: null
             <url>
                 <loc>{{ site.url }}{{ post.url }}</loc>
                 <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-                <changefreq>weekly</changefreq>
+                {% if post.sitemap.changefreq == null %}
+                    <changefreq>weekly</changefreq>
+                {% else %}
+                    <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+                {% endif %}
                 <priority>0.80</priority>
             </url>
         {%- endfor -%}
