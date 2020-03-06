@@ -11,10 +11,11 @@ sass:
   sass_dir: _sass
 plainwhite:
   navigation:
-    - title: POST
-      url: "/post"
     - title: ABOUT
       url: "/about"
+    - title: POST
+      url: "/post"
+    
 
   name: YuJin Kim
   tagline: SW Engineer
