@@ -23,7 +23,7 @@ plainwhite:
   sitemap: true # set to true to generate sitemap.xml content
 
   disqus_shortname: 0pencoding
-  analytics_id: "150778693"
+  analytics_id: "UA-150778693-1"
 
   # generate social links in footer
   social_links:
