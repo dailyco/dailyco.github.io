@@ -1,0 +1,70 @@
+I"�#<p>난이도 ★ ☆ ☆<br />
+본 문제는 한 번 풀어본 적이 있어서 문제를 푸는 데에 많은 시간이 걸리지는 않았다. 하지만 C++을 사용해서 문제를 해결하는 것이 처음이었고, 처음에 hash_map으로 잘못 검색하여 실행시키는데 오류 범벅인 코드 덕에 애를 조금 먹었다. 그리고 hash에 대한 개념이 완벽하지는 않지만 조금 잡혀가고 있는 것 같다.<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>수포자는 수학을 포기한 사람의 준말입니다.<br />
+수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다.<br />
+수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.</p>
+<ul>
+  <li>1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, …</li>
+  <li>2번 수포자가 찍는 방식: 2, 1, 2, 3, 2, 4, 2, 5, 2, 1, 2, 3, 2, 4, 2, 5, …</li>
+  <li>3번 수포자가 찍는 방식: 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, …<br />
+1번 문제부터 마지막 문제까지의 정답이 순서대로 들은 배열 answers가 주어졌을 때, 가장 많은 문제를 맞힌 사람이 누구인지 배열에 담아 return 하도록 solution 함수를 작성해주세요.</li>
+</ul>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>시험은 최대 10,000 문제로 구성되어있습니다.</li>
+  <li>문제의 정답은 1, 2, 3, 4, 5중 하나입니다.</li>
+  <li>가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.
+<br />
+<br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<p>1) answer 벡터에 1,2,3을 미리 초기화 시키고, 각 수포자가 찍는 방식을 벡터로 생성한다.<br />
+2) 각 수포자가 찍는 방식대로 answers와 답을 비교하여 맞은 수를 센다.<br />
+3) 각 수포자가 맞은 개수가 가장 크지 않으면, answer 벡터에서 삭제한다.<br />
+<br />
+<br /></p>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">answers</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">answer</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">first</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">second</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">third</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+    
+    <span class="kt">int</span> <span class="n">one</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">two</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">three</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">answers</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">first</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">first</span><span class="p">.</span><span class="n">size</span><span class="p">()]</span> <span class="o">==</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">one</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">second</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">second</span><span class="p">.</span><span class="n">size</span><span class="p">()]</span> <span class="o">==</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">two</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">third</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">third</span><span class="p">.</span><span class="n">size</span><span class="p">()]</span> <span class="o">==</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">three</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">one</span> <span class="o">&lt;</span> <span class="n">two</span> <span class="o">||</span> <span class="n">one</span> <span class="o">&lt;</span> <span class="n">three</span><span class="p">)</span> <span class="n">answer</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">answer</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">two</span> <span class="o">&lt;</span> <span class="n">one</span> <span class="o">||</span> <span class="n">two</span> <span class="o">&lt;</span> <span class="n">three</span><span class="p">)</span> <span class="n">answer</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">answer</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">three</span> <span class="o">&lt;</span> <span class="n">one</span> <span class="o">||</span> <span class="n">three</span> <span class="o">&lt;</span> <span class="n">two</span><span class="p">)</span> <span class="n">answer</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">answer</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>각 수포자가찍는 방식을 어떻게 나타낼지가 포인트 (처음에 알고리즘적으로 접근 but…)</li>
+  <li>문제를 맞힌 갯수가 가장 큰 수포자들을 골라내는 부분도 생각해볼 필요가 있다</li>
+  <li>다른 사람은 max를 찾아 max와 같은지 한 번더 비교해주는 방법
+<br />
+<br /></li>
+</ul>
+:ET
