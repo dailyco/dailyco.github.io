@@ -15,7 +15,7 @@ plainwhite:
     - title: ABOUT
       url: "/about"
     - title: POST
-      url: "/post"
+      url: "/_pages/about.md"
     
   avartar: assets/profile.png
   name: YuJin Kim
