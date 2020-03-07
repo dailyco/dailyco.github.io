@@ -10,6 +10,9 @@ show_excerpts: true # set to true to show excerpts on the homepage
 sass:
   sass_dir: _sass
 
+include:
+  - _pages
+
 plainwhite:
   avartar: profile.png
   name: YuJin Kim
