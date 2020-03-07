@@ -5,23 +5,23 @@ description: > # this means to ignore newlines until "show_exerpts:"
   An amazing website!
 show_excerpts: true # set to true to show excerpts on the homepage
 
-logo: assets/logo.png
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
   sass_dir: _sass
+
 plainwhite:
-  navigation:
-    - title: ABOUT
-      url: "/about"
-    - title: POST
-      url: "/_pages/about.md"
-    
-  avartar: assets/profile.png
+  avartar: profile.png
   name: YuJin Kim
   tagline: SW Engineer
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
+  
+  navigation:
+    - title: ABOUT
+      url: /about/
+    - title: POST
+      url: /post/
 
   disqus_shortname: 0pencoding
   analytics_id: "UA-150778693-1"
