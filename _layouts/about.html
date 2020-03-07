@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%- include head.html -%}
+  </head>
+  <body>
+    <div class="post-container" style="margin: 80px 300px;">
+      <a class="post-link" href="{{ page.url | relative_url }}">
+        <h1 class="post-title" style="text-align: center; font-size: 40px;">{{ page.title | escape }}</h1>
+      </a>
+      <div class="post" style="padding: 30px 0px;">
+        {{ content }}
+      </div>
+    </div>
+  </body>
+</html>
