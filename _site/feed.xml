@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Mar 2020 22:47:08 +0900</pubDate>
-    <lastBuildDate>Mon, 09 Mar 2020 22:47:08 +0900</lastBuildDate>
+    <pubDate>Mon, 09 Mar 2020 23:20:07 +0900</pubDate>
+    <lastBuildDate>Mon, 09 Mar 2020 23:20:07 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -78,6 +78,17 @@
   &lt;li&gt;전에 생각해 본적이 있는 문제라서 빨리 해결했다&lt;/li&gt;
   &lt;li&gt;수학을 잘한다면 빨리 풀 수 있는 문제가 아닐까&lt;/li&gt;
   &lt;li&gt;value를 vector로 해서 해결하는 방법 습득!
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[C++ STL]map의 value에 여러값을 주기 &lt;a href=&quot;http://bitly.kr/Kf1SnSwC&quot;&gt;http://bitly.kr/Kf1SnSwC&lt;/a&gt;&lt;br /&gt;
+map의 value값으로 vector가 사용 가능&lt;br /&gt;
+map에서 key의 value에 접근할 때, map[key]와 같이 index에 key값을 넣어주는 것도 가능&lt;/li&gt;
+  &lt;li&gt;[C++] auto 타입추론에 대해서 &lt;a href=&quot;https://blockdmask.tistory.com/384&quot;&gt;https://blockdmask.tistory.com/384&lt;/a&gt;&lt;br /&gt;
+auto 키워드를 사용해서 for문 등에서 유용하게 사용 가능
 &lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -158,6 +169,16 @@
 &lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[C++] sort algorithm 정리 및 예시 &lt;a href=&quot;https://blockdmask.tistory.com/178&quot;&gt;https://blockdmask.tistory.com/178&lt;/a&gt;&lt;br /&gt;
+사용자 정의 함수를 사용한 sorting을 위해서는 sort() 함수의 3번째 인자에 사용자 정의 함수를 assign&lt;/li&gt;
+  &lt;li&gt;[C++] string 클래스, 문자열에 대해서 (총정리) &lt;a href=&quot;https://blockdmask.tistory.com/338&quot;&gt;https://blockdmask.tistory.com/338&lt;/a&gt;&lt;br /&gt;
+string에서 index로 접근하기 위해서는 string.at() 함수를 사용하고 char형태가 반환
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Thu, 05 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/level2/2020/03/05/%EC%A0%95%EB%A0%AC_%EA%B0%80%EC%9E%A5%ED%81%B0%EC%88%98_level2.html</link>
@@ -235,6 +256,15 @@
 &lt;ul&gt;
   &lt;li&gt;해시를 사용해서 푼 것이 맞나?&lt;/li&gt;
   &lt;li&gt;정렬을 사용해서 풀 수도 있다!
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[C++ 공식문서] std:set:upper_bound &lt;a href=&quot;http://www.cplusplus.com/reference/set/set/upper_bound/&quot;&gt;http://www.cplusplus.com/reference/set/set/upper_bound/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[C++ 레퍼런스 - string 의 find 함수] &lt;a href=&quot;https://modoocode.com/241&quot;&gt;https://modoocode.com/241&lt;/a&gt;&lt;br /&gt;
+string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없을경우 string::npos를 반환
 &lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -322,6 +352,13 @@
 &lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[C++ 공식문서] std:vector:erase &lt;a href=&quot;http://www.cplusplus.com/reference/vector/vector/erase/&quot;&gt;http://www.cplusplus.com/reference/vector/vector/erase/&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Wed, 04 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/level1/2020/03/04/%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8_%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B4%E1%84%80%E1%85%A9%E1%84%89%E1%85%A1_level1.html</link>
@@ -400,7 +437,7 @@
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;[c++ 공식문서] std:multiset:find &lt;a href=&quot;http://www.cplusplus.com/reference/set/multiset/find/&quot;&gt;http://www.cplusplus.com/reference/set/multiset/find/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[C++ 공식문서] std:multiset:find &lt;a href=&quot;http://www.cplusplus.com/reference/set/multiset/find/&quot;&gt;http://www.cplusplus.com/reference/set/multiset/find/&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;[C++] multiset container 정리 및 사용법 &lt;a href=&quot;https://blockdmask.tistory.com/80&quot;&gt;https://blockdmask.tistory.com/80&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;[연관 컨테이너 - Set, Map, multiSet, multiMap] &lt;a href=&quot;https://mrhook.co.kr/84&quot;&gt;https://mrhook.co.kr/84&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;[씹어먹는 C++ - &amp;lt;10 - 2. C++ STL - 셋(set), 맵(map), unordered_set, unordered_map&amp;gt;] &lt;a href=&quot;https://modoocode.com/224&quot;&gt;https://modoocode.com/224&lt;/a&gt;
