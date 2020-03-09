@@ -2,11 +2,48 @@
 layout: header
 ---
 
-<div class="post-container" style="margin: 60px 300px;">
+<div class="post-container">
   <a class="post-link" href="{{ page.url | relative_url }}">
     <h1 class="post-title" style="text-align: center; font-size: 40px;">{{ page.title | escape }}</h1>
   </a>
-  <div class="post" style="padding: 30px 0px;">
+  <div class="post" id="main-text" style="padding: 30px 0px;">
     {{ content }}
   </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+  var max_margin = 300;
+
+  $( document ).ready( function() {
+    var main_text = document.getElementById("main-text");
+    var windowWidth = $( window ).width();
+
+    if (windowWidth < 500) {
+      main_text.style.marginLeft = 0;
+      main_text.style.marginRight = 0;
+    } else {
+      var margin = windowWidth/1600 * max_margin;
+
+      main_text.style.marginLeft = margin+'px';
+      main_text.style.marginRight = margin+'px';
+    }
+
+    $( window ).resize(function() {
+      var windowWidth = $( window ).width();
+      
+      if (windowWidth < 500) {
+        main_text.style.marginLeft = 0;
+        main_text.style.marginRight = 0;
+      } else {
+        var margin = windowWidth/1600 * max_margin;
+
+        main_text.style.marginLeft = margin+'px';
+        main_text.style.marginRight = margin+'px';
+      }
+
+    });
+  });
+
+  
+</script>

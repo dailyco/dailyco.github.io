@@ -1,6 +1,7 @@
 /* ==========================================================================
    MASTHEAD
    ========================================================================== */
+
    .masthead {
     background-color: #ffffff;
     position: fixed;
@@ -84,3 +85,16 @@
   .body_content {
     padding-top: 70px;
   }
+  /* @media screen and ( min-width: 769px ) {
+    #main-text {
+      margin-left: 300px;
+      margin-right: 300px;
+    }
+  }
+
+  @media screen and ( max-width: 768px ) {
+    #main-text {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  } */
