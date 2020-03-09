@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Mar 2020 22:16:02 +0900</pubDate>
-    <lastBuildDate>Mon, 09 Mar 2020 22:16:02 +0900</lastBuildDate>
+    <pubDate>Mon, 09 Mar 2020 22:47:08 +0900</pubDate>
+    <lastBuildDate>Mon, 09 Mar 2020 22:47:08 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -397,6 +397,16 @@
 &lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[c++ 공식문서] std:multiset:find &lt;a href=&quot;http://www.cplusplus.com/reference/set/multiset/find/&quot;&gt;http://www.cplusplus.com/reference/set/multiset/find/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[C++] multiset container 정리 및 사용법 &lt;a href=&quot;https://blockdmask.tistory.com/80&quot;&gt;https://blockdmask.tistory.com/80&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[연관 컨테이너 - Set, Map, multiSet, multiMap] &lt;a href=&quot;https://mrhook.co.kr/84&quot;&gt;https://mrhook.co.kr/84&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[씹어먹는 C++ - &amp;lt;10 - 2. C++ STL - 셋(set), 맵(map), unordered_set, unordered_map&amp;gt;] &lt;a href=&quot;https://modoocode.com/224&quot;&gt;https://modoocode.com/224&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Tue, 03 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/level1/2020/03/03/%ED%95%B4%EC%8B%9C_%EC%99%84%EC%A3%BC%ED%95%98%EC%A7%80%EB%AA%BB%ED%95%9C%EC%84%A0%EC%88%98_level1.html</link>
@@ -473,6 +483,18 @@
   &lt;li&gt;vector에서 copy와 assign의 차이점&lt;/li&gt;
   &lt;li&gt;2차원 벡터 사용 방법&lt;/li&gt;
   &lt;li&gt;sorting 방법
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[STL] vector 복사 &lt;a href=&quot;https://terrorjang.tistory.com/85&quot;&gt;https://terrorjang.tistory.com/85&lt;/a&gt;&lt;br /&gt;
+vector를 전체 복사, 혹은 부분적으로 복사할 때 copy, assign 사용&lt;br /&gt;
+&lt;span style=&quot;color: #c70000&quot;&gt;※ copy와 assign의 차이점:&lt;/span&gt; copy는 vector의 크기가 미리 할당 되어있어야하고, assign은 그러지 않아도 된다.&lt;/li&gt;
+  &lt;li&gt;[C++ STL] 동적 2차원 배열 사용법(vector) &lt;a href=&quot;https://sunnyholic.com/93&quot;&gt;https://sunnyholic.com/93&lt;/a&gt;&lt;br /&gt;
+c++에서 2차원 vector에 접근할 때에는 c, java와 비슷하게 index로 접근&lt;/li&gt;
+  &lt;li&gt;[C++] sort algorithm 정리 및 예시 &lt;a href=&quot;https://blockdmask.tistory.com/178&quot;&gt;https://blockdmask.tistory.com/178&lt;/a&gt;
 &lt;br /&gt;
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
