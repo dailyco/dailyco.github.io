@@ -22,7 +22,7 @@ title: "ABOUT ME"
 <br/>
 * 2017.03 ~ ing ㅤHandong global university 입학
 * 2017.11 ~ ing ㅤ컴퓨터 공학 전공 시작
-* 2018.03 ~ ing ㅤ전산 동아리 CRA
+* 2018.03 ~ ing ㅤ[전산 동아리 CRA](https://cra16.github.io/)
 * 2018.06 ~ 2018.07 ㅤ김호준 교수님 Java Camp
 * 2018.07 ~ ing ㅤ남재창 교수님 ISEL 랩실
 * 2018.07 ~ 2018.08 ㅤWrongIncrementerChecker Tool 개발

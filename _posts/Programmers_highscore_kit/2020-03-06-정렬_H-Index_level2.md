@@ -2,7 +2,7 @@
 layout: post
 title: "프로그래머스 코딩테스트 고득점 Kit : [정렬] H-Index"
 date: 2020-03-06
-categories: 프로그래머스고득점Kit level2
+categories: 프로그래머스고득점Kit level2 Algorithm C++
 sitemap:
     changefreq: daily
 ---
