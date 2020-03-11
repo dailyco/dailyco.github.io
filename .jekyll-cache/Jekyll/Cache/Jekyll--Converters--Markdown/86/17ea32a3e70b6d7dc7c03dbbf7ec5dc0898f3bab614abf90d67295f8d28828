@@ -1,0 +1,171 @@
+I"�3<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/post/">POST</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/level2/2020/03/10/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89_%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC_level2.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [완전탐색] 숫자 야구</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>프로그래머스고득점Kit</li><li>level2</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Mar 10, 2020</div>
+  </div>
+  <div class="post">
+    <p>난이도 ★ ★ ☆<br />
+본 문제는 문제를 읽자마자 바로 알고리즘이 떠올랐다. 하지만 정작 문제는 잘 해결되지 않았는데, 내가 문제를 자세하게 읽지 않아서 문제를 잘못 이해하고 있었다. 보통의 숫자야구를 생각해서 당연히 중복된 숫자가 가능하고, 0도 포함되어 있을거라 생각했으나 그게 아니었던 것이 복병이었던 것 같다. 역시 문제 속에 답이 있다고… •́︿•̀ 앞으로 문제를 꼼꼼히 읽는 습관을 들여야겠다.<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>숫자 야구 게임이란 2명이 서로가 생각한 숫자를 맞추는 게임입니다. <a href="https://scratch.mit.edu/projects/131352991/">게임해보기</a><br />
+각자 서로 다른 1~9까지 3자리 임의의 숫자를 정한 뒤 서로에게 3자리의 숫자를 불러서 결과를 확인합니다.<br />
+그리고 그 결과를 토대로 상대가 정한 숫자를 예상한 뒤 맞힙니다.</p>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">*</span> 숫자는 맞지만, 위치가 틀렸을 때는 볼
+<span class="p">*</span> 숫자와 위치가 모두 맞을 때는 스트라이크
+<span class="p">*</span> 숫자와 위치가 모두 틀렸을 때는 아웃
+</code></pre></div></div>
+<p>예를 들어, 아래의 경우가 있으면</p>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A : 123
+B : 1스트라이크 1볼.
+A : 356
+B : 1스트라이크 0볼.
+A : 327
+B : 2스트라이크 0볼.
+A : 489
+B : 0스트라이크 1볼.
+</code></pre></div></div>
+<p>이때 가능한 답은 324와 328 두 가지입니다.<br />
+질문한 세 자리의 수, 스트라이크의 수, 볼의 수를 담은 2차원 배열 baseball이 매개변수로 주어질 때, 가능한 답의 개수를 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>질문의 수는 1 이상 100 이하의 자연수입니다.</li>
+  <li>baseball의 각 행은 [세 자리의 수, 스트라이크의 수, 볼의 수] 를 담고 있습니다.
+<br />
+<br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<p>1) 문제에서 서로 다른 1~9까지의 숫자라고 했기 때문에 반복문의 범위를 123에서 987으로 정해준다.<br />
+2) 각 숫자에 0이 포함되거나, 같은 숫자가 있을 경우는 건너뛴다.<br />
+3) 각 숫자를 baseball에 담긴 숫자들과 비교해서 strike 수와 ball 수를 구한다.<br />
+4) baseball에 담긴 숫자들과 strike, ball 갯수가 모두 같으면 answer을 증가시킨다.<br />
+<br />
+<br /></p>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">baseball</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">988</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">bool</span> <span class="n">is_answer</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="n">string</span> <span class="n">num</span> <span class="o">=</span> <span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="sc">'0'</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">||</span> <span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">||</span> <span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
+        
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="o">:</span> <span class="n">baseball</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">string</span> <span class="n">baseball_num</span> <span class="o">=</span> <span class="n">to_string</span><span class="p">(</span><span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+            <span class="kt">int</span> <span class="n">strike</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ball</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">baseball_num</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="n">strike</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">baseball_num</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="n">strike</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">baseball_num</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="n">strike</span><span class="o">++</span><span class="p">;</span>
+            
+            <span class="k">if</span> <span class="p">(</span><span class="n">baseball_num</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">ball</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">baseball_num</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">ball</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">baseball_num</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">ball</span><span class="o">++</span><span class="p">;</span>
+            
+            <span class="n">ball</span> <span class="o">-=</span> <span class="n">strike</span><span class="p">;</span>
+            
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">strike</span> <span class="o">||</span> <span class="n">j</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="n">ball</span><span class="p">)</span>
+                <span class="n">is_answer</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">is_answer</span><span class="p">)</span> <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>문제를 잘 읽자!</li>
+  <li>string에 접근하는 방법으로 at() 함수 말고 다른 방법도 있었네..
+<br />
+<br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>[C++] string 클래스, 문자열에 대해서 (총정리) <a href="https://blockdmask.tistory.com/338">https://blockdmask.tistory.com/338</a><br />
+string에서 char로 접근할 때 at() 함수로 접근하는 방법 외에도 index로 접근 가능<br />
+단, index로 접근했을 경우 형태는 char 형태로 다른 char과 비교할 때 ‘'’을 사용</li>
+  <li><br />
+<br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/level2/2020/03/10/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89_%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC_level2.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/level2/2020/03/10/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89_%EC%88%AB%EC%9E%90%EC%95%BC%EA%B5%AC_level2.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
