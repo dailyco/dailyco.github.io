@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<title>프로그래머스 코딩테스트 고득점 Kit : [깊이/너비 우선 탐색] 타겟 넘버</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>프로그래머스 코딩테스트 고득점 Kit : [깊이/너비 우선 탐색] 타겟 넘버 | Opencoding</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="프로그래머스 코딩테스트 고득점 Kit : [깊이/너비 우선 탐색] 타겟 넘버" />
+<meta name="author" content="YuJin Kim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="난이도 ★ ★ ☆ 본 문제는 처음에 접근을 어떻게 해야할지 잘 모르겠어서 언니와 의논을 한 뒤에 풀기 시작했다. 확실히 한 번 의논을 한 뒤에 문제에 접근하면 훨씬 쉽게 접근 할 수 있는 것 같다. 완전히 혼자의 힘으로 풀지는 못했지만, 문제를 푸는 방향을 옳게 갔다는 데에는 확실히 좋은 방법이라고 생각이 든다. 그래도 다음부터는 최대한 혼자의 힘으로 풀도록 노력해야지 (๑و•̀Δ•́)و" />
+<meta property="og:description" content="난이도 ★ ★ ☆ 본 문제는 처음에 접근을 어떻게 해야할지 잘 모르겠어서 언니와 의논을 한 뒤에 풀기 시작했다. 확실히 한 번 의논을 한 뒤에 문제에 접근하면 훨씬 쉽게 접근 할 수 있는 것 같다. 완전히 혼자의 힘으로 풀지는 못했지만, 문제를 푸는 방향을 옳게 갔다는 데에는 확실히 좋은 방법이라고 생각이 든다. 그래도 다음부터는 최대한 혼자의 힘으로 풀도록 노력해야지 (๑و•̀Δ•́)و" />
+<link rel="canonical" href="http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/dfs/bfs/level2/algorithm/c++/2020/03/11/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%ED%83%80%EA%B2%9F%EB%84%98%EB%B2%84_level2.html" />
+<meta property="og:url" content="http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/dfs/bfs/level2/algorithm/c++/2020/03/11/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%ED%83%80%EA%B2%9F%EB%84%98%EB%B2%84_level2.html" />
+<meta property="og:site_name" content="Opencoding" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-11T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"프로그래머스 코딩테스트 고득점 Kit : [깊이/너비 우선 탐색] 타겟 넘버","dateModified":"2020-03-11T00:00:00+09:00","datePublished":"2020-03-11T00:00:00+09:00","url":"http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/dfs/bfs/level2/algorithm/c++/2020/03/11/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%ED%83%80%EA%B2%9F%EB%84%98%EB%B2%84_level2.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/dfs/bfs/level2/algorithm/c++/2020/03/11/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%ED%83%80%EA%B2%9F%EB%84%98%EB%B2%84_level2.html"},"author":{"@type":"Person","name":"YuJin Kim"},"description":"난이도 ★ ★ ☆ 본 문제는 처음에 접근을 어떻게 해야할지 잘 모르겠어서 언니와 의논을 한 뒤에 풀기 시작했다. 확실히 한 번 의논을 한 뒤에 문제에 접근하면 훨씬 쉽게 접근 할 수 있는 것 같다. 완전히 혼자의 힘으로 풀지는 못했지만, 문제를 푸는 방향을 옳게 갔다는 데에는 확실히 좋은 방법이라고 생각이 든다. 그래도 다음부터는 최대한 혼자의 힘으로 풀도록 노력해야지 (๑و•̀Δ•́)و","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/custom/header.css">
+    </head>
+
+    <body>
+        
+
+        <div class="masthead">
+            <div class="masthead__inner-wrap">
+                <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    
+                    <a class="site-logo" href="/"><img src="/assets/img//logo.png" alt=""></a>
+                    
+                    <a class="site-title" href="/">Opencoding</a>
+                    <ul class="visible-links"><li class="masthead__menu-item">
+                        <a href="/about/" >ABOUT</a>
+                        </li><li class="masthead__menu-item">
+                        <a href="/post/" >POST</a>
+                        </li><!-- <li class="masthead__menu-item">
+                            
+                                <button class="search__toggle " type="button">
+                                <span class="visually-hidden">Toggle search</span>
+                                <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+                                    <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+                                </svg>
+                                </button>
+                            
+                        </li> -->
+                    </ul>
+                    
+                </nav>
+                </div>
+            </div>
+        </div>
+
+        <section class="body_content">
+            <main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim"></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/post/">POST</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/dfs/bfs/level2/algorithm/c++/2020/03/11/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%ED%83%80%EA%B2%9F%EB%84%98%EB%B2%84_level2.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [깊이/너비 우선 탐색] 타겟 넘버</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>프로그래머스고득점Kit</li><li>DFS/BFS</li><li>Level2</li><li>Algorithm</li><li>C++</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Mar 11, 2020</div>
+  </div>
+  <div class="post">
+    <p>난이도 ★ ★ ☆<br />
+본 문제는 처음에 접근을 어떻게 해야할지 잘 모르겠어서 언니와 의논을 한 뒤에 풀기 시작했다. 확실히 한 번 의논을 한 뒤에 문제에 접근하면 훨씬 쉽게 접근 할 수 있는 것 같다. 완전히 혼자의 힘으로 풀지는 못했지만, 문제를 푸는 방향을 옳게 갔다는 데에는 확실히 좋은 방법이라고 생각이 든다. 그래도 다음부터는 최대한 혼자의 힘으로 풀도록 노력해야지 (๑و•̀Δ•́)و<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>n개의 음이 아닌 정수가 있습니다.<br />
+이 수를 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다.<br />
+예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들려면 다음 다섯 방법을 쓸 수 있습니다.</p>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1+1+1+1+1 = 3
++1-1+1+1+1 = 3
++1+1-1+1+1 = 3
++1+1+1-1+1 = 3
++1+1+1+1-1 = 3
+</code></pre></div></div>
+<p>사용할 수 있는 숫자가 담긴 배열 numbers, 타겟 넘버 target이 매개변수로 주어질 때 숫자를 적절히 더하고 빼서 타겟 넘버를 만드는 방법의 수를 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>주어지는 숫자의 개수는 2개 이상 20개 이하입니다.</li>
+  <li>각 숫자는 1 이상 50 이하인 자연수입니다.</li>
+  <li>타겟 넘버는 1 이상 1000 이하인 자연수입니다.
+<br />
+<br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<p>1) recursive를 사용해서 풀어보자.<br />
+2) parameter로 받은 vector의 길이에 따라서 길이가 0일 때와 나머지의 경우로 나눈다.<br />
+3) vector의 길이가 0일 경우 지금까지의 합 sum이 target과 같으면 answer를 증가시켜 반환하고, 아니라면 그냥 반환한다.<br />
+4) vector의 길이가 0이 아니면 answer를 구하기 위해 sum에 vector의 첫번째 원소를 각각 더한 경우와 뺀 경우의 answer 값을 더해 반환한다.<br />
+<br />
+<br /></p>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<h4 id="초반에-해결한-코드">초반에 해결한 코드</h4>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">find_answer</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sum</span><span class="p">,</span> <span class="kt">int</span> <span class="n">answer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">numbers</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span> <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers_cp</span><span class="p">;</span>
+        <span class="n">numbers_cp</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">numbers</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">numbers</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        
+        <span class="k">return</span> <span class="n">find_answer</span><span class="p">(</span><span class="n">numbers_cp</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">answer</span><span class="p">)</span> 
+        <span class="o">+</span> <span class="n">find_answer</span><span class="p">(</span><span class="n">numbers_cp</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">sum</span> <span class="o">-</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">answer</span><span class="p">);</span>
+    <span class="p">}</span>
+        
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">find_answer</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>recursive는 비효율적이라는 고정관념에 빠져 recursive 사용하기를 꺼려했는데 그러지 말아야겠다</li>
+  <li>vector의 첫 원소만 제외하고 vector를 만들어줄 때 assign() 함수를 사용하는건 메모리 측면에서 너무 비효율 적인 것 같은데 방법이 없을까?
+<br />
+<br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>[C++ 공식문서] std:vector:assign <a href="http://www.cplusplus.com/reference/vector/vector/assign/">http://www.cplusplus.com/reference/vector/vector/assign/</a>
+<br />
+<br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/dfs/bfs/level2/algorithm/c++/2020/03/11/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%ED%83%80%EA%B2%9F%EB%84%98%EB%B2%84_level2.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/dfs/bfs/level2/algorithm/c++/2020/03/11/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%ED%83%80%EA%B2%9F%EB%84%98%EB%B2%84_level2.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main><script async src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+  <script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+        </section>
+    </body>
+</html>
