@@ -140,28 +140,27 @@
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
-<h4 id="초반에-해결한-코드">초반에 해결한 코드</h4>
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 </span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="kt">int</span> <span class="nf">find_answer</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sum</span><span class="p">,</span> <span class="kt">int</span> <span class="n">answer</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">find_answer</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">numbers</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span> <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers_cp</span><span class="p">;</span>
         <span class="n">numbers_cp</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">numbers</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">numbers</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
         
-        <span class="k">return</span> <span class="n">find_answer</span><span class="p">(</span><span class="n">numbers_cp</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">answer</span><span class="p">)</span> 
-        <span class="o">+</span> <span class="n">find_answer</span><span class="p">(</span><span class="n">numbers_cp</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">sum</span> <span class="o">-</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">answer</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">find_answer</span><span class="p">(</span><span class="n">numbers_cp</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+        <span class="o">+</span> <span class="n">find_answer</span><span class="p">(</span><span class="n">numbers_cp</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">sum</span> <span class="o">-</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
     <span class="p">}</span>
         
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">find_answer</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">find_answer</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 <p><br />
