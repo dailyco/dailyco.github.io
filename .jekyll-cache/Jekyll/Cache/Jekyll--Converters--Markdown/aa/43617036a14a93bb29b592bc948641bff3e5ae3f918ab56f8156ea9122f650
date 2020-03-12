@@ -1,0 +1,99 @@
+I"�<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/post/">POST</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/about/java/gui/2020/03/13/JavaCamp_Round2_%EA%B7%B8%EB%A6%BC%ED%8C%90.html">
+    <h2 class="post-title">[Java-GUI] ROUND2. 그림판 만들기</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>About</li><li>Java</li><li>GUI</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Mar 13, 2020</div>
+  </div>
+  <div class="post">
+    <p>드디어 시작! “Round 1. 계산기 만들기” 단계에 오신 여러분들 환영해요, ‘Round 0’에서 벌써부터 지쳐버렸을텐데 이제부터는 정말 실전이니 힘내서 한 단계 더 나아가 보자구요! 첫번째 프로젝트는 계산기 만들기예요. 
+<br /></p>
+
+<h2 id="1-기능">1. 기능</h2>
+<ul>
+  <li>그리기: 선, 사각형, 원, Polyline, Sketch(Pen), Spray, Pattern 中 최소 4가지 이상 필수 선택</li>
+  <li>속성: 굵기, 색, Style, 채우기 中 최소 2가지 이상 필수 선택</li>
+  <li>부가기능: drag &amp; drop, resize, rotate, undo/redo, 지우기, 저장/불러오기, 복사/붙여넣기, grouping/ungrouping 中 최소 2가지 이상 필수 선택</li>
+  <li>이외에 자유롭게 자신이 선보이고 싶은 기능, 있으면 좋겠다 싶은 기능 추가</li>
+</ul>
+
+<h4 id="기간">기간</h4>
+<p>4일
+<br />
+<br /></p>
+
+<h2 id="2">2.</h2>
+<p><br />
+<br /></p>
+
+<h2 id="3-결과물">3. 결과물</h2>
+<p><br />
+<br /></p>
+
+<h2 id="4">4.</h2>
+<p><br />
+<br /></p>
+
+<h2 id="5-github">5. GitHub</h2>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/about/java/gui/2020/03/13/JavaCamp_Round2_%EA%B7%B8%EB%A6%BC%ED%8C%90.html';
+      this.page.identifier = 'http://localhost:4000/about/java/gui/2020/03/13/JavaCamp_Round2_%EA%B7%B8%EB%A6%BC%ED%8C%90.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET

@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Mar 2020 00:16:31 +0900</pubDate>
-    <lastBuildDate>Fri, 13 Mar 2020 00:16:31 +0900</lastBuildDate>
+    <pubDate>Fri, 13 Mar 2020 01:24:01 +0900</pubDate>
+    <lastBuildDate>Fri, 13 Mar 2020 01:24:01 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -19,14 +19,11 @@
 &lt;p&gt;본 프로젝트를 하기로 마음 먹었다면 더욱 단단히 열심히하겠다는 각오를 가지길!&lt;br /&gt;
 3주라는 시간이 길다고 생각하면 오산, 3주동안 절대로 이 프로젝트에만 집중해야한다.&lt;br /&gt;
 6개의 프로젝트가 끝나고나면 자신감도 생기고 정말 많은 것을 배운 후일 것이다.&lt;br /&gt;
-그리고 참고로 나의 프로젝트 결과물들은 Java를 배운지 얼마되지 않은 상태에서 서툴게 만들었기 때문에 부족한 부분이 많을텐데, 부끄럽지만 그 부분은 감안해주었으면 좋겠다…(o´▽`o)/&lt;br /&gt;
+그리고 참고로 나의 프로젝트 결과물들은 Java를 배운지 얼마되지 않은 상태에서 서툴게 만들었기 때문에 부족한 부분이 많은데, 부끄럽지만 그 부분은 감안해주었으면 좋겠다…(o´▽`o)/&lt;br /&gt;
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-준비-단계&quot;&gt;2. 준비 단계&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/java_standard.jpg&quot; alt=&quot;java의_정석&quot; width=&quot;150px&quot; /&gt;&lt;/p&gt;
-
 &lt;p&gt;먼저 바로 실전에 뛰어들기 전에, 나는 1일의 기간을 잡고 ‘Java의 정석’ 이라는 책을 읽었다.&lt;br /&gt;
 하루만에 책을 전부 읽는 것은 분명 힘들지만 (그래서 나도 잘 해내지 못했지만..) 함께 프로젝트를 진행했던 친구들은(모두 같이 진행했지만, 결과물은 개인으로 각각 하나의 아웃풋을 만들었다) 거의 대부분 잘 해내었다.&lt;br /&gt;
 불가능한 것은 아니라는 것! 꼭 ‘Java의 정석’ 이 아니라도 괜찮다.&lt;br /&gt;
@@ -35,13 +32,13 @@
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-실전이다-한-단계씩&quot;&gt;3. 실전이다, 한 단계씩!&lt;/h2&gt;
-&lt;p&gt;[Round0] &lt;a href=&quot;&quot;&gt;‘Java의 정석’ 책 읽기&lt;/a&gt;&lt;br /&gt;
-[Round1] &lt;a href=&quot;&quot;&gt;‘계산기’ 구현&lt;/a&gt;&lt;br /&gt;
-[Round2] &lt;a href=&quot;&quot;&gt;‘그림판’ 구현&lt;/a&gt;&lt;br /&gt;
-[Round3] &lt;a href=&quot;&quot;&gt;데이터베이스&lt;/a&gt;&lt;br /&gt;
-[Round4] &lt;a href=&quot;&quot;&gt;이미지 프로세싱&lt;/a&gt;&lt;br /&gt;
-[Round5] &lt;a href=&quot;&quot;&gt;‘육목’ 구현&lt;/a&gt;&lt;br /&gt;
-[Round6] &lt;a href=&quot;&quot;&gt;네트워크 적용&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;[Round0] ‘Java의 정석’ 책 읽기ㅤ&lt;a href=&quot;https://0pencoding.github.io/about/java/gui/2020/03/12/JavaCamp_Round0_%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D%EC%B1%85%EC%9D%BD%EA%B8%B0.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
+[Round1] ‘계산기’ 구현ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
+[Round2] ‘그림판’ 구현ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
+[Round3] 데이터베이스ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
+[Round4] 이미지 프로세싱ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
+[Round5] ‘육목’ 구현ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
+[Round6] 네트워크 적용ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
@@ -117,6 +114,86 @@
         <pubDate>Thu, 12 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round0_%E1%84%8C%E1%85%A1%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A5%E1%86%A8%E1%84%8E%E1%85%A2%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%B0%E1%84%80%E1%85%B5.html</link>
         <guid isPermaLink="true">http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round0_%E1%84%8C%E1%85%A1%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A5%E1%86%A8%E1%84%8E%E1%85%A2%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%B0%E1%84%80%E1%85%B5.html</guid>
+        
+        
+        <category>About</category>
+        
+        <category>Java</category>
+        
+        <category>GUI</category>
+        
+      </item>
+    
+      <item>
+        <title>[Java-GUI] ROUND1. 계산기 만들기</title>
+        <description>&lt;p&gt;드디어 시작! “Round 1. 계산기 만들기” 단계에 오신 여러분들 환영해요, ‘Round 0’에서 벌써부터 지쳐버렸을텐데 이제부터는 정말 실전이니 힘내서 한 단계 더 나아가 보자구요! 첫번째 프로젝트는 계산기 만들기예요. 이번 프로젝트는 Java GUI를 처음 접해보는 사람들을 위한 연습 단계 입니다! 이번 단계에서 Java GUI 사용 방법에 대해서 공부하고, 익숙해지면 좋을 것 같아요 :)&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-기간-ㅤ3일&quot;&gt;⏰ 기간 ⏰ㅤ3일&lt;/h3&gt;
+
+&lt;h2 id=&quot;1-기능&quot;&gt;1. 기능&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;계산: 덧셈, 뺄셈, 곱셈, 나눗셈, 결과(=)&lt;/li&gt;
+  &lt;li&gt;버튼: 0 부터 9까지의 숫자, 초기화, 지우기&lt;/li&gt;
+  &lt;li&gt;이외에 자유롭게 자신이 선보이고 싶은 기능, 있으면 좋겠다 싶은 기능 추가 (필수 1개)
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-시작&quot;&gt;2. 시작!&lt;/h2&gt;
+&lt;p&gt;사실 내가 무언가 이론적으로 가르쳐주고 하는 것은 없다.&lt;br /&gt;
+나의 할 일은 기간을 알려주고, 만들어야할 프로젝트의 기능을 알려줄 뿐!&lt;br /&gt;
+어떻게 만들지는 여러분이 검색하고 찾아가면서 해야할 일이다.&lt;br /&gt;
+‘이게 뭐야, 괜히 했잖아!’라는 마음이 든다면 그래도 속는셈치고 한 번 해보았으면 좋겠다.&lt;br /&gt;
+열심히 찾고 공부하는 과정 속에서 얻는 것이 정말 많을거라 믿는다 :)&lt;br /&gt;
+그래도 여러분의 검색을 좀 더 수월하게 하기위해 약간의 Reference를 제공할 생각이다.&lt;br /&gt;
+하지만 내가 제공하는 자료는 정말 한정적이기 때문에 필요에 따라 여러분이 열심히 찾고 공부해야한다, 화이팅!&lt;br /&gt;
+그리고 reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
+꼭 3일 후에 본 프로젝트를 마무리하고 확인하길 바란다.&lt;br /&gt;
+그냥 내 코드와 결과물을 보고 공부한다면 그것도 물론 공부가 되겠지만 자신이 직접 찾아가며 한 공부보다는 훨씬 못할 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docsplayer.org/84194920-Microsoft-powerpoint-java%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-9%EC%9E%A5gui.html&quot;&gt;Java GUI - AWT 와 Swing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://brian-s.tistory.com/97&quot;&gt;Java GUI 로 프로그램 만들어보기&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-결과물&quot;&gt;3. 결과물&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/calculator.png&quot; alt=&quot;Calculator&quot; width=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;구현-기능&quot;&gt;구현 기능&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;계산: 덧셈, 뺄셈, 곱셈, 나눗셈, 결과(=)&lt;/li&gt;
+  &lt;li&gt;버튼: 0 부터 9까지의 숫자, 초기화, 지우기&lt;/li&gt;
+  &lt;li&gt;나만의 기능: 키보드 모드, 최근 계산 목록&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;보완-해야할-부분&quot;&gt;보완 해야할 부분&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;숫자가 길어질 때 뒷 부분이 “…” 으로 표시 → 숫자가 뒤로 밀어지게 보이게&lt;/li&gt;
+  &lt;li&gt;나만의 기능 아이콘 표시 → 어떤 기능인지 직관적으로 알 수 있게 표시&lt;/li&gt;
+  &lt;li&gt;소수점 아래 숫자가 0일 때는 소수점 아래로 숫자 보여지지 않게&lt;/li&gt;
+  &lt;li&gt;계산 버튼을 눌렀을 때 기존에 입력되었던 숫자가 지워지게 (이 부분은 좀 더 고민)
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-코드-세부-설명&quot;&gt;4. 코드 세부 설명&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-github&quot;&gt;5. GitHub&lt;/h2&gt;
+&lt;p&gt;제 코드는 아래 GitHub에서 확인 가능합니다 :)&lt;br /&gt;
+&lt;a href=&quot;https://github.com/0pencoding/JavaCamp-Round1-Calculator&quot;&gt;https://github.com/0pencoding/JavaCamp-Round1-Calculator&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 12 Mar 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round1_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5.html</link>
+        <guid isPermaLink="true">http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round1_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5.html</guid>
         
         
         <category>About</category>
