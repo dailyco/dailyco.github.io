@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Mar 2020 01:24:01 +0900</pubDate>
-    <lastBuildDate>Fri, 13 Mar 2020 01:24:01 +0900</lastBuildDate>
+    <pubDate>Fri, 13 Mar 2020 01:26:55 +0900</pubDate>
+    <lastBuildDate>Fri, 13 Mar 2020 01:26:55 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -33,7 +33,7 @@
 
 &lt;h2 id=&quot;3-실전이다-한-단계씩&quot;&gt;3. 실전이다, 한 단계씩!&lt;/h2&gt;
 &lt;p&gt;[Round0] ‘Java의 정석’ 책 읽기ㅤ&lt;a href=&quot;https://0pencoding.github.io/about/java/gui/2020/03/12/JavaCamp_Round0_%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D%EC%B1%85%EC%9D%BD%EA%B8%B0.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
-[Round1] ‘계산기’ 구현ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
+[Round1] ‘계산기’ 구현ㅤ&lt;a href=&quot;https://0pencoding.github.io/about/java/gui/2020/03/12/JavaCamp_Round1_%EA%B3%84%EC%82%B0%EA%B8%B0.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
 [Round2] ‘그림판’ 구현ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
 [Round3] 데이터베이스ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
 [Round4] 이미지 프로세싱ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
@@ -48,9 +48,9 @@
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 12 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/about/java/gui/imageprocessing/graphics/database/network/2020/03/12/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</link>
-        <guid isPermaLink="true">http://localhost:4000/about/java/gui/imageprocessing/graphics/database/network/2020/03/12/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</guid>
+        <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/about/java/gui/imageprocessing/graphics/database/network/2020/03/13/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</link>
+        <guid isPermaLink="true">http://localhost:4000/about/java/gui/imageprocessing/graphics/database/network/2020/03/13/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</guid>
         
         
         <category>About</category>
@@ -66,61 +66,6 @@
         <category>Database</category>
         
         <category>Network</category>
-        
-      </item>
-    
-      <item>
-        <title>[Java-GUI] ROUND0. '자바의 정석' 책 읽기</title>
-        <description>&lt;p&gt;“Round 0. 자바의 정석 책 읽기” 에 오신 여러분을 환영합니다 :) 본 프로젝트를 하기로 마음먹었다는 시작점에서 부터 그 용기와 도전에 박수를 쳐주고 싶어요! 한 단계씩 올라가며 점점 자신감이 생기고 실력은 늘고 성장하는 여러분 되길 희망할게요, 화이팅! 👊👊&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-책-준비&quot;&gt;1. 책 준비&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/java_standard.jpg&quot; alt=&quot;java의_정석&quot; width=&quot;150px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;자바의 정석, 27,000원 ㅤ&lt;a href=&quot;https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9788994492032&amp;amp;orderClick=JAj&quot;&gt;구매하러가기 (교보문고)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;꼭 자바의 정석이 아니어도 괜찮다. 마음에 드는 책으로 준비!
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-책-읽기&quot;&gt;2. 책 읽기&lt;/h2&gt;
-&lt;p&gt;본 포스팅을 쓴 목적이기도 한데, 책은 하루 동안 읽는다.&lt;br /&gt;
-이틀을 넘겨버리면 본 프로젝트는 분명 루즈하고 재미없어질 것이다. 명심!&lt;br /&gt;
-그런데, 하루동안 책을 전부 읽기는 힘들다는 것 알고있다. 그래서 책을 읽을 때 조금의 팁을 주고자한다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Java를 배웠을거라는 가정하에, 이미 알고있는 내용은 빠르게 훑고 넘긴다.&lt;/li&gt;
-  &lt;li&gt;시간이 없다, 잘 이해가 가지 않는다고 잡고 있지 말고 일단은 넘기고 보자.&lt;/li&gt;
-  &lt;li&gt;숲을 보고 나무를 봐야한다, 먼저 크게 어떤 내용들을 다루는지를 보고 세부 내용으로 들어가라.&lt;/li&gt;
-  &lt;li&gt;적어도 책의 70%는 읽어야한다 단, 빠르게 훑고 잘 이해가 안가 넘긴 부분을 포함해서.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이미 알고있는 내용들일지 모르겠지만 정말 명심해야한다.&lt;br /&gt;
-주어진 시간이 하루밖에 없기 때문에 시간 분배를 정말 잘 해야하기 때문이다.&lt;br /&gt;
-특히 3번 내용은 정말 중요하다, 어떤 내용이 있는지를 알고있으면 나중에 다시 찾아볼 수 있기 때문에 꼭 숲을 인지하고 있자.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-마무리&quot;&gt;3. 마무리&lt;/h2&gt;
-&lt;p&gt;하루동안 책을 읽는 것은 엄청 지루하고 힘들 것이다. 나도 해봐서 알지만, 정말 힘들고 지치는 일이었고 다시 하라고하면 정말 싫은 시간이었다.&lt;br /&gt;
-그럼에도 불구하고 정말 도움이 많이되고 꼭 필요한 시간이라고 생각한다. 그래서 여기까지 오신 여러분들에게 정말 수고했다는 말을 남기고 싶다 :)&lt;br /&gt;
-아, 그리고 혹시 하루동안 책의 70%를 못읽어서 어떻게 해야하나 고민이 된다면 그냥 다음 단계로 넘어가도 좋다.&lt;br /&gt;
-사실 나도 책을 완벽하게 잘 읽지 못했었지만 프로젝트는 무사히 마쳤기 때문에…&lt;br /&gt;
-단, 프로젝트를 진행하면서 책을 잘 읽은 사람에 비해서 많이 부족했고, 검색에 더 많은 시간과 노력을 들여야했다.&lt;br /&gt;
-그럼, 다음 단계도 화이팅!&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 12 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round0_%E1%84%8C%E1%85%A1%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A5%E1%86%A8%E1%84%8E%E1%85%A2%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%B0%E1%84%80%E1%85%B5.html</link>
-        <guid isPermaLink="true">http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round0_%E1%84%8C%E1%85%A1%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A5%E1%86%A8%E1%84%8E%E1%85%A2%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%B0%E1%84%80%E1%85%B5.html</guid>
-        
-        
-        <category>About</category>
-        
-        <category>Java</category>
-        
-        <category>GUI</category>
         
       </item>
     
@@ -191,9 +136,64 @@
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 </description>
+        <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/about/java/gui/2020/03/13/JavaCamp_Round1_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5.html</link>
+        <guid isPermaLink="true">http://localhost:4000/about/java/gui/2020/03/13/JavaCamp_Round1_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5.html</guid>
+        
+        
+        <category>About</category>
+        
+        <category>Java</category>
+        
+        <category>GUI</category>
+        
+      </item>
+    
+      <item>
+        <title>[Java-GUI] ROUND0. '자바의 정석' 책 읽기</title>
+        <description>&lt;p&gt;“Round 0. 자바의 정석 책 읽기” 에 오신 여러분을 환영합니다 :) 본 프로젝트를 하기로 마음먹었다는 시작점에서 부터 그 용기와 도전에 박수를 쳐주고 싶어요! 한 단계씩 올라가며 점점 자신감이 생기고 실력은 늘고 성장하는 여러분 되길 희망할게요, 화이팅! 👊👊&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-책-준비&quot;&gt;1. 책 준비&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/java_standard.jpg&quot; alt=&quot;java의_정석&quot; width=&quot;150px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;자바의 정석, 27,000원 ㅤ&lt;a href=&quot;https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9788994492032&amp;amp;orderClick=JAj&quot;&gt;구매하러가기 (교보문고)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;꼭 자바의 정석이 아니어도 괜찮다. 마음에 드는 책으로 준비!
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-책-읽기&quot;&gt;2. 책 읽기&lt;/h2&gt;
+&lt;p&gt;본 포스팅을 쓴 목적이기도 한데, 책은 하루 동안 읽는다.&lt;br /&gt;
+이틀을 넘겨버리면 본 프로젝트는 분명 루즈하고 재미없어질 것이다. 명심!&lt;br /&gt;
+그런데, 하루동안 책을 전부 읽기는 힘들다는 것 알고있다. 그래서 책을 읽을 때 조금의 팁을 주고자한다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Java를 배웠을거라는 가정하에, 이미 알고있는 내용은 빠르게 훑고 넘긴다.&lt;/li&gt;
+  &lt;li&gt;시간이 없다, 잘 이해가 가지 않는다고 잡고 있지 말고 일단은 넘기고 보자.&lt;/li&gt;
+  &lt;li&gt;숲을 보고 나무를 봐야한다, 먼저 크게 어떤 내용들을 다루는지를 보고 세부 내용으로 들어가라.&lt;/li&gt;
+  &lt;li&gt;적어도 책의 70%는 읽어야한다 단, 빠르게 훑고 잘 이해가 안가 넘긴 부분을 포함해서.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이미 알고있는 내용들일지 모르겠지만 정말 명심해야한다.&lt;br /&gt;
+주어진 시간이 하루밖에 없기 때문에 시간 분배를 정말 잘 해야하기 때문이다.&lt;br /&gt;
+특히 3번 내용은 정말 중요하다, 어떤 내용이 있는지를 알고있으면 나중에 다시 찾아볼 수 있기 때문에 꼭 숲을 인지하고 있자.&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-마무리&quot;&gt;3. 마무리&lt;/h2&gt;
+&lt;p&gt;하루동안 책을 읽는 것은 엄청 지루하고 힘들 것이다. 나도 해봐서 알지만, 정말 힘들고 지치는 일이었고 다시 하라고하면 정말 싫은 시간이었다.&lt;br /&gt;
+그럼에도 불구하고 정말 도움이 많이되고 꼭 필요한 시간이라고 생각한다. 그래서 여기까지 오신 여러분들에게 정말 수고했다는 말을 남기고 싶다 :)&lt;br /&gt;
+아, 그리고 혹시 하루동안 책의 70%를 못읽어서 어떻게 해야하나 고민이 된다면 그냥 다음 단계로 넘어가도 좋다.&lt;br /&gt;
+사실 나도 책을 완벽하게 잘 읽지 못했었지만 프로젝트는 무사히 마쳤기 때문에…&lt;br /&gt;
+단, 프로젝트를 진행하면서 책을 잘 읽은 사람에 비해서 많이 부족했고, 검색에 더 많은 시간과 노력을 들여야했다.&lt;br /&gt;
+그럼, 다음 단계도 화이팅!&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+</description>
         <pubDate>Thu, 12 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round1_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5.html</link>
-        <guid isPermaLink="true">http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round1_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5.html</guid>
+        <link>http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round0_%E1%84%8C%E1%85%A1%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A5%E1%86%A8%E1%84%8E%E1%85%A2%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%B0%E1%84%80%E1%85%B5.html</link>
+        <guid isPermaLink="true">http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round0_%E1%84%8C%E1%85%A1%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A5%E1%86%A8%E1%84%8E%E1%85%A2%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%B0%E1%84%80%E1%85%B5.html</guid>
         
         
         <category>About</category>
