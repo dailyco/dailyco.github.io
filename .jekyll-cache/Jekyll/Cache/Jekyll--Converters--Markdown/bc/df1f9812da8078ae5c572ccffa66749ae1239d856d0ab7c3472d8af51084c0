@@ -1,0 +1,146 @@
+I"�$<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/post/">POST</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/about/java/gui/imageprocessing/graphics/database/network/2020/03/12/JavaCamp_%EA%B0%9C%EC%9A%94.html">
+    <h2 class="post-title">[Java-GUI] 6개의 프로젝트 도전기</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>About</li><li>Java</li><li>GUI</li><li>ImageProcessing</li><li>Graphics</li><li>Database</li><li>Network</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Mar 12, 2020</div>
+  </div>
+  <div class="post">
+    <p>본 포스팅의 시작에 앞서 내가 이 포스팅을 올리기로 마음먹었던 이유에 대해 이야기하고자 한다. 나는 이 6개의 프로젝트를 학교에서 Java라는 언어를 배우고 그 학기가 끝난 방학 때 3주동안 진행하였다. 모든 프로젝트는 GUI로 구현하였으며, 학교 Java 수업에서 GUI에 대한 내용은 일체 다루지 않았다. 그래서 Java를 배우고 얼마되지 않은 친구들이 GUI를 공부해보고 싶다거나, Java를 좀 더 다양하게 활용해 보고 싶은 마음이 있는 친구들을 위해 본 포스팅을 작성한다. 3주라는 기간을 잡고 본 포스팅을 한 단계씩 완료한다면 많은 것을 배울 수 있으리라 생각한다 :)<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.<br />
+예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i = 2, j = 5, k = 3이라면 array의 2번째부터 5번째까지 자르면 [5, 2, 6, 3]입니다.<br />
+1에서 나온 배열을 정렬하면 [2, 3, 5, 6]입니다. 2에서 나온 배열의 3번째 숫자는 5입니다.<br />
+배열 array, [i, j, k]를 원소로 가진 2차원 배열 commands가 매개변수로 주어질 때, commands의 모든 원소에 대해 앞서 설명한 연산을 적용했을 때 나온 결과를 배열에 담아 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>array의 길이는 1 이상 100 이하입니다.</li>
+  <li>array의 각 원소는 1 이상 100 이하입니다.</li>
+  <li>commands의 길이는 1 이상 50 이하입니다.</li>
+  <li>commands의 각 원소는 길이가 3입니다.
+<br />
+<br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<p>1) commands의 원소의 i, j, k 값을 각각 받는다.<br />
+2) array의 i부터 j까지 범위의 숫자를 cpVector에 복사한다.<br />
+3) cpVector의 k번째 수를 answer에 넣는다.<br />
+4) 위 과정을 commands의 원소갯수만큼 반복한다.<br />
+<br />
+<br /></p>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">commands</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">answer</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">commands</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">cpVector</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+        
+        <span class="n">cpVector</span><span class="p">.</span><span class="n">assign</span><span class="p">((</span><span class="n">array</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">j</span><span class="p">));</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">cpVector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">cpVector</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="n">answer</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">cpVector</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>vector에서 copy와 assign의 차이점</li>
+  <li>2차원 벡터 사용 방법</li>
+  <li>sorting 방법
+<br />
+<br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>[STL] vector 복사 <a href="https://terrorjang.tistory.com/85">https://terrorjang.tistory.com/85</a><br />
+vector를 전체 복사, 혹은 부분적으로 복사할 때 copy, assign 사용<br />
+<span style="color: #c70000">※ copy와 assign의 차이점:</span> copy는 vector의 크기가 미리 할당 되어있어야하고, assign은 그러지 않아도 된다.</li>
+  <li>[C++ STL] 동적 2차원 배열 사용법(vector) <a href="https://sunnyholic.com/93">https://sunnyholic.com/93</a><br />
+c++에서 2차원 vector에 접근할 때에는 c, java와 비슷하게 index로 접근</li>
+  <li>[C++] sort algorithm 정리 및 예시 <a href="https://blockdmask.tistory.com/178">https://blockdmask.tistory.com/178</a>
+<br />
+<br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/about/java/gui/imageprocessing/graphics/database/network/2020/03/12/JavaCamp_%EA%B0%9C%EC%9A%94.html';
+      this.page.identifier = 'http://localhost:4000/about/java/gui/imageprocessing/graphics/database/network/2020/03/12/JavaCamp_%EA%B0%9C%EC%9A%94.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
