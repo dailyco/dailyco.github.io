@@ -1,0 +1,154 @@
+I"�<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/post/">POST</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/about/java/gui/graphics/2020/03/13/JavaCamp_Round2_%EA%B7%B8%EB%A6%BC%ED%8C%90.html">
+    <h2 class="post-title">[Java-GUI] ROUND2. 그림판 만들기</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>About</li><li>Java</li><li>GUI</li><li>Graphics</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Mar 13, 2020</div>
+  </div>
+  <div class="post">
+    <p>첫 실전을 마무리했다. ‘Round1 계산기 만들기’ 에서 Java GUI에 대해서 조금 감을 잡았길 바라며, 다음 단계로 넘어가 보자! 두번째 프로젝트는 그림판이다. Round1에서는 GUI에 대해 익히는 것이었다면 이번 라운드에서는 java GUI를 좀 더 깊게 공부하게 되지 않을까 생각한다. 마찬가지로 프로젝트를 진행하지 않는 사람들에게는 나의 코드가 유용한 정보가 되길 바란다 :)<br />
+<br /></p>
+
+<p><br /></p>
+<h3 id="-기간-ㅤ4일">⏰ 기간 ⏰ㅤ4일</h3>
+<p><br /></p>
+
+<h2 id="1-기능">1. 기능</h2>
+<ul>
+  <li>그리기: 선, 사각형, 원, Polyline, Sketch(Pen), Spray, Pattern 中 최소 4가지 이상 필수 선택</li>
+  <li>속성: 굵기, 색, Style, 채우기 中 최소 2가지 이상 필수 선택</li>
+  <li>부가기능: drag &amp; drop, resize, rotate, undo/redo, 지우기, 저장/불러오기, 복사/붙여넣기, grouping/ungrouping<br />
+中 최소 2가지 이상 필수 선택</li>
+  <li>이외에 자유롭게 자신이 선보이고 싶은 기능, 있으면 좋겠다 싶은 기능 추가
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-시작">2. 시작!</h2>
+<p>마찬가지로 검색을 좀 더 수월하게 하기위해 약간의 Reference를 제공한다.<br />
+하지만 말했듯이 내가 제공하는 자료는 정말 한정적이기 때문에 필요한 자료는 더 열심히 찾고 공부해야한다.<br />
+Reference 아래로는 나의 결과물과 설명이 이어진다.<br />
+꼭 4일 후에 본 프로젝트를 마무리하고 확인하길 바란다.<br />
+그냥 내 코드와 결과물을 보고 공부한다면 그것도 물론 공부가 되겠지만 자신이 직접 찾아가며 한 공부보다는 훨씬 못할 것이다.<br />
+또한 역시 말했듯이 그 당시에는 몰랐지만 지금보면 내 코드도 잘 짜여진 코드는 아니다 (-﹏-。;)</p>
+
+<h3 id="reference">Reference</h3>
+<ul>
+  <li><a href="https://aiden1004.tistory.com/entry/%EC%9E%90%EB%B0%94-GUI-%EA%B7%B8%EB%9E%98%ED%94%BD-%EA%B7%B8%EB%A6%AC%EA%B8%B0-%EA%B8%B0%EC%B4%88">자바 GUI Graphics (그래픽) 그리기 기초</a></li>
+  <li><a href="https://blog.naver.com/khk6435/50112360444">자바GUI강의 8.[패널에 그림그리기]</a>
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="3-결과물">3. 결과물</h2>
+<p><br />
+<img src="/assets/img/post/About_me/JavaCamp/drawboard.png" alt="drawboard" width="750px" /></p>
+
+<h3 id="구현-기능">구현 기능</h3>
+<ul>
+  <li>그리기: 선, 사각형, 원, Sketch(Pen)</li>
+  <li>속성: 굵기, 색</li>
+  <li>부가 기능: undo/redo, 지우기, 저장/불러오기</li>
+  <li>나만의 기능: 텍스트 모드, 캔버스 여러개, 캔버스 삭제</li>
+</ul>
+
+<h3 id="보완-해야할-부분">보완 해야할 부분</h3>
+<ul>
+  <li>텍스트 모드에서 클릭하면 글 쓰기를 시작할 수 있게</li>
+  <li>텍스트 모드에서 txt 파일이 저장되도록</li>
+  <li>캔버스 별로 메모리가 분리 되도록</li>
+  <li>지우개 사용할 때 지우개의 크기를 알 수 있도록</li>
+  <li>파일을 불러왔을 때 수정 가능하도록
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="4-세부-기능-캡쳐">4. 세부 기능 캡쳐</h2>
+<p><br />
+ㅤ<img src="/assets/img/post/About_me/JavaCamp/drawboard_detail(1).png" alt="calculator_detail" width="400px" /></p>
+
+<p>ㅤ<img src="/assets/img/post/About_me/JavaCamp/drawboard_detail(2).png" alt="calculator_detail" width="700px" />
+<br /><br /><br /></p>
+
+<h2 id="5-코드-세부-설명">5. 코드 세부 설명</h2>
+<p><br />
+<img src="/assets/img/post/About_me/JavaCamp/drawboard_uml.gif" alt="calculator_uml" width="900px" /></p>
+
+<p>위 사진은 내 코드를 UML Diagram으로 나타낸 것이다.<br />
+그래도 처음 계산기에 비하면 나름 class 별로 짜려고 노력한 흔적이 보인다.</p>
+
+<p>코드를 세부적으로 설명하면 아래와 같다.</p>
+<ul>
+  <li><strong><code class="highlighter-rouge">main()</code></strong> : Calculator 객체를 만들어 <code class="highlighter-rouge">displayFrame()</code> 실행</li>
+</ul>
+
+<p>UML Diagram을 보면 알겠지만, 다른 함수들도 있지만 크게 중요하지 않아 주요 함수들만 설명했다.<br />
+(혹시 코드를 보시고 궁금한 점이나 문의드릴 내용이 있으면 댓글 주세요!)
+<br /><br /><br /></p>
+
+<h2 id="6-github">6. GitHub</h2>
+<p>제 코드는 아래 GitHub에서 확인 가능합니다 :)<br />
+<a href="https://github.com/0pencoding/JavaCamp-Round2-DrawBoard">https://github.com/0pencoding/JavaCamp-Round2-DrawBoard</a>
+<br /><br /><br /></p>
+
+<h2 style="text-align: right;" id="round-3-데이터-베이스-구현--"><a href="abc">[Round 3] 데이터 베이스 구현 ➜ </a></h2>
+<p><br /></p>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/about/java/gui/graphics/2020/03/13/JavaCamp_Round2_%EA%B7%B8%EB%A6%BC%ED%8C%90.html';
+      this.page.identifier = 'http://localhost:4000/about/java/gui/graphics/2020/03/13/JavaCamp_Round2_%EA%B7%B8%EB%A6%BC%ED%8C%90.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET

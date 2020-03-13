@@ -6,9 +6,181 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Mar 2020 20:39:48 +0900</pubDate>
-    <lastBuildDate>Fri, 13 Mar 2020 20:39:48 +0900</lastBuildDate>
+    <pubDate>Fri, 13 Mar 2020 23:02:07 +0900</pubDate>
+    <lastBuildDate>Fri, 13 Mar 2020 23:02:07 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>[Java-GUI] ROUND2. 그림판 만들기</title>
+        <description>&lt;p&gt;첫 실전을 마무리했다. ‘Round1 계산기 만들기’ 에서 Java GUI에 대해서 조금 감을 잡았길 바라며, 다음 단계로 넘어가 보자! 두번째 프로젝트는 그림판이다. Round1에서는 GUI에 대해 익히는 것이었다면 이번 라운드에서는 java GUI를 좀 더 깊게 공부하게 되지 않을까 생각한다. 마찬가지로 프로젝트를 진행하지 않는 사람들에게는 나의 코드가 유용한 정보가 되길 바란다 :)&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-기간-ㅤ4일&quot;&gt;⏰ 기간 ⏰ㅤ4일&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-기능&quot;&gt;1. 기능&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;그리기: 선, 사각형, 원, Polyline, Sketch(Pen), Spray, Pattern 中 최소 4가지 이상 필수 선택&lt;/li&gt;
+  &lt;li&gt;속성: 굵기, 색, Style, 채우기 中 최소 2가지 이상 필수 선택&lt;/li&gt;
+  &lt;li&gt;부가기능: drag &amp;amp; drop, resize, rotate, undo/redo, 지우기, 저장/불러오기, 복사/붙여넣기, grouping/ungrouping&lt;br /&gt;
+中 최소 2가지 이상 필수 선택&lt;/li&gt;
+  &lt;li&gt;이외에 자유롭게 자신이 선보이고 싶은 기능, 있으면 좋겠다 싶은 기능 추가
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-시작&quot;&gt;2. 시작!&lt;/h2&gt;
+&lt;p&gt;마찬가지로 검색을 좀 더 수월하게 하기위해 약간의 Reference를 제공한다.&lt;br /&gt;
+하지만 말했듯이 내가 제공하는 자료는 정말 한정적이기 때문에 필요한 자료는 더 열심히 찾고 공부해야한다.&lt;br /&gt;
+Reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
+꼭 4일 후에 본 프로젝트를 마무리하고 확인하길 바란다.&lt;br /&gt;
+그냥 내 코드와 결과물을 보고 공부한다면 그것도 물론 공부가 되겠지만 자신이 직접 찾아가며 한 공부보다는 훨씬 못할 것이다.&lt;br /&gt;
+또한 역시 말했듯이 그 당시에는 몰랐지만 지금보면 내 코드도 잘 짜여진 코드는 아니다 (-﹏-。;)&lt;/p&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://aiden1004.tistory.com/entry/%EC%9E%90%EB%B0%94-GUI-%EA%B7%B8%EB%9E%98%ED%94%BD-%EA%B7%B8%EB%A6%AC%EA%B8%B0-%EA%B8%B0%EC%B4%88&quot;&gt;자바 GUI Graphics (그래픽) 그리기 기초&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/khk6435/50112360444&quot;&gt;자바GUI강의 8.[패널에 그림그리기]&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-결과물&quot;&gt;3. 결과물&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/drawboard.png&quot; alt=&quot;drawboard&quot; width=&quot;750px&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;구현-기능&quot;&gt;구현 기능&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;그리기: 선, 사각형, 원, Sketch(Pen)&lt;/li&gt;
+  &lt;li&gt;속성: 굵기, 색&lt;/li&gt;
+  &lt;li&gt;부가 기능: undo/redo, 지우기, 저장/불러오기&lt;/li&gt;
+  &lt;li&gt;나만의 기능: 텍스트 모드, 캔버스 여러개, 캔버스 삭제&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;보완-해야할-부분&quot;&gt;보완 해야할 부분&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;텍스트 모드에서 클릭하면 글 쓰기를 시작할 수 있게&lt;/li&gt;
+  &lt;li&gt;텍스트 모드에서 txt 파일이 저장되도록&lt;/li&gt;
+  &lt;li&gt;캔버스 별로 메모리가 분리 되도록&lt;/li&gt;
+  &lt;li&gt;지우개 사용할 때 지우개의 크기를 알 수 있도록&lt;/li&gt;
+  &lt;li&gt;파일을 불러왔을 때 수정 가능하도록
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-세부-기능-캡쳐&quot;&gt;4. 세부 기능 캡쳐&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+ㅤ&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/drawboard_detail(1).png&quot; alt=&quot;calculator_detail&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ㅤ&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/drawboard_detail(2).png&quot; alt=&quot;calculator_detail&quot; width=&quot;700px&quot; /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-코드-세부-설명&quot;&gt;5. 코드 세부 설명&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/drawboard_uml.gif&quot; alt=&quot;calculator_uml&quot; width=&quot;900px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 사진은 내 코드를 UML Diagram으로 나타낸 것이다.&lt;br /&gt;
+그래도 처음 계산기에 비하면 나름 class 별로 짜려고 노력한 흔적이 보인다.&lt;/p&gt;
+
+&lt;p&gt;코드를 세부적으로 설명하면 아래와 같다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Main class&lt;/code&gt;&lt;/strong&gt; : Drawboard의 전체적인 큰 프레임
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Main()&lt;/code&gt;&lt;/strong&gt; : Frame의 제목, 크기를 설정해주고, 닫기를 눌렀을 때 닫아지도록 설정, 또한 MenuBar와 ToolBar, Canvas 탭을 추가&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MenuBar class&lt;/code&gt;&lt;/strong&gt; : 프레임의 메뉴바 부분
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MenuBar()&lt;/code&gt;&lt;/strong&gt; : 저장과 불러오기를 만들고 여기에 각각 알맞은 ActionListener를 더해주는 역할&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;actionPerformed()&lt;/code&gt;&lt;/strong&gt; : 저장과 불러오기를 눌렀을 때 각각 JFileChoose를 사용해서 해당 이벤트를 실행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ToolBar class&lt;/code&gt;&lt;/strong&gt; : 프레임의 메뉴바 아래에 툴바 부분
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ToolBar()&lt;/code&gt;&lt;/strong&gt; : 툴바의 배경색을 설정하고, 툴바에 Buttons 클래스를 추가해 툴바를 완성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Buttons class&lt;/code&gt;&lt;/strong&gt; : 툴바의 버튼들을 구성
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Buttons()&lt;/code&gt;&lt;/strong&gt; : 툴바에 필요한 버튼들을 생성하고 각 버튼들에 MouseListener를 추가&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;moustClicked()&lt;/code&gt;&lt;/strong&gt; : 툴바의 각 버튼들을 눌렀을 때 해당 버튼에 맞는 행동들을 실행&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;undo()&lt;/code&gt;&lt;/strong&gt; : undo 버튼을 누를 때마다 지금까지 실행되었던 것들을 한개씩 pop해서 redo에 넣고 다시 그려주는 역할&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;redo()&lt;/code&gt;&lt;/strong&gt; : redo 버튼을 누를 때 마다 redo 메모리에서 한개씩 pop해서 메모리에 넣고 다시 그려주는 역할&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;addCanvas()&lt;/code&gt;&lt;/strong&gt; : new canvas 버튼을 누를 때 마다 새로운 Canvas 생성 및 Canvas group에 넣어주는 역할&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setEraser()&lt;/code&gt;&lt;/strong&gt; : eraser 버튼을 눌렀을 때 버튼 세팅&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setText()&lt;/code&gt;&lt;/strong&gt; : new text 버튼을 눌렀을 때 버튼 세팅하고 TextBoard 생성 및 Canvas group에 넣어주는 역할&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setInit()&lt;/code&gt;&lt;/strong&gt; : clear 버튼을 눌렀을 때 버튼 세팅 및 캔버스 초기화&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setDraw()&lt;/code&gt;&lt;/strong&gt; : draw 버튼을 눌렀을 때 각각의 맞는 도형이 그려지도록 세팅&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CanvasGroup class&lt;/code&gt;&lt;/strong&gt; : 생성된 Canvas들과 TextBoard들을 모아두는 곳&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Canvas class&lt;/code&gt;&lt;/strong&gt; : 그림을 그리기위한 Canvas
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Canvas()&lt;/code&gt;&lt;/strong&gt; : MyMouseListener 클래스를 Canvas에 추가&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MyMouseListener를 class&lt;/code&gt;&lt;/strong&gt; : 마우스가 눌렸을 때와 드레그 되었을 때, 놓였을 때로 나누어 MouseListener를 설정
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;paintComponent()&lt;/code&gt;&lt;/strong&gt; : 실제로 Canvas에 그림이 그려지도록 Graphics를 사용해서 그림을 그리는 역할&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TextBoard class&lt;/code&gt;&lt;/strong&gt; : 텍스트 모드에서 글을 쓰기위한 TextBoard
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TextBoard()&lt;/code&gt;&lt;/strong&gt; : 글을 쓸 수 있는 TextArea 설정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Sketch class&lt;/code&gt;&lt;/strong&gt; : 스케치를 위해 스케치의 시작점과 끝점을 저장하는 클래스&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Memory class&lt;/code&gt;&lt;/strong&gt; : redo, undo를 위해 지금까지 그렸던 도형들을 저장하는 클래스&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ColorFrame class&lt;/code&gt;&lt;/strong&gt; : 스케치나 도형을 그릴 때 색을 선택할 수 있도록 해주는 클래스
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ColorFrame()&lt;/code&gt;&lt;/strong&gt; : ChangeListener를 추가&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stateChanged()&lt;/code&gt;&lt;/strong&gt; : 색이 바뀔 때 마다 해당 색으로 지정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CheckFrame class&lt;/code&gt;&lt;/strong&gt; : Delete 버튼을 눌렀을 때 정말로 삭제할지 묻는 창
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CheckFrame()&lt;/code&gt;&lt;/strong&gt; : 정말로 삭제할지 묻는 라벨과 ActionListener를 추가한 yes, no 버튼 추가&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;actionPerformed()&lt;/code&gt;&lt;/strong&gt; : yes 버튼 - Canvas 삭제 및 모든 메모리를 비워주고 창을 삭제,&lt;br /&gt;
+  no 버튼 - 해당 CheckFrame을 닫아주는 행동을 실행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Stroke class&lt;/code&gt;&lt;/strong&gt; : 라인의 굵기를 설정하는 클래스
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Stroke()&lt;/code&gt;&lt;/strong&gt; : ChangeListener를 추가&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stateChanged()&lt;/code&gt;&lt;/strong&gt; : 굵기가 바뀔 때마다 해당 굵기로 지정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Clear class&lt;/code&gt;&lt;/strong&gt; : 창을 초기화 시킬 때에 캔버스 화면에 맞는 하연 사각형 객체를 만들어주는 class&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했다.&lt;br /&gt;
+혹시 코드를 보고 궁금한 점이나 문의할 내용이 있으면 댓글로 남겨주세요!
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;6-github-및-프로젝트-보고서&quot;&gt;6. GitHub 및 프로젝트 보고서&lt;/h2&gt;
+&lt;p&gt;제 코드는 아래 GitHub에서 확인 가능합니다 :)&lt;br /&gt;
+&lt;a href=&quot;https://github.com/0pencoding/JavaCamp-Round2-DrawBoard&quot;&gt;https://github.com/0pencoding/JavaCamp-Round2-DrawBoard&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;또한 위 코드 설명보다 더 자세한 설명이나 실행 결과가 필요하다면 아래 링크에서 보고서를 다운받을 수 있습니다 :)&lt;br /&gt;
+&lt;a href=&quot;https://drive.google.com/file/d/15mE3ce3AQZ2JYinjSA9cl54PlF53mcJc/view?usp=sharing&quot;&gt;https://drive.google.com/file/d/15mE3ce3AQZ2JYinjSA9cl54PlF53mcJc/view?usp=sharing&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- ## [[Round 3] 데이터 베이스 구현 ➜ ](abc)
+{: style=&quot;text-align: right;&quot;}
+&lt;br/&gt; --&gt;
+</description>
+        <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/about/java/gui/graphics/2020/03/13/JavaCamp_Round2_%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%E1%84%91%E1%85%A1%E1%86%AB.html</link>
+        <guid isPermaLink="true">http://localhost:4000/about/java/gui/graphics/2020/03/13/JavaCamp_Round2_%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%E1%84%91%E1%85%A1%E1%86%AB.html</guid>
+        
+        
+        <category>About</category>
+        
+        <category>Java</category>
+        
+        <category>GUI</category>
+        
+        <category>Graphics</category>
+        
+      </item>
     
       <item>
         <title>[Java-GUI] Java 프로젝트 도전기 : 계산기, 그림판, 데이터베이스, 이미지 프로세싱, 육목, 네트워크</title>
@@ -57,7 +229,7 @@
 &lt;p&gt;ㅤㅤ&lt;a href=&quot;https://0pencoding.github.io/about/java/gui/2020/03/13/JavaCamp_Round1_%EA%B3%84%EC%82%B0%EA%B8%B0.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;ㅤ--round2-그림판-구현&quot;&gt;ㅤ- [Round2] ‘그림판’ 구현&lt;/h3&gt;
-&lt;!-- ㅤㅤ[[포스팅 바로가기]](abc)   --&gt;
+&lt;p&gt;ㅤㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;ㅤ--round3-데이터베이스&quot;&gt;ㅤ- [Round3] 데이터베이스&lt;/h3&gt;
 &lt;!-- ㅤㅤ[[포스팅 바로가기]](abc)   --&gt;
@@ -79,8 +251,8 @@
 &lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/about/java/gui/imageprocessing/graphics/database/network/2020/03/13/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</link>
-        <guid isPermaLink="true">http://localhost:4000/about/java/gui/imageprocessing/graphics/database/network/2020/03/13/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</guid>
+        <link>http://localhost:4000/about/java/gui/graphics/database/imageprocessing/network/2020/03/13/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</link>
+        <guid isPermaLink="true">http://localhost:4000/about/java/gui/graphics/database/imageprocessing/network/2020/03/13/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</guid>
         
         
         <category>About</category>
@@ -89,11 +261,11 @@
         
         <category>GUI</category>
         
-        <category>ImageProcessing</category>
-        
         <category>Graphics</category>
         
         <category>Database</category>
+        
+        <category>ImageProcessing</category>
         
         <category>Network</category>
         
@@ -101,7 +273,7 @@
     
       <item>
         <title>[Java-GUI] ROUND1. 계산기 만들기</title>
-        <description>&lt;p&gt;이제 본 프로젝트의 진정한 실전 시작이다. ‘Round 0 책 읽기’에서 지쳐버렸을텐데 이제부터 실전이니 힘내서 한 단계 더 나아가길! 첫번째 프로젝트는 계산기 만들기다. GUI를 접해보지 않은 사람이라는 가정하에, 이번 프로젝트에서는 Java GUI 사용 방법에 대해서 공부하고, 익숙해지면 시간이 될 것 같다. 그리고 프로젝트를 진행하지 않는 사람들에게는 나의 코드가 유용한 정보가 되길 바란다 :)&lt;br /&gt;
+        <description>&lt;p&gt;이제 본 프로젝트의 진정한 실전 시작이다. ‘Round 0 책 읽기’ 에서 지쳐버렸을텐데 이제부터 실전이니 힘내서 한 단계 더 나아가길! 첫번째 프로젝트는 계산기 만들기다. GUI를 접해보지 않은 사람이라는 가정하에, 이번 프로젝트에서는 Java GUI 사용 방법에 대해서 공부하고, 익숙해지면 시간이 될 것 같다. 그리고 프로젝트를 진행하지 않는 사람들에게는 나의 코드가 유용한 정보가 되길 바란다 :)&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -119,7 +291,7 @@
 &lt;h2 id=&quot;2-시작&quot;&gt;2. 시작!&lt;/h2&gt;
 &lt;p&gt;내가 할 일은 여기에서 끝이지만, 그래도 검색을 좀 더 수월하게 하기위해 약간의 Reference를 제공할 생각이다.&lt;br /&gt;
 하지만 내가 제공하는 자료는 정말 한정적이기 때문에 필요한 자료는 더 열심히 찾고 공부해야한다.&lt;br /&gt;
-그리고 reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
+그리고 Reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
 꼭 3일 후에 본 프로젝트를 마무리하고 확인하길 바란다.&lt;br /&gt;
 그냥 내 코드와 결과물을 보고 공부한다면 그것도 물론 공부가 되겠지만 자신이 직접 찾아가며 한 공부보다는 훨씬 못할 것이다.&lt;br /&gt;
 그리고 그 당시에는 몰랐지만 지금보면 내 코드도 잘 짜여진 코드는 아니다 (-﹏-。;)&lt;/p&gt;
@@ -180,7 +352,7 @@
 &lt;/ul&gt;
 
 &lt;p&gt;UML Diagram을 보면 알겠지만, 다른 함수들도 있지만 크게 중요하지 않아 주요 함수들만 설명했다.&lt;br /&gt;
-(혹시 코드를 보시고 궁금한 점이나 문의드릴 내용이 있으면 댓글 주세요!)
+혹시 코드를 보고 궁금한 점이나 문의할 내용이 있으면 댓글로 남겨주세요!
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;6-github&quot;&gt;6. GitHub&lt;/h2&gt;
