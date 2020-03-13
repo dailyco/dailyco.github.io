@@ -118,6 +118,6 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 <https://drive.google.com/file/d/15mE3ce3AQZ2JYinjSA9cl54PlF53mcJc/view?usp=sharing>
 <br/><br/><br/>
 
-<!-- ## [[Round 3] 데이터 베이스 구현 ➜ ](abc)
+## [[Round 3] 데이터 베이스 구현 ➜ ](https://0pencoding.github.io/about/java/gui/database/mysql/2020/03/14/JavaCamp_Round3_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4.html)
 {: style="text-align: right;"}
-<br/> -->
+<br/>
