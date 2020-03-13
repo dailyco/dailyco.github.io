@@ -6,41 +6,71 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Mar 2020 01:26:55 +0900</pubDate>
-    <lastBuildDate>Fri, 13 Mar 2020 01:26:55 +0900</lastBuildDate>
+    <pubDate>Fri, 13 Mar 2020 20:39:48 +0900</pubDate>
+    <lastBuildDate>Fri, 13 Mar 2020 20:39:48 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title>[Java-GUI] 6개의 Java 프로젝트 도전기</title>
-        <description>&lt;p&gt;본 포스팅의 시작에 앞서 내가 이 포스팅을 올리기로 마음먹었던 이유에 대해 이야기하고자 한다. 나는 이 6개의 프로젝트를 학교에서 Java라는 언어를 배우고 그 학기가 끝난 방학 때 3주동안 진행하였다. 모든 프로젝트는 GUI로 구현하였으며, 학교 Java 수업에서 GUI에 대한 내용은 일체 다루지 않았다. 그래서 Java를 배우고 얼마되지 않은 친구들이 GUI를 공부해보고 싶다거나, Java를 좀 더 다양하게 활용해 보고 싶은 마음이 있는 친구들을 위해 본 포스팅을 작성한다. 3주라는 기간을 잡고 본 포스팅을 한 단계씩 완료한다면 많은 것을 배울 수 있으리라 생각한다 :)&lt;br /&gt;
+        <title>[Java-GUI] Java 프로젝트 도전기 : 계산기, 그림판, 데이터베이스, 이미지 프로세싱, 육목, 네트워크</title>
+        <description>&lt;p&gt;본 포스팅의 시작에 앞서 내가 이 포스팅을 올리게된 계기를 설명하면, 나는 이 6개의 프로젝트를 학교에서 Java라는 언어를 배우고 그 학기가 끝난 방학 때 교수님의 지도 아래 3주동안 진행하였다. GUI에 대한 지식이 없었던 상태에서 이 프로젝트는 나에게 정말 많은 도움이 되었고, 이 프로젝트 후에는 어떤 것이든 할 수 있을 것 같은 자신감이 생겼다. 그래서 나는 이 경험을 Java를 배우고 얼마되지 않은 친구들이 GUI를 공부해보고 싶다거나, Java를 좀 더 다양하게 활용해 보고 싶은 마음이 있는 친구들에게 나누고, 그 때했던 프로젝트들을 하나씩 정리하고 싶어 본 포스팅을 작성한다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;1-들어가기에-앞서&quot;&gt;1. 들어가기에 앞서…&lt;/h2&gt;
-&lt;p&gt;본 프로젝트를 하기로 마음 먹었다면 더욱 단단히 열심히하겠다는 각오를 가지길!&lt;br /&gt;
-3주라는 시간이 길다고 생각하면 오산, 3주동안 절대로 이 프로젝트에만 집중해야한다.&lt;br /&gt;
-6개의 프로젝트가 끝나고나면 자신감도 생기고 정말 많은 것을 배운 후일 것이다.&lt;br /&gt;
-그리고 참고로 나의 프로젝트 결과물들은 Java를 배운지 얼마되지 않은 상태에서 서툴게 만들었기 때문에 부족한 부분이 많은데, 부끄럽지만 그 부분은 감안해주었으면 좋겠다…(o´▽`o)/&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;만약 본 프로젝트를 해볼까하는 마음이 있다면 중간에 포기하지 않도록 마음을 잘 다잡고 했으면 좋겠다.&lt;/li&gt;
+  &lt;li&gt;만약 본 프로젝트를 하려면 3주라는 시간이 생각보다 짧기 때문에 3주동안은 다른 일과 병행하지 않고 절대 이 프로젝트에만 집중해야한다.&lt;/li&gt;
+  &lt;li&gt;다시 한번 말하지만 Java를 배운지 얼마 안됐는데 GUI에 대해 더 공부해보고 싶거나 활용해보고 싶은 사람들에게 추천한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그리고 참고로 나의 프로젝트 결과물들은 Java를 배운지 얼마되지 않은 상태에서 서툴게 만들었기 때문에 부족한 부분이 많은데, 부끄럽지만 그 부분은 감안해주었으면 좋겠다…(o´▽`o)/
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-준비-단계&quot;&gt;2. 준비 단계&lt;/h2&gt;
-&lt;p&gt;먼저 바로 실전에 뛰어들기 전에, 나는 1일의 기간을 잡고 ‘Java의 정석’ 이라는 책을 읽었다.&lt;br /&gt;
-하루만에 책을 전부 읽는 것은 분명 힘들지만 (그래서 나도 잘 해내지 못했지만..) 함께 프로젝트를 진행했던 친구들은(모두 같이 진행했지만, 결과물은 개인으로 각각 하나의 아웃풋을 만들었다) 거의 대부분 잘 해내었다.&lt;br /&gt;
-불가능한 것은 아니라는 것! 꼭 ‘Java의 정석’ 이 아니라도 괜찮다.&lt;br /&gt;
-하루동안 모든 시간을 쏟아서 Java 공부하기! (적어도 책의 70%정도는 읽길..)&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;‘Java의 정석’ 이라는 책 구매 (꼭 이 책이 아니어도 괜찮다)&lt;/li&gt;
+  &lt;li&gt;함께 진행하는 친구들 (있다면 더 많이 배울 수 있을 것 같다)&lt;/li&gt;
+  &lt;li&gt;성공적으로 마무리 해보겠다는 마음가짐
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h2 id=&quot;3-실전이다-한-단계씩&quot;&gt;3. 실전이다, 한 단계씩!&lt;/h2&gt;
-&lt;p&gt;[Round0] ‘Java의 정석’ 책 읽기ㅤ&lt;a href=&quot;https://0pencoding.github.io/about/java/gui/2020/03/12/JavaCamp_Round0_%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D%EC%B1%85%EC%9D%BD%EA%B8%B0.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
-[Round1] ‘계산기’ 구현ㅤ&lt;a href=&quot;https://0pencoding.github.io/about/java/gui/2020/03/12/JavaCamp_Round1_%EA%B3%84%EC%82%B0%EA%B8%B0.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
-[Round2] ‘그림판’ 구현ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
-[Round3] 데이터베이스ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
-[Round4] 이미지 프로세싱ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
-[Round5] ‘육목’ 구현ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
-[Round6] 네트워크 적용ㅤ&lt;a href=&quot;abc&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3-과정&quot;&gt;3. 과정&lt;/h2&gt;
+&lt;p&gt;프로젝트가 어떤 식으로 진행되는지 간략하게 개요만 설명하면,&lt;/p&gt;
+&lt;h3 id=&quot;ㅤ일정&quot;&gt;ㅤ일정&lt;/h3&gt;
+&lt;p&gt;ㅤㅤ&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/process.png&quot; alt=&quot;process&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ㅤㅤ위와 같은 일정으로 3주 (21일) 동안 진행된다.&lt;/p&gt;
+&lt;h3 id=&quot;ㅤ방법&quot;&gt;ㅤ방법&lt;/h3&gt;
+&lt;p&gt;ㅤㅤ나는 사람들에게 이렇게해라, 저렇게 해라 가르칠만한 실력을 갖추고있지 않다.&lt;br /&gt;
+ㅤㅤ이 프로젝트는 순전히 자신이 적극적으로 찾아가면서 하는 것이다.&lt;br /&gt;
+ㅤㅤ나의 역할은 위와 같은 일정동안 어떤 프로젝트를 만들어야 하는지를 알려주는 것 뿐이다.&lt;br /&gt;
+ㅤㅤ어떻게 만들어야 하는지는 스스로 검색하고 찾아가면서 해야한다.&lt;br /&gt;
+ㅤㅤ물론 나의 결과물과 코드, 코드 설명도 하지만 그건 자신이 프로젝트를 완성한 후에 확인하면서 이 사람은 이렇게 했구나 하고 확인했으면 좋겠다.&lt;br /&gt;
+ㅤㅤ그리고 친구와 함께 하지 않는 친구들은 나의 결과물을 보면서 함께 한단계씩 해결해 나가고 있다는 느낌을 받으면 좋겠다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-실전이다-한-단계씩&quot;&gt;4. 실전이다, 한 단계씩!&lt;/h2&gt;
+&lt;h3 id=&quot;ㅤ--round0-java의-정석-책-읽기&quot;&gt;ㅤ- [Round0] ‘Java의 정석’ 책 읽기&lt;/h3&gt;
+&lt;p&gt;ㅤㅤ&lt;a href=&quot;https://0pencoding.github.io/about/java/gui/2020/03/12/JavaCamp_Round0_%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D%EC%B1%85%EC%9D%BD%EA%B8%B0.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ㅤ--round1-계산기-구현&quot;&gt;ㅤ- [Round1] ‘계산기’ 구현&lt;/h3&gt;
+&lt;p&gt;ㅤㅤ&lt;a href=&quot;https://0pencoding.github.io/about/java/gui/2020/03/13/JavaCamp_Round1_%EA%B3%84%EC%82%B0%EA%B8%B0.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ㅤ--round2-그림판-구현&quot;&gt;ㅤ- [Round2] ‘그림판’ 구현&lt;/h3&gt;
+&lt;!-- ㅤㅤ[[포스팅 바로가기]](abc)   --&gt;
+
+&lt;h3 id=&quot;ㅤ--round3-데이터베이스&quot;&gt;ㅤ- [Round3] 데이터베이스&lt;/h3&gt;
+&lt;!-- ㅤㅤ[[포스팅 바로가기]](abc)   --&gt;
+
+&lt;h3 id=&quot;ㅤ--round4-이미지-프로세싱&quot;&gt;ㅤ- [Round4] 이미지 프로세싱&lt;/h3&gt;
+&lt;!-- ㅤㅤ[[포스팅 바로가기]](abc)   --&gt;
+
+&lt;h3 id=&quot;ㅤ--round5-육목-구현&quot;&gt;ㅤ- [Round5] ‘육목’ 구현&lt;/h3&gt;
+&lt;!-- ㅤㅤ[[포스팅 바로가기]](abc)   --&gt;
+
+&lt;h3 id=&quot;ㅤ--round6-네트워크-적용&quot;&gt;ㅤ- [Round6] 네트워크 적용&lt;/h3&gt;
+&lt;!-- ㅤㅤ[[포스팅 바로가기]](abc) --&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-마무리&quot;&gt;4. 마무리&lt;/h2&gt;
 &lt;p&gt;포스팅을 마무리하며, 모두 3주간의 프로젝트를 잘 마무리해서 실력도 늘고 자신감도 생겼으면 좋겠다.&lt;br /&gt;
@@ -71,43 +101,39 @@
     
       <item>
         <title>[Java-GUI] ROUND1. 계산기 만들기</title>
-        <description>&lt;p&gt;드디어 시작! “Round 1. 계산기 만들기” 단계에 오신 여러분들 환영해요, ‘Round 0’에서 벌써부터 지쳐버렸을텐데 이제부터는 정말 실전이니 힘내서 한 단계 더 나아가 보자구요! 첫번째 프로젝트는 계산기 만들기예요. 이번 프로젝트는 Java GUI를 처음 접해보는 사람들을 위한 연습 단계 입니다! 이번 단계에서 Java GUI 사용 방법에 대해서 공부하고, 익숙해지면 좋을 것 같아요 :)&lt;br /&gt;
+        <description>&lt;p&gt;이제 본 프로젝트의 진정한 실전 시작이다. ‘Round 0 책 읽기’에서 지쳐버렸을텐데 이제부터 실전이니 힘내서 한 단계 더 나아가길! 첫번째 프로젝트는 계산기 만들기다. GUI를 접해보지 않은 사람이라는 가정하에, 이번 프로젝트에서는 Java GUI 사용 방법에 대해서 공부하고, 익숙해지면 시간이 될 것 같다. 그리고 프로젝트를 진행하지 않는 사람들에게는 나의 코드가 유용한 정보가 되길 바란다 :)&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h3 id=&quot;-기간-ㅤ3일&quot;&gt;⏰ 기간 ⏰ㅤ3일&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-기능&quot;&gt;1. 기능&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;계산: 덧셈, 뺄셈, 곱셈, 나눗셈, 결과(=)&lt;/li&gt;
   &lt;li&gt;버튼: 0 부터 9까지의 숫자, 초기화, 지우기&lt;/li&gt;
   &lt;li&gt;이외에 자유롭게 자신이 선보이고 싶은 기능, 있으면 좋겠다 싶은 기능 추가 (필수 1개)
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-시작&quot;&gt;2. 시작!&lt;/h2&gt;
-&lt;p&gt;사실 내가 무언가 이론적으로 가르쳐주고 하는 것은 없다.&lt;br /&gt;
-나의 할 일은 기간을 알려주고, 만들어야할 프로젝트의 기능을 알려줄 뿐!&lt;br /&gt;
-어떻게 만들지는 여러분이 검색하고 찾아가면서 해야할 일이다.&lt;br /&gt;
-‘이게 뭐야, 괜히 했잖아!’라는 마음이 든다면 그래도 속는셈치고 한 번 해보았으면 좋겠다.&lt;br /&gt;
-열심히 찾고 공부하는 과정 속에서 얻는 것이 정말 많을거라 믿는다 :)&lt;br /&gt;
-그래도 여러분의 검색을 좀 더 수월하게 하기위해 약간의 Reference를 제공할 생각이다.&lt;br /&gt;
-하지만 내가 제공하는 자료는 정말 한정적이기 때문에 필요에 따라 여러분이 열심히 찾고 공부해야한다, 화이팅!&lt;br /&gt;
+&lt;p&gt;내가 할 일은 여기에서 끝이지만, 그래도 검색을 좀 더 수월하게 하기위해 약간의 Reference를 제공할 생각이다.&lt;br /&gt;
+하지만 내가 제공하는 자료는 정말 한정적이기 때문에 필요한 자료는 더 열심히 찾고 공부해야한다.&lt;br /&gt;
 그리고 reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
 꼭 3일 후에 본 프로젝트를 마무리하고 확인하길 바란다.&lt;br /&gt;
-그냥 내 코드와 결과물을 보고 공부한다면 그것도 물론 공부가 되겠지만 자신이 직접 찾아가며 한 공부보다는 훨씬 못할 것이다.&lt;/p&gt;
+그냥 내 코드와 결과물을 보고 공부한다면 그것도 물론 공부가 되겠지만 자신이 직접 찾아가며 한 공부보다는 훨씬 못할 것이다.&lt;br /&gt;
+그리고 그 당시에는 몰랐지만 지금보면 내 코드도 잘 짜여진 코드는 아니다 (-﹏-。;)&lt;/p&gt;
 
 &lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://docsplayer.org/84194920-Microsoft-powerpoint-java%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-9%EC%9E%A5gui.html&quot;&gt;Java GUI - AWT 와 Swing&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://brian-s.tistory.com/97&quot;&gt;Java GUI 로 프로그램 만들어보기&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;3-결과물&quot;&gt;3. 결과물&lt;/h2&gt;
 &lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/calculator.png&quot; alt=&quot;Calculator&quot; width=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/calculator.png&quot; alt=&quot;calculator&quot; width=&quot;300px&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;구현-기능&quot;&gt;구현 기능&lt;/h3&gt;
 &lt;ul&gt;
@@ -121,20 +147,49 @@
   &lt;li&gt;숫자가 길어질 때 뒷 부분이 “…” 으로 표시 → 숫자가 뒤로 밀어지게 보이게&lt;/li&gt;
   &lt;li&gt;나만의 기능 아이콘 표시 → 어떤 기능인지 직관적으로 알 수 있게 표시&lt;/li&gt;
   &lt;li&gt;소수점 아래 숫자가 0일 때는 소수점 아래로 숫자 보여지지 않게&lt;/li&gt;
+  &lt;li&gt;아무 숫자도 입력하지 않고 ‘=’ 버튼을 눌렀을 때 오류가 나지 않게&lt;/li&gt;
   &lt;li&gt;계산 버튼을 눌렀을 때 기존에 입력되었던 숫자가 지워지게 (이 부분은 좀 더 고민)
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;4-코드-세부-설명&quot;&gt;4. 코드 세부 설명&lt;/h2&gt;
+&lt;h2 id=&quot;4-세부-기능-캡쳐&quot;&gt;4. 세부 기능 캡쳐&lt;/h2&gt;
 &lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+ㅤ&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/calculator_detail.png&quot; alt=&quot;calculator_detail&quot; width=&quot;700px&quot; /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;5-github&quot;&gt;5. GitHub&lt;/h2&gt;
+&lt;h2 id=&quot;5-코드-세부-설명&quot;&gt;5. 코드 세부 설명&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/calculator_uml.gif&quot; alt=&quot;calculator_uml&quot; width=&quot;250px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 사진은 내 코드를 UML Diagram으로 나타낸 것이다.&lt;br /&gt;
+이 때 Java로 GUI를 처음 만들어 본 것이고 OODP이니, 객체 지향이니 하나도 모르고 만들어서 class 하나에 다 때려 넣었다.&lt;br /&gt;
+지금 생각하면 정말… 부끄러운 코드이다.&lt;/p&gt;
+
+&lt;p&gt;코드를 세부적으로 설명하면 아래와 같다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt;&lt;/strong&gt; : Calculator 객체를 만들어 &lt;code class=&quot;highlighter-rouge&quot;&gt;displayFrame()&lt;/code&gt; 실행&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;displayFrame()&lt;/code&gt;&lt;/strong&gt; : 계산기 Frame을 보여주고 닫기 버튼을 누르면 닫아주는 역할&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Calculator()&lt;/code&gt;&lt;/strong&gt; : &lt;code class=&quot;highlighter-rouge&quot;&gt;createFrame()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setButton()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setEvent()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setPnl()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;addFrame()&lt;/code&gt; 실행&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;createFrame()&lt;/code&gt;&lt;/strong&gt; : Frame들 (계산기, 키보드 모드 알림, 최근 계산 목록)의 크기, 위치를 설정하고 계산 결과 영역과 copyright 설정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setButton()&lt;/code&gt;&lt;/strong&gt; : 각 버튼들의 색상, 글자 설정해서 만드는 역할&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setEvent()&lt;/code&gt;&lt;/strong&gt; : 각 버튼들을 눌렀을 때의 event 와 키보드 모드에서 키보드를 눌렀을 때의 event 설정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setPnl()&lt;/code&gt;&lt;/strong&gt; : 각 버튼들을 역할에 맞게 Panel에 나누어 담는 역할&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;addFrame()&lt;/code&gt;&lt;/strong&gt; : 위에서 만들었던 계산 결과 영역과 버튼, copyright를 Frame에 추가하는 역할&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clear()&lt;/code&gt;&lt;/strong&gt; : 계산 결과 영역을 clear 해주는 역할&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;calculateAddSbtr(), calculateMltpDivs&lt;/code&gt;&lt;/strong&gt; : 덧셈, 뺄셈, 곱셈, 나눗셈을 계산해주는 역할&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;UML Diagram을 보면 알겠지만, 다른 함수들도 있지만 크게 중요하지 않아 주요 함수들만 설명했다.&lt;br /&gt;
+(혹시 코드를 보시고 궁금한 점이나 문의드릴 내용이 있으면 댓글 주세요!)
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;6-github&quot;&gt;6. GitHub&lt;/h2&gt;
 &lt;p&gt;제 코드는 아래 GitHub에서 확인 가능합니다 :)&lt;br /&gt;
 &lt;a href=&quot;https://github.com/0pencoding/JavaCamp-Round1-Calculator&quot;&gt;https://github.com/0pencoding/JavaCamp-Round1-Calculator&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 style=&quot;text-align: right;&quot; id=&quot;round-2-그림판-구현--&quot;&gt;&lt;a href=&quot;abc&quot;&gt;[Round 2] 그림판 구현 ➜ &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/about/java/gui/2020/03/13/JavaCamp_Round1_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5.html</link>
@@ -151,18 +206,22 @@
     
       <item>
         <title>[Java-GUI] ROUND0. '자바의 정석' 책 읽기</title>
-        <description>&lt;p&gt;“Round 0. 자바의 정석 책 읽기” 에 오신 여러분을 환영합니다 :) 본 프로젝트를 하기로 마음먹었다는 시작점에서 부터 그 용기와 도전에 박수를 쳐주고 싶어요! 한 단계씩 올라가며 점점 자신감이 생기고 실력은 늘고 성장하는 여러분 되길 희망할게요, 화이팅! 👊👊&lt;br /&gt;
+        <description>&lt;p&gt;본 프로젝트의 첫 단계는 ‘자바의 정석’ 책 읽기 이다. 자바의 정석 책이 아니어도 되고, 자신이 좋아하는 자바 책 혹은 자신이 가지고 있는 자바 책이어도 되지만 나는 교수님의 지도하에 ‘자바의 정석’ 으로 선택했다. 그리고 지금 다른 책과 비교해보아도 개인적ㅇ으로 ‘자바의 정석’ 책이 다른 책에 비해 내용적인 면에 있어서 좋은 것 같다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-기간-ㅤ1일&quot;&gt;⏰ 기간 ⏰ㅤ1일&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-책-준비&quot;&gt;1. 책 준비&lt;/h2&gt;
 &lt;p&gt;&lt;br /&gt;
 &lt;img src=&quot;/assets/img/post/About_me/JavaCamp/java_standard.jpg&quot; alt=&quot;java의_정석&quot; width=&quot;150px&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;자바의 정석, 27,000원 ㅤ&lt;a href=&quot;https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9788994492032&amp;amp;orderClick=JAj&quot;&gt;구매하러가기 (교보문고)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;자바의 정석, 27,000원&lt;br /&gt;
+&lt;a href=&quot;https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;amp;ejkGb=KOR&amp;amp;barcode=9788994492032&amp;amp;orderClick=JAj&quot;&gt;구매하러가기 (교보문고)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;꼭 자바의 정석이 아니어도 괜찮다. 마음에 드는 책으로 준비!
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-책-읽기&quot;&gt;2. 책 읽기&lt;/h2&gt;
 &lt;p&gt;본 포스팅을 쓴 목적이기도 한데, 책은 하루 동안 읽는다.&lt;br /&gt;
@@ -170,16 +229,15 @@
 그런데, 하루동안 책을 전부 읽기는 힘들다는 것 알고있다. 그래서 책을 읽을 때 조금의 팁을 주고자한다.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Java를 배웠을거라는 가정하에, 이미 알고있는 내용은 빠르게 훑고 넘긴다.&lt;/li&gt;
-  &lt;li&gt;시간이 없다, 잘 이해가 가지 않는다고 잡고 있지 말고 일단은 넘기고 보자.&lt;/li&gt;
-  &lt;li&gt;숲을 보고 나무를 봐야한다, 먼저 크게 어떤 내용들을 다루는지를 보고 세부 내용으로 들어가라.&lt;/li&gt;
-  &lt;li&gt;적어도 책의 70%는 읽어야한다 단, 빠르게 훑고 잘 이해가 안가 넘긴 부분을 포함해서.&lt;/li&gt;
+  &lt;li&gt;시간이 없기 때문에 잘 이해가 가지 않는다고 잡고 있지 말고 일단은 넘기고 보자.&lt;/li&gt;
+  &lt;li&gt;숲을 보고 나무를 보자. 먼저 크게 어떤 내용들을 다루는지를 보고 세부 내용으로 들어가라.&lt;/li&gt;
+  &lt;li&gt;적어도 책의 70%는 읽어야한다. 단, 빠르게 훑고 잘 이해가 안가 넘긴 부분을 포함해서.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;이미 알고있는 내용들일지 모르겠지만 정말 명심해야한다.&lt;br /&gt;
 주어진 시간이 하루밖에 없기 때문에 시간 분배를 정말 잘 해야하기 때문이다.&lt;br /&gt;
-특히 3번 내용은 정말 중요하다, 어떤 내용이 있는지를 알고있으면 나중에 다시 찾아볼 수 있기 때문에 꼭 숲을 인지하고 있자.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+특히 3번 내용은 정말 중요하다, 어떤 내용이 있는지를 알고있으면 나중에 다시 찾아볼 수 있기 때문에 꼭 숲을 인지하고 있자.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-마무리&quot;&gt;3. 마무리&lt;/h2&gt;
 &lt;p&gt;하루동안 책을 읽는 것은 엄청 지루하고 힘들 것이다. 나도 해봐서 알지만, 정말 힘들고 지치는 일이었고 다시 하라고하면 정말 싫은 시간이었다.&lt;br /&gt;
@@ -187,9 +245,11 @@
 아, 그리고 혹시 하루동안 책의 70%를 못읽어서 어떻게 해야하나 고민이 된다면 그냥 다음 단계로 넘어가도 좋다.&lt;br /&gt;
 사실 나도 책을 완벽하게 잘 읽지 못했었지만 프로젝트는 무사히 마쳤기 때문에…&lt;br /&gt;
 단, 프로젝트를 진행하면서 책을 잘 읽은 사람에 비해서 많이 부족했고, 검색에 더 많은 시간과 노력을 들여야했다.&lt;br /&gt;
-그럼, 다음 단계도 화이팅!&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+그럼, 다음 단계도 화이팅!
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 style=&quot;text-align: right;&quot; id=&quot;round-1-계산기-구현--&quot;&gt;&lt;a href=&quot;https://0pencoding.github.io/about/java/gui/2020/03/13/JavaCamp_Round1_%EA%B3%84%EC%82%B0%EA%B8%B0.html&quot;&gt;[Round 1] 계산기 구현 ➜ &lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/about/java/gui/2020/03/12/JavaCamp_Round0_%E1%84%8C%E1%85%A1%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A5%E1%86%A8%E1%84%8E%E1%85%A2%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%B0%E1%84%80%E1%85%B5.html</link>
