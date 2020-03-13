@@ -1,0 +1,35 @@
+I"�<p>프로젝트의 번외편으로 자바로 MySQL을 연동시키는 방법에 대해 이야기 하려한다. 나도 프로젝트를 진행할 당시에 데이터베이스에 대한 개념이 없어 힘들었던 기억이 있기 때문에… 본 포스팅은 eclipse에서 자바와 MySQL을 연동시킬 수 있는 간단한 방법에 대해 이야기한다. <br />
+<br /></p>
+
+<h2 id="1-mysql-connectorj-다운로드">1. MySQL connector/J 다운로드</h2>
+<p><a href="https://dev.mysql.com/downloads/connector/j/">https://dev.mysql.com/downloads/connector/j/</a></p>
+
+<p>위 사이트에서 MySQL connector/J를 다운받는다.<br />
+Operating System은 <span style="color: #c70000">Platform Independent</span>를 선택하고 <span style="color: #c70000">ZIP</span> 파일을 다운 받는다.<br />
+해당 파일의 압축을 풀어 mysql-connector-java-8.0.11.jar 파일이 있는 것을 확인한다.
+<br /><br /><br /></p>
+
+<h2 id="2-mysql-다운로드">2. MySQL 다운로드</h2>
+<p><a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
+
+<p>위 사이트에서 MySQL을 다운 받는다.<br />
+Operating System은 자신의 컴퓨터에 맞는 OS를 선택한다.<br />
+또한 <span style="color: #c70000">Window는 ZIP</span> 파일을, <span style="color: #c70000">macOS는 DMG</span> 파일을 다운 받는다.
+<br /><br /><br /></p>
+
+<h2 id="3-database---mysql-사용-준비">3. Database - MySQL 사용 준비</h2>
+
+<p><a href="https://futurists.tistory.com/11?category=587334wkqkhttp://futurists.tistory.com/11?category=587334">https://futurists.tistory.com/11?category=587334wkqkhttp://futurists.tistory.com/11?category=587334</a>
+<br /><br /><br /></p>
+
+<h2 id="4-java---mysql-연동">4. Java - MySQL 연동</h2>
+<p>1) Eclipse에서 MySQL과 연동할 프로젝트를 생성한다.<br />
+2) 해당 프로젝트 ‘우클릭 - Build Path - Add External Archives’ 를 선택한다.<br />
+3) 위에서 다운 받았던 mysql-connector-java-8.0.11.jar 파일을 추가한다.<br />
+4) 아래 코드를 이용해서 MySQL과 연동이 되었는지 확인한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<p><br /><br /><br /></p>
+:ET

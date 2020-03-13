@@ -9,6 +9,13 @@
             <lastmod>2019-06-07T00:00:00+00:00</lastmod>
             <priority>1.00</priority>
         </url><url>
+                <loc>http://localhost:4000/about/java/gui/database/mysql/2020/03/14/13-JavaCamp_Round3.5_%EC%9E%90%EB%B0%94MySQL%EC%97%B0%EA%B2%B0.html</loc>
+                <lastmod>2020-03-14T00:00:00+09:00</lastmod>
+                
+                    <changefreq>daily</changefreq>
+                
+                <priority>0.80</priority>
+            </url><url>
                 <loc>http://localhost:4000/about/java/gui/graphics/2020/03/13/JavaCamp_Round2_%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%E1%84%91%E1%85%A1%E1%86%AB.html</loc>
                 <lastmod>2020-03-13T00:00:00+09:00</lastmod>
                 

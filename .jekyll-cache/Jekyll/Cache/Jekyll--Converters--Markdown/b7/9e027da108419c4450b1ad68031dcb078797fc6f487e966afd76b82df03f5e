@@ -1,0 +1,87 @@
+I"�<p>프로젝트의 번외편으로 자바로 MySQL을 연동시키는 방법에 대해 이야기 하려한다. 나도 프로젝트를 진행할 당시에 데이터베이스에 대한 개념이 없어 힘들었던 기억이 있기 때문에… 본 포스팅은 eclipse에서 자바와 MySQL을 연동시킬 수 있는 간단한 방법에 대해 이야기한다. <br />
+<br /></p>
+
+<h2 id="1-mysql-connectorj-다운로드">1. MySQL connector/J 다운로드</h2>
+<p><a href="https://dev.mysql.com/downloads/connector/j/">https://dev.mysql.com/downloads/connector/j/</a></p>
+
+<p>위 사이트에서 MySQL connector/J를 다운받는다.<br />
+Operating System은 <span style="color: #c70000">Platform Independent</span>를 선택하고 <span style="color: #c70000">ZIP</span> 파일을 다운 받는다.<br />
+해당 파일의 압축을 풀어 mysql-connector-java-8.0.11.jar 파일이 있는 것을 확인한다.
+<br /><br /><br /></p>
+
+<h2 id="2-mysql-다운로드">2. MySQL 다운로드</h2>
+<p><a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
+
+<p>위 사이트에서 MySQL을 다운 받는다.<br />
+Operating System은 자신의 컴퓨터에 맞는 OS를 선택한다.<br />
+또한 <span style="color: #c70000">Window는 ZIP</span> 파일을, <span style="color: #c70000">macOS는 DMG</span> 파일을 다운 받는다.<br />
+다운 받은 파일은 압축을 풀어 준비한다.
+<br /><br /><br /></p>
+
+<h2 id="3-database---mysql-사용-준비">3. Database - MySQL 사용 준비</h2>
+<p>이제 다운로드는 마쳤으니 MySQL 서버를 실행시켜 Database를 사용할 준비를 해야한다.<br />
+MySQL을 다운 받아 압축을 풀었던 폴더로 이동해서 <span style="color: #c70000">Window는 cmd</span>를, <span style="color: #c70000">macOS는 터미널</span>을 실행시킨다.<br />
+해당 폴더 안의 bin 폴더로 들어가 mysql을 실행시킨다.</p>
+
+<p>Window의 경우 아래 명령어를 이용하면 된다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd bin
+mysql.exe --initialize
+mysqld --console --explicit_defaults_for_timestamp --skip-grant-tables &amp;
+
+// 새로운 cmd를 켜서 다시 bin 폴더로 이동 및 mysql 실행
+cd bin
+mysql -u root mysql
+</code></pre></div></div>
+
+<p>macOS의 경우 아래 명령어를 이용하면 된다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd bin
+./mysql -u root -p
+</code></pre></div></div>
+
+<p><a href="https://futurists.tistory.com/11?category=587334wkqkhttp://futurists.tistory.com/11?category=587334">https://futurists.tistory.com/11?category=587334wkqkhttp://futurists.tistory.com/11?category=587334</a>
+<br /><br /><br /></p>
+
+<h2 id="4-java---mysql-연동">4. Java - MySQL 연동</h2>
+<p>1) Eclipse에서 MySQL과 연동할 프로젝트를 생성한다.<br />
+2) 해당 프로젝트 ‘우클릭 - Build Path - Add External Archives’ 를 선택한다.<br />
+3) 위에서 다운 받았던 mysql-connector-java-8.0.11.jar 파일을 추가한다.<br />
+4) 아래 코드를 이용해서 MySQL과 연동이 되었는지 확인한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">java.database</span><span class="o">;</span> <span class="c1">// 패키지명 수정</span>
+
+<span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MysqlConnection</span><span class="o">{</span>
+	<span class="nc">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+	<span class="nc">Statement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+	<span class="nc">PreparedStatement</span> <span class="n">pstmt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+	<span class="nc">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+	<span class="nc">MysqlConnection</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">Try</span> <span class="o">{</span>
+			<span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.mysql.cj.jdbc.Driver"</span><span class="o">).</span><span class="na">newInstance</span><span class="o">();</span> <span class="c1">// JDBC 드라이버 로드</span>
+			<span class="n">conn</span> <span class="o">=</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="s">"jdbc:mysql://localhost:3306/[table name]?serverTimezone=UTC&amp;&amp;useSSL=false"</span><span class="o">,</span> <span class="s">"root"</span><span class="o">,</span> <span class="s">"[pwd]"</span><span class="o">);</span> <span class="c1">// []부분 ([table name], [pwd]) 수정</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">“</span><span class="n">연결</span> <span class="n">완료</span><span class="err">”</span><span class="o">);</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="nc">ClassNotFoundException</span> <span class="n">ce</span><span class="o">){</span>
+			<span class="n">ce</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="nc">SQLException</span> <span class="n">se</span><span class="o">){</span>
+			<span class="n">se</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">){</span>
+			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span><span class="k">finally</span><span class="o">{</span>
+			<span class="k">try</span><span class="o">{</span> <span class="c1">// 연결 해제(한정돼 있으므로)</span>
+				<span class="k">if</span><span class="o">(</span><span class="n">rs</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span><span class="n">rs</span><span class="o">.</span><span class="na">close</span><span class="o">();}</span>
+				<span class="k">if</span><span class="o">(</span><span class="n">pstmt</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span><span class="n">pstmt</span><span class="o">.</span><span class="na">close</span><span class="o">();}</span>
+				<span class="k">if</span><span class="o">(</span><span class="n">stmt</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span><span class="n">stmt</span><span class="o">.</span><span class="na">close</span><span class="o">();}</span>
+				<span class="k">if</span><span class="o">(</span><span class="n">conn</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span><span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();}</span>
+			<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="nc">SQLException</span> <span class="n">se2</span><span class="o">){</span>
+				<span class="n">se2</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><br /><br /></p>
+:ET

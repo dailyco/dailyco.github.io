@@ -55,14 +55,14 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.
 
 ## 4. 세부 기능 캡쳐
 <br/>
-ㅤ![calculator_detail](/assets/img/post/About_me/JavaCamp/drawboard_detail(1).png){:width="400px"}  
+ㅤ![drawboard_detail](/assets/img/post/About_me/JavaCamp/drawboard_detail(1).png){:width="400px"}  
 
-ㅤ![calculator_detail](/assets/img/post/About_me/JavaCamp/drawboard_detail(2).png){:width="700px"}
+ㅤ![drawboard_detail](/assets/img/post/About_me/JavaCamp/drawboard_detail(2).png){:width="700px"}
 <br/><br/><br/>
 
 ## 5. 코드 세부 설명
 <br/>
-![calculator_uml](/assets/img/post/About_me/JavaCamp/drawboard_uml.gif){:width="900px"}  
+![drawboard_uml](/assets/img/post/About_me/JavaCamp/drawboard_uml.gif){:width="900px"}  
 
 위 사진은 내 코드를 UML Diagram으로 나타낸 것이다.  
 그래도 처음 계산기에 비하면 나름 class 별로 짜려고 노력한 흔적이 보인다.  
