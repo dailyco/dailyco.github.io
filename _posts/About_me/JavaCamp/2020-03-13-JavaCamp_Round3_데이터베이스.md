@@ -32,13 +32,13 @@ sitemap:
 이전에도 말했듯이 그 당시에는 몰랐지만 지금보면 내 코드도 잘 짜여진 코드는 아님을 참고해주었으면 좋겠다 (-﹏-。;)  
 
 ### Reference
-- [[Java-GUI] ROUND3. 번외 ) Eclipse Java - MySQL 연동]()
-- 
+- [[Java-GUI] ROUND3. 번외 ) Eclipse Java - MySQL 연동](https://0pencoding.github.io/about/java/gui/database/mysql/2020/03/14/13-JavaCamp_Round3.5_%EC%9E%90%EB%B0%94MySQL%EC%97%B0%EA%B2%B0.html)
+- [[JAVA] MySQL 조회, 쓰기, 수정, 삭제](https://goppa.tistory.com/entry/MySQL-%EC%A1%B0%ED%9A%8C-%EC%93%B0%EA%B8%B0-%EC%88%98%EC%A0%95-%EC%82%AD%EC%A0%9C)
 <br/><br/><br/>
 
 ## 3. 결과물
 <br/>
-![database](/assets/img/post/About_me/JavaCamp/database.png){:width="750px"}  
+![database](/assets/img/post/About_me/JavaCamp/database.png){:width="250px"}  
 
 ### 구현 기능
 - 신규 가입 (ID 중복 확인, PW 확인)
@@ -53,30 +53,37 @@ sitemap:
 
 ## 4. 세부 기능 캡쳐
 <br/>
-ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/database.png){:width="400px"}  
+ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/database_detail(1).png){:width="700px"}  
+<br/>
+ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/database_detail(2).png){:width="700px"}  
+<br/>
+ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/database_detail(3).png){:width="800px"}
 <br/><br/><br/>
 
 ## 5. 코드 세부 설명
 <br/>
-![database_uml](/assets/img/post/About_me/JavaCamp/database_uml.gif){:width="900px"}  
+![database_uml](/assets/img/post/About_me/JavaCamp/database_uml.gif){:width="1000px"}  
 
 위 사진은 내 코드를 UML Diagram으로 나타낸 것이다.  
 점점 객체지향 언어인 Java에 맞게 그럴싸하게 class 별로 코드를 짜도록 성장하는 것 같다.  
+클래스가 너무 많아 사진이 잘 안보일 수 있을 것 같은데 사진을 다운받아서 확대시켜 보면 크게 볼 수 있을 것이다.  
 
 코드를 세부적으로 설명하면 아래와 같다.
-- **`Main class`** : 
-    - **`Main()`** : 
+* 포스트 작성중
+<!-- - **`Main class`** : 
+    - **`Main()`** :  -->
 
 UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했다.  
+하나하나 전부 설명하기에는 너무 내용이 많고 쓸데없는 설명들까지 되기에 필요한 부분들만 설명했다.  
 혹시 코드를 보고 궁금한 점이나 문의할 내용이 있으면 댓글로 남겨주세요!
 <br/><br/><br/>
 
 ## 6. GitHub 및 프로젝트 보고서
 제 코드는 아래 GitHub에서 확인 가능합니다 :)  
-<https://github.com/0pencoding/JavaCamp-Round2-DrawBoard>
+<https://github.com/0pencoding/JavaCamp-Round3-Database>
 
 또한 위 코드 설명보다 더 자세한 설명이나 실행 결과가 필요하다면 아래 링크에서 보고서를 다운받을 수 있습니다 :)  
-<https://drive.google.com/file/d/15mE3ce3AQZ2JYinjSA9cl54PlF53mcJc/view?usp=sharing>
+<https://drive.google.com/file/d/1jKqC_JaYrER1g6qOag4Q68FpDpJwpHKO/view?usp=sharing>
 <br/><br/><br/>
 
 <!-- ## [[Round 4] 이미지 프로세싱 구현 ➜ ](abc)
