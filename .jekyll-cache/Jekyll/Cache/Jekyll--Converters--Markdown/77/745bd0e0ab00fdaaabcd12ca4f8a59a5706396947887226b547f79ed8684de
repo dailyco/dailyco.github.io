@@ -1,73 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<title>[Java-GUI] ROUND4. 이미지 프로세싱 포토샵 만들기</title>
-<!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>[Java-GUI] ROUND4. 이미지 프로세싱 포토샵 만들기 | Opencoding</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="[Java-GUI] ROUND4. 이미지 프로세싱 포토샵 만들기" />
-<meta name="author" content="YuJin Kim" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="벌써 프로젝트의 반이 끝났다는 사실이 놀랍다. 내 생각에는 항상 이맘때 즈음이 가장 힘든 시기인 것 같다. 중간쯤 왔을 때 지금까지 해왔던 과정을 한 번 더 해야한다는 마음과 그냥 포기하고 싶은 마음의 갈등 속에 있을 때, 더욱 힘내서 다음 단계로 나아갔으면 좋겠다. 네번째 프로젝트는 이미지 프로세싱이다. 이미지를 가지고 조작하는 것이다. 프로젝트를 진행하지 않는 사람들에게는 나의 코드와 설명이 유용한 정보가 되길 바란다 :)" />
-<meta property="og:description" content="벌써 프로젝트의 반이 끝났다는 사실이 놀랍다. 내 생각에는 항상 이맘때 즈음이 가장 힘든 시기인 것 같다. 중간쯤 왔을 때 지금까지 해왔던 과정을 한 번 더 해야한다는 마음과 그냥 포기하고 싶은 마음의 갈등 속에 있을 때, 더욱 힘내서 다음 단계로 나아갔으면 좋겠다. 네번째 프로젝트는 이미지 프로세싱이다. 이미지를 가지고 조작하는 것이다. 프로젝트를 진행하지 않는 사람들에게는 나의 코드와 설명이 유용한 정보가 되길 바란다 :)" />
-<link rel="canonical" href="http://localhost:4000/about/java/gui/imageprocessing/2020/03/14/JavaCamp_Round4_%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1.html" />
-<meta property="og:url" content="http://localhost:4000/about/java/gui/imageprocessing/2020/03/14/JavaCamp_Round4_%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1.html" />
-<meta property="og:site_name" content="Opencoding" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-14T00:00:00+09:00" />
-<script type="application/ld+json">
-{"headline":"[Java-GUI] ROUND4. 이미지 프로세싱 포토샵 만들기","dateModified":"2020-03-14T00:00:00+09:00","datePublished":"2020-03-14T00:00:00+09:00","url":"http://localhost:4000/about/java/gui/imageprocessing/2020/03/14/JavaCamp_Round4_%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/about/java/gui/imageprocessing/2020/03/14/JavaCamp_Round4_%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1.html"},"author":{"@type":"Person","name":"YuJin Kim"},"description":"벌써 프로젝트의 반이 끝났다는 사실이 놀랍다. 내 생각에는 항상 이맘때 즈음이 가장 힘든 시기인 것 같다. 중간쯤 왔을 때 지금까지 해왔던 과정을 한 번 더 해야한다는 마음과 그냥 포기하고 싶은 마음의 갈등 속에 있을 때, 더욱 힘내서 다음 단계로 나아갔으면 좋겠다. 네번째 프로젝트는 이미지 프로세싱이다. 이미지를 가지고 조작하는 것이다. 프로젝트를 진행하지 않는 사람들에게는 나의 코드와 설명이 유용한 정보가 되길 바란다 :)","@type":"BlogPosting","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/css/custom/header.css">
-    </head>
-
-    <body>
-        
-
-        <div class="masthead">
-            <div class="masthead__inner-wrap">
-                <div class="masthead__menu">
-                <nav id="site-nav" class="greedy-nav">
-                    
-                    <a class="site-logo" href="/"><img src="/assets/img//logo.png" alt=""></a>
-                    
-                    <a class="site-title" href="/">Opencoding</a>
-                    <ul class="visible-links"><li class="masthead__menu-item">
-                        <a href="/about/" >ABOUT</a>
-                        </li><li class="masthead__menu-item">
-                        <a href="/post/" >POST</a>
-                        </li><!-- <li class="masthead__menu-item">
-                            
-                                <button class="search__toggle " type="button">
-                                <span class="visually-hidden">Toggle search</span>
-                                <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
-                                    <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
-                                </svg>
-                                </button>
-                            
-                        </li> -->
-                    </ul>
-                    
-                </nav>
-                </div>
-            </div>
-        </div>
-
-        <section class="body_content">
-            <main class="container">
+I"�$<main class="container">
   <section class="about">
-    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim"></a>
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
     <h2 id="title">
       <a href="/">YuJin Kim</a>
     </h2>
@@ -152,7 +85,6 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.<br />
 <h3 id="보완-해야할-부분">보완 해야할 부분</h3>
 <ul>
   <li>사진을 불러오지 않았을 때 RGB값이 없어 오류가 나는 문제</li>
-  <li>사진을 불러왔을 때 이미지의 크기를 화면에 맞게 조절</li>
   <li>모자이크 효과 후에 다른 효과를 줄 때 모자이크 효과 사라지는 문제</li>
   <li>다른 효과를 클릭 했을 때 밝기 조절 바가 있다면 없애주기 및 밝기 조절 효과 종료
 <br /><br /><br /></li>
@@ -225,14 +157,15 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.<br />
       powered by Disqus.</a></noscript></div>
 
   </section>
-</main><script async src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
-  <script>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 
 gtag('config', 'UA-150778693-1');
 </script>
-        </section>
-    </body>
-</html>
+
+:ET

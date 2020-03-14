@@ -17,6 +17,7 @@ sitemap:
 ## 1. 기능
 * 이미지 파일 읽어오기, 이미지 흑백 반전, 이미지 엣지추출, 대비, 밝기 조절, 이미지 합성, 돋보기 中 최소 4가지 이상 필수 선택
 * 이외에 자유롭게 자신이 선보이고 싶은 기능, 있으면 좋겠다 싶은 기능 추가
+* 주의할 점 : OpenCV를 사용하면 안된다
 <br/><br/><br/>
 
 ## 2. 시작!
@@ -28,7 +29,9 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.
 이전에도 말했듯이 그 당시에는 몰랐지만 지금보면 내 코드도 잘 짜여진 코드는 아님을 참고해주었으면 좋겠다 (-﹏-。;)  
 
 ### Reference
-- 
+- [자바 이미지 사이즈 비율 변경 (java image resize)](https://huskdoll.tistory.com/826)
+- [[java] 자바 패키지 java.awt 이용한 이미지 밝기 조절](https://m.blog.naver.com/PostView.nhn?blogId=calubimkkk&logNo=220333049614&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
+- [[Java] grayscale로 이미지 저장하기](https://blog.leocat.kr/notes/2016/01/12/java-save-to-grayscale)
 <br/><br/><br/>
 
 ## 3. 결과물
@@ -43,42 +46,51 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.
 - 이미지 초기화
 
 ### 보완 해야할 부분
-- 
+- 사진을 불러오지 않았을 때 RGB값이 없어 오류가 나는 문제
+- 사진을 불러왔을 때 이미지의 크기를 화면에 맞게 조절
+- 모자이크 효과 후에 다른 효과를 줄 때 모자이크 효과 사라지는 문제
+- 다른 효과를 클릭 했을 때 밝기 조절 바가 있다면 없애주기 및 밝기 조절 효과 종료
 <br/><br/><br/>
 
 ## 4. 세부 기능 캡쳐
 <br/>
-<!-- ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(1).png){:width="700px"}   -->
+ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(1).png){:width="500px"}  
 <br/>
-<!-- ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(2).png){:width="700px"}   -->
+ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(2).png){:width="700px"}  
 <br/>
-<!-- ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(3).png){:width="800px"} -->
+ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(3).png){:width="700px"}
 <br/><br/><br/>
 
 ## 5. 코드 세부 설명
 <br/>
-<!-- ![database_uml](/assets/img/post/About_me/JavaCamp/database_uml.gif){:width="1000px"}   -->
+![database_uml](/assets/img/post/About_me/JavaCamp/imageprocessing_uml.gif){:width="800px"}  
 
 위 사진은 내 코드를 UML Diagram으로 나타낸 것이다.  
-점점 객체지향 언어인 Java에 맞게 그럴싸하게 class 별로 코드를 짜도록 성장하는 것 같다.  
-클래스가 너무 많아 사진이 잘 안보일 수 있을 것 같은데 사진을 다운받아서 확대시켜 보면 크게 볼 수 있을 것이다.  
+확실히 프로젝트를 진행하면서 어떻게 객체 지향적으로 코드를 짜야하는지를 배워가는 것 같다.  
 
 코드를 세부적으로 설명하면 아래와 같다.
-* 포스트 작성중
-<!-- - **`Main class`** : 
-    - **`Main()`** :  -->
+- **`Main class`** : ImageProcessing의 큰 틀이 되는 Frame으로 각 버튼들을 눌렀을 때 행동 제어
+    - **`Main()`** : Frame 세팅 및 각 버튼들과 메뉴바 설정
+    - **`actionPerformed()`** : 버튼들을 눌렀을 때 각 버튼에 맞는 행동을 하는 함수 실행
+    - **`stateChanged()`** : 밝기 조절과 관련해서 state가 바뀔 때 마다 맞는 행동을 제어
+    - **`나머지 함수들`** : 버튼에 맞는 행동들을 하는 함수들
+- **`ImagePanel class`** : 이미지를 돋보기 시키기 위한 클래스로 돋보기 시킨 이미지 자체를 그리는 역할
+- **`Magnifier class`** : 이미지를 감싸는 틀인 돋보기 자체를 그리는 역할
+- **`MenuBar class`** : 파일을 불러오고 저장하는 역할, 메뉴바 구성
+- **`ButtonsPanel class`** : 이미지를 조작하기위한 버튼들 구성
+- **`Memory class`** : undo, redo를 위한 메모리 구성
+- **`BrightSlider class`** : 이미지의 밝기를 조절하는 slider로 밝기 값 자체를 구성
 
 UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했다.  
-하나하나 전부 설명하기에는 너무 내용이 많고 쓸데없는 설명들까지 되기에 필요한 부분들만 설명했다.  
 혹시 코드를 보고 궁금한 점이나 문의할 내용이 있으면 댓글로 남겨주세요!
 <br/><br/><br/>
 
 ## 6. GitHub 및 프로젝트 보고서
 제 코드는 아래 GitHub에서 확인 가능합니다 :)  
-<https://github.com/0pencoding/JavaCamp-Round3-Database>
+<https://github.com/0pencoding/JavaCamp-Round4-ImageProcessing>
 
 또한 위 코드 설명보다 더 자세한 설명이나 실행 결과가 필요하다면 아래 링크에서 보고서를 다운받을 수 있습니다 :)  
-<https://drive.google.com/file/d/1jKqC_JaYrER1g6qOag4Q68FpDpJwpHKO/view?usp=sharing>
+<https://drive.google.com/file/d/1UzaaQ9yTvtG25G2l08lBilVSrMqooShG/view?usp=sharing>
 <br/><br/><br/>
 
 <!-- ## [[Round 5] 육목 구현 ➜ ](abc)
