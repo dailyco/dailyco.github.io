@@ -176,12 +176,50 @@
 
 <p>코드를 세부적으로 설명하면 아래와 같다.</p>
 <ul>
-  <li>포스트 작성중
-&lt;!– - <strong><code class="highlighter-rouge">Main class</code></strong> :
+  <li><strong><code class="highlighter-rouge">Main class</code></strong> : MySQL과 연결시키고, 모든 display 화면들을 멤버로 가져 navigation을 담당하는 클래스
     <ul>
-      <li><strong><code class="highlighter-rouge">Main()</code></strong> :  –&gt;</li>
+      <li><strong><code class="highlighter-rouge">Main()</code></strong> : Frame을 설정해서 첫 화면을 보여주고 모든 display 각각에 맞는 ActionListener를 설정</li>
+      <li><strong><code class="highlighter-rouge">actionPerformed()</code></strong> : 누른 버튼에 따라 그것에 맞는 행동을 하는 함수들을 설정</li>
+      <li><strong><code class="highlighter-rouge">나머지 함수들</code></strong> : 누른 버튼에 따라 그것에 맞는 행동들을 하는 함수들</li>
     </ul>
   </li>
+  <li><strong><code class="highlighter-rouge">InitDisplay class</code></strong> : 처음에 어플리케이션을 켰을 때 화면
+    <ul>
+      <li><strong><code class="highlighter-rouge">InitDisplay()</code></strong> : 첫 화면의 Panel을 설정하고 가입하기 버튼과 로그인 버튼을 세팅</li>
+    </ul>
+  </li>
+  <li><strong><code class="highlighter-rouge">Join class</code></strong> : 가입하기 화면
+    <ul>
+      <li><strong><code class="highlighter-rouge">Join()</code></strong> : 가입하기 화면의 Panel을 설정하고 ID, PW, Nickname을 입력할 수 있는 textField 와 확인 버튼들 세팅</li>
+    </ul>
+  </li>
+  <li><strong><code class="highlighter-rouge">Login class</code></strong> : 로그인 화면
+    <ul>
+      <li><strong><code class="highlighter-rouge">Login()</code></strong> : 로그인 화면의 Panel을 설정하고 ID와 PW를 입력할 수 있는 textField 와 로그인 버튼 세팅</li>
+    </ul>
+  </li>
+  <li><strong><code class="highlighter-rouge">Menu class</code></strong> : 내 정보를 보거나 수정, 조회, 로그아웃, 탈퇴를 할 수 있는 메뉴 화면
+    <ul>
+      <li><strong><code class="highlighter-rouge">Menu()</code></strong> : 내 정보 조회, 수정, 로그아웃, 탈퇴를 할 수 있는 버튼 세팅</li>
+    </ul>
+  </li>
+  <li><strong><code class="highlighter-rouge">MyInfo class</code></strong> : 내 정보를 보여주는 화면
+    <ul>
+      <li><strong><code class="highlighter-rouge">MyInfo()</code></strong> : 나의 정보를 보여줄 수 있도록 화면 세팅</li>
+    </ul>
+  </li>
+  <li><strong><code class="highlighter-rouge">Edit class</code></strong> : 내 정보를 수정할 수 있는 화면
+    <ul>
+      <li><strong><code class="highlighter-rouge">Edit()</code></strong> : 내 정보를 수정할 수 있도록 하는 버튼들과 수정하고 각 버튼들을 눌렀을 경우 ActionListener 추가</li>
+      <li><strong><code class="highlighter-rouge">actionPerformed()</code></strong> : 내 정보를 수정할 수 있도록 하는 버튼들을 눌렀을 경우 각각에 맞는 행동들을 수행</li>
+    </ul>
+  </li>
+  <li><strong><code class="highlighter-rouge">Search class</code></strong> : 내 정보를 조회 할 수 있는 화면
+    <ul>
+      <li><strong><code class="highlighter-rouge">Search()</code></strong> : 내 정보를 조회하는 버튼들과 세팅</li>
+    </ul>
+  </li>
+  <li><strong><code class="highlighter-rouge">나머지 클래스들</code></strong> : 가입이나 로그인, 개인 정보를 수정할 때에 ID, PW의 조건에 맞게 설정했는지를 알려주는 Frame들</li>
 </ul>
 
 <p>UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했다.<br />
