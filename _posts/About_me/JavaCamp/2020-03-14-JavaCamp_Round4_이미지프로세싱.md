@@ -54,16 +54,16 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.
 
 ## 4. 세부 기능 캡쳐
 <br/>
-ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(1).png){:width="500px"}  
+ㅤ![imageprocessing_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(1).png){:width="500px"}  
 <br/>
-ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(2).png){:width="700px"}  
+ㅤ![imageprocessing_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(2).png){:width="700px"}  
 <br/>
-ㅤ![database_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(3).png){:width="700px"}
+ㅤ![imageprocessing_detail](/assets/img/post/About_me/JavaCamp/imageprocessing_detail(3).png){:width="700px"}
 <br/><br/><br/>
 
 ## 5. 코드 세부 설명
 <br/>
-![database_uml](/assets/img/post/About_me/JavaCamp/imageprocessing_uml.gif){:width="800px"}  
+![imageprocessing_uml](/assets/img/post/About_me/JavaCamp/imageprocessing_uml.gif){:width="800px"}  
 
 위 사진은 내 코드를 UML Diagram으로 나타낸 것이다.  
 확실히 프로젝트를 진행하면서 어떻게 객체 지향적으로 코드를 짜야하는지를 배워가는 것 같다.  
@@ -93,6 +93,6 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 <https://drive.google.com/file/d/1UzaaQ9yTvtG25G2l08lBilVSrMqooShG/view?usp=sharing>
 <br/><br/><br/>
 
-<!-- ## [[Round 5] 육목 구현 ➜ ](abc)
+## [[Round 5] 육목 구현 ➜ ](https://0pencoding.github.io/about/java/gui/2020/03/14/JavaCamp_Round5_%EC%9C%A1%EB%AA%A9.html)
 {: style="text-align: right;"}
-<br/> -->
+<br/>
