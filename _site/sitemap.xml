@@ -9,6 +9,13 @@
             <lastmod>2019-06-07T00:00:00+00:00</lastmod>
             <priority>1.00</priority>
         </url><url>
+                <loc>http://localhost:4000/about/java/gui/2020/03/14/JavaCamp_Round5_%EC%9C%A1%EB%AA%A9.html</loc>
+                <lastmod>2020-03-14T00:00:00+09:00</lastmod>
+                
+                    <changefreq>daily</changefreq>
+                
+                <priority>0.80</priority>
+            </url><url>
                 <loc>http://localhost:4000/about/java/gui/imageprocessing/2020/03/14/JavaCamp_Round4_%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1.html</loc>
                 <lastmod>2020-03-14T00:00:00+09:00</lastmod>
                 
@@ -30,14 +37,14 @@
                 
                 <priority>0.80</priority>
             </url><url>
-                <loc>http://localhost:4000/about/java/gui/graphics/2020/03/13/JavaCamp_Round2_%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%E1%84%91%E1%85%A1%E1%86%AB.html</loc>
-                <lastmod>2020-03-13T00:00:00+09:00</lastmod>
+                <loc>http://localhost:4000/about/java/gui/graphics/database/imageprocessing/network/2020/03/14/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</loc>
+                <lastmod>2020-03-14T00:00:00+09:00</lastmod>
                 
                     <changefreq>daily</changefreq>
                 
                 <priority>0.80</priority>
             </url><url>
-                <loc>http://localhost:4000/about/java/gui/graphics/database/imageprocessing/network/2020/03/13/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</loc>
+                <loc>http://localhost:4000/about/java/gui/graphics/2020/03/13/JavaCamp_Round2_%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%E1%84%91%E1%85%A1%E1%86%AB.html</loc>
                 <lastmod>2020-03-13T00:00:00+09:00</lastmod>
                 
                     <changefreq>daily</changefreq>
