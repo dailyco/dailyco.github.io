@@ -103,6 +103,6 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 <https://drive.google.com/file/d/1jKqC_JaYrER1g6qOag4Q68FpDpJwpHKO/view?usp=sharing>
 <br/><br/><br/>
 
-<!-- ## [[Round 4] 이미지 프로세싱 구현 ➜ ](abc)
+## [[Round 4] 이미지 프로세싱 구현 ➜ ](https://0pencoding.github.io/about/java/gui/imageprocessing/2020/03/14/JavaCamp_Round4_%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1.html)
 {: style="text-align: right;"}
-<br/> -->
+<br/>
