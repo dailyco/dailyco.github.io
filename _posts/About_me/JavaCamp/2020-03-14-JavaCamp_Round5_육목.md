@@ -95,6 +95,6 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 <https://github.com/0pencoding/JavaCamp-Round5-Connect6>
 <br/><br/><br/>
 
-## [[Round 6] 육목 네트워크 적용 ➜ ]()
+## [[Round 6] 육목 네트워크 적용 ➜ ](https://0pencoding.github.io/about/java/gui/network/socketprogramming/2020/03/14/JavaCamp_Round6_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9C%A1%EB%AA%A9.html)
 {: style="text-align: right;"}
 <br/>
