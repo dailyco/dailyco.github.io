@@ -85,9 +85,6 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.
 - **`WinPanel class`** : 게임에서 이긴 플레이어를 표시해주는 Panel
 - **`BackgroundSound class`** : Background music을 제어하는 클래스
 
-
-
-
 UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했다.  
 혹시 코드를 보고 궁금한 점이나 문의할 내용이 있으면 댓글로 남겨주세요!
 <br/><br/><br/>
@@ -98,6 +95,6 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 <https://github.com/0pencoding/JavaCamp-Round5-Connect6>
 <br/><br/><br/>
 
-<!-- ## [[Round 6] 육목 네트워크 적용 ➜ ](abc)
+## [[Round 6] 육목 네트워크 적용 ➜ ]()
 {: style="text-align: right;"}
-<br/> -->
+<br/>
