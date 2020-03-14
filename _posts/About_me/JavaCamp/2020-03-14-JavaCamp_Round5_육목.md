@@ -65,8 +65,28 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.
 다음에 시간과 기회가 된다면 코드를 refactoring 해야겠다.
 
 코드를 세부적으로 설명하면 아래와 같다.
-- **`Main class`** : 작성중...
-    - **`Main()`** : 작성중...
+- **`Main class`** : Screen1, Screen2, Screen3 화면들의 navigation을 담당하는 클래스
+    - **`Main()`** : Frame을 설정해서 첫 화면을 보여주고 모든 Screen 각각에 맞는 ActionListener를 설정
+    - **`actionPerformed()`** : 누른 버튼에 따라 그것에 맞는 행동을 하는 함수들을 설정
+    - **`나머지 함수들`** : 누른 버튼에 따라 그것에 맞는 행동들을 하는 함수들
+- **`Screen1 class`** : 처음에 어플리케이션을 켰을 때 화면
+    - **`Screen1()`** : 첫 화면의 Panel을 설정하고 시작하기 버튼 세팅
+- **`Screen2 class`** : 두 플레이어의 이름과 캐릭터를 설정하는 화면
+    - **`Screen2()`** : 플레이어의 이름과 캐릭터를 설정할 수 있는 이미지와 TextField 세팅
+- **`Screen3 class`** : 실제로 게임을 진행하는 화면
+    - **`Screen3()`** : 게임 진행을 위한 각 플레이어의 Panel을 설정하고 게임 진행 상황에 맞게 게임판을 다시 그려줄 수 있도록 MouseListener 추가
+- **`Board class`** : 게임의 진행과정을 보여주는 실질적인 게임판으로, 플레이어의 이벤트에 따라 적절한 행동을 취하는 클래스
+    - **`Board()`** : 게임판을 그리고 플레이어의 이벤트에 따라 알맞은 행동을 하도록 MouseListener 추가
+    - **`paintComponent()`** : 플레이어가 돌을 둘 때마다 게임판을 다시 그려주는 역할
+    - **`나머지 함수들`** : 게임 진행을 위해 어느 플레이어의 차례이고, 게임이 끝났는지를 확인해주는 함수들
+- **`Player1Panel class`** : Player1의 캐릭터와 이름을 보여주고 게임 진행 상황을 정보와 상황을 표시하는 Panel
+- **`Player2Panel class`** : Player2의 캐릭터와 이름을 보여주고 게임 진행 상황을 정보와 상황을 표시하는 Panel, 또한 Background music을 제어할 수 있는 부분 포함
+- **`Player class`** : Player의 캐릭터와 이름을 저장하는 객체
+- **`WinPanel class`** : 게임에서 이긴 플레이어를 표시해주는 Panel
+- **`BackgroundSound class`** : Background music을 제어하는 클래스
+
+
+
 
 UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했다.  
 혹시 코드를 보고 궁금한 점이나 문의할 내용이 있으면 댓글로 남겨주세요!
@@ -74,7 +94,8 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 
 ## 6. GitHub 및 프로젝트 보고서
 제 코드는 아래 GitHub에서 확인 가능합니다 :)  
-<>
+(배경음악은 파일이 너무 커서 올리지 못했습니다. 실행하시면 소리는 나지 않을거예요!)  
+<https://github.com/0pencoding/JavaCamp-Round5-Connect6>
 <br/><br/><br/>
 
 <!-- ## [[Round 6] 육목 네트워크 적용 ➜ ](abc)

@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 14 Mar 2020 15:13:14 +0900</pubDate>
-    <lastBuildDate>Sat, 14 Mar 2020 15:13:14 +0900</lastBuildDate>
+    <pubDate>Sat, 14 Mar 2020 16:14:01 +0900</pubDate>
+    <lastBuildDate>Sat, 14 Mar 2020 16:14:01 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -79,11 +79,40 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
 
 &lt;p&gt;코드를 세부적으로 설명하면 아래와 같다.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Main class&lt;/code&gt;&lt;/strong&gt; : 작성중…
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Main class&lt;/code&gt;&lt;/strong&gt; : Screen1, Screen2, Screen3 화면들의 navigation을 담당하는 클래스
     &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Main()&lt;/code&gt;&lt;/strong&gt; : 작성중…&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Main()&lt;/code&gt;&lt;/strong&gt; : Frame을 설정해서 첫 화면을 보여주고 모든 Screen 각각에 맞는 ActionListener를 설정&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;actionPerformed()&lt;/code&gt;&lt;/strong&gt; : 누른 버튼에 따라 그것에 맞는 행동을 하는 함수들을 설정&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;나머지 함수들&lt;/code&gt;&lt;/strong&gt; : 누른 버튼에 따라 그것에 맞는 행동들을 하는 함수들&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Screen1 class&lt;/code&gt;&lt;/strong&gt; : 처음에 어플리케이션을 켰을 때 화면
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Screen1()&lt;/code&gt;&lt;/strong&gt; : 첫 화면의 Panel을 설정하고 시작하기 버튼 세팅&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Screen2 class&lt;/code&gt;&lt;/strong&gt; : 두 플레이어의 이름과 캐릭터를 설정하는 화면
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Screen2()&lt;/code&gt;&lt;/strong&gt; : 플레이어의 이름과 캐릭터를 설정할 수 있는 이미지와 TextField 세팅&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Screen3 class&lt;/code&gt;&lt;/strong&gt; : 실제로 게임을 진행하는 화면
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Screen3()&lt;/code&gt;&lt;/strong&gt; : 게임 진행을 위한 각 플레이어의 Panel을 설정하고 게임 진행 상황에 맞게 게임판을 다시 그려줄 수 있도록 MouseListener 추가&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Board class&lt;/code&gt;&lt;/strong&gt; : 게임의 진행과정을 보여주는 실질적인 게임판으로, 플레이어의 이벤트에 따라 적절한 행동을 취하는 클래스
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Board()&lt;/code&gt;&lt;/strong&gt; : 게임판을 그리고 플레이어의 이벤트에 따라 알맞은 행동을 하도록 MouseListener 추가&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;paintComponent()&lt;/code&gt;&lt;/strong&gt; : 플레이어가 돌을 둘 때마다 게임판을 다시 그려주는 역할&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;나머지 함수들&lt;/code&gt;&lt;/strong&gt; : 게임 진행을 위해 어느 플레이어의 차례이고, 게임이 끝났는지를 확인해주는 함수들&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Player1Panel class&lt;/code&gt;&lt;/strong&gt; : Player1의 캐릭터와 이름을 보여주고 게임 진행 상황을 정보와 상황을 표시하는 Panel&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Player2Panel class&lt;/code&gt;&lt;/strong&gt; : Player2의 캐릭터와 이름을 보여주고 게임 진행 상황을 정보와 상황을 표시하는 Panel, 또한 Background music을 제어할 수 있는 부분 포함&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Player class&lt;/code&gt;&lt;/strong&gt; : Player의 캐릭터와 이름을 저장하는 객체&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;WinPanel class&lt;/code&gt;&lt;/strong&gt; : 게임에서 이긴 플레이어를 표시해주는 Panel&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;BackgroundSound class&lt;/code&gt;&lt;/strong&gt; : Background music을 제어하는 클래스&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했다.&lt;br /&gt;
@@ -92,7 +121,8 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
 
 &lt;h2 id=&quot;6-github-및-프로젝트-보고서&quot;&gt;6. GitHub 및 프로젝트 보고서&lt;/h2&gt;
 &lt;p&gt;제 코드는 아래 GitHub에서 확인 가능합니다 :)&lt;br /&gt;
-&amp;lt;&amp;gt;
+(배경음악은 파일이 너무 커서 올리지 못했습니다. 실행하시면 소리는 나지 않을거예요!)&lt;br /&gt;
+&lt;a href=&quot;https://github.com/0pencoding/JavaCamp-Round5-Connect6&quot;&gt;https://github.com/0pencoding/JavaCamp-Round5-Connect6&lt;/a&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;!-- ## [[Round 6] 육목 네트워크 적용 ➜ ](abc)
