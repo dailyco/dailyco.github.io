@@ -1,0 +1,134 @@
+I"^<p>난이도 ★ ★ ☆<br />
+본 문제는 level2 라고 하기엔 조금 놀랄만큼 쉬웠던 문제이다. 해결한 사람 수만 봐도 level1의 문제와 비슷했기 때문에 쉬울거라고 예상은 했었지만 정말 쉬운 문제였다. 다만, 본 문제가 왜 Stack/Queue 문제인지는 아직 잘 이해가가지 않는다. stack을 시용해서 풀 수는 있으나 여러가지 다른 방법으로도 해결 가능하기 때문에… 물론 모든 문제가 제시된 방법으로만 해결되는 것은 아니기 때문에 어떤 방법으로든 효율성 좋게 해결만 한다면 괜찮지 않을까?<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>트럭 여러 대가 강을 가로지르는 일 차선 다리를 정해진 순으로 건너려 합니다.<br />
+모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다.<br />
+트럭은 1초에 1만큼 움직이며, 다리 길이는 bridge_length이고 다리는 무게 weight까지 견딥니다.<br />
+※ 트럭이 다리에 완전히 오르지 않은 경우, 이 트럭의 무게는 고려하지 않습니다.</p>
+
+<p>예를 들어, 길이가 2이고 10kg 무게를 견디는 다리가 있습니다.<br />
+무게가 [7, 4, 5, 6]kg인 트럭이 순서대로 최단 시간 안에 다리를 건너려면 다음과 같이 건너야 합니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>경과 시간</th>
+      <th>다리를 지난 트럭</th>
+      <th>다리를 건너는 트럭</th>
+      <th>대기 트럭</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>[7,4,5,6]</td>
+    </tr>
+    <tr>
+      <td>1~2</td>
+      <td>[]</td>
+      <td>[7]</td>
+      <td>[4,5,6]</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>[7]</td>
+      <td>[4]</td>
+      <td>[5,6]</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>[7]</td>
+      <td>[4,5]</td>
+      <td>[6]</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>[7,4]</td>
+      <td>[5]</td>
+      <td>[6]</td>
+    </tr>
+    <tr>
+      <td>6~7</td>
+      <td>[7,4,5]</td>
+      <td>[6]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>[7,4,5,6]</td>
+      <td>[]</td>
+      <td>[]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>따라서, 모든 트럭이 다리를 지나려면 최소 8초가 걸립니다.</p>
+
+<p>solution 함수의 매개변수로 다리 길이 bridge_length, 다리가 견딜 수 있는 무게 weight, 트럭별 무게 truck_weights가 주어집니다.<br />
+이때 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 return 하도록 solution 함수를 완성하세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>bridge_length는 1 이상 10,000 이하입니다.</li>
+  <li>weight는 1 이상 10,000 이하입니다.</li>
+  <li>truck_weights의 길이는 1 이상 10,000 이하입니다.</li>
+  <li>모든 트럭의 무게는 1 이상 weight 이하입니다.
+<br />
+<br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<p>1) 
+<br />
+<br /></p>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;vector&gt;
+#include &lt;list&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="kt">int</span> <span class="n">bridge_length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">weight</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">truck_weights</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">lst</span> <span class="p">(</span><span class="n">bridge_length</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">total_weight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="k">while</span><span class="p">(</span><span class="n">lst</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">total_weight</span> <span class="o">-=</span> <span class="n">lst</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+        <span class="n">lst</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">truck_weights</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">truck_weights</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">total_weight</span> <span class="o">&gt;</span> <span class="n">weight</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">lst</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">lst</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">truck_weights</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+                <span class="n">total_weight</span> <span class="o">+=</span> <span class="n">truck_weights</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+                <span class="n">truck_weights</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">truck_weights</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li><br />
+<br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li><br />
+<br /></li>
+</ul>
+:ET

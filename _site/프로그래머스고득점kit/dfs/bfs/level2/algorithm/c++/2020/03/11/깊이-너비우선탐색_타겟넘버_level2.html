@@ -109,6 +109,8 @@
 본 문제는 처음에 접근을 어떻게 해야할지 잘 모르겠어서 언니와 의논을 한 뒤에 풀기 시작했다. 확실히 한 번 의논을 한 뒤에 문제에 접근하면 훨씬 쉽게 접근 할 수 있는 것 같다. 완전히 혼자의 힘으로 풀지는 못했지만, 문제를 푸는 방향을 옳게 갔다는 데에는 확실히 좋은 방법이라고 생각이 든다. 그래도 다음부터는 최대한 혼자의 힘으로 풀도록 노력해야지 (๑و•̀Δ•́)و<br />
 <br /></p>
 
+<p><br /></p>
+
 <h2 id="1-문제">1. 문제</h2>
 <p>n개의 음이 아닌 정수가 있습니다.<br />
 이 수를 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다.<br />
@@ -126,8 +128,7 @@
   <li>주어지는 숫자의 개수는 2개 이상 20개 이하입니다.</li>
   <li>각 숫자는 1 이상 50 이하인 자연수입니다.</li>
   <li>타겟 넘버는 1 이상 1000 이하인 자연수입니다.
-<br />
-<br /></li>
+<br /><br /><br /></li>
 </ul>
 
 <h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
@@ -135,8 +136,7 @@
 2) parameter로 받은 vector의 길이에 따라서 길이가 0일 때와 나머지의 경우로 나눈다.<br />
 3) vector의 길이가 0일 경우 지금까지의 합 sum이 target과 같으면 answer를 증가시켜 반환하고, 아니라면 그냥 반환한다.<br />
 4) vector의 길이가 0이 아니면 answer를 구하기 위해 sum에 vector의 첫번째 원소를 각각 더한 경우와 뺀 경우의 answer 값을 더해 반환한다.<br />
-<br />
-<br /></p>
+<br /><br /></p>
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
@@ -163,22 +163,19 @@
     <span class="k">return</span> <span class="n">find_answer</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p><br />
-<br /></p>
+<p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
 <ul>
   <li>recursive는 비효율적이라는 고정관념에 빠져 recursive 사용하기를 꺼려했는데 그러지 말아야겠다</li>
   <li>vector의 첫 원소만 제외하고 vector를 만들어줄 때 assign() 함수를 사용하는건 메모리 측면에서 너무 비효율 적인 것 같은데 방법이 없을까?
-<br />
-<br /></li>
+<br /><br /><br /></li>
 </ul>
 
 <h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
 <ul>
   <li>[C++ 공식문서] std:vector:assign <a href="http://www.cplusplus.com/reference/vector/vector/assign/">http://www.cplusplus.com/reference/vector/vector/assign/</a>
-<br />
-<br /></li>
+<br /><br /><br /></li>
 </ul>
 
   </div><div id="disqus_thread" style="margin-top:25px"></div>

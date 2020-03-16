@@ -6,9 +6,171 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 14 Mar 2020 17:31:21 +0900</pubDate>
-    <lastBuildDate>Sat, 14 Mar 2020 17:31:21 +0900</lastBuildDate>
+    <pubDate>Tue, 17 Mar 2020 01:16:11 +0900</pubDate>
+    <lastBuildDate>Tue, 17 Mar 2020 01:16:11 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>프로그래머스 코딩테스트 고득점 Kit : [스택/큐] 다리를 지나는 트럭</title>
+        <description>&lt;p&gt;난이도 ★ ★ ☆&lt;br /&gt;
+오랜만에 프로그래머스 고득점 Kit 문제를 풀어 올린다. 그동안 자바 캠프에 대해서 정리하느라고 알고리즘 문제 푸는 것을 잠시 쉬었더니 금세 감을 잃었는지 이 문제를 푸는데에는 꽤 오래 걸렸다. 문제 자체를 이해하는 데에도 시간을 많이 썼던 탓도 있긴하지만, 그래도 문제를 풀어놓고보니 나름 잘 풀었다는 생각이 들어서 뿌듯했던 문제였다 :)&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
+&lt;p&gt;트럭 여러 대가 강을 가로지르는 일 차선 다리를 정해진 순으로 건너려 합니다.&lt;br /&gt;
+모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다.&lt;br /&gt;
+트럭은 1초에 1만큼 움직이며, 다리 길이는 bridge_length이고 다리는 무게 weight까지 견딥니다.&lt;br /&gt;
+※ 트럭이 다리에 완전히 오르지 않은 경우, 이 트럭의 무게는 고려하지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어, 길이가 2이고 10kg 무게를 견디는 다리가 있습니다.&lt;br /&gt;
+무게가 [7, 4, 5, 6]kg인 트럭이 순서대로 최단 시간 안에 다리를 건너려면 다음과 같이 건너야 합니다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;경과 시간&lt;/th&gt;
+      &lt;th&gt;다리를 지난 트럭&lt;/th&gt;
+      &lt;th&gt;다리를 건너는 트럭&lt;/th&gt;
+      &lt;th&gt;대기 트럭&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+      &lt;td&gt;[7,4,5,6]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1~2&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+      &lt;td&gt;[7]&lt;/td&gt;
+      &lt;td&gt;[4,5,6]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;[7]&lt;/td&gt;
+      &lt;td&gt;[4]&lt;/td&gt;
+      &lt;td&gt;[5,6]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;[7]&lt;/td&gt;
+      &lt;td&gt;[4,5]&lt;/td&gt;
+      &lt;td&gt;[6]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;[7,4]&lt;/td&gt;
+      &lt;td&gt;[5]&lt;/td&gt;
+      &lt;td&gt;[6]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6~7&lt;/td&gt;
+      &lt;td&gt;[7,4,5]&lt;/td&gt;
+      &lt;td&gt;[6]&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;[7,4,5,6]&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+      &lt;td&gt;[]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;따라서, 모든 트럭이 다리를 지나려면 최소 8초가 걸립니다.&lt;/p&gt;
+
+&lt;p&gt;solution 함수의 매개변수로 다리 길이 bridge_length, 다리가 견딜 수 있는 무게 weight, 트럭별 무게 truck_weights가 주어집니다.&lt;br /&gt;
+이때 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 return 하도록 solution 함수를 완성하세요.&lt;/p&gt;
+
+&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;bridge_length는 1 이상 10,000 이하입니다.&lt;/li&gt;
+  &lt;li&gt;weight는 1 이상 10,000 이하입니다.&lt;/li&gt;
+  &lt;li&gt;truck_weights의 길이는 1 이상 10,000 이하입니다.&lt;/li&gt;
+  &lt;li&gt;모든 트럭의 무게는 1 이상 weight 이하입니다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
+&lt;p&gt;1) 다리를 건너고 있는 트럭을 위치까지 함께 표현할 수 있도록 list를 생성한다.&lt;br /&gt;
+2) 트럭의 위치를 표현하기 위해 list를 bridge_length 만큼 0으로 초기화한다.&lt;br /&gt;
+3) 현재 다리 위에 있는 트럭의 총 무게를 알기위해 total_weight 변수를 생성한다.&lt;br /&gt;
+4) 1초가 지나고 list안의 원소를 한칸씩 앞으로 해주기위해 answer를 더하고 list에서 원소를 pop 한다.&lt;br /&gt;
+ㅤ (다리를 다 건넌 트럭의 무게를 total_weight에서 빼줘야하기 때문에 pop할 원소만큼 빼주는 것도 해야한다.)&lt;br /&gt;
+5) 다리를 건너야할 트럭이 남아있고, 트럭이 다리위로 올라가도 무게를 초과하지 않으면 다리 위로 올려준다.&lt;br /&gt;
+ㅤ (list에 트럭 무게를 추가해주고, total_weight에 해당 트럭 무게만큼 더하고, truck_weights에서는 해당 원소를 지운다.)&lt;br /&gt;
+6) 트럭이 다리위로 올라가면 무게가 초과되면, list에 아무것도 가지 못했다는 것을 나타내기 위해 0을 push한다.&lt;br /&gt;
+7) list가 비워질 때까지 4번 부터의 과정을 반복한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
+&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;
+#include &amp;lt;list&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bridge_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;truck_weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lst&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bridge_length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total_weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;total_weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop_front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;truck_weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;truck_weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total_weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;lst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;lst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;truck_weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;total_weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;truck_weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;truck_weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;erase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;truck_weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;queue가 처음에 0으로 원하는 갯수만큼 초기화가 안돼서 다른 자료구조를 찾아보다가 list 발견!&lt;/li&gt;
+  &lt;li&gt;list 라는 자료구조가 있다는 것도 처음 알았다…&lt;/li&gt;
+  &lt;li&gt;answer만큼 while loop가 돌아야하는게 조금 효율성이 안좋다고 생각할 수 있는데… 그럭저럭 괜찮은듯(?!)
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[C++ 공식문서] std:list &lt;a href=&quot;http://www.cplusplus.com/reference/list/list/&quot;&gt;http://www.cplusplus.com/reference/list/list/&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/stack/queue/level2/algorithm/c++/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EB%8B%A4%EB%A6%AC%EB%A5%BC%EC%A7%80%EB%82%98%EB%8A%94%ED%8A%B8%EB%9F%AD_level2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/stack/queue/level2/algorithm/c++/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EB%8B%A4%EB%A6%AC%EB%A5%BC%EC%A7%80%EB%82%98%EB%8A%94%ED%8A%B8%EB%9F%AD_level2.html</guid>
+        
+        
+        <category>프로그래머스고득점Kit</category>
+        
+        <category>Stack/Queue</category>
+        
+        <category>Level2</category>
+        
+        <category>Algorithm</category>
+        
+        <category>C++</category>
+        
+      </item>
     
       <item>
         <title>[Java-GUI] ROUND6. 육목 네트워크 적용하기</title>
@@ -1091,6 +1253,8 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
 본 문제는 정말 마음에 안들게 푼 문제이다. 해결 후에 분명 더 좋은 방법이 있을거라고 생각은 드는데 쉽게 생각이 떠오르질 않아서 기분이 좋지 않았다. 그리고 다른 사람의 풀이를 보는데 ‘왜 이렇게 생각하지 못했지’, ‘이번 문제는 정말 못 풀었다’하는 생각이 들었다. 그래서 풀고나서 다른 사람의 코드를 참고해 다시 한 번 더 풀어서, 처음에 생각했던 알고리즘과 다른 사람의 코드를 참고해서 다시 내 나름대로 푼 알고리즘 두 가지가 있다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;Leo는 카펫을 사러 갔다가 아래 그림과 같이 중앙에는 빨간색으로 칠해져 있고 테두리 1줄은 갈색으로 칠해져 있는 격자 모양 카펫을 봤습니다.&lt;/p&gt;
 
@@ -1104,8 +1268,7 @@ Leo가 본 카펫에서 갈색 격자의 수 brown, 빨간색 격자의 수 red�
   &lt;li&gt;갈색 격자의 수 brown은 8 이상 5,000 이하인 자연수입니다.&lt;/li&gt;
   &lt;li&gt;빨간색 격자의 수 red는 1 이상 2,000,000 이하인 자연수입니다.&lt;/li&gt;
   &lt;li&gt;카펫의 가로 길이는 세로 길이와 같거나, 세로 길이보다 깁니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -1113,8 +1276,7 @@ Leo가 본 카펫에서 갈색 격자의 수 brown, 빨간색 격자의 수 red�
 2) 정사각형일 때에는 (red의 제곱근+2) 값을 가로, 세로 값으로 반환한다.&lt;br /&gt;
 3) 정사각형이 아닐 때에는 세로의 길이를 1씩 줄어가면서 맞는 길이를 찾는다.&lt;br /&gt;
 4) 맞는 길이를 찾으면 마찮가지로 (가로+2), (세로+2) 값을 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1162,15 +1324,13 @@ Leo가 본 카펫에서 갈색 격자의 수 brown, 빨간색 격자의 수 red�
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;벡터를 선언하지 않고 바로 사용할 수 있다는… 신세계 (파이썬 같다)&lt;/li&gt;
   &lt;li&gt;초반에 너무 복잡하게 풀었고 정말 좋지 않은 코드 방법으로 풀었다 → 자칫 잘못하면 무한 루트에 빠지는 불상사가..
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -1180,8 +1340,7 @@ Leo가 본 카펫에서 갈색 격자의 수 brown, 빨간색 격자의 수 red�
   &lt;li&gt;[C++] std :: vector 초기화하기 &lt;a href=&quot;https://riptutorial.com/ko/cplusplus/example/1676/std----vector-%EC%B4%88%EA%B8%B0%ED%99%94%ED%95%98%EA%B8%B0&quot;&gt;https://riptutorial.com/ko/cplusplus/example/1676/std----vector-%EC%B4%88%EA%B8%B0%ED%99%94%ED%95%98%EA%B8%B0&lt;/a&gt;&lt;br /&gt;
 vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값을 할당하며 초기화 가능&lt;br /&gt;
 &lt;span style=&quot;color: #c70000&quot;&gt;※ 특정 변수에 vector를 할당할 필요없이 그냥 바로 사용할 때에는 {n1, n2, …} 식으로 사용 가능&lt;/span&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 11 Mar 2020 00:00:00 +0900</pubDate>
@@ -1207,6 +1366,8 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
 본 문제는 level2 라고 하기엔 조금 놀랄만큼 쉬웠던 문제이다. 해결한 사람 수만 봐도 level1의 문제와 비슷했기 때문에 쉬울거라고 예상은 했었지만 정말 쉬운 문제였다. 다만, 본 문제가 왜 Stack/Queue 문제인지는 아직 잘 이해가가지 않는다. stack을 시용해서 풀 수는 있으나 여러가지 다른 방법으로도 해결 가능하기 때문에… 물론 모든 문제가 제시된 방법으로만 해결되는 것은 아니기 때문에 어떤 방법으로든 효율성 좋게 해결만 한다면 괜찮지 않을까?&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;수평 직선에 탑 N대를 세웠습니다. 모든 탑의 꼭대기에는 신호를 송/수신하는 장치를 설치했습니다.&lt;br /&gt;
 발사한 신호는 신호를 보낸 탑보다 높은 탑에서만 수신합니다. 또한, 한 번 수신된 신호는 다른 탑으로 송신되지 않습니다.&lt;br /&gt;
@@ -1219,16 +1380,14 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
   &lt;li&gt;heights는 길이 2 이상 100 이하인 정수 배열입니다.&lt;/li&gt;
   &lt;li&gt;모든 탑의 높이는 1 이상 100 이하입니다.&lt;/li&gt;
   &lt;li&gt;신호를 수신하는 탑이 없으면 0으로 표시합니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;p&gt;1) vector의 마지막 원소부터 시작한다.&lt;br /&gt;
 2) 해당 원소 앞 쪽에 해당 원소보다 큰 값이 나오면 그 값을 answer vector에 insert 한다.&lt;br /&gt;
 3) 해당 원소보다 큰 값이 없으면 answer vector에 0을 insert 한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1255,23 +1414,20 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;vector의 insert() 함수 사용 방법&lt;/li&gt;
   &lt;li&gt;효율성을 더 좋게 하는 방법은 없나…&lt;/li&gt;
   &lt;li&gt;stack을 사용할 수는 있는데 알고리즘 자체는 똑같아서..
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;[C++ 공식문서] std:vector:insert &lt;a href=&quot;http://www.cplusplus.com/reference/vector/vector/insert/&quot;&gt;http://www.cplusplus.com/reference/vector/vector/insert/&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 11 Mar 2020 00:00:00 +0900</pubDate>
@@ -1297,6 +1453,8 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
 본 문제는 처음에 접근을 어떻게 해야할지 잘 모르겠어서 언니와 의논을 한 뒤에 풀기 시작했다. 확실히 한 번 의논을 한 뒤에 문제에 접근하면 훨씬 쉽게 접근 할 수 있는 것 같다. 완전히 혼자의 힘으로 풀지는 못했지만, 문제를 푸는 방향을 옳게 갔다는 데에는 확실히 좋은 방법이라고 생각이 든다. 그래도 다음부터는 최대한 혼자의 힘으로 풀도록 노력해야지 (๑و•̀Δ•́)و&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;n개의 음이 아닌 정수가 있습니다.&lt;br /&gt;
 이 수를 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다.&lt;br /&gt;
@@ -1314,8 +1472,7 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
   &lt;li&gt;주어지는 숫자의 개수는 2개 이상 20개 이하입니다.&lt;/li&gt;
   &lt;li&gt;각 숫자는 1 이상 50 이하인 자연수입니다.&lt;/li&gt;
   &lt;li&gt;타겟 넘버는 1 이상 1000 이하인 자연수입니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -1323,8 +1480,7 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
 2) parameter로 받은 vector의 길이에 따라서 길이가 0일 때와 나머지의 경우로 나눈다.&lt;br /&gt;
 3) vector의 길이가 0일 경우 지금까지의 합 sum이 target과 같으면 answer를 증가시켜 반환하고, 아니라면 그냥 반환한다.&lt;br /&gt;
 4) vector의 길이가 0이 아니면 answer를 구하기 위해 sum에 vector의 첫번째 원소를 각각 더한 경우와 뺀 경우의 answer 값을 더해 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1351,22 +1507,19 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;find_answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;recursive는 비효율적이라는 고정관념에 빠져 recursive 사용하기를 꺼려했는데 그러지 말아야겠다&lt;/li&gt;
   &lt;li&gt;vector의 첫 원소만 제외하고 vector를 만들어줄 때 assign() 함수를 사용하는건 메모리 측면에서 너무 비효율 적인 것 같은데 방법이 없을까?
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;[C++ 공식문서] std:vector:assign &lt;a href=&quot;http://www.cplusplus.com/reference/vector/vector/assign/&quot;&gt;http://www.cplusplus.com/reference/vector/vector/assign/&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 11 Mar 2020 00:00:00 +0900</pubDate>
@@ -1391,6 +1544,8 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
         <description>&lt;p&gt;난이도 ★ ★ ☆&lt;br /&gt;
 본 문제는 문제를 읽자마자 바로 알고리즘이 떠올랐다. 하지만 정작 문제는 잘 해결되지 않았는데, 내가 문제를 자세하게 읽지 않아서 문제를 잘못 이해하고 있었다. 보통의 숫자야구를 생각해서 당연히 중복된 숫자가 가능하고, 0도 포함되어 있을거라 생각했으나 그게 아니었던 것이 복병이었던 것 같다. 역시 문제 속에 답이 있다고… •́︿•̀ 앞으로 문제를 꼼꼼히 읽는 습관을 들여야겠다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;숫자 야구 게임이란 2명이 서로가 생각한 숫자를 맞추는 게임입니다. &lt;a href=&quot;https://scratch.mit.edu/projects/131352991/&quot;&gt;게임해보기&lt;/a&gt;&lt;br /&gt;
@@ -1417,8 +1572,7 @@ B : 0스트라이크 1볼.
 &lt;ul&gt;
   &lt;li&gt;질문의 수는 1 이상 100 이하의 자연수입니다.&lt;/li&gt;
   &lt;li&gt;baseball의 각 행은 [세 자리의 수, 스트라이크의 수, 볼의 수] 를 담고 있습니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -1426,8 +1580,7 @@ B : 0스트라이크 1볼.
 2) 각 숫자에 0이 포함되거나, 같은 숫자가 있을 경우는 건너뛴다.&lt;br /&gt;
 3) 각 숫자를 baseball에 담긴 숫자들과 비교해서 strike 수와 ball 수를 구한다.&lt;br /&gt;
 4) baseball에 담긴 숫자들과 strike, ball 갯수가 모두 같으면 answer을 증가시킨다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1470,16 +1623,14 @@ B : 0스트라이크 1볼.
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;문제를 잘 읽자!&lt;/li&gt;
   &lt;li&gt;string에 접근하는 방법으로 at() 함수 말고 다른 방법도 있었네..&lt;/li&gt;
   &lt;li&gt;string.find() 함수를 쓸 때 찾고자하는 문자열이 없을 때 string::npos 외에도 -1을 사용해서 비교 가능
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -1487,8 +1638,7 @@ B : 0스트라이크 1볼.
   &lt;li&gt;[C++] string 클래스, 문자열에 대해서 (총정리) &lt;a href=&quot;https://blockdmask.tistory.com/338&quot;&gt;https://blockdmask.tistory.com/338&lt;/a&gt;&lt;br /&gt;
 string에서 char로 접근할 때 at() 함수로 접근하는 방법 외에도 index로 접근 가능&lt;br /&gt;
 단, index로 접근했을 경우 형태는 char 형태로 다른 char과 비교할 때 ‘’ 을 사용
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 11 Mar 2020 00:00:00 +0900</pubDate>
@@ -1632,6 +1782,8 @@ char to int를 하기 위해서는 48을 빼면된다, 반대는 48을 더하면
 본 문제는 문제를 이해하는 데에 무척 오려 걸렸다. 문제를 이해한 후에도 나름의 알고리즘을 세우고 코드를 짰지만 도무지 어느 곳이 잘못된지를 몰라 애를 많이 먹어서 알고리즘을 한 번 뒤엎었던 문제이기도 하다. 처음에 생각했던 알고리즘과 다른 알고리즘으로 문제를 해결한 후에 다른 사람의 코드를 보며 처음 세웠던 알고리즘을 정리해 다시 짜면서 해결코드가 두 가지가 되었는데, 코드를 보면서 알고리즘이 어떻게 다른지 생각해보는 것도 좋은 공부가 될 것 같다 :)&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;H-Index는 과학자의 생산성과 영향력을 나타내는 지표입니다.&lt;br /&gt;
 어느 과학자의 H-Index를 나타내는 값인 h를 구하려고 합니다.&lt;br /&gt;
@@ -1643,16 +1795,14 @@ char to int를 하기 위해서는 48을 빼면된다, 반대는 48을 더하면
 &lt;ul&gt;
   &lt;li&gt;과학자가 발표한 논문의 수는 1편 이상 1,000편 이하입니다.&lt;/li&gt;
   &lt;li&gt;논문별 인용 횟수는 0회 이상 10,000회 이하입니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;p&gt;1) citations을 오름차순으로 정렬한다.&lt;br /&gt;
 2) citations을 하나씩 돌면서 인용 횟수와 인용된 논문의 갯수 중 작은 값과 지금까지의 가장 큰 H-Index 중 큰 값을 H-Index의 값으로 설정한다.&lt;br /&gt;
 3) citations을 모두 돌고 H-Index 값을 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1711,8 +1861,7 @@ char to int를 하기 위해서는 48을 빼면된다, 반대는 48을 더하면
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;citations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
@@ -1721,8 +1870,7 @@ char to int를 하기 위해서는 48을 빼면된다, 반대는 48을 더하면
   &lt;li&gt;다른 사람 코드를 참고해 수정한 코드에서는 H-Index가 해당 논문의 인용횟수/인용된 논문의 수와 다를 경우를 보장&lt;/li&gt;
   &lt;li&gt;vector를 내림차 순으로 sorting하는 법&lt;/li&gt;
   &lt;li&gt;max값, min값 구하는 법
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -1731,8 +1879,7 @@ char to int를 하기 위해서는 48을 빼면된다, 반대는 48을 더하면
 내림차 순으로 sorting하기 위해서는 sort() 함수의 3번째 인자에 greater&lt;int&gt;()함수를 assign&lt;/int&gt;&lt;/li&gt;
   &lt;li&gt;[C++] 최초값, 최대값 함수 min, max 에 대해서 (클래스, vector 사용법까지) &lt;a href=&quot;https://blockdmask.tistory.com/366&quot;&gt;https://blockdmask.tistory.com/366&lt;/a&gt;
 최대값, 최소값을 구하기 위해서는 max(), min() 함수를 사용
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 06 Mar 2020 00:00:00 +0900</pubDate>
@@ -1758,6 +1905,8 @@ char to int를 하기 위해서는 48을 빼면된다, 반대는 48을 더하면
 본 문제는 이전에 남자친구와 함께 고민해본 적이 있는 문제여서 무척 빠르게 풀었다. 알고리즘 문제라기 보다는 수학 문제에 가깝고 (이 또한 알고리즘 이긴 하지만…) 문제를 풀면서 고등학교 수학에서 배웠던 경우의 수가 생각나는 문제이다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;스파이들은 매일 다른 옷을 조합하여 입어 자신을 위장합니다.&lt;br /&gt;
 예를 들어 스파이가 가진 옷이 아래와 같고 오늘 스파이가 동그란 안경, 긴 코트, 파란색 티셔츠를 입었다면 다음날은 청바지를 추가로 입거나 동그란 안경 대신 검정 선글라스를 착용하거나 해야 합니다.&lt;/p&gt;
@@ -1780,16 +1929,14 @@ char to int를 하기 위해서는 48을 빼면된다, 반대는 48을 더하면
   &lt;li&gt;clothes의 모든 원소는 문자열로 이루어져 있습니다.&lt;/li&gt;
   &lt;li&gt;모든 문자열의 길이는 1 이상 20 이하인 자연수이고 알파벳 소문자 또는 ‘_’ 로만 이루어져 있습니다.&lt;/li&gt;
   &lt;li&gt;스파이는 하루에 최소 한 개의 의상은 입습니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;p&gt;1) 옷을 종류별로 담기위해 map을 한 개 생성한다.&lt;br /&gt;
 2) clothes를 map에 옷의 종류를 key, 옷의 이름을 value로 한 벡터로 나누어 담는다.&lt;br /&gt;
 3) 옷의 종류 별로 (옷의 갯수 + 1)한 값을 모두 곱해 전체에서 1을 뺀 값을 반환한다.(수학)&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1812,16 +1959,14 @@ char to int를 하기 위해서는 48을 빼면된다, 반대는 48을 더하면
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;전에 생각해 본적이 있는 문제라서 빨리 해결했다&lt;/li&gt;
   &lt;li&gt;수학을 잘한다면 빨리 풀 수 있는 문제가 아닐까&lt;/li&gt;
   &lt;li&gt;value를 vector로 해서 해결하는 방법 습득!
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -1831,8 +1976,7 @@ map의 value값으로 vector가 사용 가능&lt;br /&gt;
 map에서 key의 value에 접근할 때, map[key]와 같이 index에 key값을 넣어주는 것도 가능&lt;/li&gt;
   &lt;li&gt;[C++] auto 타입추론에 대해서 &lt;a href=&quot;https://blockdmask.tistory.com/384&quot;&gt;https://blockdmask.tistory.com/384&lt;/a&gt;&lt;br /&gt;
 auto 키워드를 사용해서 for문 등에서 유용하게 사용 가능
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 05 Mar 2020 00:00:00 +0900</pubDate>
@@ -1858,6 +2002,8 @@ auto 키워드를 사용해서 for문 등에서 유용하게 사용 가능
 본 문제는 푸는데 시간이 정말 오래걸렸던 문제이다. 하지만 알고리즘 문제 풀기의 정석대로 단계를 거쳤던 것 같아 문제를 풀고나서는 뿌듯하고 내 자신이 자랑스러웠다. 처음에 잘못된 방향으로 고민하다가 점점 정답에 가깝게 생각했다는 것이 정말 기분좋다 :)&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.&lt;br /&gt;
 예를 들어, 주어진 정수가 [6, 10, 2]라면 [6102, 6210, 1062, 1026, 2610, 2106]를 만들 수 있고, 이중 가장 큰 수는 6210입니다.
@@ -1868,8 +2014,7 @@ auto 키워드를 사용해서 for문 등에서 유용하게 사용 가능
   &lt;li&gt;numbers의 길이는 1 이상 100,000 이하입니다.&lt;/li&gt;
   &lt;li&gt;numbers의 원소는 0 이상 1,000 이하입니다.&lt;/li&gt;
   &lt;li&gt;정답이 너무 클 수 있으니 문자열로 바꾸어 return 합니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -1877,8 +2022,7 @@ auto 키워드를 사용해서 for문 등에서 유용하게 사용 가능
 2) compare 함수는 두 수를 string으로 붙여 비교한다.&lt;br /&gt;
 3) 정렬된 벡터를 그대로 이어붙여 문자열을 만든다.&lt;br /&gt;
 4) 벡터에 0이 들어갔을 경우를 고려하여 첫 숫자가 0이면 0을 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1906,16 +2050,14 @@ auto 키워드를 사용해서 for문 등에서 유용하게 사용 가능
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;푸는데 시간 오래걸림&lt;/li&gt;
   &lt;li&gt;각 문자열의 길이를 같게하는게 key point!&lt;/li&gt;
   &lt;li&gt;0일 경우는 생각 못함…(마지막 테스트 케이스…)
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -1924,8 +2066,7 @@ auto 키워드를 사용해서 for문 등에서 유용하게 사용 가능
 사용자 정의 함수를 사용한 sorting을 위해서는 sort() 함수의 3번째 인자에 사용자 정의 함수를 assign&lt;/li&gt;
   &lt;li&gt;[C++] string 클래스, 문자열에 대해서 (총정리) &lt;a href=&quot;https://blockdmask.tistory.com/338&quot;&gt;https://blockdmask.tistory.com/338&lt;/a&gt;&lt;br /&gt;
 string에서 index로 접근하기 위해서는 string.at() 함수를 사용하고 char형태가 반환
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 05 Mar 2020 00:00:00 +0900</pubDate>
@@ -1951,6 +2092,8 @@ string에서 index로 접근하기 위해서는 string.at() 함수를 사용하�
 본 문제는 풀기 전에 알고리즘을 생각하면서 ‘이렇게하면 될까?’하고 반신반의하며 푼 문제이다. set의 upper_bound에 대해서 제대로 이해하지 못하고 있는 줄 알았는데 막상 이걸 이용해서 문제를 해결하고나니 제대로 이해하고 있었다는 생각이 들었다 :)&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;전화번호부에 적힌 전화번호 중, 한 번호가 다른 번호의 접두어인 경우가 있는지 확인하려 합니다.&lt;br /&gt;
 전화번호가 다음과 같을 경우, 구조대 전화번호는 영석이의 전화번호의 접두사입니다.&lt;/p&gt;
@@ -1966,8 +2109,7 @@ string에서 index로 접근하기 위해서는 string.at() 함수를 사용하�
 &lt;ul&gt;
   &lt;li&gt;phone_book의 길이는 1 이상 1,000,000 이하입니다.&lt;/li&gt;
   &lt;li&gt;각 전화번호의 길이는 1 이상 20 이하입니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -1976,8 +2118,7 @@ string에서 index로 접근하기 위해서는 string.at() 함수를 사용하�
 3) upper bound가 마지막 원소일 경우는 pass.&lt;br /&gt;
 4) 각 phone_book이 해당 upper_bound의 접두어인지 확인한다.&lt;br /&gt;
 5) 접두어이면 false를 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -2003,15 +2144,13 @@ string에서 index로 접근하기 위해서는 string.at() 함수를 사용하�
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;해시를 사용해서 푼 것이 맞나?&lt;/li&gt;
   &lt;li&gt;정렬을 사용해서 풀 수도 있다!
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -2019,8 +2158,7 @@ string에서 index로 접근하기 위해서는 string.at() 함수를 사용하�
   &lt;li&gt;[C++ 공식문서] std:set:upper_bound &lt;a href=&quot;http://www.cplusplus.com/reference/set/set/upper_bound/&quot;&gt;http://www.cplusplus.com/reference/set/set/upper_bound/&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;[C++ 레퍼런스 - string 의 find 함수] &lt;a href=&quot;https://modoocode.com/241&quot;&gt;https://modoocode.com/241&lt;/a&gt;&lt;br /&gt;
 string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없을경우 string::npos를 반환
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 04 Mar 2020 00:00:00 +0900</pubDate>
@@ -2046,6 +2184,8 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
 본 문제를 풀면서 가장 뿌듯했던 것은 각 수포자가 찍는 방식을 미리 array로 만들어둔것이다. 다른 사람이 생각할 때 ‘그게 왜?’라고 생각할 수 있지만, 평소에 내가 생각하고 있던 것이 아니라 문제를 풀면서 퍼뜩하고 생각나서 더 그랬던 것 같다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;수포자는 수학을 포기한 사람의 준말입니다.&lt;br /&gt;
 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다.&lt;br /&gt;
@@ -2063,16 +2203,14 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
   &lt;li&gt;시험은 최대 10,000 문제로 구성되어있습니다.&lt;/li&gt;
   &lt;li&gt;문제의 정답은 1, 2, 3, 4, 5중 하나입니다.&lt;/li&gt;
   &lt;li&gt;가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;p&gt;1) answer 벡터에 1,2,3을 미리 초기화 시키고, 각 수포자가 찍는 방식을 벡터로 생성한다.&lt;br /&gt;
 2) 각 수포자가 찍는 방식대로 answers와 답을 비교하여 맞은 수를 센다.&lt;br /&gt;
 3) 각 수포자가 맞은 개수가 가장 크지 않으면, answer 벡터에서 삭제한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -2101,23 +2239,20 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;각 수포자가찍는 방식을 어떻게 나타낼지가 포인트 (처음에 알고리즘적으로 접근 but…)&lt;/li&gt;
   &lt;li&gt;문제를 맞힌 갯수가 가장 큰 수포자들을 골라내는 부분도 생각해볼 필요가 있다&lt;/li&gt;
   &lt;li&gt;다른 사람은 max를 찾아 max와 같은지 한 번더 비교해주는 방법
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;[C++ 공식문서] std:vector:erase &lt;a href=&quot;http://www.cplusplus.com/reference/vector/vector/erase/&quot;&gt;http://www.cplusplus.com/reference/vector/vector/erase/&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 04 Mar 2020 00:00:00 +0900</pubDate>
@@ -2143,6 +2278,8 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
 본 문제는 한 번 풀어본 적이 있어서 문제를 푸는 데에 많은 시간이 걸리지는 않았다. 하지만 C++을 사용해서 문제를 해결하는 것이 처음이었고, 처음에 hash_map으로 잘못 검색하여 실행시키는데 오류 범벅인 코드 덕에 애를 조금 먹었다. 그리고 hash에 대한 개념이 완벽하지는 않지만 조금 잡혀가고 있는 것 같다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;수많은 마라톤 선수들이 마라톤에 참여하였습니다.&lt;br /&gt;
 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.&lt;br /&gt;
@@ -2154,16 +2291,14 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
   &lt;li&gt;completion의 길이는 participant의 길이보다 1 작습니다.&lt;/li&gt;
   &lt;li&gt;참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자로 이루어져 있습니다.&lt;/li&gt;
   &lt;li&gt;참가자 중에는 동명이인이 있을 수 있습니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;p&gt;1) completion의 이름을 key로하는 multiset에 전부 넣는다.&lt;br /&gt;
 2) participant의 이름을 multiset에서 찾는다.&lt;br /&gt;
 3) 없으면 해당 이름을 반환하고, 있으면 multiset에서 해당 이름을 지운다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -2189,16 +2324,14 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;어떤 문제에 어떤 자료구조를 사용해야하는지 선택의 중요성&lt;/li&gt;
   &lt;li&gt;map, set, unordered_map, unordered_set의 차이점&lt;/li&gt;
   &lt;li&gt;다른 사람들의 해결 방법으로 sort 사용 → 여러 방법으로 생각해보는 능력 기르기
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -2207,8 +2340,7 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
   &lt;li&gt;[C++] multiset container 정리 및 사용법 &lt;a href=&quot;https://blockdmask.tistory.com/80&quot;&gt;https://blockdmask.tistory.com/80&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;[연관 컨테이너 - Set, Map, multiSet, multiMap] &lt;a href=&quot;https://mrhook.co.kr/84&quot;&gt;https://mrhook.co.kr/84&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;[씹어먹는 C++ - &amp;lt;10 - 2. C++ STL - 셋(set), 맵(map), unordered_set, unordered_map&amp;gt;] &lt;a href=&quot;https://modoocode.com/224&quot;&gt;https://modoocode.com/224&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 03 Mar 2020 00:00:00 +0900</pubDate>
@@ -2234,6 +2366,8 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
 본 문제를 푸는 데에 큰 어려움은 없었지만 vector를 사용하는 데에 있어서 조금 공부가 필요했다. 아직까지 문제가 많이 어렵지는 않아서 난이도에 있어서나 문제를 푸는 시간에 있어서 그렇게 오래 걸리지는 않지만 C++을 잘 몰라 찾고 공부하는 데에 시간 소요가 있는 것 같다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.&lt;br /&gt;
 예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i = 2, j = 5, k = 3이라면 array의 2번째부터 5번째까지 자르면 [5, 2, 6, 3]입니다.&lt;br /&gt;
@@ -2246,8 +2380,7 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
   &lt;li&gt;array의 각 원소는 1 이상 100 이하입니다.&lt;/li&gt;
   &lt;li&gt;commands의 길이는 1 이상 50 이하입니다.&lt;/li&gt;
   &lt;li&gt;commands의 각 원소는 길이가 3입니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -2255,8 +2388,7 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
 2) array의 i부터 j까지 범위의 숫자를 cpVector에 복사한다.&lt;br /&gt;
 3) cpVector의 k번째 수를 answer에 넣는다.&lt;br /&gt;
 4) 위 과정을 commands의 원소갯수만큼 반복한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -2284,16 +2416,14 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;vector에서 copy와 assign의 차이점&lt;/li&gt;
   &lt;li&gt;2차원 벡터 사용 방법&lt;/li&gt;
   &lt;li&gt;sorting 방법
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -2304,8 +2434,7 @@ vector를 전체 복사, 혹은 부분적으로 복사할 때 copy, assign 사�
   &lt;li&gt;[C++ STL] 동적 2차원 배열 사용법(vector) &lt;a href=&quot;https://sunnyholic.com/93&quot;&gt;https://sunnyholic.com/93&lt;/a&gt;&lt;br /&gt;
 c++에서 2차원 vector에 접근할 때에는 c, java와 비슷하게 index로 접근&lt;/li&gt;
   &lt;li&gt;[C++] sort algorithm 정리 및 예시 &lt;a href=&quot;https://blockdmask.tistory.com/178&quot;&gt;https://blockdmask.tistory.com/178&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 03 Mar 2020 00:00:00 +0900</pubDate>

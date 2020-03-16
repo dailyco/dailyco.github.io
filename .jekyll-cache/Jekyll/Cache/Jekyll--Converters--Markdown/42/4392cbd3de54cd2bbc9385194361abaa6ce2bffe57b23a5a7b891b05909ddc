@@ -1,0 +1,72 @@
+I"�<p>난이도 ★ ☆ ☆<br />
+본 문제는 한 번 풀어본 적이 있어서 문제를 푸는 데에 많은 시간이 걸리지는 않았다. 하지만 C++을 사용해서 문제를 해결하는 것이 처음이었고, 처음에 hash_map으로 잘못 검색하여 실행시키는데 오류 범벅인 코드 덕에 애를 조금 먹었다. 그리고 hash에 대한 개념이 완벽하지는 않지만 조금 잡혀가고 있는 것 같다.<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>수많은 마라톤 선수들이 마라톤에 참여하였습니다.<br />
+단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.<br />
+마라톤에 참여한 선수들의 이름이 담긴 배열 participant와 완주한 선수들의 이름이 담긴 배열 completion이 주어질 때, 완주하지 못한 선수의 이름을 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>마라톤 경기에 참여한 선수의 수는 1명 이상 100,000명 이하입니다.</li>
+  <li>completion의 길이는 participant의 길이보다 1 작습니다.</li>
+  <li>참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자로 이루어져 있습니다.</li>
+  <li>참가자 중에는 동명이인이 있을 수 있습니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<p>1) completion의 이름을 key로하는 multiset에 전부 넣는다.<br />
+2) participant의 이름을 multiset에서 찾는다.<br />
+3) 없으면 해당 이름을 반환하고, 있으면 multiset에서 해당 이름을 지운다.<br />
+<br /><br /></p>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;set&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">string</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">participant</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">completion</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">multiset</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">completion</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">names</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">completion</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">participant</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">multiset</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">item</span> <span class="o">=</span> <span class="n">names</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">participant</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">item</span> <span class="o">==</span> <span class="n">names</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">participant</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">else</span>
+            <span class="n">names</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>어떤 문제에 어떤 자료구조를 사용해야하는지 선택의 중요성</li>
+  <li>map, set, unordered_map, unordered_set의 차이점</li>
+  <li>다른 사람들의 해결 방법으로 sort 사용 → 여러 방법으로 생각해보는 능력 기르기
+<br />
+<br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>[C++ 공식문서] std:multiset:find <a href="http://www.cplusplus.com/reference/set/multiset/find/">http://www.cplusplus.com/reference/set/multiset/find/</a></li>
+  <li>[C++] multiset container 정리 및 사용법 <a href="https://blockdmask.tistory.com/80">https://blockdmask.tistory.com/80</a></li>
+  <li>[연관 컨테이너 - Set, Map, multiSet, multiMap] <a href="https://mrhook.co.kr/84">https://mrhook.co.kr/84</a></li>
+  <li>[씹어먹는 C++ - &lt;10 - 2. C++ STL - 셋(set), 맵(map), unordered_set, unordered_map&gt;] <a href="https://modoocode.com/224">https://modoocode.com/224</a>
+<br />
+<br /></li>
+</ul>
+:ET
