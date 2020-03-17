@@ -1,0 +1,147 @@
+I"�'<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/post/">POST</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/heap/level2/algorithm/c++/2020/03/17/%ED%9E%99_%EB%8D%94%EB%A7%B5%EA%B2%8C_level2.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [힙] 더 맵게</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>프로그래머스고득점Kit</li><li>Heap</li><li>Level2</li><li>Algorithm</li><li>C++</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Mar 17, 2020</div>
+  </div>
+  <div class="post">
+    <p>난이도 ★ ★ ☆<br />
+본 문제는 level2인 것 치고는 쉬운 편이었지만 문제를 꼼꼼히 읽어야했던 문제였다. 나는 함께 문제를 푸는 언니가 문제를 자세히 봐야한다고 말해주었기 때문에 금방 찾을 수 있었지만, 만약 몰랐다면 문제를 제대로 안읽고 왜 안되냐며 헛수고를 하고 있었을거라는 생각이 들었다. 그리고 이번 문제에서는 ‘힙’ 이라는 새로운 자료구조(?)를 배웠는데 처음이라서 쓰는 방법에 대해 조금 헤맸던 것 같다.<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>매운 것을 좋아하는 Leo는 모든 음식의 스코빌 지수를 K 이상으로 만들고 싶습니다.<br />
+모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 Leo는 스코빌 지수가 가장 낮은 두 개의 음식을 아래와 같이 특별한 방법으로 섞어 새로운 음식을 만듭니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>섞은 음식의 스코빌 지수 = 가장 맵지 않은 음식의 스코빌 지수 + (두 번째로 맵지 않은 음식의 스코빌 지수 * 2)
+</code></pre></div></div>
+
+<p>Leo는 모든 음식의 스코빌 지수가 K 이상이 될 때까지 반복하여 섞습니다.<br />
+Leo가 가진 음식의 스코빌 지수를 담은 배열 scoville과 원하는 스코빌 지수 K가 주어질 때,<br />
+모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>scoville의 길이는 1 이상 1,000,000 이하입니다.</li>
+  <li>K는 0 이상 1,000,000,000 이하입니다.</li>
+  <li>scoville의 원소는 각각 0 이상 1,000,000 이하입니다.</li>
+  <li>모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우에는 -1을 return 합니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<p>1) scoville 를 min-heap으로 만든다.<br />
+2) 가장 작은 스코빌 지수가 K 이하, 음식을 섞어서 스코빌 지수를 높일 수 있기 때문에 벡터의 크기가 2 이상인 동안 아래를 반복한다.<br />
+3) 가장 작은 스코빌 지수 smallest1과 그 다음으로 작은 스코빌 지수 smallest2를 pop한다.<br />
+4) 섞은 음식의 스코빌 지수를 다시 heap에 넣고 answer는 증가시킨다.<br />
+5) 모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우를 고려해 그 경우에는 -1을 반환한다.<br />
+6) 나머지의 경우에는 answer를 반환한다.<br />
+<br /><br /></p>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt; 
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">scoville</span><span class="p">,</span> <span class="kt">int</span> <span class="n">K</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="n">make_heap</span><span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">scoville</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+    
+    <span class="k">while</span><span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">front</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">K</span> <span class="o">&amp;&amp;</span> <span class="n">scoville</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">pop_heap</span><span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">scoville</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+        <span class="kt">int</span> <span class="n">smallest1</span> <span class="o">=</span> <span class="n">scoville</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+        <span class="n">scoville</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        
+        <span class="n">pop_heap</span><span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">scoville</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+        <span class="kt">int</span> <span class="n">smallest2</span> <span class="o">=</span> <span class="n">scoville</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+        <span class="n">scoville</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        
+        <span class="n">scoville</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">smallest1</span> <span class="o">+</span> <span class="n">smallest2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">push_heap</span><span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">scoville</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+        
+        <span class="n">answer</span> <span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">K</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li><br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li><br /><br /><br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/heap/level2/algorithm/c++/2020/03/17/%ED%9E%99_%EB%8D%94%EB%A7%B5%EA%B2%8C_level2.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/heap/level2/algorithm/c++/2020/03/17/%ED%9E%99_%EB%8D%94%EB%A7%B5%EA%B2%8C_level2.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
