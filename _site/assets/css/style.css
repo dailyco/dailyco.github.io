@@ -327,6 +327,14 @@ pre.highlight, code { font-family: 'Consolas', Menlo, monospace; line-height: 1.
 
 *, *:before, *:after { box-sizing: border-box; }
 
+table { border-collapse: collapse; text-align: left; line-height: 1.4; }
+
+table thead th { padding: 10px 40px 10px 10px; font-weight: bold; vertical-align: top; color: #369; border-bottom: 3px solid #036; }
+
+table tbody th { padding: 10px; font-weight: bold; vertical-align: top; border-bottom: 1px solid #ccc; background: #f3f6f7; }
+
+table td { padding: 10px; vertical-align: top; border-bottom: 1px solid #ccc; }
+
 body { font-family: "Raleway", sans-serif; font-size: 16px; line-height: 1.2em; margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 img, embed, object, video { max-width: 100%; }
