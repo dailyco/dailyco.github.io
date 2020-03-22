@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Mar 2020 23:36:56 +0900</pubDate>
-    <lastBuildDate>Sun, 22 Mar 2020 23:36:56 +0900</lastBuildDate>
+    <pubDate>Sun, 22 Mar 2020 23:45:12 +0900</pubDate>
+    <lastBuildDate>Sun, 22 Mar 2020 23:45:12 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -184,7 +184,7 @@ string의 문자를 삭제할 때는 erase() 함수 사용, 파라미터로 위�
         
         <category>greedy</category>
         
-        <category>leve2</category>
+        <category>level2</category>
         
         <category>algorithm</category>
         
