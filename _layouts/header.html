@@ -18,7 +18,7 @@
                     <a class="site-logo" href="{{ '/' | relative_url }}"><img src="/assets/img/header/{{ logo_path | relative_url }}" alt=""></a>
                     {% endunless %}
                     <a class="site-title" href="{{ '/' | relative_url }}">{{ site.masthead_title | default: site.title }}</a>
-                    <button class="greedy-nav__toggle hidden" type="button"></button>
+                    <!-- <button class="greedy-nav__toggle hidden" type="button"></button>
                     <ul class="hidden-links hidden">
                         {%- for link in site.plainwhite.navigation -%}
                             {%- if link.url contains '://' -%}
@@ -30,7 +30,7 @@
                                 <a href="{{ url }}" {% if link.description %}title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
                             </li>
                         {%- endfor -%}
-                    </ul>
+                    </ul> -->
                     <ul class="visible-links">
                     {%- for link in site.plainwhite.navigation -%}
                         {%- if link.url contains '://' -%}
