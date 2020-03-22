@@ -12,9 +12,9 @@ layout: default
               <div class="post-meta tag-list">
                 <ul class="post-tags">
                     {% for tag in site.data.tags %}
-                        <a href="/tags/?tag={{ tag }}">
+                        <!-- <a href="/tags/?tag={{ tag }}"> -->
                             <li class="tag" data-tag="{{tag}}">{{ site.data.format[tag] }}</li>
-                        </a>
+                        <!-- </a> -->
                     {% endfor %}
                 </ul>
               </div>

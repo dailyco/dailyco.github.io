@@ -403,6 +403,8 @@ main .about img { max-width: 150px; }
 
 .tag:hover { background-color: #FBE79D !important; }
 
+.tag { cursor: pointer; }
+
 .post-date { margin-right: 10px; color: #555; min-width: 150px; }
 
 .post-meta { display: flex; justify-content: space-between; align-items: center; }
