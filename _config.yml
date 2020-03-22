@@ -22,10 +22,8 @@ plainwhite:
   navigation:
     - title: ABOUT
       url: /about/
-    # - title: POST
-    #   url: /post/
-    - title: CATEGORIES
-      url: /categories/
+    # - title: CATEGORIES
+    #   url: /categories/
     - title: TAGS
       url: /tags/
 

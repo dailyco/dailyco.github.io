@@ -1,4 +1,4 @@
-I"//<main class="container">
+I"Í.<main class="container">
   <section class="about">
     <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
     <h2 id="title">
@@ -16,10 +16,6 @@
           
             <li>
               <a href="/about/">ABOUT</a>
-            </li>
-          
-            <li>
-              <a href="/categories/">CATEGORIES</a>
             </li>
           
             <li>
