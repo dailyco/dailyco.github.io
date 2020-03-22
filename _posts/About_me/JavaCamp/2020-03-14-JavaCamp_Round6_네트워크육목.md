@@ -2,7 +2,8 @@
 layout: post
 title: "[Java-GUI] ROUND6. 육목 네트워크 적용하기"
 date: 2020-03-14
-categories: About Java GUI Network SocketProgramming
+categories: JavaCamp
+tags: about java gui network socketprogramming
 sitemap:
     changefreq: daily
 ---

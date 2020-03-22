@@ -2,7 +2,8 @@
 layout: post
 title: "[Java-GUI] ROUND3. 데이터베이스 연결"
 date: 2020-03-14
-categories: About Java GUI Database MySQL
+categories: JavaCamp
+tags: about java gui database mysql
 sitemap:
     changefreq: daily
 ---

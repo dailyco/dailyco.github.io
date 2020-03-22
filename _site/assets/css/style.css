@@ -327,7 +327,7 @@ pre.highlight, code { font-family: 'Consolas', Menlo, monospace; line-height: 1.
 
 *, *:before, *:after { box-sizing: border-box; }
 
-table { border-collapse: collapse; text-align: left; line-height: 1.4; }
+table { border-collapse: collapse; text-align: left; max-width: 100%; line-height: 1.4; }
 
 table thead th { padding: 10px 40px 10px 10px; font-weight: bold; vertical-align: top; color: #369; border-bottom: 3px solid #036; }
 
@@ -391,11 +391,17 @@ main .about img { max-width: 150px; }
 
 .post-wrapper { border-bottom: 1px solid #ececec; margin-bottom: 1rem; padding-bottom: 1rem; }
 
-.post-categories { list-style-type: none; margin: 0; padding: 0; }
+.post-tags { list-style-type: none; margin: 0; padding: 0; }
 
-.post-categories li { font-size: 14px; float: left; background-color: #e3e3e3; padding: 5px 20px; border-radius: 2px; margin-right: 10px; margin-bottom: 10px; }
+.post-tags li { font-size: 14px; float: left; background-color: #fff6d4; padding: 5px 20px; border-radius: 2px; margin-right: 10px; margin-bottom: 10px; }
 
-@media screen and (max-width: 768px) { .post-categories li { margin-top: 5px; } }
+@media screen and (max-width: 768px) { .post-tags li { margin-top: 5px; } }
+
+.hidden { display: none; }
+
+.selected { background-color: #FBE79D !important; }
+
+.tag:hover { background-color: #FBE79D !important; }
 
 .post-date { margin-right: 10px; color: #555; min-width: 150px; }
 
@@ -403,6 +409,8 @@ main .about img { max-width: 150px; }
 
 @media screen and (max-width: 768px) { .post-meta { flex-direction: column-reverse; align-items: baseline; }
   .post-meta .post-date { margin-bottom: 16px; } }
+
+.tag-list { padding-top: 50px; padding-left: 70px; }
 
 .post-link { text-decoration: none; }
 

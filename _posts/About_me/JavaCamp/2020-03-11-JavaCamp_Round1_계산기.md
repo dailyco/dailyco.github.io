@@ -2,7 +2,8 @@
 layout: post
 title: "[Java-GUI] ROUND1. 계산기 만들기"
 date: 2020-03-13
-categories: About Java GUI
+categories: JavaCamp
+tags: about java gui
 sitemap:
     changefreq: daily
 ---

@@ -2,7 +2,8 @@
 layout: post
 title: "[Java-GUI] ROUND5. 육목 만들기"
 date: 2020-03-14
-categories: About Java GUI
+categories: JavaCamp
+tags: about java gui
 sitemap:
     changefreq: daily
 ---

@@ -2,7 +2,8 @@
 layout: post
 title: "[Java-GUI] ROUND4. 이미지 프로세싱 포토샵(?) 만들기"
 date: 2020-03-14
-categories: About Java GUI ImageProcessing
+categories: JavaCamp
+tags: about java gui imageprocessing
 sitemap:
     changefreq: daily
 ---

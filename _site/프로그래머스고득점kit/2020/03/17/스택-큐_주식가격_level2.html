@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<title>프로그래머스 코딩테스트 고득점 Kit : [스택/큐] 주식가격</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>프로그래머스 코딩테스트 고득점 Kit : [스택/큐] 주식가격 | Opencoding</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="프로그래머스 코딩테스트 고득점 Kit : [스택/큐] 주식가격" />
+<meta name="author" content="YuJin Kim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="난이도 ★ ★ ☆ ☆ ☆ 본 문제는 처음에 문제를 잘 이해하지 못해서 함께 문제를 푸는 언니에게 물어보았다. 처음에는 문제를 잘못 이해했다가 ‘이거 조금 이상한 것 같은데?’ 하는 생각이 들었다가 언니의 설명을 듣고 이해가 되었고, 문제를 이해한 뒤에는 문제를 푸는 데에는 그렇게 오래 걸리지 않았다. 루프를 두 번 돌기 때문에 효율성이 좋다고 말할 수는 없지만 다른 사람들도 비슷하게 푼 것 같아 못한건 아니라는 생각이 들었다." />
+<meta property="og:description" content="난이도 ★ ★ ☆ ☆ ☆ 본 문제는 처음에 문제를 잘 이해하지 못해서 함께 문제를 푸는 언니에게 물어보았다. 처음에는 문제를 잘못 이해했다가 ‘이거 조금 이상한 것 같은데?’ 하는 생각이 들었다가 언니의 설명을 듣고 이해가 되었고, 문제를 이해한 뒤에는 문제를 푸는 데에는 그렇게 오래 걸리지 않았다. 루프를 두 번 돌기 때문에 효율성이 좋다고 말할 수는 없지만 다른 사람들도 비슷하게 푼 것 같아 못한건 아니라는 생각이 들었다." />
+<link rel="canonical" href="http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9_level2.html" />
+<meta property="og:url" content="http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9_level2.html" />
+<meta property="og:site_name" content="Opencoding" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-17T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"프로그래머스 코딩테스트 고득점 Kit : [스택/큐] 주식가격","dateModified":"2020-03-17T00:00:00+09:00","datePublished":"2020-03-17T00:00:00+09:00","url":"http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9_level2.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9_level2.html"},"author":{"@type":"Person","name":"YuJin Kim"},"description":"난이도 ★ ★ ☆ ☆ ☆ 본 문제는 처음에 문제를 잘 이해하지 못해서 함께 문제를 푸는 언니에게 물어보았다. 처음에는 문제를 잘못 이해했다가 ‘이거 조금 이상한 것 같은데?’ 하는 생각이 들었다가 언니의 설명을 듣고 이해가 되었고, 문제를 이해한 뒤에는 문제를 푸는 데에는 그렇게 오래 걸리지 않았다. 루프를 두 번 돌기 때문에 효율성이 좋다고 말할 수는 없지만 다른 사람들도 비슷하게 푼 것 같아 못한건 아니라는 생각이 들었다.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/custom/header.css">
+    </head>
+
+    <body>
+        
+
+        <div class="masthead">
+            <div class="masthead__inner-wrap">
+                <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    
+                    <a class="site-logo" href="/"><img src="/assets/img//logo.png" alt=""></a>
+                    
+                    <a class="site-title" href="/">Opencoding</a>
+                    <ul class="visible-links"><li class="masthead__menu-item">
+                        <a href="/about/" >ABOUT</a>
+                        </li><li class="masthead__menu-item">
+                        <a href="/categories/" >CATEGORIES</a>
+                        </li><li class="masthead__menu-item">
+                        <a href="/tags/" >TAGS</a>
+                        </li><!-- <li class="masthead__menu-item">
+                            
+                                <button class="search__toggle " type="button">
+                                <span class="visually-hidden">Toggle search</span>
+                                <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+                                    <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+                                </svg>
+                                </button>
+                            
+                        </li> -->
+                    </ul>
+                    
+                </nav>
+                </div>
+            </div>
+        </div>
+
+        <section class="body_content">
+            <main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim"></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/categories/">CATEGORIES</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9_level2.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [스택/큐] 주식가격</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>프로그래머스 고득점 Kit</li>
+        
+          <li>Stack / Queue</li>
+        
+          <li>Level 2</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Mar 17, 2020</div>
+  </div>
+  <div class="post">
+    <p>난이도 ★ ★ ☆ ☆ ☆<br />
+본 문제는 처음에 문제를 잘 이해하지 못해서 함께 문제를 푸는 언니에게 물어보았다. 처음에는 문제를 잘못 이해했다가 ‘이거 조금 이상한 것 같은데?’ 하는 생각이 들었다가 언니의 설명을 듣고 이해가 되었고, 문제를 이해한 뒤에는 문제를 푸는 데에는 그렇게 오래 걸리지 않았다. 루프를 두 번 돌기 때문에 효율성이 좋다고 말할 수는 없지만 다른 사람들도 비슷하게 푼 것 같아 못한건 아니라는 생각이 들었다.<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>초 단위로 기록된 주식가격이 담긴 배열 prices가 매개변수로 주어질 때,<br />
+가격이 떨어지지 않은 기간은 몇 초인지를 return 하도록 solution 함수를 완성하세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>prices의 각 가격은 1 이상 10,000 이하인 자연수입니다.</li>
+  <li>prices의 길이는 2 이상 100,000 이하입니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<p>1) 각 prices를 p로 받고 count는 0부터 시작한다.<br />
+2) 다음 prices부터 시작해서 가격이 떨어지지 않은 기간이기 때문에 p보다 크거나 작은 동안 count를 증가시킨다.<br />
+3) count를 answer에 push한다.<br />
+4) prices의 크기만큼 반복한다.<br />
+<br /><br /></p>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">prices</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">answer</span><span class="p">;</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">prices</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">p</span> <span class="o">&lt;=</span> <span class="n">prices</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">prices</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="n">count</span> <span class="o">++</span><span class="p">;</span>
+        
+        <span class="n">answer</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>prices.size() - 1 로 해준 것은 가격이 떨어지지 않은 기간이기 때문에 prices 마지막 원소는 고려해주지 않은 것!</li>
+  <li>처음에 문제가 제대로 이해가 안돼서 당황쓰.. 막상 풀고나니 쉬운 문제!</li>
+  <li>그러나 여전히 스택/큐는 사용하지 않았다
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>없다! 점점 스스로 해결해 가는 것 같아 뿌듯 :)
+<br /><br /><br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9_level2.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9_level2.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main><script async src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+  <script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+        </section>
+    </body>
+</html>

@@ -2,7 +2,8 @@
 layout: post
 title: "[Java-GUI] ROUND2. 그림판 만들기"
 date: 2020-03-13
-categories: About Java GUI Graphics
+categories: JavaCamp
+tags: about java gui graphics
 sitemap:
     changefreq: daily
 ---

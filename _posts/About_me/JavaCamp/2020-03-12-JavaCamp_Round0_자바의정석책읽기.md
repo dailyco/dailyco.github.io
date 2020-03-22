@@ -2,7 +2,8 @@
 layout: post
 title: "[Java-GUI] ROUND0. '자바의 정석' 책 읽기"
 date: 2020-03-12
-categories: About Java GUI
+categories: JavaCamp
+tags: about java gui
 sitemap:
     changefreq: daily
 ---

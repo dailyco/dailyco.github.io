@@ -2,7 +2,8 @@
 layout: post
 title: "[Java-GUI] ROUND3. 번외 ) MySQL 설치 및 Eclipse Java - MySQL 연동"
 date: 2020-03-14
-categories: About Java GUI Database MySQL
+categories: JavaCamp
+tags: about java gui database mysql
 sitemap:
     changefreq: daily
 ---

@@ -7,9 +7,11 @@ layout: default
     <h2 class="post-title">{{ page.title | escape }}</h2>
   </a>
   <div class="post-meta">
-    <ul class="post-categories">
-      {%- for tag in page.categories -%}
-      <li>{{ tag }}</li>
+    <ul class="post-tags">
+      {%- for tag in page.tags -%}
+        {% if site.data.tags contains tag %}
+          <li>{{ site.data.format[tag] }}</li>
+        {% endif %}
       {%- endfor -%}
     </ul>
     <div class="post-date"><i class="icon-calendar"></i>{{ page.date | date: date_format }}</div>

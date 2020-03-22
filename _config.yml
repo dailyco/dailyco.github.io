@@ -22,8 +22,12 @@ plainwhite:
   navigation:
     - title: ABOUT
       url: /about/
-    - title: POST
-      url: /post/
+    # - title: POST
+    #   url: /post/
+    - title: CATEGORIES
+      url: /categories/
+    - title: TAGS
+      url: /tags/
 
   disqus_shortname: 0pencoding
   analytics_id: "UA-150778693-1"
