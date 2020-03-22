@@ -90,12 +90,12 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 혹시 코드를 보고 궁금한 점이나 문의할 내용이 있으면 댓글로 남겨주세요!
 <br/><br/><br/>
 
-## 6. GitHub 및 프로젝트 보고서
+## 6. GitHub
 제 코드는 아래 GitHub에서 확인 가능합니다 :)  
 (배경음악은 파일이 너무 커서 올리지 못했습니다. 실행하시면 소리는 나지 않을거예요!)  
 <https://github.com/0pencoding/JavaCamp-Round5-Connect6>
 <br/><br/><br/>
 
-## [[Round 6] 육목 네트워크 적용 ➜ ](https://0pencoding.github.io/about/java/gui/network/socketprogramming/2020/03/14/JavaCamp_Round6_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9C%A1%EB%AA%A9.html)
+## [[Round 6] 육목 네트워크 적용 ➜ ](https://0pencoding.github.io/javacamp/2020/03/14/JavaCamp_Round6_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9C%A1%EB%AA%A9.html)
 {: style="text-align: right;"}
 <br/>

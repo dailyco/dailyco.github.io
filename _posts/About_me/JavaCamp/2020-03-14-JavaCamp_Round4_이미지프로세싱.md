@@ -94,6 +94,6 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 <https://drive.google.com/file/d/1UzaaQ9yTvtG25G2l08lBilVSrMqooShG/view?usp=sharing>
 <br/><br/><br/>
 
-## [[Round 5] 육목 구현 ➜ ](https://0pencoding.github.io/about/java/gui/2020/03/14/JavaCamp_Round5_%EC%9C%A1%EB%AA%A9.html)
+## [[Round 5] 육목 구현 ➜ ](https://0pencoding.github.io/javacamp/2020/03/14/JavaCamp_Round5_%EC%9C%A1%EB%AA%A9.html)
 {: style="text-align: right;"}
 <br/>

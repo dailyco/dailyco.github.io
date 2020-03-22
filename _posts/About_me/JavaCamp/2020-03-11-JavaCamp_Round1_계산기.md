@@ -85,6 +85,6 @@ UML Diagram을 보면 알겠지만, 다른 함수들도 있지만 크게 중요�
 <https://github.com/0pencoding/JavaCamp-Round1-Calculator>
 <br/><br/><br/>
 
-## [[Round 2] 그림판 구현 ➜ ](https://0pencoding.github.io/about/java/gui/graphics/2020/03/13/JavaCamp_Round2_%EA%B7%B8%EB%A6%BC%ED%8C%90.html)
+## [[Round 2] 그림판 구현 ➜ ](https://0pencoding.github.io/javacamp/2020/03/13/JavaCamp_Round2_%EA%B7%B8%EB%A6%BC%ED%8C%90.html)
 {: style="text-align: right;"}
 <br/>

@@ -48,6 +48,6 @@ sitemap:
 그럼, 다음 단계도 화이팅!
 <br/><br/><br/>
 
-## [[Round 1] 계산기 구현 ➜ ](https://0pencoding.github.io/about/java/gui/2020/03/13/JavaCamp_Round1_%EA%B3%84%EC%82%B0%EA%B8%B0.html)
+## [[Round 1] 계산기 구현 ➜ ](https://0pencoding.github.io/javacamp/2020/03/13/JavaCamp_Round1_%EA%B3%84%EC%82%B0%EA%B8%B0.html)
 {: style="text-align: right;"}
 <br/>

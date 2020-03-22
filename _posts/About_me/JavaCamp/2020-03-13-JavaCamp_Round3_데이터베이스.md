@@ -33,7 +33,7 @@ sitemap:
 이전에도 말했듯이 그 당시에는 몰랐지만 지금보면 내 코드도 잘 짜여진 코드는 아님을 참고해주었으면 좋겠다 (-﹏-。;)  
 
 ### Reference
-- [[Java-GUI] ROUND3. 번외 ) Eclipse Java - MySQL 연동](https://0pencoding.github.io/about/java/gui/database/mysql/2020/03/14/13-JavaCamp_Round3.5_%EC%9E%90%EB%B0%94MySQL%EC%97%B0%EA%B2%B0.html)
+- [[Java-GUI] ROUND3. 번외 ) Eclipse Java - MySQL 연동](https://0pencoding.github.io/javacamp/2020/03/14/13-JavaCamp_Round3.5_%EC%9E%90%EB%B0%94MySQL%EC%97%B0%EA%B2%B0.html)
 - [[JAVA] MySQL 조회, 쓰기, 수정, 삭제](https://goppa.tistory.com/entry/MySQL-%EC%A1%B0%ED%9A%8C-%EC%93%B0%EA%B8%B0-%EC%88%98%EC%A0%95-%EC%82%AD%EC%A0%9C)
 <br/><br/><br/>
 
@@ -104,6 +104,6 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 <https://drive.google.com/file/d/1jKqC_JaYrER1g6qOag4Q68FpDpJwpHKO/view?usp=sharing>
 <br/><br/><br/>
 
-## [[Round 4] 이미지 프로세싱 구현 ➜ ](https://0pencoding.github.io/about/java/gui/imageprocessing/2020/03/14/JavaCamp_Round4_%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1.html)
+## [[Round 4] 이미지 프로세싱 구현 ➜ ](https://0pencoding.github.io/javacamp/2020/03/14/JavaCamp_Round4_%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1.html)
 {: style="text-align: right;"}
 <br/>
