@@ -184,8 +184,8 @@ main {
 
 .post-wrapper {
   border-bottom: 1px solid #ececec;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
+  // margin-bottom: 1rem;
+  // padding-bottom: 1rem;
 }
 
 .post-tags {
@@ -209,10 +209,6 @@ main {
 .hidden {
   display: none;
 }
-
-// .tag {
-//   background-color: #fff6d4 !important;
-// }
 
 .selected {
   background-color: #FBE79D !important;
@@ -241,8 +237,7 @@ main {
 }
 
 .tag-list {
-  padding-top: 50px;
-  padding-left: 70px;
+  padding-bottom: 40px;
 }
 
 .post-link {

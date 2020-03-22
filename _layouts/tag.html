@@ -5,57 +5,58 @@ layout: default
 <article class="tagHTML">
     <div>
 
-        <div class="post-meta tag-list">
-            <ul class="post-tags">
-                {% for tag in site.data.tags %}
-                    <a href="/tags/?tag={{ tag }}">
-                        <li class="tag" data-tag="{{tag}}">{{ site.data.format[tag] }}</li>
-                    </a>
-                {% endfor %}
-            </ul>
-        </div>
-
         <div>
             {%- if site.posts.size > 0 -%}
             <ul class="posts">
-                <li>
-                <h1 id="posts-label">Tag posts</h1>
-                </li>
-
-                {% for post in site.posts %}
-                <div class="post-wrapper"
-                    {% if post.tags %}
-                    {% for tag in post.tags %}
-                        data-{{ tag }}
+              
+              <div class="post-meta tag-list">
+                <ul class="post-tags">
+                    {% for tag in site.data.tags %}
+                        <a href="/tags/?tag={{ tag }}">
+                            <li class="tag" data-tag="{{tag}}">{{ site.data.format[tag] }}</li>
+                        </a>
                     {% endfor %}
-                    {% endif %}>
-                    <article class="post-preview">
-                        <li>
-                            {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
-                            <a class="post-link" href="{{ post.url | relative_url }}">
-                            <h2 class="post-title">{{ post.title | escape }}</h2>
-                            </a>
-                            <div class="post-meta">
-                            <ul class="post-tags">
-                                {%- for tag in post.tags -%}
-                                {% if site.data.tags contains tag %}
-                                    <li>{{ site.data.format[tag] }}</li>
-                                {% endif %}
-                                {%- endfor -%}
-                            </ul>
-                            <div class="post-date">
-                                <i class="icon-calendar"></i>
-                                {{ post.date | date: date_format }}</div>
-                            </div>
-                            <div class="post">
-                            {%- if site.show_excerpts -%}
-                                {{ post.excerpt }}
-                            {%- endif -%}
-                            </div>
-                        </li>
-                    </article>
-                </div>
-                {% endfor %}
+                </ul>
+              </div>
+
+              <li>
+              <h1 id="posts-label">Tag posts</h1>
+              </li>
+
+              {% for post in site.posts %}
+              <div class="post-wrapper"
+                  {% if post.tags %}
+                  {% for tag in post.tags %}
+                      data-{{ tag }}
+                  {% endfor %}
+                  {% endif %}>
+                  <article class="post-preview">
+                      <li>
+                          {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+                          <a class="post-link" href="{{ post.url | relative_url }}">
+                          <h2 class="post-title">{{ post.title | escape }}</h2>
+                          </a>
+                          <div class="post-meta">
+                          <ul class="post-tags">
+                              {%- for tag in post.tags -%}
+                              {% if site.data.tags contains tag %}
+                                  <li>{{ site.data.format[tag] }}</li>
+                              {% endif %}
+                              {%- endfor -%}
+                          </ul>
+                          <div class="post-date">
+                              <i class="icon-calendar"></i>
+                              {{ post.date | date: date_format }}</div>
+                          </div>
+                          <div class="post">
+                          {%- if site.show_excerpts -%}
+                              {{ post.excerpt }}
+                          {%- endif -%}
+                          </div>
+                      </li>
+                  </article>
+              </div>
+              {% endfor %}
             </ul>
             <!-- <p class="feed-subscribe"><svg class="svg-icon orange">
                     <use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>

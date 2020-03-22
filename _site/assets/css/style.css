@@ -389,7 +389,7 @@ main .about img { max-width: 150px; }
 
 @media screen and (max-width: 768px) { .navigation ul a { padding: 2rem 0; } }
 
-.post-wrapper { border-bottom: 1px solid #ececec; margin-bottom: 1rem; padding-bottom: 1rem; }
+.post-wrapper { border-bottom: 1px solid #ececec; }
 
 .post-tags { list-style-type: none; margin: 0; padding: 0; }
 
@@ -410,7 +410,7 @@ main .about img { max-width: 150px; }
 @media screen and (max-width: 768px) { .post-meta { flex-direction: column-reverse; align-items: baseline; }
   .post-meta .post-date { margin-bottom: 16px; } }
 
-.tag-list { padding-top: 50px; padding-left: 70px; }
+.tag-list { padding-bottom: 40px; }
 
 .post-link { text-decoration: none; }
 
