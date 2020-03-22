@@ -1,5 +1,5 @@
 ---
 layout: tag
 permalink: /tags/
-title: Tags
+title: TAG POSTS
 ---
