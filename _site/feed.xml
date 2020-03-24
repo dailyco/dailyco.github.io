@@ -6,9 +6,177 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Mar 2020 23:45:12 +0900</pubDate>
-    <lastBuildDate>Sun, 22 Mar 2020 23:45:12 +0900</lastBuildDate>
+    <pubDate>Tue, 24 Mar 2020 23:22:16 +0900</pubDate>
+    <lastBuildDate>Tue, 24 Mar 2020 23:22:16 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>[Mac/Window] 학생 윈도우10 정품 및 윈도우10 무료 다운</title>
+        <description>&lt;p&gt;본 포스팅에서는 학생들이 윈도우10 정품 Edu 에디션 (Windows10 Edu) 을 무료로 다운 받는 방법을 이야기한다. 하지만 알아둬야 할 것은, 마이크로소프트와 계약이 되어있는 학교만을 대상으로하며, 학생이 아니거나 마이크로소프트와 계약이 되어있지 않은 학교 학생들도 정품 인증은 되지 않지만 윈도우10을 무료로 다운 받을 수 있는 방법을 소개한다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-마이크로소프트와-계약이-되어있는-학교인지-확인&quot;&gt;1. 마이크로소프트와 계약이 되어있는 학교인지 확인&lt;/h2&gt;
+&lt;p&gt;제목에서도 이야기했다싶이 학생들은 Window10, 정확히는 Window10 edu 에디션을 무료로 다운 받을 수 있다.&lt;br /&gt;
+단, 해당 학교가 마이크로소프트와 계약이 되어있는 학교 대상만!&lt;br /&gt;
+학생이 아니고, 학생이더라도 본인 학교가 마이크로소프트와 계약이 되어있지 않는 학생일 경우는 아래에서 다루도록 하겠다.&lt;/p&gt;
+
+&lt;p&gt;먼저, 아래 링크에서 본인 학교가 마이크로소프트와 계약이 되어있는지 확인 해보길 바란다.&lt;br /&gt;
+&lt;a href=&quot;https://onthehub.com/search&quot;&gt;https://onthehub.com/search&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;확인 방법은 아래와 같다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-홈페이지에-들어가-아래-화면-중-자신에게-해당되는-것을-고른다&quot;&gt;1. 홈페이지에 들어가 아래 화면 중 자신에게 해당되는 것을 고른다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/select.png&quot; alt=&quot;select&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-해당-칸에-자신의-국적과-학교를-검색한다&quot;&gt;2. 해당 칸에 자신의 국적과 학교를 검색한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/search.png&quot; alt=&quot;search&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-아래와-같은-화면이-보여지면-해당-학교는-있는-것이며-학교가-검색되지-않는다면-없는-것이다&quot;&gt;3. 아래와 같은 화면이 보여지면 해당 학교는 있는 것이며, 학교가 검색되지 않는다면 없는 것이다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/result.png&quot; alt=&quot;result&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-본인-학교가-마이크로소프트와-계약이-되어있는-경우&quot;&gt;2. 본인 학교가 마이크로소프트와 계약이 되어있는 경우&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-검색-결과에서-빨간-박스를-클릭한다-가려진-박스에는-본인의-학교가-있다&quot;&gt;1. 검색 결과에서 빨간 박스를 클릭한다. (가려진 박스에는 본인의 학교가 있다)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/1.png&quot; alt=&quot;step1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-아이디가-있다면-로그인을-하고-없다면-등록을-눌러-회원가입을-해준다&quot;&gt;2. 아이디가 있다면 로그인을 하고, 없다면 등록을 눌러 회원가입을 해준다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/2.png&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-로그인을-한-후-windows-10을-클릭한다-만약-메인-페이지에-없을-경우-microsoft-메뉴를-확인&quot;&gt;3. 로그인을 한 후, Windows 10을 클릭한다. (만약 메인 페이지에 없을 경우, Microsoft 메뉴를 확인)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/3.png&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-카트에-추가를-해주고-캡쳐는-하지-못했는데-자신의-이메일과-이름을-서명란에-그대로-입력해준다&quot;&gt;4. 카트에 추가를 해주고, 캡쳐는 하지 못했는데 자신의 이메일과 이름을 서명란에 그대로 입력해준다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/4.png&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-제품-키는-한-달-후에-돈을-내고-조회해야-하기-때문에-따로-메모를-해둔다&quot;&gt;5. 제품 키는 한 달 후에 돈을 내고 조회해야 하기 때문에 따로 메모를 해둔다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/5.png&quot; alt=&quot;step5&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 과정 후에 두 가지로 나뉘는데,&lt;br /&gt;
+Window 컴퓨터에 Window10 운영체제를 설치하는 것과 Mac 컴퓨터에 Window10 운영체제를 설치하기 위해서 ISO 파일을 다운 받는 과정이다.&lt;br /&gt;
+전자를 먼저 설명한 후에, 후자도 이어서 설명하겠다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;a-1-window-컴퓨터에-window10-운영체제를-설치하려면-컴퓨터에서-window-업데이트-설정-을-찾는다&quot;&gt;A-1. Window 컴퓨터에 Window10 운영체제를 설치하려면 컴퓨터에서 ‘Window 업데이트 설정’ 을 찾는다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/A-1.png&quot; alt=&quot;stepA-1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;a-2-정품-인증-메뉴를-누르면-아래와-같은-화면이-보이는데-여기에-아까-메모해-두었던-정품-키를-입력한다&quot;&gt;A-2. ‘정품 인증’ 메뉴를 누르면 아래와 같은 화면이 보이는데 여기에 아까 메모해 두었던 정품 키를 입력한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/A-2.png&quot; alt=&quot;stepA-2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;b-1-mac-컴퓨터에-window10-운영체제를-설치하기-위해서는-iso-파일을-다운-받아야-하기-때문에-아까-정품-키가-나온-페이지-화면에서-get-started-버튼을-클릭한다&quot;&gt;B-1. Mac 컴퓨터에 Window10 운영체제를 설치하기 위해서는 ISO 파일을 다운 받아야 하기 때문에 아까 정품 키가 나온 페이지 화면에서 ‘Get Started’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/B-1.png&quot; alt=&quot;stepB-1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;b-2-새로-나온-창에서-iso-파일을-다운-받는-사이트로-이동한다&quot;&gt;B-2. 새로 나온 창에서 ISO 파일을 다운 받는 사이트로 이동한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/B-2.png&quot; alt=&quot;stepB-2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;b-3-다운로드-받는-사이트가-나오고-아래로-조금-내리면-언어를-선택해-다운로드-받는-아래와-같은-화면이-나올텐데-언어는-korean-을-찾아-설정하고-confirm-버튼을-클릭한다&quot;&gt;B-3. 다운로드 받는 사이트가 나오고, 아래로 조금 내리면 언어를 선택해 다운로드 받는 아래와 같은 화면이 나올텐데, 언어는 ‘Korean’ 을 찾아 설정하고 ‘Confirm’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/B-3.png&quot; alt=&quot;stepB-3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;b-4-자신이-원하는-비트를-골라-다운로드-받는다-본인은-64비트를-권장하며-64비트를-다운-받았다&quot;&gt;B-4. 자신이 원하는 비트를 골라 다운로드 받는다. 본인은 64비트를 권장하며 64비트를 다운 받았다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/B-4.png&quot; alt=&quot;stepB-4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-본인-학교가-마이크로소프트와-계약이-되어있지-않은-경우--일반인&quot;&gt;3. 본인 학교가 마이크로소프트와 계약이 되어있지 않은 경우 / 일반인&lt;/h2&gt;
+&lt;p&gt;이 경우는 Window10 정품 인증을 하지 않고 사용하는 경우이며, 이와 같은 경우에 어떤 차이가 있는지는 아래 블로그를 참고하길 바란다.&lt;br /&gt;
+&lt;a href=&quot;https://extrememanual.net/12916&quot;&gt;https://extrememanual.net/12916&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;또한 이 과정은 Window 컴퓨터에 Window 운영체제를 설치하는 방법이 아니며,&lt;br /&gt;
+Mac에 Window 운영체제를 설치하기 위한 ISO 파일을 다운 받는 방법에 대해 설명한다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-iso-파일을-다운받기위해-아래-링크로-들어간다&quot;&gt;1. ISO 파일을 다운받기위해 아래 링크로 들어간다.&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/ko-kr/software-download/windows10ISO&quot;&gt;https://www.microsoft.com/ko-kr/software-download/windows10ISO&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-버전을-선택하고-확인-버튼을-클릭한다&quot;&gt;2. 버전을 선택하고 ‘확인’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/6.png&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-제품의-언어를-선택하고-확인-버튼을-클릭한다&quot;&gt;3. 제품의 언어를 선택하고 ‘확인’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/7.png&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-자신이-원하는-비트를-골라-다운로드-받는다-본인은-64비트를-권장하며-64비트를-다운-받았다&quot;&gt;4. 자신이 원하는 비트를 골라 다운로드 받는다. 본인은 64비트를 권장하며 64비트를 다운 받았다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/8.png&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-reference&quot;&gt;4. Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;대학생이라면 윈도우10 무료로 쓰자!! 윈도우10 정품 무료로 설치하기(windows 10 edu) &lt;a href=&quot;https://m.blog.naver.com/hisong1105/221667302222&quot;&gt;https://m.blog.naver.com/hisong1105/221667302222&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;맥(Mac) 부트캠프 윈도우10 설치 방법 &lt;a href=&quot;https://extrememanual.net/12760&quot;&gt;https://extrememanual.net/12760&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 24 Mar 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/install/2020/03/24/Window10_ISO_download.html</link>
+        <guid isPermaLink="true">http://localhost:4000/install/2020/03/24/Window10_ISO_download.html</guid>
+        
+        <category>mac</category>
+        
+        <category>window</category>
+        
+        <category>window10</category>
+        
+        <category>install</category>
+        
+        
+        <category>Install</category>
+        
+      </item>
+    
+      <item>
+        <title>[Mac/Window] 학생 윈도우10 정품 무료 및 부트캠프로 윈도우10 설치</title>
+        <description>&lt;p&gt;학교에서 실습 과제를 해야하는데 왠걸, 맥북에서는 실행 파일이 돌아가지 않는다고 한다. 업친데 덥친격인지 전자책을 구매했는데 맥북에서는 Viewer 가 지원이 되지 않는단다. 그래서 ‘맥에 윈도우를 설치해야겠다!’ 다짐하고 여기저기 검색해 본 결과, 나와 같은 사람들이 있다면 좀 더 수월하게 설치했으면 하는 마음에 포스팅을 적는다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-window10-iso-파일-다운&quot;&gt;1. Window10 ISO 파일 다운&lt;/h2&gt;
+&lt;p&gt;포스팅이 너무 길어질 것 같아 단계별로 나누어 포스팅을 하였다.&lt;br /&gt;
+아래 링크에 들어가 나온 순서대로 따라하면 ISO 파일을 다운 받을 수 있을 것이다.&lt;br /&gt;
+&lt;a href=&quot;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&quot;&gt;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2&quot;&gt;2.&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-reference&quot;&gt;5. Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 24 Mar 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/install/2020/03/24/Mac_Window10_Install.html</link>
+        <guid isPermaLink="true">http://localhost:4000/install/2020/03/24/Mac_Window10_Install.html</guid>
+        
+        <category>mac</category>
+        
+        <category>window</category>
+        
+        <category>bootcamp</category>
+        
+        <category>window10</category>
+        
+        <category>install</category>
+        
+        
+        <category>Install</category>
+        
+      </item>
     
       <item>
         <title>프로그래머스 코딩테스트 고득점 Kit : [탐욕법] 큰 수 만들기</title>
@@ -3133,192 +3301,6 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
         <category>hash</category>
         
         <category>level2</category>
-        
-        <category>algorithm</category>
-        
-        <category>cplusplus</category>
-        
-        
-        <category>프로그래머스고득점Kit</category>
-        
-      </item>
-    
-      <item>
-        <title>프로그래머스 코딩테스트 고득점 Kit : [완전탐색] 모의고사</title>
-        <description>&lt;p&gt;난이도 ★ ☆ ☆ ☆ ☆&lt;br /&gt;
-본 문제를 풀면서 가장 뿌듯했던 것은 각 수포자가 찍는 방식을 미리 array로 만들어둔것이다. 다른 사람이 생각할 때 ‘그게 왜?’라고 생각할 수 있지만, 평소에 내가 생각하고 있던 것이 아니라 문제를 풀면서 퍼뜩하고 생각나서 더 그랬던 것 같다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
-&lt;p&gt;수포자는 수학을 포기한 사람의 준말입니다.&lt;br /&gt;
-수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다.&lt;br /&gt;
-수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, …&lt;/li&gt;
-  &lt;li&gt;2번 수포자가 찍는 방식: 2, 1, 2, 3, 2, 4, 2, 5, 2, 1, 2, 3, 2, 4, 2, 5, …&lt;/li&gt;
-  &lt;li&gt;3번 수포자가 찍는 방식: 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, …&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;1번 문제부터 마지막 문제까지의 정답이 순서대로 들은 배열 answers가 주어졌을 때, 가장 많은 문제를 맞힌 사람이 누구인지 배열에 담아 return 하도록 solution 함수를 작성해주세요.&lt;/p&gt;
-
-&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;시험은 최대 10,000 문제로 구성되어있습니다.&lt;/li&gt;
-  &lt;li&gt;문제의 정답은 1, 2, 3, 4, 5중 하나입니다.&lt;/li&gt;
-  &lt;li&gt;가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) answer 벡터에 1,2,3을 미리 초기화 시키고, 각 수포자가 찍는 방식을 벡터로 생성한다.&lt;br /&gt;
-2) 각 수포자가 찍는 방식대로 answers와 답을 비교하여 맞은 수를 센다.&lt;br /&gt;
-3) 각 수포자가 맞은 개수가 가장 크지 않으면, answer 벡터에서 삭제한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
-&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;string&amp;gt;
-#include &amp;lt;vector&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;third&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-    
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;one&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;two&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;three&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;two&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;third&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;third&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;three&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;one&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;two&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;one&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;three&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;erase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;two&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;one&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;two&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;three&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;erase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;three&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;one&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;three&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;two&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;erase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;각 수포자가찍는 방식을 어떻게 나타낼지가 포인트 (처음에 알고리즘적으로 접근 but…)&lt;/li&gt;
-  &lt;li&gt;문제를 맞힌 갯수가 가장 큰 수포자들을 골라내는 부분도 생각해볼 필요가 있다&lt;/li&gt;
-  &lt;li&gt;다른 사람은 max를 찾아 max와 같은지 한 번더 비교해주는 방법
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;[C++ 공식문서] std:vector:erase &lt;a href=&quot;http://www.cplusplus.com/reference/vector/vector/erase/&quot;&gt;http://www.cplusplus.com/reference/vector/vector/erase/&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 04 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/04/%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8_%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B4%E1%84%80%E1%85%A9%E1%84%89%E1%85%A1_level1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/04/%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8_%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B4%E1%84%80%E1%85%A9%E1%84%89%E1%85%A1_level1.html</guid>
-        
-        <category>programmershighscorekit</category>
-        
-        <category>bruteforce</category>
-        
-        <category>level1</category>
-        
-        <category>algorithm</category>
-        
-        <category>cplusplus</category>
-        
-        
-        <category>프로그래머스고득점Kit</category>
-        
-      </item>
-    
-      <item>
-        <title>프로그래머스 코딩테스트 고득점 Kit : [해시] 완주하지 못한 선수</title>
-        <description>&lt;p&gt;난이도 ★ ☆ ☆ ☆ ☆&lt;br /&gt;
-본 문제는 한 번 풀어본 적이 있어서 문제를 푸는 데에 많은 시간이 걸리지는 않았다. 하지만 C++을 사용해서 문제를 해결하는 것이 처음이었고, 처음에 hash_map으로 잘못 검색하여 실행시키는데 오류 범벅인 코드 덕에 애를 조금 먹었다. 그리고 hash에 대한 개념이 완벽하지는 않지만 조금 잡혀가고 있는 것 같다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
-&lt;p&gt;수많은 마라톤 선수들이 마라톤에 참여하였습니다.&lt;br /&gt;
-단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.&lt;br /&gt;
-마라톤에 참여한 선수들의 이름이 담긴 배열 participant와 완주한 선수들의 이름이 담긴 배열 completion이 주어질 때, 완주하지 못한 선수의 이름을 return 하도록 solution 함수를 작성해주세요.&lt;/p&gt;
-
-&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;마라톤 경기에 참여한 선수의 수는 1명 이상 100,000명 이하입니다.&lt;/li&gt;
-  &lt;li&gt;completion의 길이는 participant의 길이보다 1 작습니다.&lt;/li&gt;
-  &lt;li&gt;참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자로 이루어져 있습니다.&lt;/li&gt;
-  &lt;li&gt;참가자 중에는 동명이인이 있을 수 있습니다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) completion의 이름을 key로하는 multiset에 전부 넣는다.&lt;br /&gt;
-2) participant의 이름을 multiset에서 찾는다.&lt;br /&gt;
-3) 없으면 해당 이름을 반환하고, 있으면 multiset에서 해당 이름을 지운다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
-&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;string&amp;gt;
-#include &amp;lt;vector&amp;gt;
-#include &amp;lt;set&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;participant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;multiset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;participant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;multiset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iterator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;participant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;participant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;erase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;어떤 문제에 어떤 자료구조를 사용해야하는지 선택의 중요성&lt;/li&gt;
-  &lt;li&gt;map, set, unordered_map, unordered_set의 차이점&lt;/li&gt;
-  &lt;li&gt;다른 사람들의 해결 방법으로 sort 사용 → 여러 방법으로 생각해보는 능력 기르기
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;[C++ 공식문서] std:multiset:find &lt;a href=&quot;http://www.cplusplus.com/reference/set/multiset/find/&quot;&gt;http://www.cplusplus.com/reference/set/multiset/find/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;[C++] multiset container 정리 및 사용법 &lt;a href=&quot;https://blockdmask.tistory.com/80&quot;&gt;https://blockdmask.tistory.com/80&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;[연관 컨테이너 - Set, Map, multiSet, multiMap] &lt;a href=&quot;https://mrhook.co.kr/84&quot;&gt;https://mrhook.co.kr/84&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;[씹어먹는 C++ - &amp;lt;10 - 2. C++ STL - 셋(set), 맵(map), unordered_set, unordered_map&amp;gt;] &lt;a href=&quot;https://modoocode.com/224&quot;&gt;https://modoocode.com/224&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 03 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/03/%ED%95%B4%EC%8B%9C_%EC%99%84%EC%A3%BC%ED%95%98%EC%A7%80%EB%AA%BB%ED%95%9C%EC%84%A0%EC%88%98_level1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/03/%ED%95%B4%EC%8B%9C_%EC%99%84%EC%A3%BC%ED%95%98%EC%A7%80%EB%AA%BB%ED%95%9C%EC%84%A0%EC%88%98_level1.html</guid>
-        
-        <category>programmershighscorekit</category>
-        
-        <category>hash</category>
-        
-        <category>level1</category>
         
         <category>algorithm</category>
         

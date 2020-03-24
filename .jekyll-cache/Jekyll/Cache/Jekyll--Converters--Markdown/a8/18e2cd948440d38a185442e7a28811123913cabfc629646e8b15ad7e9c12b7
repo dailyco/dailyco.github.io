@@ -1,0 +1,104 @@
+I"�<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/install/2020/03/24/Mac_Window10_Install.html">
+    <h2 class="post-title">[Mac/Window] 학생 윈도우10 정품 무료 설치 및 부트캠프로 윈도우10 설치</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>Mac</li>
+        
+          <li>Window</li>
+        
+          <li>BootCamp</li>
+        
+          <li>Window10</li>
+        
+          <li>Install</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Mar 24, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>학교에서 실습 과제를 해야하는데 왠걸, 맥북에서는 실행 파일이 돌아가지 않는다고 한다. 업친데 덥친격인지 전자책을 구매했는데 맥북에서는 Viewer 가 지원이 되지 않는단다. 그래서 ‘맥에 윈도우를 설치해야겠다!’ 다짐하고 여기저기 검색해 본 결과, 나와 같은 사람들이 있다면 좀 더 수월하게 설치했으면 하는 마음에 포스팅을 적는다.<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-window10-iso-파일-다운">1. Window10 ISO 파일 다운</h2>
+
+<h3 id="️-본인-학교가-마이크로소프트와-계약이-되어있는-경우">🙆‍♀️ 본인 학교가 마이크로소프트와 계약이 되어있는 경우</h3>
+<p>제목에서도 이야기했다싶이 학생들은 Window10, 정확히는 Window10 edu 에디션을 무료로 다운 받을 수 있다.<br />
+단, 해당 학교가 마이크로소프트와 계약이 되어있는 학교 대상만!
+학생이 아니고, 학생이더라도 본인 학교가 마이크로소프트와 계약이 되어있지 않는 학생일 경우는 아래에서 다루도록 하겠다.</p>
+
+<h3 id="️-본인-학교가-마이크로소프트와-계약이-되어있지-않은-경우--일반인">🤦‍♀️ 본인 학교가 마이크로소프트와 계약이 되어있지 않은 경우 / 일반인</h3>
+
+<p><br /><br /><br /></p>
+
+<h2 id="2">2.</h2>
+<p><br /><br /><br /></p>
+
+<h2 id="5-reference">5. Reference</h2>
+<ul>
+  <li><br /><br /><br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/install/2020/03/24/Mac_Window10_Install.html';
+      this.page.identifier = 'http://localhost:4000/install/2020/03/24/Mac_Window10_Install.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET

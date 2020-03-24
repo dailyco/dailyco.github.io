@@ -1,0 +1,155 @@
+I"�"<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/install/2020/03/24/Window10_ISO_download.html">
+    <h2 class="post-title">[Mac/Window] 학생 윈도우10 정품 및 윈도우10 무료 다운</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>Mac</li>
+        
+          <li>Window</li>
+        
+          <li>Window10</li>
+        
+          <li>Install</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Mar 24, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>본 포스팅에서는 학생들이 윈도우10 정품 Edu 에디션 (Windows10 Edu) 을 무료로 다운 받는 방법을 이야기한다. 하지만 알아둬야 할 것은, 마이크로소프트와 계약이 되어있는 학교만을 대상으로하며, 학생이 아니거나 마이크로소프트와 계약이 되어있지 않은 학교 학생들도 정품 인증은 되지 않지만 윈도우10을 무료로 다운 받을 수 있는 방법을 소개한다.<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-마이크로소프트와-계약이-되어있는-학교인지-확인">1. 마이크로소프트와 계약이 되어있는 학교인지 확인</h2>
+<p>제목에서도 이야기했다싶이 학생들은 Window10, 정확히는 Window10 edu 에디션을 무료로 다운 받을 수 있다.<br />
+단, 해당 학교가 마이크로소프트와 계약이 되어있는 학교 대상만!<br />
+학생이 아니고, 학생이더라도 본인 학교가 마이크로소프트와 계약이 되어있지 않는 학생일 경우는 아래에서 다루도록 하겠다.</p>
+
+<p>먼저, 아래 링크에서 본인 학교가 마이크로소프트와 계약이 되어있는지 확인 해보길 바란다.<br />
+<a href="https://onthehub.com/search">https://onthehub.com/search</a><br />
+<br /></p>
+
+<p>확인 방법은 아래와 같다.</p>
+
+<h4 id="1-홈페이지에-들어가-아래-화면-중-자신에게-해당되는-것을-고른다">1. 홈페이지에 들어가 아래 화면 중 자신에게 해당되는 것을 고른다.</h4>
+<p><img src="/assets/img/post/Install/select.png" alt="select" width="600px" /></p>
+
+<h4 id="2-해당-칸에-자신의-국적과-학교를-검색한다">2. 해당 칸에 자신의 국적과 학교를 검색한다.</h4>
+<p><img src="/assets/img/post/Install/search.png" alt="search" width="600px" /><br />
+<br /></p>
+
+<h4 id="3-아래와-같은-화면이-보여지면-해당-학교는-있는-것이며-학교가-검색되지-않는다면-없는-것이다">3. 아래와 같은 화면이 보여지면 해당 학교는 있는 것이며, 학교가 검색되지 않는다면 없는 것이다.</h4>
+<p><img src="/assets/img/post/Install/result.png" alt="result" width="600px" /></p>
+
+<p><br /><br /><br /></p>
+
+<h2 id="2-본인-학교가-마이크로소프트와-계약이-되어있는-경우">2. 본인 학교가 마이크로소프트와 계약이 되어있는 경우</h2>
+
+<h4 id="1-검색-결과에서-빨간-박스를-클릭한다-가려진-박스에는-본인의-학교가-있다">1. 검색 결과에서 빨간 박스를 클릭한다. (가려진 박스에는 본인의 학교가 있다)</h4>
+<p><img src="/assets/img/post/Install/1.png" alt="step1" width="600px" /><br />
+<br /></p>
+
+<h4 id="2-아이디가-있다면-로그인을-하고-없다면-등록을-눌러-회원가입을-해준다">2. 아이디가 있다면 로그인을 하고, 없다면 등록을 눌러 회원가입을 해준다.</h4>
+<p><img src="/assets/img/post/Install/2.png" alt="step2" width="600px" /><br />
+<br /></p>
+
+<h4 id="3-로그인을-한-후-windows-10을-클릭한다-만약-메인-페이지에-없을-경우-microsoft-메뉴를-확인">3. 로그인을 한 후, Windows 10을 클릭한다. (만약 메인 페이지에 없을 경우, Microsoft 메뉴를 확인)</h4>
+<p><img src="/assets/img/post/Install/3.png" alt="step3" width="600px" /><br />
+<br /></p>
+
+<h4 id="4-카트에-추가를-해주고-캡쳐는-하지-못했는데-자신의-이메일과-이름을-서명란에-그대로-입력해준다">4. 카트에 추가를 해주고, 캡쳐는 하지 못했는데 자신의 이메일과 이름을 서명란에 그대로 입력해준다.</h4>
+<p><img src="/assets/img/post/Install/4.png" alt="step4" width="600px" /><br />
+<br /></p>
+
+<h4 id="5-제품-키는-한-달-후에-돈을-내고-조회해야-하기-때문에-따로-메모를-해둔다">5. 제품 키는 한 달 후에 돈을 내고 조회해야 하기 때문에 따로 메모를 해둔다.</h4>
+<p><img src="/assets/img/post/Install/5.png" alt="step5" width="600px" /></p>
+
+<p>이 과정 후에 두 가지로 나뉘는데,<br />
+Window 컴퓨터에 Window10 운영체제를 설치하는 것과 Mac 컴퓨터에 Window10 운영체제를 설치하기 위해서 ISO 파일을 다운 받는 과정이다.<br />
+전자를 먼저 설명한 후에, 후자도 이어서 설명하겠다.<br />
+<br /></p>
+
+<h4 id="a-1-window-컴퓨터에-window10-운영체제를-설치하려면-컴퓨터에서-window-업데이트-설정-을-찾는다">A-1. Window 컴퓨터에 Window10 운영체제를 설치하려면 컴퓨터에서 ‘Window 업데이트 설정’ 을 찾는다.</h4>
+<p><img src="/assets/img/post/Install/A-1.png" alt="stepA-1" width="600px" /><br />
+<br /></p>
+
+<h4 id="a-2-정품-인증-메뉴를-누르면-아래와-같은-화면이-보이는데-여기에-아까-메모해-두었던-정품-키를-입력한다">A-2. ‘정품 인증’ 메뉴를 누르면 아래와 같은 화면이 보이는데 여기에 아까 메모해 두었던 정품 키를 입력한다.</h4>
+<p><img src="/assets/img/post/Install/A-2.png" alt="stepA-2" width="600px" /><br />
+<br /></p>
+
+<h4 id="b-1-mac-컴퓨터에-window10-운영체제를-설치하기-위해서는-iso-파일을-다운-받아야-하기-때문에-아까-정품-키가-나온-페이지-화면에서-get-started-버튼을-클릭한다">B-1. Mac 컴퓨터에 Window10 운영체제를 설치하기 위해서는 ISO 파일을 다운 받아야 하기 때문에 아까 정품 키가 나온 페이지 화면에서 ‘Get Started’ 버튼을 클릭한다.</h4>
+<p><img src="/assets/img/post/Install/B-1.png" alt="stepB-1" width="600px" /><br />
+<br /></p>
+
+<h4 id="b-2-새로-나온-창에서-iso-파일을-다운-받는-사이트로-이동한다">B-2. 새로 나온 창에서 ISO 파일을 다운 받는 사이트로 이동한다.</h4>
+<p><img src="/assets/img/post/Install/B-2.png" alt="stepB-2" width="600px" /><br />
+<br /></p>
+
+<h4 id="b-3-다운로드-받는-사이트가-나오고-아래로-조금-내리면-언어를-선택해-다운로드-받는-아래와-같은-화면이-나올텐데-korean-을-찾아-confirm-버튼을-클릭한다">B-3. 다운로드 받는 사이트가 나오고, 아래로 조금 내리면 언어를 선택해 다운로드 받는 아래와 같은 화면이 나올텐데, ‘Korean’ 을 찾아 ‘Confirm’ 버튼을 클릭한다.</h4>
+<p><img src="/assets/img/post/Install/B-2.png" alt="stepB-2" width="600px" /><br />
+<br /></p>
+
+<h2 id="3-본인-학교가-마이크로소프트와-계약이-되어있지-않은-경우--일반인">3. 본인 학교가 마이크로소프트와 계약이 되어있지 않은 경우 / 일반인</h2>
+
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/install/2020/03/24/Window10_ISO_download.html';
+      this.page.identifier = 'http://localhost:4000/install/2020/03/24/Window10_ISO_download.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
