@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Mar 2020 23:22:16 +0900</pubDate>
-    <lastBuildDate>Tue, 24 Mar 2020 23:22:16 +0900</lastBuildDate>
+    <pubDate>Tue, 24 Mar 2020 23:25:58 +0900</pubDate>
+    <lastBuildDate>Tue, 24 Mar 2020 23:25:58 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -29,37 +29,37 @@
 &lt;p&gt;확인 방법은 아래와 같다.&lt;/p&gt;
 
 &lt;h3 id=&quot;1-홈페이지에-들어가-아래-화면-중-자신에게-해당되는-것을-고른다&quot;&gt;1. 홈페이지에 들어가 아래 화면 중 자신에게 해당되는 것을 고른다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/select.png&quot; alt=&quot;select&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/select.png&quot; alt=&quot;select&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2-해당-칸에-자신의-국적과-학교를-검색한다&quot;&gt;2. 해당 칸에 자신의 국적과 학교를 검색한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/search.png&quot; alt=&quot;search&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/search.png&quot; alt=&quot;search&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;3-아래와-같은-화면이-보여지면-해당-학교는-있는-것이며-학교가-검색되지-않는다면-없는-것이다&quot;&gt;3. 아래와 같은 화면이 보여지면 해당 학교는 있는 것이며, 학교가 검색되지 않는다면 없는 것이다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/result.png&quot; alt=&quot;result&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/result.png&quot; alt=&quot;result&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-본인-학교가-마이크로소프트와-계약이-되어있는-경우&quot;&gt;2. 본인 학교가 마이크로소프트와 계약이 되어있는 경우&lt;/h2&gt;
 
 &lt;h3 id=&quot;1-검색-결과에서-빨간-박스를-클릭한다-가려진-박스에는-본인의-학교가-있다&quot;&gt;1. 검색 결과에서 빨간 박스를 클릭한다. (가려진 박스에는 본인의 학교가 있다)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/1.png&quot; alt=&quot;step1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/1.png&quot; alt=&quot;step1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2-아이디가-있다면-로그인을-하고-없다면-등록을-눌러-회원가입을-해준다&quot;&gt;2. 아이디가 있다면 로그인을 하고, 없다면 등록을 눌러 회원가입을 해준다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/2.png&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/2.png&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;3-로그인을-한-후-windows-10을-클릭한다-만약-메인-페이지에-없을-경우-microsoft-메뉴를-확인&quot;&gt;3. 로그인을 한 후, Windows 10을 클릭한다. (만약 메인 페이지에 없을 경우, Microsoft 메뉴를 확인)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/3.png&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/3.png&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;4-카트에-추가를-해주고-캡쳐는-하지-못했는데-자신의-이메일과-이름을-서명란에-그대로-입력해준다&quot;&gt;4. 카트에 추가를 해주고, 캡쳐는 하지 못했는데 자신의 이메일과 이름을 서명란에 그대로 입력해준다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/4.png&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/4.png&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;5-제품-키는-한-달-후에-돈을-내고-조회해야-하기-때문에-따로-메모를-해둔다&quot;&gt;5. 제품 키는 한 달 후에 돈을 내고 조회해야 하기 때문에 따로 메모를 해둔다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/5.png&quot; alt=&quot;step5&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/5.png&quot; alt=&quot;step5&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;이 과정 후에 두 가지로 나뉘는데,&lt;br /&gt;
 Window 컴퓨터에 Window10 운영체제를 설치하는 것과 Mac 컴퓨터에 Window10 운영체제를 설치하기 위해서 ISO 파일을 다운 받는 과정이다.&lt;br /&gt;
@@ -67,27 +67,27 @@ Window 컴퓨터에 Window10 운영체제를 설치하는 것과 Mac 컴퓨터�
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;a-1-window-컴퓨터에-window10-운영체제를-설치하려면-컴퓨터에서-window-업데이트-설정-을-찾는다&quot;&gt;A-1. Window 컴퓨터에 Window10 운영체제를 설치하려면 컴퓨터에서 ‘Window 업데이트 설정’ 을 찾는다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/A-1.png&quot; alt=&quot;stepA-1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/A-1.png&quot; alt=&quot;stepA-1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;a-2-정품-인증-메뉴를-누르면-아래와-같은-화면이-보이는데-여기에-아까-메모해-두었던-정품-키를-입력한다&quot;&gt;A-2. ‘정품 인증’ 메뉴를 누르면 아래와 같은 화면이 보이는데 여기에 아까 메모해 두었던 정품 키를 입력한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/A-2.png&quot; alt=&quot;stepA-2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/A-2.png&quot; alt=&quot;stepA-2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;b-1-mac-컴퓨터에-window10-운영체제를-설치하기-위해서는-iso-파일을-다운-받아야-하기-때문에-아까-정품-키가-나온-페이지-화면에서-get-started-버튼을-클릭한다&quot;&gt;B-1. Mac 컴퓨터에 Window10 운영체제를 설치하기 위해서는 ISO 파일을 다운 받아야 하기 때문에 아까 정품 키가 나온 페이지 화면에서 ‘Get Started’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/B-1.png&quot; alt=&quot;stepB-1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/B-1.png&quot; alt=&quot;stepB-1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;b-2-새로-나온-창에서-iso-파일을-다운-받는-사이트로-이동한다&quot;&gt;B-2. 새로 나온 창에서 ISO 파일을 다운 받는 사이트로 이동한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/B-2.png&quot; alt=&quot;stepB-2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/B-2.png&quot; alt=&quot;stepB-2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;b-3-다운로드-받는-사이트가-나오고-아래로-조금-내리면-언어를-선택해-다운로드-받는-아래와-같은-화면이-나올텐데-언어는-korean-을-찾아-설정하고-confirm-버튼을-클릭한다&quot;&gt;B-3. 다운로드 받는 사이트가 나오고, 아래로 조금 내리면 언어를 선택해 다운로드 받는 아래와 같은 화면이 나올텐데, 언어는 ‘Korean’ 을 찾아 설정하고 ‘Confirm’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/B-3.png&quot; alt=&quot;stepB-3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/B-3.png&quot; alt=&quot;stepB-3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;b-4-자신이-원하는-비트를-골라-다운로드-받는다-본인은-64비트를-권장하며-64비트를-다운-받았다&quot;&gt;B-4. 자신이 원하는 비트를 골라 다운로드 받는다. 본인은 64비트를 권장하며 64비트를 다운 받았다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/B-4.png&quot; alt=&quot;stepB-4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/B-4.png&quot; alt=&quot;stepB-4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-본인-학교가-마이크로소프트와-계약이-되어있지-않은-경우--일반인&quot;&gt;3. 본인 학교가 마이크로소프트와 계약이 되어있지 않은 경우 / 일반인&lt;/h2&gt;
@@ -103,15 +103,15 @@ Mac에 Window 운영체제를 설치하기 위한 ISO 파일을 다운 받는 �
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2-버전을-선택하고-확인-버튼을-클릭한다&quot;&gt;2. 버전을 선택하고 ‘확인’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/6.png&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/6.png&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;3-제품의-언어를-선택하고-확인-버튼을-클릭한다&quot;&gt;3. 제품의 언어를 선택하고 ‘확인’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/7.png&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/7.png&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;4-자신이-원하는-비트를-골라-다운로드-받는다-본인은-64비트를-권장하며-64비트를-다운-받았다&quot;&gt;4. 자신이 원하는 비트를 골라 다운로드 받는다. 본인은 64비트를 권장하며 64비트를 다운 받았다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/8.png&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/8.png&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-reference&quot;&gt;4. Reference&lt;/h2&gt;
@@ -151,12 +151,15 @@ Mac에 Window 운영체제를 설치하기 위한 ISO 파일을 다운 받는 �
 &lt;a href=&quot;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&quot;&gt;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&lt;/a&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;2&quot;&gt;2.&lt;/h2&gt;
+&lt;h2 id=&quot;2-bootcamp를-사용해서-mac에-window-운영체제-설치&quot;&gt;2. BootCamp를 사용해서 Mac에 Window 운영체제 설치&lt;/h2&gt;
+
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;5-reference&quot;&gt;5. Reference&lt;/h2&gt;
+&lt;h2 id=&quot;4-reference&quot;&gt;4. Reference&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;대학생이라면 윈도우10 무료로 쓰자!! 윈도우10 정품 무료로 설치하기(windows 10 edu) &lt;a href=&quot;https://m.blog.naver.com/hisong1105/221667302222&quot;&gt;https://m.blog.naver.com/hisong1105/221667302222&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;맥(Mac) 부트캠프 윈도우10 설치 방법 &lt;a href=&quot;https://extrememanual.net/12760&quot;&gt;https://extrememanual.net/12760&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 24 Mar 2020 00:00:00 +0900</pubDate>

@@ -19,10 +19,12 @@ sitemap:
 <https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html>
 <br/><br/><br/>
 
-## 2. 
+## 2. BootCamp를 사용해서 Mac에 Window 운영체제 설치
+
 <br/><br/><br/>
 
 
-## 5. Reference
-- 
+## 4. Reference
+- 대학생이라면 윈도우10 무료로 쓰자!! 윈도우10 정품 무료로 설치하기(windows 10 edu) <https://m.blog.naver.com/hisong1105/221667302222>
+- 맥(Mac) 부트캠프 윈도우10 설치 방법 <https://extrememanual.net/12760>
 <br/><br/><br/>

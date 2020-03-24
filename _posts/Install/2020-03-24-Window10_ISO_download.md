@@ -25,37 +25,37 @@ sitemap:
 확인 방법은 아래와 같다.  
 
 ### 1. 홈페이지에 들어가 아래 화면 중 자신에게 해당되는 것을 고른다.
-![select](/assets/img/post/Install/select.png){:width="600px"}  
+![select](/assets/img/post/Install/Window10/select.png){:width="600px"}  
 
 ### 2. 해당 칸에 자신의 국적과 학교를 검색한다.
-![search](/assets/img/post/Install/search.png){:width="600px"}  
+![search](/assets/img/post/Install/Window10/search.png){:width="600px"}  
 <br/>
 
 ### 3. 아래와 같은 화면이 보여지면 해당 학교는 있는 것이며, 학교가 검색되지 않는다면 없는 것이다.
-![result](/assets/img/post/Install/result.png){:width="600px"}  
+![result](/assets/img/post/Install/Window10/result.png){:width="600px"}  
 
 <br/><br/><br/>
 
 ## 2. 본인 학교가 마이크로소프트와 계약이 되어있는 경우
 
 ### 1. 검색 결과에서 빨간 박스를 클릭한다. (가려진 박스에는 본인의 학교가 있다)
-![step1](/assets/img/post/Install/1.png){:width="600px"}  
+![step1](/assets/img/post/Install/Window10/1.png){:width="600px"}  
 <br/>
 
 ### 2. 아이디가 있다면 로그인을 하고, 없다면 등록을 눌러 회원가입을 해준다.
-![step2](/assets/img/post/Install/2.png){:width="600px"}  
+![step2](/assets/img/post/Install/Window10/2.png){:width="600px"}  
 <br/>
 
 ### 3. 로그인을 한 후, Windows 10을 클릭한다. (만약 메인 페이지에 없을 경우, Microsoft 메뉴를 확인)
-![step3](/assets/img/post/Install/3.png){:width="600px"}  
+![step3](/assets/img/post/Install/Window10/3.png){:width="600px"}  
 <br/>
 
 ### 4. 카트에 추가를 해주고, 캡쳐는 하지 못했는데 자신의 이메일과 이름을 서명란에 그대로 입력해준다.
-![step4](/assets/img/post/Install/4.png){:width="600px"}  
+![step4](/assets/img/post/Install/Window10/4.png){:width="600px"}  
 <br/>
 
 ### 5. 제품 키는 한 달 후에 돈을 내고 조회해야 하기 때문에 따로 메모를 해둔다.
-![step5](/assets/img/post/Install/5.png){:width="600px"}  
+![step5](/assets/img/post/Install/Window10/5.png){:width="600px"}  
 
 이 과정 후에 두 가지로 나뉘는데,  
 Window 컴퓨터에 Window10 운영체제를 설치하는 것과 Mac 컴퓨터에 Window10 운영체제를 설치하기 위해서 ISO 파일을 다운 받는 과정이다.  
@@ -63,27 +63,27 @@ Window 컴퓨터에 Window10 운영체제를 설치하는 것과 Mac 컴퓨터�
 <br/>
 
 ### A-1. Window 컴퓨터에 Window10 운영체제를 설치하려면 컴퓨터에서 'Window 업데이트 설정' 을 찾는다.
-![stepA-1](/assets/img/post/Install/A-1.png){:width="600px"}  
+![stepA-1](/assets/img/post/Install/Window10/A-1.png){:width="600px"}  
 <br/>
 
 ### A-2. '정품 인증' 메뉴를 누르면 아래와 같은 화면이 보이는데 여기에 아까 메모해 두었던 정품 키를 입력한다.
-![stepA-2](/assets/img/post/Install/A-2.png){:width="600px"}  
+![stepA-2](/assets/img/post/Install/Window10/A-2.png){:width="600px"}  
 <br/>
 
 ### B-1. Mac 컴퓨터에 Window10 운영체제를 설치하기 위해서는 ISO 파일을 다운 받아야 하기 때문에 아까 정품 키가 나온 페이지 화면에서 'Get Started' 버튼을 클릭한다.
-![stepB-1](/assets/img/post/Install/B-1.png){:width="600px"}  
+![stepB-1](/assets/img/post/Install/Window10/B-1.png){:width="600px"}  
 <br/>
 
 ### B-2. 새로 나온 창에서 ISO 파일을 다운 받는 사이트로 이동한다.
-![stepB-2](/assets/img/post/Install/B-2.png){:width="600px"}  
+![stepB-2](/assets/img/post/Install/Window10/B-2.png){:width="600px"}  
 <br/>
 
 ### B-3. 다운로드 받는 사이트가 나오고, 아래로 조금 내리면 언어를 선택해 다운로드 받는 아래와 같은 화면이 나올텐데, 언어는 'Korean' 을 찾아 설정하고 'Confirm' 버튼을 클릭한다.
-![stepB-3](/assets/img/post/Install/B-3.png){:width="600px"}  
+![stepB-3](/assets/img/post/Install/Window10/B-3.png){:width="600px"}  
 <br/>
 
 ### B-4. 자신이 원하는 비트를 골라 다운로드 받는다. 본인은 64비트를 권장하며 64비트를 다운 받았다.
-![stepB-4](/assets/img/post/Install/B-4.png){:width="600px"}  
+![stepB-4](/assets/img/post/Install/Window10/B-4.png){:width="600px"}  
 <br/><br/>
 
 ## 3. 본인 학교가 마이크로소프트와 계약이 되어있지 않은 경우 / 일반인
@@ -99,15 +99,15 @@ Mac에 Window 운영체제를 설치하기 위한 ISO 파일을 다운 받는 �
 <br/>
 
 ### 2. 버전을 선택하고 '확인' 버튼을 클릭한다.
-![step2](/assets/img/post/Install/6.png){:width="600px"}  
+![step2](/assets/img/post/Install/Window10/6.png){:width="600px"}  
 <br/>
 
 ### 3. 제품의 언어를 선택하고 '확인' 버튼을 클릭한다.
-![step3](/assets/img/post/Install/7.png){:width="600px"}  
+![step3](/assets/img/post/Install/Window10/7.png){:width="600px"}  
 <br/>
 
 ### 4. 자신이 원하는 비트를 골라 다운로드 받는다. 본인은 64비트를 권장하며 64비트를 다운 받았다.
-![step4](/assets/img/post/Install/8.png){:width="600px"}  
+![step4](/assets/img/post/Install/Window10/8.png){:width="600px"}  
 <br/><br/><br/>
 
 ## 4. Reference
