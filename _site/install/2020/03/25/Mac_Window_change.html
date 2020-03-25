@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<title>[Mac] 맥 Window와 MacOS 간의 전환 방법</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>[Mac] 맥 Window와 MacOS 간의 전환 방법 | Opencoding</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="[Mac] 맥 Window와 MacOS 간의 전환 방법" />
+<meta name="author" content="YuJin Kim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="본 포스팅에서는 Mac에서 BootCamp를 사용해서 Window 운영체제를 설치하고, 다시 MacOS로 돌아가는 방법 혹은 MacOS에서 다시 Window 운영체제로 돌아가는 방법을 모르는 사람들을 위한 포스팅이다. 이 방법은 무척 간단하고 쉽기 때문에 한 번 익히기만하면 언제든 계속해서 사용할 수 있을 것이다." />
+<meta property="og:description" content="본 포스팅에서는 Mac에서 BootCamp를 사용해서 Window 운영체제를 설치하고, 다시 MacOS로 돌아가는 방법 혹은 MacOS에서 다시 Window 운영체제로 돌아가는 방법을 모르는 사람들을 위한 포스팅이다. 이 방법은 무척 간단하고 쉽기 때문에 한 번 익히기만하면 언제든 계속해서 사용할 수 있을 것이다." />
+<link rel="canonical" href="http://localhost:4000/install/2020/03/25/Mac_Window_change.html" />
+<meta property="og:url" content="http://localhost:4000/install/2020/03/25/Mac_Window_change.html" />
+<meta property="og:site_name" content="Opencoding" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-25T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"[Mac] 맥 Window와 MacOS 간의 전환 방법","dateModified":"2020-03-25T00:00:00+09:00","datePublished":"2020-03-25T00:00:00+09:00","url":"http://localhost:4000/install/2020/03/25/Mac_Window_change.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/install/2020/03/25/Mac_Window_change.html"},"author":{"@type":"Person","name":"YuJin Kim"},"description":"본 포스팅에서는 Mac에서 BootCamp를 사용해서 Window 운영체제를 설치하고, 다시 MacOS로 돌아가는 방법 혹은 MacOS에서 다시 Window 운영체제로 돌아가는 방법을 모르는 사람들을 위한 포스팅이다. 이 방법은 무척 간단하고 쉽기 때문에 한 번 익히기만하면 언제든 계속해서 사용할 수 있을 것이다.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/custom/header.css">
+    </head>
+
+    <body>
+        
+
+        <div class="masthead">
+            <div class="masthead__inner-wrap">
+                <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    
+                    <a class="site-logo" href="/"><img src="/assets/img/header//logo.png" alt=""></a>
+                    
+                    <a class="site-title" href="/">Opencoding</a>
+                    <!-- <button class="greedy-nav__toggle hidden" type="button"></button>
+                    <ul class="hidden-links hidden"><li class="masthead__menu-item">
+                                <a href="/about/" >ABOUT</a>
+                            </li><li class="masthead__menu-item">
+                                <a href="/tags/" >TAGS</a>
+                            </li></ul> -->
+                    <ul class="visible-links"><li class="masthead__menu-item">
+                        <a href="/about/" >ABOUT</a>
+                        </li><li class="masthead__menu-item">
+                        <a href="/tags/" >TAGS</a>
+                        </li></ul>
+                    <!-- <li class="masthead__menu-item">
+                            
+                                <button class="search__toggle " type="button">
+                                <span class="visually-hidden">Toggle search</span>
+                                <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+                                    <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+                                </svg>
+                                </button>
+                            
+                        </li> -->
+                </nav>
+                </div>
+            </div>
+        </div>
+
+        <section class="body_content">
+            <main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim"></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/install/2020/03/25/Mac_Window_change.html">
+    <h2 class="post-title">[Mac] 맥 Window와 MacOS 간의 전환 방법</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>Mac</li>
+        
+          <li>Window</li>
+        
+          <li>BootCamp</li>
+        
+          <li>Window10</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Mar 25, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>본 포스팅에서는 Mac에서 BootCamp를 사용해서 Window 운영체제를 설치하고, 다시 MacOS로 돌아가는 방법 혹은 MacOS에서 다시 Window 운영체제로 돌아가는 방법을 모르는 사람들을 위한 포스팅이다. 이 방법은 무척 간단하고 쉽기 때문에 한 번 익히기만하면 언제든 계속해서 사용할 수 있을 것이다.
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-windows와-macos-간에-전환하는-방법">1. Windows와 macOS 간에 전환하는 방법</h2>
+
+<h3 id="1-mac을-재시동한다">1. Mac을 재시동한다.</h3>
+
+<h3 id="2-mac이-켜지기-전-화면이-꺼졌을-때-키보드의-option또는-alt--키를-길게-누른다">2. Mac이 켜지기 전 (화면이 꺼졌을 때), 키보드의 option(또는 alt) ⌥ 키를 길게 누른다.</h3>
+
+<h3 id="3-그러면-아래와-같이-시동-관리자-창이-나타나게-되는데-이-창이-나타나면-option또는-alt--키를-놓는다">3. 그러면 아래와 같이 시동 관리자 창이 나타나게 되는데, 이 창이 나타나면 option(또는 alt) ⌥ 키를 놓는다.</h3>
+<p><img src="/assets/img/post/Install/Window10/change.png" alt="change" width="600px" /></p>
+
+<h3 id="4-자신이-사용하고자하는-시동-디스크를-선택하고-녹색-박스-안의-화살표-버튼을-클릭한다">4. 자신이 사용하고자하는 시동 디스크를 선택하고 녹색 박스 안의 화살표 버튼을 클릭한다.</h3>
+<p>아래 사진에서는 Boot Camp라고 나와있는데, Windows라고 표기된 사람들도 있을 것이다.<br />
+Boot Camp를 선택하면 Window로 실행되고, Macintosh HD를 선택하면 MacOS로 실행된다.<br />
+<br /></p>
+
+<p><img src="/assets/img/post/Install/Window10/change-select.png" alt="change-select" width="600px" /><br />
+<br /><br /><br /></p>
+
+<h2 id="2-reference">2. Reference</h2>
+<ul>
+  <li>Windows와 macOS 간에 전환하기 <a href="https://support.apple.com/ko-kr/HT208123">https://support.apple.com/ko-kr/HT208123</a>
+<br /><br /><br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/install/2020/03/25/Mac_Window_change.html';
+      this.page.identifier = 'http://localhost:4000/install/2020/03/25/Mac_Window_change.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main><script async src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+  <script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+        </section>
+    </body>
+</html>

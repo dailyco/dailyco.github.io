@@ -6,9 +6,273 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Mar 2020 23:25:58 +0900</pubDate>
-    <lastBuildDate>Tue, 24 Mar 2020 23:25:58 +0900</lastBuildDate>
+    <pubDate>Wed, 25 Mar 2020 14:55:24 +0900</pubDate>
+    <lastBuildDate>Wed, 25 Mar 2020 14:55:24 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>[Mac] 맥 Window와 MacOS 간의 전환 방법</title>
+        <description>&lt;p&gt;본 포스팅에서는 Mac에서 BootCamp를 사용해서 Window 운영체제를 설치하고, 다시 MacOS로 돌아가는 방법 혹은 MacOS에서 다시 Window 운영체제로 돌아가는 방법을 모르는 사람들을 위한 포스팅이다. 이 방법은 무척 간단하고 쉽기 때문에 한 번 익히기만하면 언제든 계속해서 사용할 수 있을 것이다.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-windows와-macos-간에-전환하는-방법&quot;&gt;1. Windows와 macOS 간에 전환하는 방법&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-mac을-재시동한다&quot;&gt;1. Mac을 재시동한다.&lt;/h3&gt;
+
+&lt;h3 id=&quot;2-mac이-켜지기-전-화면이-꺼졌을-때-키보드의-option또는-alt--키를-길게-누른다&quot;&gt;2. Mac이 켜지기 전 (화면이 꺼졌을 때), 키보드의 option(또는 alt) ⌥ 키를 길게 누른다.&lt;/h3&gt;
+
+&lt;h3 id=&quot;3-그러면-아래와-같이-시동-관리자-창이-나타나게-되는데-이-창이-나타나면-option또는-alt--키를-놓는다&quot;&gt;3. 그러면 아래와 같이 시동 관리자 창이 나타나게 되는데, 이 창이 나타나면 option(또는 alt) ⌥ 키를 놓는다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/change.png&quot; alt=&quot;change&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-자신이-사용하고자하는-시동-디스크를-선택하고-녹색-박스-안의-화살표-버튼을-클릭한다&quot;&gt;4. 자신이 사용하고자하는 시동 디스크를 선택하고 녹색 박스 안의 화살표 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;아래 사진에서는 Boot Camp라고 나와있는데, Windows라고 표기된 사람들도 있을 것이다.&lt;br /&gt;
+Boot Camp를 선택하면 Window로 실행되고, Macintosh HD를 선택하면 MacOS로 실행된다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/change-select.png&quot; alt=&quot;change-select&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-reference&quot;&gt;2. Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Windows와 macOS 간에 전환하기 &lt;a href=&quot;https://support.apple.com/ko-kr/HT208123&quot;&gt;https://support.apple.com/ko-kr/HT208123&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 25 Mar 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/install/2020/03/25/Mac_Window_change.html</link>
+        <guid isPermaLink="true">http://localhost:4000/install/2020/03/25/Mac_Window_change.html</guid>
+        
+        <category>mac</category>
+        
+        <category>window</category>
+        
+        <category>bootcamp</category>
+        
+        <category>window10</category>
+        
+        
+        <category>Install</category>
+        
+      </item>
+    
+      <item>
+        <title>[Mac] 맥 BootCamp를 사용해서 윈도우10 설치</title>
+        <description>&lt;p&gt;본 포스팅에서는 Mac의 BootCamp를 사용해서 윈도우10 운영체제를 설치하는 방법에 대해서 설명한다. 여러 블로그를 검색하다가 전부 잘 이해가 되지 않아 열심히 검색하고 또 찾아보고 포스팅한다. 나처럼 방법을 잘 몰라 헤메었던 사람들에게 많은 도움이 되길 바라며…ㅠㅠ&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-window10-iso-파일-다운&quot;&gt;1. Window10 ISO 파일 다운&lt;/h2&gt;
+&lt;p&gt;ISO 파일을 다운 받지 않고 바로 이 포스팅으로 온 사람들을 위해,&lt;br /&gt;
+아래 링크에 들어가 나온 순서대로 따라하면 ISO 파일을 다운 받을 수 있을 것이다.&lt;br /&gt;
+&lt;a href=&quot;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&quot;&gt;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-bootcamp로-window-설치&quot;&gt;2. BootCamp로 Window 설치&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-command--space-버튼을-눌러-spotlight-검색창을-띄우고-boot-camp-지원을-검색해-해당-창을-띄워준다&quot;&gt;1. ‘command + space’ 버튼을 눌러 spotlight 검색창을 띄우고, ‘Boot Camp 지원’을 검색해 해당 창을 띄워준다.&lt;/h3&gt;
+
+&lt;p&gt;꼭 이 방법으로 하지 않아도되고, ‘finder-응용프로그램-Utility-Boot Camp 지원’ 을 통해서 창을 띄워줘도 된다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-아래와-같은-boot-camp-지원-창을-볼-수-있는데-계속-버튼을-클릭한다&quot;&gt;2. 아래와 같은 ‘Boot Camp 지원’ 창을 볼 수 있는데, ‘계속’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/9.png&quot; alt=&quot;step9&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-이전에위에서-다운받았던-iso-파일을-선택하고-용량을-설정해준다&quot;&gt;3. 이전에(위에서) 다운받았던 ISO 파일을 선택하고, 용량을 설정해준다.&lt;/h3&gt;
+&lt;p&gt;보통의 서류작업은 30~40GB면 충분하고 노란색 바를 드래그해서 용량을 설정할 수 있다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/10.png&quot; alt=&quot;step10&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-아래와-같이-설정해주고-설치-버튼을-클릭한다&quot;&gt;4. 아래와 같이 설정해주고 ‘설치’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/11.png&quot; alt=&quot;step11&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-아래와-같은-작업이-끝나고-설치가-완료된다&quot;&gt;5. 아래와 같은 작업이 끝나고 설치가 완료된다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/12.png&quot; alt=&quot;step12&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;6-설치가-완료되면-아래와-같은-노란창이-뜨는데-암호를-입력하고-확인-버튼을-누르면-컴퓨터가-재부팅된다&quot;&gt;6. 설치가 완료되면 아래와 같은 노란창이 뜨는데, 암호를 입력하고 ‘확인’ 버튼을 누르면 컴퓨터가 재부팅된다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/13.png&quot; alt=&quot;step13&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;7-재부팅되고-로딩이-되면-아래-화면과-같이-보인다&quot;&gt;7. 재부팅되고 로딩이 되면 아래 화면과 같이 보인다.&lt;/h3&gt;
+&lt;p&gt;이 아래부터는 캡쳐를 하기가 힘들어 핸드폰으로 찍은 사진이라 화질이 좋지않고 프레임이 바르지 않다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/14.jpeg&quot; alt=&quot;step14&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;8-재부팅이-되고나면-아래와-같은-창이-뜨는데-다음-버튼을-클릭한다&quot;&gt;8. 재부팅이 되고나면 아래와 같은 창이 뜨는데, ‘다음’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/15.jpeg&quot; alt=&quot;step15&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;9-아까-적어두었던-제품-키-번호를-입력하고-다음-버튼을-클릭한다&quot;&gt;9. 아까 적어두었던 제품 키 번호를 입력하고, ‘다음’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;제품 키 번호는 차후에 변경 가능하므로 잘 모르겠다면 그냥 넘아가도 된다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/16.jpeg&quot; alt=&quot;step16&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;10-동의함-에-체크를-하고-다음-버튼을-클릭한다&quot;&gt;10. ‘동의함’ 에 체크를 하고 ‘다음’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/17.jpeg&quot; alt=&quot;step17&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;11-아래-창과-같이-설치가-되는-창이-보여진다&quot;&gt;11. 아래 창과 같이 설치가 되는 창이 보여진다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/18-1.jpeg&quot; alt=&quot;step18-1&quot; width=&quot;300px&quot; /&gt;
+&lt;img src=&quot;/assets/img/post/Install/Window10/18-2.jpeg&quot; alt=&quot;step18-2&quot; width=&quot;300px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;12-설치가-완료되면-컴퓨터가-다시-시작-된다&quot;&gt;12. 설치가 완료되면 컴퓨터가 다시 시작 된다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/19.jpeg&quot; alt=&quot;step19&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;13-아래와-같이-로딩-화면이-나오고&quot;&gt;13. 아래와 같이 로딩 화면이 나오고&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/20.jpeg&quot; alt=&quot;step20&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;14-다시-시작이-되면-아래-화면과-같이-나오는데-한국-으로-설정하고-예-버튼을-클릭한다&quot;&gt;14. 다시 시작이 되면 아래 화면과 같이 나오는데, ‘한국’ 으로 설정하고 ‘예’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/21.jpeg&quot; alt=&quot;step21&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;15-microsoft-입력기-로-설정하고-예-버튼을-클릭한다&quot;&gt;15. ‘Microsoft 입력기’ 로 설정하고 ‘예’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/22.jpeg&quot; alt=&quot;step22&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;16-두번째-레이아웃으로-영어를-추가해도되고-건너뛰기를-선택해도된다-본인은-건너뛰었는데-영어-자판에-문제-없었다&quot;&gt;16. 두번째 레이아웃으로 영어를 추가해도되고, 건너뛰기를 선택해도된다. (본인은 건너뛰었는데 영어 자판에 문제 없었다)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/23.jpeg&quot; alt=&quot;step23&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;17-네트워크-설정은-만약-네트워크가-나온다면-해당-네트워크를-설정해주고-아래와-같다면-인터넷이-없음을-선택한다&quot;&gt;17. 네트워크 설정은 만약 네트워크가 나온다면 해당 네트워크를 설정해주고, 아래와 같다면 ‘인터넷이 없음’을 선택한다.&lt;/h3&gt;
+&lt;p&gt;네트워크가 나와 설정하면, 몇 가지 창이 더 나올텐데 그 부분은 아래에서 설명하겠다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/24.jpeg&quot; alt=&quot;step24&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;18-제한된-설치로-계속을-선택한다-네트워크-설정을-해준-사람은-해당x&quot;&gt;18. ‘제한된 설치로 계속’을 선택한다. (네트워크 설정을 해준 사람은 해당X)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/25.jpeg&quot; alt=&quot;step25&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;19-이름과-비밀번호를-설정하고-비밀번호-분실시-질문-답변을-모두-설정한다&quot;&gt;19. 이름과 비밀번호를 설정하고 비밀번호 분실시 질문 답변을 모두 설정한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/26-1.jpeg&quot; alt=&quot;step26-1&quot; width=&quot;300px&quot; /&gt;
+&lt;img src=&quot;/assets/img/post/Install/Window10/26-2.jpeg&quot; alt=&quot;step26-2&quot; width=&quot;300px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;20-예를-클릭한다&quot;&gt;20. ‘예’를 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/27.jpeg&quot; alt=&quot;step27&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;21-수락을-클릭한다&quot;&gt;21. ‘수락’을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/28.jpeg&quot; alt=&quot;step28&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;22-아래-화면이-나오면서-조금-기다리면&quot;&gt;22. 아래 화면이 나오면서 조금 기다리면&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/29.jpeg&quot; alt=&quot;step29&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;23-이렇게-window-화면이-나온다-하지만-여기에서-끝이-아니다&quot;&gt;23. 이렇게 Window 화면이 나온다! 하지만 여기에서 끝이 아니다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/30.png&quot; alt=&quot;step30&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;24-내-문서에서-내-pc-osxreservedd-를-클릭한다&quot;&gt;24. 내 문서에서 ‘내 PC-OSXRESERVED(D:)’ 를 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/31.png&quot; alt=&quot;step31&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;25-bootcamp-를-클릭하고&quot;&gt;25. ‘BootCamp’ 를 클릭하고,&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/32.png&quot; alt=&quot;step32&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;26-setup-을-클릭하면&quot;&gt;26. ‘Setup’ 을 클릭하면&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/33.png&quot; alt=&quot;step33&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;27-아래와-같은-창이-나온다-예-를-클릭하면&quot;&gt;27. 아래와 같은 창이 나온다. ‘예’ 를 클릭하면&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/34.jpeg&quot; alt=&quot;step34&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;28-bootcamp-설치-창이-나온다-window에-bootcamp를-설치하는-과정이다-다음-버튼을-클릭한다&quot;&gt;28. ‘BootCamp’ 설치 창이 나온다. Window에 BootCamp를 설치하는 과정이다. ‘다음’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/35.png&quot; alt=&quot;step35&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;29-사용-약관에-동의해주고-설치-버튼을-클릭한다&quot;&gt;29. 사용 약관에 동의해주고, ‘설치’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/36.png&quot; alt=&quot;step36&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;30-아래와-같이-설치되는동안-조금-기다려주고&quot;&gt;30. 아래와 같이 설치되는동안 조금 기다려주고&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/37.png&quot; alt=&quot;step37&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;31-설치가-다-되어-아래와-같은-화면이-나오면-마침-버튼을-눌러준다-컴퓨터가-재부팅되고-다시-켜지면-완료&quot;&gt;31. 설치가 다 되어 아래와 같은 화면이 나오면 ‘마침’ 버튼을 눌러준다. 컴퓨터가 재부팅되고 다시 켜지면 완료!&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/38.png&quot; alt=&quot;step38&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-네트워크-설정&quot;&gt;4. 네트워크 설정&lt;/h2&gt;
+&lt;p&gt;위와 같은 단계를 마무리하고, 실제로 엣지나 크롬 인터넷을 사용하기 위해서는 네트워크를 설정해야한다.&lt;br /&gt;
+자신이 사용하는 와이파이를 연결시키고 나면, 나머지 환경설정을 마무리할 수 있다는 화면이 나오게 되는데, 이 부분까지 마무리해보자.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-설정을-위해-시작-버튼을-클릭한다&quot;&gt;1. 설정을 위해 ‘시작’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/39.jpeg&quot; alt=&quot;step39&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-microsoft-계정으로-로그인을-해준다-없으면-만들도록-하자&quot;&gt;2. Microsoft 계정으로 로그인을 해준다. (없으면 만들도록 하자)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/40-1.jpeg&quot; alt=&quot;step40-1&quot; width=&quot;300px&quot; /&gt;
+&lt;img src=&quot;/assets/img/post/Install/Window10/40-2.jpeg&quot; alt=&quot;step40-2&quot; width=&quot;300px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-사실-여기부터는-원하는대로-설정하면-된다-본인은-넘어가기위해-다음을-클릭&quot;&gt;3. 사실 여기부터는 원하는대로 설정하면 된다. (본인은 넘어가기위해 ‘다음’을 클릭)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/41.jpeg&quot; alt=&quot;step41&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-넘어가려면-다음-을-클릭한다&quot;&gt;4. 넘어가려면 ‘다음’ 을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/42.jpeg&quot; alt=&quot;step42&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-본인은-학교에서-제공하는-microsoft-서비스가-있기-때문에-제품키가-있습니다-클릭-그냥-넘어가기-위해-클릭해도-된다&quot;&gt;5. 본인은 학교에서 제공하는 Microsoft 서비스가 있기 때문에 ‘제품키가 있습니다’ 클릭 (그냥 넘어가기 위해 클릭해도 된다)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/43.jpeg&quot; alt=&quot;step43&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;6-드디어-끝이-났다-닫기-버튼을-클릭한다&quot;&gt;6. 드디어 끝이 났다! ‘닫기’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/44.jpeg&quot; alt=&quot;step44&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-마무리&quot;&gt;5. 마무리&lt;/h2&gt;
+&lt;p&gt;드디어 끝이 났다.&lt;br /&gt;
+나는 설치하는 데에 정말 오래걸렸는데 이걸 따라하는 사람들은 잘 따라해서 도움이 되었으면 좋겠다.&lt;/p&gt;
+
+&lt;p&gt;그리고 마지막으로, 막상 Window를 설치하고 어떻게 다시 Mac으로 돌아가는지 모르는 사람들이 있던데,&lt;br /&gt;
+이 경우 아래 링크를 참고하면 좋겠다.&lt;br /&gt;
+&lt;a href=&quot;https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html&quot;&gt;https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;6-reference&quot;&gt;6. Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;맥(Mac) 부트캠프 윈도우10 설치 방법 &lt;a href=&quot;https://extrememanual.net/12760&quot;&gt;https://extrememanual.net/12760&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;맥에 윈도우 설치하기 (초보자를 위한 맥라이프 4편) &lt;a href=&quot;https://www.youtube.com/watch?v=YytE1SKavpc&quot;&gt;https://www.youtube.com/watch?v=YytE1SKavpc&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 25 Mar 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/install/2020/03/25/Mac_Window10_Install.html</link>
+        <guid isPermaLink="true">http://localhost:4000/install/2020/03/25/Mac_Window10_Install.html</guid>
+        
+        <category>mac</category>
+        
+        <category>window</category>
+        
+        <category>bootcamp</category>
+        
+        <category>window10</category>
+        
+        <category>install</category>
+        
+        
+        <category>Install</category>
+        
+      </item>
     
       <item>
         <title>[Mac/Window] 학생 윈도우10 정품 및 윈도우10 무료 다운</title>
@@ -128,49 +392,6 @@ Mac에 Window 운영체제를 설치하기 위한 ISO 파일을 다운 받는 �
         <category>mac</category>
         
         <category>window</category>
-        
-        <category>window10</category>
-        
-        <category>install</category>
-        
-        
-        <category>Install</category>
-        
-      </item>
-    
-      <item>
-        <title>[Mac/Window] 학생 윈도우10 정품 무료 및 부트캠프로 윈도우10 설치</title>
-        <description>&lt;p&gt;학교에서 실습 과제를 해야하는데 왠걸, 맥북에서는 실행 파일이 돌아가지 않는다고 한다. 업친데 덥친격인지 전자책을 구매했는데 맥북에서는 Viewer 가 지원이 되지 않는단다. 그래서 ‘맥에 윈도우를 설치해야겠다!’ 다짐하고 여기저기 검색해 본 결과, 나와 같은 사람들이 있다면 좀 더 수월하게 설치했으면 하는 마음에 포스팅을 적는다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-window10-iso-파일-다운&quot;&gt;1. Window10 ISO 파일 다운&lt;/h2&gt;
-&lt;p&gt;포스팅이 너무 길어질 것 같아 단계별로 나누어 포스팅을 하였다.&lt;br /&gt;
-아래 링크에 들어가 나온 순서대로 따라하면 ISO 파일을 다운 받을 수 있을 것이다.&lt;br /&gt;
-&lt;a href=&quot;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&quot;&gt;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-bootcamp를-사용해서-mac에-window-운영체제-설치&quot;&gt;2. BootCamp를 사용해서 Mac에 Window 운영체제 설치&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-reference&quot;&gt;4. Reference&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;대학생이라면 윈도우10 무료로 쓰자!! 윈도우10 정품 무료로 설치하기(windows 10 edu) &lt;a href=&quot;https://m.blog.naver.com/hisong1105/221667302222&quot;&gt;https://m.blog.naver.com/hisong1105/221667302222&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;맥(Mac) 부트캠프 윈도우10 설치 방법 &lt;a href=&quot;https://extrememanual.net/12760&quot;&gt;https://extrememanual.net/12760&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 24 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/install/2020/03/24/Mac_Window10_Install.html</link>
-        <guid isPermaLink="true">http://localhost:4000/install/2020/03/24/Mac_Window10_Install.html</guid>
-        
-        <category>mac</category>
-        
-        <category>window</category>
-        
-        <category>bootcamp</category>
         
         <category>window10</category>
         
@@ -3208,100 +3429,6 @@ string에서 index로 접근하기 위해서는 string.at() 함수를 사용하�
         <category>programmershighscorekit</category>
         
         <category>sorting</category>
-        
-        <category>level2</category>
-        
-        <category>algorithm</category>
-        
-        <category>cplusplus</category>
-        
-        
-        <category>프로그래머스고득점Kit</category>
-        
-      </item>
-    
-      <item>
-        <title>프로그래머스 코딩테스트 고득점 Kit : [해시] 전화번호 목록</title>
-        <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
-본 문제는 풀기 전에 알고리즘을 생각하면서 ‘이렇게하면 될까?’하고 반신반의하며 푼 문제이다. set의 upper_bound에 대해서 제대로 이해하지 못하고 있는 줄 알았는데 막상 이걸 이용해서 문제를 해결하고나니 제대로 이해하고 있었다는 생각이 들었다 :)&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
-&lt;p&gt;전화번호부에 적힌 전화번호 중, 한 번호가 다른 번호의 접두어인 경우가 있는지 확인하려 합니다.&lt;br /&gt;
-전화번호가 다음과 같을 경우, 구조대 전화번호는 영석이의 전화번호의 접두사입니다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;구조대 : 119&lt;/li&gt;
-  &lt;li&gt;박준영 : 97 674 223&lt;/li&gt;
-  &lt;li&gt;지영석 : 11 9552 4421&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;전화번호부에 적힌 전화번호를 담은 배열 phone_book 이 solution 함수의 매개변수로 주어질 때, 어떤 번호가 다른 번호의 접두어인 경우가 있으면 false를 그렇지 않으면 true를 return 하도록 solution 함수를 작성해주세요.&lt;/p&gt;
-
-&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;phone_book의 길이는 1 이상 1,000,000 이하입니다.&lt;/li&gt;
-  &lt;li&gt;각 전화번호의 길이는 1 이상 20 이하입니다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) phone_book의 원소를 모두 set에 담는다.&lt;br /&gt;
-2) set에서 각 phone_book의 upper bound를 찾는다.&lt;br /&gt;
-3) upper bound가 마지막 원소일 경우는 pass.&lt;br /&gt;
-4) 각 phone_book이 해당 upper_bound의 접두어인지 확인한다.&lt;br /&gt;
-5) 접두어이면 false를 반환한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
-&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;string&amp;gt;
-#include &amp;lt;vector&amp;gt;
-#include &amp;lt;set&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phone_numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;phone_numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iterator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phone_numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;upper_bound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phone_numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phone_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;npos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;해시를 사용해서 푼 것이 맞나?&lt;/li&gt;
-  &lt;li&gt;정렬을 사용해서 풀 수도 있다!
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;[C++ 공식문서] std:set:upper_bound &lt;a href=&quot;http://www.cplusplus.com/reference/set/set/upper_bound/&quot;&gt;http://www.cplusplus.com/reference/set/set/upper_bound/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;[C++ 레퍼런스 - string 의 find 함수] &lt;a href=&quot;https://modoocode.com/241&quot;&gt;https://modoocode.com/241&lt;/a&gt;&lt;br /&gt;
-string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없을경우 string::npos를 반환
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 04 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/04/%ED%95%B4%EC%8B%9C_%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%AA%A9%EB%A1%9D_level2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/04/%ED%95%B4%EC%8B%9C_%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%AA%A9%EB%A1%9D_level2.html</guid>
-        
-        <category>programmershighscorekit</category>
-        
-        <category>hash</category>
         
         <category>level2</category>
         
