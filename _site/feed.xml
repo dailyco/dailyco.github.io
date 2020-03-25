@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Mar 2020 14:55:24 +0900</pubDate>
-    <lastBuildDate>Wed, 25 Mar 2020 14:55:24 +0900</lastBuildDate>
+    <pubDate>Wed, 25 Mar 2020 15:01:21 +0900</pubDate>
+    <lastBuildDate>Wed, 25 Mar 2020 15:01:21 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -246,7 +246,8 @@ Boot Camp를 선택하면 Window로 실행되고, Macintosh HD를 선택하면 M
 
 &lt;p&gt;그리고 마지막으로, 막상 Window를 설치하고 어떻게 다시 Mac으로 돌아가는지 모르는 사람들이 있던데,&lt;br /&gt;
 이 경우 아래 링크를 참고하면 좋겠다.&lt;br /&gt;
-&lt;a href=&quot;https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html&quot;&gt;https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html&quot;&gt;https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;6-reference&quot;&gt;6. Reference&lt;/h2&gt;
 &lt;ul&gt;

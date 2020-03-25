@@ -1,55 +1,4 @@
-I"Z><main class="container">
-  <section class="about">
-    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
-    <h2 id="title">
-      <a href="/">YuJin Kim</a>
-    </h2>
-    <p class="tagline">SW Engineer</p>
-    <ul class="social"><a href="https://github.com/0pencoding">
-          <li>
-            <i class="icon-github-circled"></i>
-          </li>
-        </a></ul>
-
-    <!--<nav class="navigation">
-        <ul>
-          
-            <li>
-              <a href="/about/">ABOUT</a>
-            </li>
-          
-            <li>
-              <a href="/tags/">TAGS</a>
-            </li>
-          
-        </ul>
-      </nav>-->
-
-    <p>&copy;
-      2020</p>
-  </section>
-  <section class="content">
-    <div class="post-container">
-  <a class="post-link" href="/install/2020/03/25/Mac_Window10_Install.html">
-    <h2 class="post-title">[Mac] 맥 BootCamp를 사용해서 윈도우10 설치</h2>
-  </a>
-  <div class="post-meta">
-    <ul class="post-tags">
-          <li>Mac</li>
-        
-          <li>Window</li>
-        
-          <li>BootCamp</li>
-        
-          <li>Window10</li>
-        
-          <li>Install</li>
-        </ul>
-    <div class="post-date"><i class="icon-calendar"></i>Mar 25, 2020</div>
-  </div>
-
-  <div class="post">
-    <p>본 포스팅에서는 Mac의 BootCamp를 사용해서 윈도우10 운영체제를 설치하는 방법에 대해서 설명한다. 여러 블로그를 검색하다가 전부 잘 이해가 되지 않아 열심히 검색하고 또 찾아보고 포스팅한다. 나처럼 방법을 잘 몰라 헤메었던 사람들에게 많은 도움이 되길 바라며…ㅠㅠ<br />
+I"6<p>본 포스팅에서는 Mac의 BootCamp를 사용해서 윈도우10 운영체제를 설치하는 방법에 대해서 설명한다. 여러 블로그를 검색하다가 전부 잘 이해가 되지 않아 열심히 검색하고 또 찾아보고 포스팅한다. 나처럼 방법을 잘 몰라 헤메었던 사람들에게 많은 도움이 되길 바라며…ㅠㅠ<br />
 <br /></p>
 
 <p><br /></p>
@@ -236,7 +185,8 @@
 
 <p>그리고 마지막으로, 막상 Window를 설치하고 어떻게 다시 Mac으로 돌아가는지 모르는 사람들이 있던데,<br />
 이 경우 아래 링크를 참고하면 좋겠다.<br />
-&lt;&gt;</p>
+<a href="https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html">https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html</a>
+<br /><br /><br /></p>
 
 <h2 id="6-reference">6. Reference</h2>
 <ul>
@@ -244,33 +194,4 @@
   <li>맥에 윈도우 설치하기 (초보자를 위한 맥라이프 4편) <a href="https://www.youtube.com/watch?v=YytE1SKavpc">https://www.youtube.com/watch?v=YytE1SKavpc</a>
 <br /><br /><br /></li>
 </ul>
-
-  </div><div id="disqus_thread" style="margin-top:25px"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = 'http://localhost:4000/install/2020/03/25/Mac_Window10_Install.html';
-      this.page.identifier = 'http://localhost:4000/install/2020/03/25/Mac_Window10_Install.html';
-    };
-    (function () {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://0pencoding.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
-      powered by Disqus.</a></noscript></div>
-
-  </section>
-</main>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
-
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
-gtag('js', new Date());
-
-gtag('config', 'UA-150778693-1');
-</script>
-
 :ET

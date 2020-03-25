@@ -196,6 +196,7 @@ ISO 파일을 다운 받지 않고 바로 이 포스팅으로 온 사람들을 �
 그리고 마지막으로, 막상 Window를 설치하고 어떻게 다시 Mac으로 돌아가는지 모르는 사람들이 있던데,  
 이 경우 아래 링크를 참고하면 좋겠다.  
 <https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html>
+<br/><br/><br/>
 
 ## 6. Reference
 - 맥(Mac) 부트캠프 윈도우10 설치 방법 <https://extrememanual.net/12760>
