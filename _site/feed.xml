@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Mar 2020 23:06:16 +0900</pubDate>
-    <lastBuildDate>Sat, 28 Mar 2020 23:06:16 +0900</lastBuildDate>
+    <pubDate>Sat, 28 Mar 2020 23:10:22 +0900</pubDate>
+    <lastBuildDate>Sat, 28 Mar 2020 23:10:22 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -675,7 +675,8 @@ string의 문자를 삭제할 때는 erase() 함수 사용, 파라미터로 위�
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;vector::push_back() and vector::pop_back() in C++ STL &lt;a href=&quot;https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/&quot;&gt;https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/&lt;/a&gt;&lt;br /&gt;
+  &lt;li&gt;vector::push_back() and vector::pop_back() in C++ STL&lt;br /&gt;
+&lt;a href=&quot;https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/&quot;&gt;https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/&lt;/a&gt;&lt;br /&gt;
 사용하진 않았지만 vector에서 마지막 원소를 더하고 빼는 함수 vector.push_back(), vector.pop_back()
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
