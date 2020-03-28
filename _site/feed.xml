@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Mar 2020 22:52:58 +0900</pubDate>
-    <lastBuildDate>Sat, 28 Mar 2020 22:52:58 +0900</lastBuildDate>
+    <pubDate>Sat, 28 Mar 2020 22:55:39 +0900</pubDate>
+    <lastBuildDate>Sat, 28 Mar 2020 22:55:39 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -123,7 +123,7 @@
     
       <item>
         <title>[Mac] 맥 Window와 MacOS 간의 전환 방법</title>
-        <description>&lt;p&gt;본 포스팅에서는 Mac에서 BootCamp를 사용해서 Window 운영체제를 설치하고, 다시 MacOS로 돌아가는 방법 혹은 MacOS에서 다시 Window 운영체제로 돌아가는 방법을 모르는 사람들을 위한 포스팅이다. 이 방법은 무척 간단하고 쉽기 때문에 한 번 익히기만하면 언제든 계속해서 사용할 수 있을 것이다.
+        <description>&lt;p&gt;본 포스팅에서는 Mac에서 BootCamp를 사용해서 Window 운영체제를 설치하고, 다시 MacOS로 돌아가는 방법 혹은 MacOS에서 다시 Window 운영체제로 돌아가는 방법을 모르는 사람들을 위한 포스팅이다. 이 방법은 무척 간단하고 쉽기 때문에 한 번 익히기만하면 언제든 계속해서 사용할 수 있을 것이다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;

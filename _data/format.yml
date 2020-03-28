@@ -24,3 +24,7 @@ window: Window
 window10: Window10
 bootcamp: BootCamp
 install: Install
+mdk-arm: MDK-ARM
+ide: IDE
+keil: Keil
+μvision: μVision
