@@ -6,9 +6,120 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Mar 2020 22:49:46 +0900</pubDate>
-    <lastBuildDate>Sat, 28 Mar 2020 22:49:46 +0900</lastBuildDate>
+    <pubDate>Sat, 28 Mar 2020 22:52:58 +0900</pubDate>
+    <lastBuildDate>Sat, 28 Mar 2020 22:52:58 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>[Window] 윈도우 MDK-ARM IDE Keil μVision 설치하기 (STM32F411RE)</title>
+        <description>&lt;p&gt;본 포스팅은 MDK-ARM IDE Keil μVision을 설치하는 방법을 이야기한다. 임베디드 과제를 하기 위해 세팅을 해야하는데 여기서부터 조금 헤메었던지라 혹시 나와 같은 사람이 있다면 도움이 되고자 포스팅을 작성한다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-mdk-arm-v5-설치하기&quot;&gt;1. MDK-ARM v5 설치하기&lt;/h2&gt;
+&lt;h3 id=&quot;1-mdk-arm-v5를-다운받기-위해-아래-홈페이지에-들어간다&quot;&gt;1. MDK-ARM v5를 다운받기 위해 아래 홈페이지에 들어간다.&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.keil.com/&quot;&gt;https://www.keil.com/&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-오른쪽-모서리의-downloads-버튼을-클릭한다&quot;&gt;2. 오른쪽 모서리의 ‘Downloads’ 버튼을 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/1.png&quot; alt=&quot;step1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-download-products에서-mdk-arm을-선택한다&quot;&gt;3. Download Products에서 MDK-Arm을 선택한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/2.png&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-정보를-입력해주고-아래-submit-버튼을-클릭한다-본인은-정확한-정보-입력x&quot;&gt;4. 정보를 입력해주고, 아래 ‘Submit’ 버튼을 클릭한다. (본인은 정확한 정보 입력X)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/3.png&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-현재의-가장-최신-버전인-mdk529exe를-다운받는다&quot;&gt;5. 현재의 가장 최신 버전인 MDK529.EXE를 다운받는다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/4.png&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-mdk-arm-v5-mdk529-설치&quot;&gt;2. MDK-ARM v5 (MDK529) 설치&lt;/h2&gt;
+&lt;h3 id=&quot;1-설치된-파일을-실행시킨다&quot;&gt;1. 설치된 파일을 실행시킨다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/5.png&quot; alt=&quot;step5&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-아래와-같은-창이-나오면-next를-클릭한다&quot;&gt;2. 아래와 같은 창이 나오면 ‘Next’를 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/6.png&quot; alt=&quot;step6&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-라이센스에-동의를-하고-다음으로-넘어간다&quot;&gt;3. 라이센스에 동의를 하고, 다음으로 넘어간다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/7.png&quot; alt=&quot;step7&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-자신이-저장하고싶은-위치를-설정해주고-다음으로-넘어간다&quot;&gt;4. 자신이 저장하고싶은 위치를 설정해주고, 다음으로 넘어간다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/8.png&quot; alt=&quot;step8&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-이름과-회사-이메일-등의-정보노란박스-를-입력하고-넘어간다-본인은-정확한-정보-입력x&quot;&gt;5. 이름과 회사, 이메일 등의 정보(노란박스) 를 입력하고 넘어간다. (본인은 정확한 정보 입력X)&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/9.png&quot; alt=&quot;step9&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;6-아래와-같이-설치-진행중인-창이-나오는데-설치될동안-기다린다&quot;&gt;6. 아래와 같이 설치 진행중인 창이 나오는데 설치될동안 기다린다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/10.png&quot; alt=&quot;step10&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;7-설치가-끝나고나면-아래와-같은-창이-새롭게-뜨는데-설치해준다&quot;&gt;7. 설치가 끝나고나면 아래와 같은 창이 새롭게 뜨는데 설치해준다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/11.png&quot; alt=&quot;step11&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;8-설치를-마치기위해-finish-를-클릭한다&quot;&gt;8. 설치를 마치기위해 ‘Finish’ 를 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/12.png&quot; alt=&quot;step12&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3설치된-keil-μvision의-pack-installer를-이용해서-stm32f411re를-위한-pack-설치&quot;&gt;3.설치된 Keil μVision의 Pack Installer를 이용해서 STM32F411RE를 위한 Pack 설치&lt;/h2&gt;
+&lt;h3 id=&quot;1-설치가-완료되고나면-아래와-같은창이-자동으로-켜지는데-ok를-클릭한다&quot;&gt;1. 설치가 완료되고나면 아래와 같은창이 자동으로 켜지는데, ‘OK’를 클릭한다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/13.png&quot; alt=&quot;step13&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-사용하는-보드를-위한-팩을-설치해주기-위해서-먼저-자신의-보드를-찾는다&quot;&gt;2. 사용하는 보드를 위한 팩을 설치해주기 위해서 먼저 자신의 보드를 찾는다.&lt;/h3&gt;
+&lt;p&gt;Search 에 자신이 사용하는 보드의 이름을 검색한다.&lt;br /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/14.png&quot; alt=&quot;step14&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-사용하는-보드를-클릭해주면-오른쪽의-packs-노란색-부분이-해당-보드를-사용하기-위해-필요한-pack들을-보여준다&quot;&gt;3. 사용하는 보드를 클릭해주면 오른쪽의 Packs (노란색) 부분이 해당 보드를 사용하기 위해 필요한 pack들을 보여준다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/15.png&quot; alt=&quot;step15&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-필요한-pack들을-설치업데이트-해준다&quot;&gt;4. 필요한 pack들을 설치/업데이트 해준다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/16.png&quot; alt=&quot;step16&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-중간에-아래와-같은-라이센스-동의를위한-창이-나올-수-있는데-동의하고-넘어간다&quot;&gt;5. 중간에 아래와 같은 라이센스 동의를위한 창이 나올 수 있는데, 동의하고 넘어간다.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/17.png&quot; alt=&quot;step17&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-reference&quot;&gt;3. Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Keil uVision5-ARM을 위한 컴파일러 &lt;a href=&quot;https://vo.la/CBX2&quot;&gt;https://vo.la/CBX2&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 28 Mar 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/install/2020/03/28/MDK-ARM_IDE_Keil_uVision_Install.html</link>
+        <guid isPermaLink="true">http://localhost:4000/install/2020/03/28/MDK-ARM_IDE_Keil_uVision_Install.html</guid>
+        
+        <category>window</category>
+        
+        <category>mdk-arm</category>
+        
+        <category>ide</category>
+        
+        <category>keil</category>
+        
+        <category>μvision</category>
+        
+        <category>install</category>
+        
+        
+        <category>Install</category>
+        
+      </item>
     
       <item>
         <title>[Mac] 맥 Window와 MacOS 간의 전환 방법</title>
@@ -3338,98 +3449,6 @@ auto 키워드를 사용해서 for문 등에서 유용하게 사용 가능
         <category>programmershighscorekit</category>
         
         <category>hash</category>
-        
-        <category>level2</category>
-        
-        <category>algorithm</category>
-        
-        <category>cplusplus</category>
-        
-        
-        <category>프로그래머스고득점Kit</category>
-        
-      </item>
-    
-      <item>
-        <title>프로그래머스 코딩테스트 고득점 Kit : [정렬] 가장 큰 수</title>
-        <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
-본 문제는 푸는데 시간이 정말 오래걸렸던 문제이다. 하지만 알고리즘 문제 풀기의 정석대로 단계를 거쳤던 것 같아 문제를 풀고나서는 뿌듯하고 내 자신이 자랑스러웠다. 처음에 잘못된 방향으로 고민하다가 점점 정답에 가깝게 생각했다는 것이 정말 기분좋다 :)&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
-&lt;p&gt;0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.&lt;br /&gt;
-예를 들어, 주어진 정수가 [6, 10, 2]라면 [6102, 6210, 1062, 1026, 2610, 2106]를 만들 수 있고, 이중 가장 큰 수는 6210입니다.
-0 또는 양의 정수가 담긴 배열 numbers가 매개변수로 주어질 때, 순서를 재배치하여 만들 수 있는 가장 큰 수를 문자열로 바꾸어 return 하도록 solution 함수를 작성해주세요.&lt;/p&gt;
-
-&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;numbers의 길이는 1 이상 100,000 이하입니다.&lt;/li&gt;
-  &lt;li&gt;numbers의 원소는 0 이상 1,000 이하입니다.&lt;/li&gt;
-  &lt;li&gt;정답이 너무 클 수 있으니 문자열로 바꾸어 return 합니다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) numbers를 문제에 맞게 정렬하기위해 정렬 기준이되는 compare 함수를 만든다.&lt;br /&gt;
-2) compare 함수는 두 수를 string으로 붙여 비교한다.&lt;br /&gt;
-3) 정렬된 벡터를 그대로 이어붙여 문자열을 만든다.&lt;br /&gt;
-4) 벡터에 0이 들어갔을 경우를 고려하여 첫 숫자가 0이면 0을 반환한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
-&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;string&amp;gt;
-#include &amp;lt;vector&amp;gt;
-#include &amp;lt;algorithm&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;푸는데 시간 오래걸림&lt;/li&gt;
-  &lt;li&gt;각 문자열의 길이를 같게하는게 key point!&lt;/li&gt;
-  &lt;li&gt;0일 경우는 생각 못함…(마지막 테스트 케이스…)
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;[C++] sort algorithm 정리 및 예시 &lt;a href=&quot;https://blockdmask.tistory.com/178&quot;&gt;https://blockdmask.tistory.com/178&lt;/a&gt;&lt;br /&gt;
-사용자 정의 함수를 사용한 sorting을 위해서는 sort() 함수의 3번째 인자에 사용자 정의 함수를 assign&lt;/li&gt;
-  &lt;li&gt;[C++] string 클래스, 문자열에 대해서 (총정리) &lt;a href=&quot;https://blockdmask.tistory.com/338&quot;&gt;https://blockdmask.tistory.com/338&lt;/a&gt;&lt;br /&gt;
-string에서 index로 접근하기 위해서는 string.at() 함수를 사용하고 char형태가 반환
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 05 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/05/%EC%A0%95%EB%A0%AC_%EA%B0%80%EC%9E%A5%ED%81%B0%EC%88%98_level2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/05/%EC%A0%95%EB%A0%AC_%EA%B0%80%EC%9E%A5%ED%81%B0%EC%88%98_level2.html</guid>
-        
-        <category>programmershighscorekit</category>
-        
-        <category>sorting</category>
         
         <category>level2</category>
         
