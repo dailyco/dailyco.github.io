@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Mar 2020 22:56:28 +0900</pubDate>
-    <lastBuildDate>Sat, 28 Mar 2020 22:56:28 +0900</lastBuildDate>
+    <pubDate>Sat, 28 Mar 2020 23:06:16 +0900</pubDate>
+    <lastBuildDate>Sat, 28 Mar 2020 23:06:16 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -23,75 +23,75 @@
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2-오른쪽-모서리의-downloads-버튼을-클릭한다&quot;&gt;2. 오른쪽 모서리의 ‘Downloads’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/1.png&quot; alt=&quot;step1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/1.PNG&quot; alt=&quot;step1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;3-download-products에서-mdk-arm을-선택한다&quot;&gt;3. Download Products에서 MDK-Arm을 선택한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/2.png&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/2.PNG&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;4-정보를-입력해주고-아래-submit-버튼을-클릭한다-본인은-정확한-정보-입력x&quot;&gt;4. 정보를 입력해주고, 아래 ‘Submit’ 버튼을 클릭한다. (본인은 정확한 정보 입력X)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/3.png&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/3.PNG&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;5-현재의-가장-최신-버전인-mdk529exe를-다운받는다&quot;&gt;5. 현재의 가장 최신 버전인 MDK529.EXE를 다운받는다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/4.png&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/4.PNG&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-mdk-arm-v5-mdk529-설치&quot;&gt;2. MDK-ARM v5 (MDK529) 설치&lt;/h2&gt;
 &lt;h3 id=&quot;1-설치된-파일을-실행시킨다&quot;&gt;1. 설치된 파일을 실행시킨다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/5.png&quot; alt=&quot;step5&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/5.PNG&quot; alt=&quot;step5&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2-아래와-같은-창이-나오면-next를-클릭한다&quot;&gt;2. 아래와 같은 창이 나오면 ‘Next’를 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/6.png&quot; alt=&quot;step6&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/6.PNG&quot; alt=&quot;step6&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;3-라이센스에-동의를-하고-다음으로-넘어간다&quot;&gt;3. 라이센스에 동의를 하고, 다음으로 넘어간다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/7.png&quot; alt=&quot;step7&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/7.PNG&quot; alt=&quot;step7&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;4-자신이-저장하고싶은-위치를-설정해주고-다음으로-넘어간다&quot;&gt;4. 자신이 저장하고싶은 위치를 설정해주고, 다음으로 넘어간다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/8.png&quot; alt=&quot;step8&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/8.PNG&quot; alt=&quot;step8&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;5-이름과-회사-이메일-등의-정보노란박스-를-입력하고-넘어간다-본인은-정확한-정보-입력x&quot;&gt;5. 이름과 회사, 이메일 등의 정보(노란박스) 를 입력하고 넘어간다. (본인은 정확한 정보 입력X)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/9.png&quot; alt=&quot;step9&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/9.PNG&quot; alt=&quot;step9&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;6-아래와-같이-설치-진행중인-창이-나오는데-설치될동안-기다린다&quot;&gt;6. 아래와 같이 설치 진행중인 창이 나오는데 설치될동안 기다린다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/10.png&quot; alt=&quot;step10&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/10.PNG&quot; alt=&quot;step10&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;7-설치가-끝나고나면-아래와-같은-창이-새롭게-뜨는데-설치해준다&quot;&gt;7. 설치가 끝나고나면 아래와 같은 창이 새롭게 뜨는데 설치해준다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/11.png&quot; alt=&quot;step11&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/11.PNG&quot; alt=&quot;step11&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;8-설치를-마치기위해-finish-를-클릭한다&quot;&gt;8. 설치를 마치기위해 ‘Finish’ 를 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/12.png&quot; alt=&quot;step12&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/12.PNG&quot; alt=&quot;step12&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3설치된-keil-μvision의-pack-installer를-이용해서-stm32f411re를-위한-pack-설치&quot;&gt;3.설치된 Keil μVision의 Pack Installer를 이용해서 STM32F411RE를 위한 Pack 설치&lt;/h2&gt;
 &lt;h3 id=&quot;1-설치가-완료되고나면-아래와-같은창이-자동으로-켜지는데-ok를-클릭한다&quot;&gt;1. 설치가 완료되고나면 아래와 같은창이 자동으로 켜지는데, ‘OK’를 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/13.png&quot; alt=&quot;step13&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/13.PNG&quot; alt=&quot;step13&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2-사용하는-보드를-위한-팩을-설치해주기-위해서-먼저-자신의-보드를-찾는다&quot;&gt;2. 사용하는 보드를 위한 팩을 설치해주기 위해서 먼저 자신의 보드를 찾는다.&lt;/h3&gt;
 &lt;p&gt;Search 에 자신이 사용하는 보드의 이름을 검색한다.&lt;br /&gt;
 &lt;br /&gt;
-&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/14.png&quot; alt=&quot;step14&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/14.PNG&quot; alt=&quot;step14&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;3-사용하는-보드를-클릭해주면-오른쪽의-packs-노란색-부분이-해당-보드를-사용하기-위해-필요한-pack들을-보여준다&quot;&gt;3. 사용하는 보드를 클릭해주면 오른쪽의 Packs (노란색) 부분이 해당 보드를 사용하기 위해 필요한 pack들을 보여준다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/15.png&quot; alt=&quot;step15&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/15.PNG&quot; alt=&quot;step15&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;4-필요한-pack들을-설치업데이트-해준다&quot;&gt;4. 필요한 pack들을 설치/업데이트 해준다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/16.png&quot; alt=&quot;step16&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/16.PNG&quot; alt=&quot;step16&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;5-중간에-아래와-같은-라이센스-동의를위한-창이-나올-수-있는데-동의하고-넘어간다&quot;&gt;5. 중간에 아래와 같은 라이센스 동의를위한 창이 나올 수 있는데, 동의하고 넘어간다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/17.png&quot; alt=&quot;step17&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/MDK-ARM/17.PNG&quot; alt=&quot;step17&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-reference&quot;&gt;3. Reference&lt;/h2&gt;
