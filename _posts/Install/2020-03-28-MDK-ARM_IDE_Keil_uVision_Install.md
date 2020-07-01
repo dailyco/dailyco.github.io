@@ -8,7 +8,7 @@ sitemap:
     changefreq: daily
 ---
 
-본 포스팅은 MDK-ARM IDE Keil μVision을 설치하는 방법을 이야기한다. 임베디드 과제를 하기 위해 세팅을 해야하는데 여기서부터 조금 헤메었던지라 혹시 나와 같은 사람이 있다면 도움이 되고자 포스팅을 작성한다.  
+본 포스팅은 MDK-ARM IDE Keil μVision을 설치하는 방법을 이야기한다. 임베디드 과제를 하기 위해 세팅을 해야하는데 여기서부터 조금 헤메었던지라 혹시 나와 같은 사람이 있다면 도움이 되고자 포스팅을 작성한다. 처음에는 막막했는데 하나씩 찾아보면서 겨우겨우 설치했던터라 다른 사람들은 그렇지 않았으면 하는 마음에 자세히 적어보았다.  
 <br/>
 
 <br/>
@@ -65,9 +65,12 @@ sitemap:
 
 ### 8. 설치를 마치기위해 'Finish' 를 클릭한다.
 ![step12](/assets/img/post/Install/MDK-ARM/12.PNG){:width="600px"}  
-<br/>
+<br/><br/><br/>
 
-## 3.설치된 Keil μVision의 Pack Installer를 이용해서 STM32F411RE를 위한 Pack 설치
+## 3. [Optional] Pack Installer를 이용해서 STM32F411RE를 위한 Pack 설치
+아래 과정은 선택사항이다.  
+그때그때 자신이 필요한 pack을 설치해도되고, 프로젝트를 생성할 때마다 사용하는 pack을 선택해줄 수도 있다.  
+<br/>
 ### 1. 설치가 완료되고나면 아래와 같은창이 자동으로 켜지는데, 'OK'를 클릭한다.
 ![step13](/assets/img/post/Install/MDK-ARM/13.PNG){:width="600px"}  
 <br/>

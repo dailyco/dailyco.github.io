@@ -28,3 +28,5 @@ mdk-arm: MDK-ARM
 ide: IDE
 keil: Keil
 μvision: μVision
+compiler: Compiler
+study: 공부
