@@ -27,9 +27,9 @@ H-Index는 과학자의 생산성과 영향력을 나타내는 지표입니다.
 <br/><br/><br/>
 
 ## 2. 알고리즘! 생각해보자
-1) citations을 오름차순으로 정렬한다.  
-2) citations을 하나씩 돌면서 인용 횟수와 인용된 논문의 갯수 중 작은 값과 지금까지의 가장 큰 H-Index 중 큰 값을 H-Index의 값으로 설정한다.  
-3) citations을 모두 돌고 H-Index 값을 반환한다.  
+1. citations을 오름차순으로 정렬한다.  
+2. citations을 하나씩 돌면서 인용 횟수와 인용된 논문의 갯수 중 작은 값과 지금까지의 가장 큰 H-Index 중 큰 값을 H-Index의 값으로 설정한다.  
+3. citations을 모두 돌고 H-Index 값을 반환한다.  
 <br/><br/>
 
 ## 3. 해결코드

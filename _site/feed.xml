@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Jul 2020 21:33:37 +0900</pubDate>
-    <lastBuildDate>Thu, 02 Jul 2020 21:33:37 +0900</lastBuildDate>
+    <pubDate>Thu, 02 Jul 2020 21:51:32 +0900</pubDate>
+    <lastBuildDate>Thu, 02 Jul 2020 21:51:32 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -491,13 +491,15 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) queue처럼 pop, push가 자유롭기 위해 priorities 벡터를 리스트로 복사해서 생성한다.&lt;br /&gt;
-2) 리스트의 최대값을 구하고, 맨 앞의 원소가 해당 최대값과 같은지 비교한다.&lt;br /&gt;
-3) 같은 값이면, pop하고 answer를 증가시키고, pop한 값이 인쇄를 요청한 문서면 반복문을 멈추고 답을 리턴하고, 아니면 새로운 최대값을 구한다.&lt;br /&gt;
-4) 같은 값이 아니면, pop하고 그 값을 뒤로 다시 push한다.&lt;br /&gt;
-5) 원소를 pop해주었기 때문에 location을 감소시킨다.&lt;br /&gt;
-6) 위 과정을 계속해서 반복한다. (break가 될 때 까지)&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;queue처럼 pop, push가 자유롭기 위해 priorities 벡터를 리스트로 복사해서 생성한다.&lt;/li&gt;
+  &lt;li&gt;리스트의 최대값을 구하고, 맨 앞의 원소가 해당 최대값과 같은지 비교한다.&lt;/li&gt;
+  &lt;li&gt;같은 값이면, pop하고 answer를 증가시키고, pop한 값이 인쇄를 요청한 문서면 반복문을 멈추고 답을 리턴하고, 아니면 새로운 최대값을 구한다.&lt;/li&gt;
+  &lt;li&gt;같은 값이 아니면, pop하고 그 값을 뒤로 다시 push한다.&lt;/li&gt;
+  &lt;li&gt;원소를 pop해주었기 때문에 location을 감소시킨다.&lt;/li&gt;
+  &lt;li&gt;위 과정을 계속해서 반복한다. (break가 될 때 까지)&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1142,10 +1144,12 @@ number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 �
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) 각 number의 문자를 비교하면서 앞의 문자가 뒤의 문자보다 작으면 지우고 k 값을 감소시킨다.&lt;br /&gt;
-2) 앞의 문자가 뒤의 문자보다 작은경우가 없어서 마지막까지 왔고, 앞 문자와 뒷 문자가 같으면 지우고 k 값을 감소시킨다.&lt;br /&gt;
-3) 제거하는 문자 개수 k가 0이 될 때까지 위 과정을 반복한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;각 number의 문자를 비교하면서 앞의 문자가 뒤의 문자보다 작으면 지우고 k 값을 감소시킨다.&lt;/li&gt;
+  &lt;li&gt;앞의 문자가 뒤의 문자보다 작은경우가 없어서 마지막까지 왔고, 앞 문자와 뒷 문자가 같으면 지우고 k 값을 감소시킨다.&lt;/li&gt;
+  &lt;li&gt;제거하는 문자 개수 k가 0이 될 때까지 위 과정을 반복한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1236,13 +1240,15 @@ string의 문자를 삭제할 때는 erase() 함수 사용, 파라미터로 위�
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) people을 오름차 순으로 정렬한다.&lt;br /&gt;
-2) j는 처음부터, i는 끝에서 부터 시작한다.&lt;br /&gt;
-3) people의 j와 i를 더했을 때 limit을 넘지않으면 j를 증가시켜 다음으로 무게가 적은 사람을 가리키게 한다.&lt;br /&gt;
-4) i랑 j가 같거나 i가 j보다 작아질 때까지 반복한다.&lt;br /&gt;
-5) 한 번 돌 때마다 구명보트 한 개가 필요한 것이기 때문에 answer를 증가시킨다.&lt;br /&gt;
-6) j를 합쳤을 때 limit을 넘는 말든 i는 구명 보트 한 개가 필요한 것이기 때문에 한번 돌 때마다 i도 증가시킨다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;people을 오름차 순으로 정렬한다.&lt;/li&gt;
+  &lt;li&gt;j는 처음부터, i는 끝에서 부터 시작한다.&lt;/li&gt;
+  &lt;li&gt;people의 j와 i를 더했을 때 limit을 넘지않으면 j를 증가시켜 다음으로 무게가 적은 사람을 가리키게 한다.&lt;/li&gt;
+  &lt;li&gt;i랑 j가 같거나 i가 j보다 작아질 때까지 반복한다.&lt;/li&gt;
+  &lt;li&gt;한 번 돌 때마다 구명보트 한 개가 필요한 것이기 때문에 answer를 증가시킨다.&lt;/li&gt;
+  &lt;li&gt;j를 합쳤을 때 limit을 넘는 말든 i는 구명 보트 한 개가 필요한 것이기 때문에 한번 돌 때마다 i도 증가시킨다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1339,14 +1345,16 @@ ex) 완성해야 하는 이름이 세 글자면 AAA, 네 글자면 AAAA&lt;/p&gt
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) 각 name을 한 글자씩 보면서, A가 아닌 알파벳이 나왔을 때 조이스틱을 조작해줘야 한다.&lt;br /&gt;
-2) A가 아닌 알파벳이 나오면, 그 전의 A가 아닌 알파벳에서 그 위치까지 앞으로 가는 것과 뒤로 돌아가서 가는 것 중 어느 것이 더 빠른지 비교한다.&lt;br /&gt;
-3) 더 빠른 방법만큼 answer에 더하고, 뒤로 돌아갔다면 endBack을 true로 바꿔준다.&lt;br /&gt;
-4) A가 아닌 알파벳의 위치(index 값)를 idxs에 넣어준다.&lt;br /&gt;
-5) A가 아닌 알파벳을 만들기위해 조이스틱의 조작이 필요한만큼 더해준다.&lt;br /&gt;
-6) 모든 글자를 다 돌고난 후, 뒤로 돌아간 적이 있는데 A로 끝나는 name일 경우를 고려해준다.&lt;br /&gt;
-7) 위와 같은 경우 A가 아닌 알파벳 중 마지막에 있는 것의 위치에서부터 마지막 A까지만큼 더해준다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;각 name을 한 글자씩 보면서, A가 아닌 알파벳이 나왔을 때 조이스틱을 조작해줘야 한다.&lt;/li&gt;
+  &lt;li&gt;A가 아닌 알파벳이 나오면, 그 전의 A가 아닌 알파벳에서 그 위치까지 앞으로 가는 것과 뒤로 돌아가서 가는 것 중 어느 것이 더 빠른지 비교한다.&lt;/li&gt;
+  &lt;li&gt;더 빠른 방법만큼 answer에 더하고, 뒤로 돌아갔다면 endBack을 true로 바꿔준다.&lt;/li&gt;
+  &lt;li&gt;A가 아닌 알파벳의 위치(index 값)를 idxs에 넣어준다.&lt;/li&gt;
+  &lt;li&gt;A가 아닌 알파벳을 만들기위해 조이스틱의 조작이 필요한만큼 더해준다.&lt;/li&gt;
+  &lt;li&gt;모든 글자를 다 돌고난 후, 뒤로 돌아간 적이 있는데 A로 끝나는 name일 경우를 고려해준다.&lt;/li&gt;
+  &lt;li&gt;위와 같은 경우 A가 아닌 알파벳 중 마지막에 있는 것의 위치에서부터 마지막 A까지만큼 더해준다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1447,12 +1455,14 @@ vector의 마지막에 있는 원소에 접근하기 위해서는 vector.back() 
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) 먼저 체육복을 잃어버린 사람을 제외하고 입을 수 있는 사람 수를 wear에 담는다.&lt;br /&gt;
-2) 여벌 체육복을 가져온 학생이 도난 당했을 경우, 다른 학생에게 체육복을 빌려줄 수 없으므로 이 경우를 제외시킨다.&lt;br /&gt;
-3) 그리고 이 경우에는 체육복을 입을 수 있는 학생이 증가된 것이기 때문에 wear을 증가시킨다.&lt;br /&gt;
-4) 남은 체육복을 잃어버린 학생들은 각각 한 명씩 자신의 앞번호나 뒷번호 학생에게 빌릴 수 있는지 확인한다.&lt;br /&gt;
-5) 빌릴수 있으면 wear을 증가시키고, 빌려준 학생의 번호는 reserve에서 -1로 바꿔준다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;먼저 체육복을 잃어버린 사람을 제외하고 입을 수 있는 사람 수를 wear에 담는다.&lt;/li&gt;
+  &lt;li&gt;여벌 체육복을 가져온 학생이 도난 당했을 경우, 다른 학생에게 체육복을 빌려줄 수 없으므로 이 경우를 제외시킨다.&lt;/li&gt;
+  &lt;li&gt;그리고 이 경우에는 체육복을 입을 수 있는 학생이 증가된 것이기 때문에 wear을 증가시킨다.&lt;/li&gt;
+  &lt;li&gt;남은 체육복을 잃어버린 학생들은 각각 한 명씩 자신의 앞번호나 뒷번호 학생에게 빌릴 수 있는지 확인한다.&lt;/li&gt;
+  &lt;li&gt;빌릴수 있으면 wear을 증가시키고, 빌려준 학생의 번호는 reserve에서 -1로 바꿔준다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1563,14 +1573,16 @@ vector의 마지막에 있는 원소에 접근하기 위해서는 vector.back() 
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) priority_queue를 생성한다.&lt;br /&gt;
-2) stock에 계속해서 공급받은 밀가루를 더해줄 것이기 때문에 (k - stock)이 0보다 큰 동안 반복한다.&lt;br /&gt;
-3) stock 갯수 만큼 버틸 수 있기 때문에 stock 갯수 보다 작거나 같은 날짜의 supplies는 전부 priority_queue에 넣어준다.&lt;br /&gt;
-4) priority_queue 안의 숫자들이 stock으로 버틸 수 있는 날짜들의 공급 받을 수 있는 밀가루 수량들이다.&lt;br /&gt;
-5) 그 중 가장 많이 공급 받을 수 있는 밀가루 priority_queue의 top()을 pop한다.&lt;br /&gt;
-6) pop한 밀가루만큼을 공급받았다고 생각하고 answer를 증가시키고 그 값만큼 stock에 더해준다.&lt;br /&gt;
-7) 다시 stock이 늘어났으므로 공급받을 수 있는 날짜에 맞게 priority_queue에 넣어주고 3번부터의 과정을 반복한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;priority_queue를 생성한다.&lt;/li&gt;
+  &lt;li&gt;stock에 계속해서 공급받은 밀가루를 더해줄 것이기 때문에 (k - stock)이 0보다 큰 동안 반복한다.&lt;/li&gt;
+  &lt;li&gt;stock 갯수 만큼 버틸 수 있기 때문에 stock 갯수 보다 작거나 같은 날짜의 supplies는 전부 priority_queue에 넣어준다.&lt;/li&gt;
+  &lt;li&gt;priority_queue 안의 숫자들이 stock으로 버틸 수 있는 날짜들의 공급 받을 수 있는 밀가루 수량들이다.&lt;/li&gt;
+  &lt;li&gt;그 중 가장 많이 공급 받을 수 있는 밀가루 priority_queue의 top()을 pop한다.&lt;/li&gt;
+  &lt;li&gt;pop한 밀가루만큼을 공급받았다고 생각하고 answer를 증가시키고 그 값만큼 stock에 더해준다.&lt;/li&gt;
+  &lt;li&gt;다시 stock이 늘어났으므로 공급받을 수 있는 날짜에 맞게 priority_queue에 넣어주고 3번부터의 과정을 반복한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1666,13 +1678,15 @@ Leo가 가진 음식의 스코빌 지수를 담은 배열 scoville과 원하는 
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) scoville 를 min-heap으로 만든다.&lt;br /&gt;
-2) 가장 작은 스코빌 지수가 K 이하, 음식을 섞어서 스코빌 지수를 높일 수 있기 때문에 벡터의 크기가 2 이상인 동안 아래를 반복한다.&lt;br /&gt;
-3) 가장 작은 스코빌 지수 smallest1과 그 다음으로 작은 스코빌 지수 smallest2를 pop한다.&lt;br /&gt;
-4) 섞은 음식의 스코빌 지수를 다시 heap에 넣고 answer는 증가시킨다.&lt;br /&gt;
-5) 모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우를 고려해 그 경우에는 -1을 반환한다.&lt;br /&gt;
-6) 나머지의 경우에는 answer를 반환한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;scoville 를 min-heap으로 만든다.&lt;/li&gt;
+  &lt;li&gt;가장 작은 스코빌 지수가 K 이하, 음식을 섞어서 스코빌 지수를 높일 수 있기 때문에 벡터의 크기가 2 이상인 동안 아래를 반복한다.&lt;/li&gt;
+  &lt;li&gt;가장 작은 스코빌 지수 smallest1과 그 다음으로 작은 스코빌 지수 smallest2를 pop한다.&lt;/li&gt;
+  &lt;li&gt;섞은 음식의 스코빌 지수를 다시 heap에 넣고 answer는 증가시킨다.&lt;/li&gt;
+  &lt;li&gt;모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우를 고려해 그 경우에는 -1을 반환한다.&lt;/li&gt;
+  &lt;li&gt;나머지의 경우에는 answer를 반환한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1792,14 +1806,16 @@ make_heap() 함수는 기본적으로 max-heap을 생성, min-heap을 생성하�
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) arrangement를 돌면서, ‘(‘이 나올때와 ‘)’이 나올 때로 경우를 나눈다.&lt;br /&gt;
-2) ‘(‘이 나오면 그 다음 문자가 ‘)’인지 확인해서 레이저인지 아닌지 확인한다.&lt;br /&gt;
-3) 레이저일 경우 현재 파이프를 절단했다는 의미이므로, 현재 pipe 수를 나타내는 pipe_count만큼 answer에 더한다.&lt;br /&gt;
-4) 또한 레이저일 경우 다음 문자 ‘)’는 이미 해석했으므로 i를 증가시킨다.&lt;br /&gt;
-4) 레이저가 아닐 경우 쇠막대기라는 의미이므로 pipe_count를 증가시킨다.&lt;br /&gt;
-5) 문자가 ‘)’일 경우는 쇠막대기가 끝났을 경우이므로 pipe_count를 감소시킨다.&lt;br /&gt;
-6) 또한 쇠막대기가 끝났을 경우 마지막 절단하고 남은 마지막 조각이 있으므로 answer에 1만큼 더한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;arrangement를 돌면서, ‘(‘이 나올때와 ‘)’이 나올 때로 경우를 나눈다.&lt;/li&gt;
+  &lt;li&gt;’(‘이 나오면 그 다음 문자가 ‘)’인지 확인해서 레이저인지 아닌지 확인한다.&lt;/li&gt;
+  &lt;li&gt;레이저일 경우 현재 파이프를 절단했다는 의미이므로, 현재 pipe 수를 나타내는 pipe_count만큼 answer에 더한다.&lt;/li&gt;
+  &lt;li&gt;또한 레이저일 경우 다음 문자 ‘)’는 이미 해석했으므로 i를 증가시킨다.&lt;/li&gt;
+  &lt;li&gt;레이저가 아닐 경우 쇠막대기라는 의미이므로 pipe_count를 증가시킨다.&lt;/li&gt;
+  &lt;li&gt;문자가 ‘)’일 경우는 쇠막대기가 끝났을 경우이므로 pipe_count를 감소시킨다.&lt;/li&gt;
+  &lt;li&gt;또한 쇠막대기가 끝났을 경우 마지막 절단하고 남은 마지막 조각이 있으므로 answer를 1만큼 증가시킨다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -1971,16 +1987,18 @@ make_heap() 함수는 기본적으로 max-heap을 생성, min-heap을 생성하�
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) 다리를 건너고 있는 트럭을 위치까지 함께 표현할 수 있도록 list를 생성한다.&lt;br /&gt;
-2) 트럭의 위치를 표현하기 위해 list를 bridge_length 만큼 0으로 초기화한다.&lt;br /&gt;
-3) 현재 다리 위에 있는 트럭의 총 무게를 알기위해 total_weight 변수를 생성한다.&lt;br /&gt;
-4) 1초가 지나고 list안의 원소를 한칸씩 앞으로 해주기위해 answer를 더하고 list에서 원소를 pop 한다.&lt;br /&gt;
-ㅤ (다리를 다 건넌 트럭의 무게를 total_weight에서 빼줘야하기 때문에 pop할 원소만큼 빼주는 것도 해야한다.)&lt;br /&gt;
-5) 다리를 건너야할 트럭이 남아있고, 트럭이 다리위로 올라가도 무게를 초과하지 않으면 다리 위로 올려준다.&lt;br /&gt;
-ㅤ (list에 트럭 무게를 추가해주고, total_weight에 해당 트럭 무게만큼 더하고, truck_weights에서는 해당 원소를 지운다.)&lt;br /&gt;
-6) 트럭이 다리위로 올라가면 무게가 초과되면, list에 아무것도 가지 못했다는 것을 나타내기 위해 0을 push한다.&lt;br /&gt;
-7) list가 비워질 때까지 4번 부터의 과정을 반복한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;다리를 건너고 있는 트럭을 위치까지 함께 표현할 수 있도록 list를 생성한다.&lt;/li&gt;
+  &lt;li&gt;트럭의 위치를 표현하기 위해 list를 bridge_length 만큼 0으로 초기화한다.&lt;/li&gt;
+  &lt;li&gt;현재 다리 위에 있는 트럭의 총 무게를 알기위해 total_weight 변수를 생성한다.&lt;/li&gt;
+  &lt;li&gt;1초가 지나고 list안의 원소를 한칸씩 앞으로 해주기위해 answer를 더하고 list에서 원소를 pop 한다.&lt;br /&gt;
+ㅤ (다리를 다 건넌 트럭의 무게를 total_weight에서 빼줘야하기 때문에 pop할 원소만큼 빼주는 것도 해야한다.)&lt;/li&gt;
+  &lt;li&gt;다리를 건너야할 트럭이 남아있고, 트럭이 다리위로 올라가도 무게를 초과하지 않으면 다리 위로 올려준다.&lt;br /&gt;
+ㅤ (list에 트럭 무게를 추가해주고, total_weight에 해당 트럭 무게만큼 더하고, truck_weights에서는 해당 원소를 지운다.)&lt;/li&gt;
+  &lt;li&gt;트럭이 다리위로 올라가면 무게가 초과되면, list에 아무것도 가지 못했다는 것을 나타내기 위해 0을 push한다.&lt;/li&gt;
+  &lt;li&gt;list가 비워질 때까지 4번 부터의 과정을 반복한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -2074,11 +2092,13 @@ make_heap() 함수는 기본적으로 max-heap을 생성, min-heap을 생성하�
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) speeds의 크기나, progresses의 크기나 똑같을테니 하나를 선택해서 size가 0이 될 때까지 아래를 반복한다.&lt;br /&gt;
-2) 해당 progress를 수행하는데 걸리는 시간을 구하고 해당 progress의 speed는 지운다.&lt;br /&gt;
-3) 다음 progress부터 시작해서 해당 progress를 수행하는데 걸리는 시간이 이전 시간보다 클 때까지 지우고 count는 늘리기를 반복한다.&lt;br /&gt;
-4) answer에 count를 push하고 2번부터 다시 반복한다.
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;speeds의 크기나, progresses의 크기나 똑같을테니 하나를 선택해서 size가 0이 될 때까지 아래를 반복한다.&lt;/li&gt;
+  &lt;li&gt;해당 progress를 수행하는데 걸리는 시간을 구하고 해당 progress의 speed는 지운다.&lt;/li&gt;
+  &lt;li&gt;다음 progress부터 시작해서 해당 progress를 수행하는데 걸리는 시간이 이전 시간보다 클 때까지 지우고 count는 늘리기를 반복한다.&lt;/li&gt;
+  &lt;li&gt;answer에 count를 push하고 2번부터 다시 반복한다.
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -2151,7 +2171,7 @@ ceil() 함수와 floor() 함수를 사용하기 위해서는 &lt;code class=&quo
       <item>
         <title>프로그래머스 코딩테스트 고득점 Kit : [스택/큐] 주식가격</title>
         <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
-본 문제는 처음에 문제를 잘 이해하지 못해서 함께 문제를 푸는 언니에게 물어보았다. 처음에는 문제를 잘못 이해했다가 ‘이거 조금 이상한 것 같은데?’ 하는 생각이 들었다가 언니의 설명을 듣고 이해가 되었고, 문제를 이해한 뒤에는 문제를 푸는 데에는 그렇게 오래 걸리지 않았다. 루프를 두 번 돌기 때문에 효율성이 좋다고 말할 수는 없지만 다른 사람들도 비슷하게 푼 것 같아 못한건 아니라는 생각이 들었다.&lt;br /&gt;
+본 문제는 처음에 문제를 잘 이해하지 못해서 함께 문제를 푸는 언니에게 물어보았다. 처음에는 문제를 잘못 이해했다가 ‘이거 조금 이상한 것 같은데?’ 하는 생각이 들었다가 언니의 설명을 듣고 이해가 되었고, 문제를 이해한 뒤에는 문제를 푸는 데에는 그렇게 오래 걸리지 않았다. 루프를 두 번 돌기 때문에 효율성이 좋다고 말할 수는 없지만 다른 사람들도 비슷하게 푼 것 같아 완전 비효율적으로 문제를 푼건 아니라는 생각이 들었다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2168,11 +2188,13 @@ ceil() 함수와 floor() 함수를 사용하기 위해서는 &lt;code class=&quo
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) 각 prices를 p로 받고 count는 0부터 시작한다.&lt;br /&gt;
-2) 다음 prices부터 시작해서 가격이 떨어지지 않은 기간이기 때문에 p보다 크거나 작은 동안 count를 증가시킨다.&lt;br /&gt;
-3) count를 answer에 push한다.&lt;br /&gt;
-4) prices의 크기만큼 반복한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;prices 벡터의 원소를 반복하면서 각 원소를 p로 받고 count는 0부터 시작한다.&lt;/li&gt;
+  &lt;li&gt;현재 원소의 다음 원소부터 시작해서 다음 원소가 현재 원소 p보다 크거나 작은(가격이 떨어지지 않은) 동안 count를 증가시킨다.&lt;/li&gt;
+  &lt;li&gt;가격이 떨어지지 않은 기간을 나타내는 count 값을 answer에 push한다.&lt;/li&gt;
+  &lt;li&gt;prices 벡터의 반복이 끝나면 answer를 반환한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -3349,11 +3371,13 @@ Leo가 본 카펫에서 갈색 격자의 수 brown, 빨간색 격자의 수 red�
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) 카펫이 정사각형일 때와 그렇지 않을 때를 구분한다.&lt;br /&gt;
-2) 정사각형일 때에는 (red의 제곱근+2) 값을 가로, 세로 값으로 반환한다.&lt;br /&gt;
-3) 정사각형이 아닐 때에는 세로의 길이를 1씩 줄어가면서 맞는 길이를 찾는다.&lt;br /&gt;
-4) 맞는 길이를 찾으면 마찮가지로 (가로+2), (세로+2) 값을 반환한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;카펫이 정사각형일 때와 그렇지 않을 때를 구분한다.&lt;/li&gt;
+  &lt;li&gt;정사각형일 때에는 (red의 제곱근+2) 값을 가로, 세로 값으로 반환한다.&lt;/li&gt;
+  &lt;li&gt;정사각형이 아닐 때에는 세로의 길이를 1씩 줄어가면서 맞는 길이를 찾는다.&lt;/li&gt;
+  &lt;li&gt;맞는 길이를 찾으면 마찮가지로 (가로+2), (세로+2) 값을 반환한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -3463,10 +3487,12 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) vector의 마지막 원소부터 시작한다.&lt;br /&gt;
-2) 해당 원소 앞 쪽에 해당 원소보다 큰 값이 나오면 그 값을 answer vector에 insert 한다.&lt;br /&gt;
-3) 해당 원소보다 큰 값이 없으면 answer vector에 0을 insert 한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;vector의 마지막 원소부터 시작한다.&lt;/li&gt;
+  &lt;li&gt;해당 원소 앞 쪽에 해당 원소보다 큰 값이 나오면 그 값을 answer vector에 insert 한다.&lt;/li&gt;
+  &lt;li&gt;해당 원소보다 큰 값이 없으면 answer vector에 0을 insert 한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
@@ -3557,11 +3583,13 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;p&gt;1) recursive를 사용해서 풀어보자.&lt;br /&gt;
-2) parameter로 받은 vector의 길이에 따라서 길이가 0일 때와 나머지의 경우로 나눈다.&lt;br /&gt;
-3) vector의 길이가 0일 경우 지금까지의 합 sum이 target과 같으면 answer를 증가시켜 반환하고, 아니라면 그냥 반환한다.&lt;br /&gt;
-4) vector의 길이가 0이 아니면 answer를 구하기 위해 sum에 vector의 첫번째 원소를 각각 더한 경우와 뺀 경우의 answer 값을 더해 반환한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;recursive를 사용해서 풀어보자.&lt;/li&gt;
+  &lt;li&gt;parameter로 받은 vector의 길이에 따라서 길이가 0일 때와 나머지의 경우로 나눈다.&lt;/li&gt;
+  &lt;li&gt;vector의 길이가 0일 경우 지금까지의 합 sum이 target과 같으면 answer를 증가시켜 반환하고, 아니라면 그냥 반환한다.&lt;/li&gt;
+  &lt;li&gt;vector의 길이가 0이 아니면 answer를 구하기 위해 sum에 vector의 첫번째 원소를 각각 더한 경우와 뺀 경우의 answer 값을 더해 반환한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
