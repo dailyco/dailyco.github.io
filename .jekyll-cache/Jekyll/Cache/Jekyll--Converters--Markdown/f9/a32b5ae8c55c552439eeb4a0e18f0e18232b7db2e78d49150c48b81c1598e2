@@ -1,4 +1,4 @@
-I"�<p>난이도 ★ ☆ ☆ ☆ ☆<br />
+I"�!<p>난이도 ★ ☆ ☆ ☆ ☆<br />
 본 문제는 한 번 풀어본 적이 있어서 문제를 푸는 데에 많은 시간이 걸리지는 않았다. 하지만 C++을 사용해서 문제를 해결하는 것이 처음이었고, 처음에 hash_map으로 잘못 검색하여 실행시키는데 오류 범벅인 코드 덕에 애를 조금 먹었다. 그리고 hash에 대한 개념이 완벽하지는 않지만 조금 잡혀가고 있는 것 같다.<br />
 <br /></p>
 
@@ -19,10 +19,12 @@
 </ul>
 
 <h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
-<p>1) completion의 이름을 key로하는 multiset에 전부 넣는다.<br />
-2) participant의 이름을 multiset에서 찾는다.<br />
-3) 없으면 해당 이름을 반환하고, 있으면 multiset에서 해당 이름을 지운다.<br />
-<br /><br /></p>
+<ol>
+  <li>completion의 이름을 key로하는 multiset에 전부 넣는다.</li>
+  <li>participant의 이름을 multiset에서 찾는다.</li>
+  <li>없으면 해당 이름을 반환하고, 있으면 multiset에서 해당 이름을 지운다.<br />
+<br /><br /></li>
+</ol>
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
@@ -46,6 +48,26 @@
         <span class="k">else</span>
             <span class="n">names</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
     <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="javascript">[Javascript]</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">participant</span><span class="p">,</span> <span class="nx">completion</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+    
+    <span class="nx">participant</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">p</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">map</span><span class="p">[</span><span class="nx">p</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">map</span><span class="p">[</span><span class="nx">p</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">else</span> <span class="nx">map</span><span class="p">[</span><span class="nx">p</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">});</span>
+    
+    <span class="nx">completion</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">c</span><span class="p">){</span>
+        <span class="nx">map</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">});</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">map</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">map</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">key</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 <p><br /><br /><br /></p>

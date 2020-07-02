@@ -19,6 +19,7 @@ mysql: MySQL
 gui: GUI
 cplusplus: C++
 java: Java
+javascript: Javascript
 about: About
 mac: Mac
 window: Window

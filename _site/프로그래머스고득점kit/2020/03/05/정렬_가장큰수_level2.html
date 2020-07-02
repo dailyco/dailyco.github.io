@@ -116,6 +116,8 @@
           <li>Algorithm</li>
         
           <li>C++</li>
+        
+          <li>Javascript</li>
         </ul>
     <div class="post-date"><i class="icon-calendar"></i>Mar 5, 2020</div>
   </div>
@@ -171,6 +173,25 @@
     
     <span class="k">if</span> <span class="p">(</span><span class="n">answer</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="sc">'0'</span><span class="p">)</span> <span class="k">return</span> <span class="s">"0"</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="javascript">[Javascript]</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+    
+    <span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">ab</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">+</span> <span class="nb">String</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">ba</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="o">+</span> <span class="nb">String</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">ba</span> <span class="o">-</span> <span class="nx">ab</span><span class="p">;</span> 
+    <span class="p">})</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="nx">answer</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">numbers</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="nx">answer</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">))</span> <span class="k">return</span> <span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 <p><br /><br /><br /></p>
