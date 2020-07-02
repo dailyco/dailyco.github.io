@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Jul 2020 21:51:32 +0900</pubDate>
-    <lastBuildDate>Thu, 02 Jul 2020 21:51:32 +0900</lastBuildDate>
+    <pubDate>Thu, 02 Jul 2020 23:04:37 +0900</pubDate>
+    <lastBuildDate>Thu, 02 Jul 2020 23:04:37 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -492,11 +492,13 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;ol&gt;
-  &lt;li&gt;queue처럼 pop, push가 자유롭기 위해 priorities 벡터를 리스트로 복사해서 생성한다.&lt;/li&gt;
+  &lt;li&gt;queue처럼 pop, push가 자유롭기 위해 priorities 벡터를 리스트로 복사해서 생성한다.&lt;br /&gt;
+(C++에도 queue가 있지만, max_element()를 사용하기 위해 리스트 사용)&lt;/li&gt;
   &lt;li&gt;리스트의 최대값을 구하고, 맨 앞의 원소가 해당 최대값과 같은지 비교한다.&lt;/li&gt;
-  &lt;li&gt;같은 값이면, pop하고 answer를 증가시키고, pop한 값이 인쇄를 요청한 문서면 반복문을 멈추고 답을 리턴하고, 아니면 새로운 최대값을 구한다.&lt;/li&gt;
+  &lt;li&gt;같은 값이면, pop하고 answer를 증가시키고, pop한 값이 인쇄를 요청한 문서면 반복문을 멈추고 답을 리턴하고, 아니면 새로운 최대값을 구한다.&lt;br /&gt;
+(pop한 값이 인쇄를 요청한 문서인지 아닌지는 location변수가 0인지로 판단)&lt;/li&gt;
   &lt;li&gt;같은 값이 아니면, pop하고 그 값을 뒤로 다시 push한다.&lt;/li&gt;
-  &lt;li&gt;원소를 pop해주었기 때문에 location을 감소시킨다.&lt;/li&gt;
+  &lt;li&gt;맨 앞의 원소를 pop해주었기 때문에 location을 감소시킨다.&lt;/li&gt;
   &lt;li&gt;위 과정을 계속해서 반복한다. (break가 될 때 까지)&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -1460,7 +1462,7 @@ vector의 마지막에 있는 원소에 접근하기 위해서는 vector.back() 
   &lt;li&gt;여벌 체육복을 가져온 학생이 도난 당했을 경우, 다른 학생에게 체육복을 빌려줄 수 없으므로 이 경우를 제외시킨다.&lt;/li&gt;
   &lt;li&gt;그리고 이 경우에는 체육복을 입을 수 있는 학생이 증가된 것이기 때문에 wear을 증가시킨다.&lt;/li&gt;
   &lt;li&gt;남은 체육복을 잃어버린 학생들은 각각 한 명씩 자신의 앞번호나 뒷번호 학생에게 빌릴 수 있는지 확인한다.&lt;/li&gt;
-  &lt;li&gt;빌릴수 있으면 wear을 증가시키고, 빌려준 학생의 번호는 reserve에서 -1로 바꿔준다.&lt;br /&gt;
+  &lt;li&gt;빌릴수 있으면 wear을 증가시키고, 빌려준 학생의 번호와 빌린 학생의 번호는 -1로 바꿔준다.&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1988,15 +1990,18 @@ make_heap() 함수는 기본적으로 max-heap을 생성, min-heap을 생성하�
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;ol&gt;
-  &lt;li&gt;다리를 건너고 있는 트럭을 위치까지 함께 표현할 수 있도록 list를 생성한다.&lt;/li&gt;
+  &lt;li&gt;다리를 건너고 있는 트럭과 그 위치를 함께 표현할 수 있도록 list를 생성한다.&lt;br /&gt;
+(list는 다리 위의 상황을 나타내는 다리 자체로 생각)&lt;/li&gt;
   &lt;li&gt;트럭의 위치를 표현하기 위해 list를 bridge_length 만큼 0으로 초기화한다.&lt;/li&gt;
   &lt;li&gt;현재 다리 위에 있는 트럭의 총 무게를 알기위해 total_weight 변수를 생성한다.&lt;/li&gt;
-  &lt;li&gt;1초가 지나고 list안의 원소를 한칸씩 앞으로 해주기위해 answer를 더하고 list에서 원소를 pop 한다.&lt;br /&gt;
-ㅤ (다리를 다 건넌 트럭의 무게를 total_weight에서 빼줘야하기 때문에 pop할 원소만큼 빼주는 것도 해야한다.)&lt;/li&gt;
-  &lt;li&gt;다리를 건너야할 트럭이 남아있고, 트럭이 다리위로 올라가도 무게를 초과하지 않으면 다리 위로 올려준다.&lt;br /&gt;
-ㅤ (list에 트럭 무게를 추가해주고, total_weight에 해당 트럭 무게만큼 더하고, truck_weights에서는 해당 원소를 지운다.)&lt;/li&gt;
-  &lt;li&gt;트럭이 다리위로 올라가면 무게가 초과되면, list에 아무것도 가지 못했다는 것을 나타내기 위해 0을 push한다.&lt;/li&gt;
-  &lt;li&gt;list가 비워질 때까지 4번 부터의 과정을 반복한다.&lt;br /&gt;
+  &lt;li&gt;list가 전부 비워질 때까지 다음을 반복한다.&lt;/li&gt;
+  &lt;li&gt;1초가 지나고(answer를 1만큼 증가) list안의 원소를 한칸씩 앞으로(list에서 맨 앞의 원소를 pop) 이동 시키고,&lt;br /&gt;
+pop한 원소의 무게를 total_weight에서 빼준다.&lt;/li&gt;
+  &lt;li&gt;다리를 건너야할 트럭이 남아있고, 트럭이 다리위로 올라가면 무게가 초과되면,&lt;br /&gt;
+list에 새로운 트럭이 가지 못했다는 것을 나타내기 위해 0을 push한다.&lt;/li&gt;
+  &lt;li&gt;다리를 건너야할 트럭이 남아있고, 트럭이 다리위로 올라가도 무게를 초과하지 않으면 해당 트럭을 다리 위로 올려준다.&lt;br /&gt;
+(list에 트럭 무게를 추가해주고, total_weight에 해당 트럭 무게만큼 더하고, truck_weights에서는 해당 원소를 지운다.)&lt;/li&gt;
+  &lt;li&gt;list가 비워져 반복이 끝나면 answer를 반환한다.&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -2093,10 +2098,14 @@ make_heap() 함수는 기본적으로 max-heap을 생성, min-heap을 생성하�
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;ol&gt;
-  &lt;li&gt;speeds의 크기나, progresses의 크기나 똑같을테니 하나를 선택해서 size가 0이 될 때까지 아래를 반복한다.&lt;/li&gt;
-  &lt;li&gt;해당 progress를 수행하는데 걸리는 시간을 구하고 해당 progress의 speed는 지운다.&lt;/li&gt;
-  &lt;li&gt;다음 progress부터 시작해서 해당 progress를 수행하는데 걸리는 시간이 이전 시간보다 클 때까지 지우고 count는 늘리기를 반복한다.&lt;/li&gt;
-  &lt;li&gt;answer에 count를 push하고 2번부터 다시 반복한다.
+  &lt;li&gt;speeds의 크기와 progresses의 크기는 동일하니 하나를 선택해서 size가 0이 될 때까지 다음을 반복한다.&lt;br /&gt;
+(speeds와 progresses의 각 원소가 작업이 끝나면 지워주는 식으로 진행했기 때문에)&lt;/li&gt;
+  &lt;li&gt;해당 progress를 수행하는데 걸리는 시간을 구해 day에 넣고, 해당 progress와 speed는 지운다.&lt;br /&gt;
+(progress를 수행하는데 걸리는 시간 = (100-progress)/speed를 올림한 값)&lt;/li&gt;
+  &lt;li&gt;다음 progress부터 시작해서 progress를 수행하는데 걸리는 시간이 이전 시간(day)보다 클 때까지&lt;br /&gt;
+progress와 speed를 지우고, count는 증가시키는 것을 반복한다.&lt;/li&gt;
+  &lt;li&gt;answer에 count를 push한다.&lt;/li&gt;
+  &lt;li&gt;speeds 혹은 progresses의 사이즈가 0이 되어서 반복문이 끝나면, answer를 반환한다.&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -3488,9 +3497,10 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;ol&gt;
-  &lt;li&gt;vector의 마지막 원소부터 시작한다.&lt;/li&gt;
-  &lt;li&gt;해당 원소 앞 쪽에 해당 원소보다 큰 값이 나오면 그 값을 answer vector에 insert 한다.&lt;/li&gt;
-  &lt;li&gt;해당 원소보다 큰 값이 없으면 answer vector에 0을 insert 한다.&lt;br /&gt;
+  &lt;li&gt;heights 벡터의 마지막 원소부터 시작해 처음 원소가 될 때까지 다음을 반복한다.&lt;/li&gt;
+  &lt;li&gt;현재 원소 앞의 원소부터해서 계속해서 앞으로 반복하며 현재 원소보다 큰 값이 나오면 원소의 위치를 answer 벡터의 앞에 넣는다.&lt;/li&gt;
+  &lt;li&gt;해당 원소보다 큰 값이 없으면 answer 벡터의 앞에 0을 넣는다.&lt;/li&gt;
+  &lt;li&gt;heights 벡터의 반복이 끝나면, answer를 반환한다.&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -3507,7 +3517,7 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;heights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_insert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;heights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                 &lt;span class=&quot;n&quot;&gt;is_insert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
                 &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
                 &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -3555,39 +3565,47 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
       </item>
     
       <item>
-        <title>프로그래머스 코딩테스트 고득점 Kit : [깊이/너비 우선 탐색] 타겟 넘버</title>
+        <title>프로그래머스 코딩테스트 고득점 Kit : [완전탐색] 숫자 야구</title>
         <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
-본 문제는 처음에 접근을 어떻게 해야할지 잘 모르겠어서 언니와 의논을 한 뒤에 풀기 시작했다. 확실히 한 번 의논을 한 뒤에 문제에 접근하면 훨씬 쉽게 접근 할 수 있는 것 같다. 완전히 혼자의 힘으로 풀지는 못했지만, 문제를 푸는 방향을 옳게 갔다는 데에는 확실히 좋은 방법이라고 생각이 든다. 그래도 다음부터는 최대한 혼자의 힘으로 풀도록 노력해야지 (๑و•̀Δ•́)و&lt;br /&gt;
+본 문제는 문제를 읽자마자 바로 알고리즘이 떠올랐다. 하지만 정작 문제는 잘 해결되지 않았는데, 내가 문제를 자세하게 읽지 않아서 문제를 잘못 이해하고 있었다. 보통의 숫자야구를 생각해서 당연히 중복된 숫자가 가능하고, 0도 포함되어 있을거라 생각했으나 그게 아니었던 것이 복병이었던 것 같다. 역시 문제 속에 답이 있다고… •́︿•̀ 앞으로 문제를 꼼꼼히 읽는 습관을 들여야겠다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
-&lt;p&gt;n개의 음이 아닌 정수가 있습니다.&lt;br /&gt;
-이 수를 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다.&lt;br /&gt;
-예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들려면 다음 다섯 방법을 쓸 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-1+1+1+1+1 = 3
-+1-1+1+1+1 = 3
-+1+1-1+1+1 = 3
-+1+1+1-1+1 = 3
-+1+1+1+1-1 = 3
+&lt;p&gt;숫자 야구 게임이란 2명이 서로가 생각한 숫자를 맞추는 게임입니다. &lt;a href=&quot;https://scratch.mit.edu/projects/131352991/&quot;&gt;게임해보기&lt;/a&gt;&lt;br /&gt;
+각자 서로 다른 1~9까지 3자리 임의의 숫자를 정한 뒤 서로에게 3자리의 숫자를 불러서 결과를 확인합니다.&lt;br /&gt;
+그리고 그 결과를 토대로 상대가 정한 숫자를 예상한 뒤 맞힙니다.&lt;/p&gt;
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; 숫자는 맞지만, 위치가 틀렸을 때는 볼
+&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; 숫자와 위치가 모두 맞을 때는 스트라이크
+&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; 숫자와 위치가 모두 틀렸을 때는 아웃
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;사용할 수 있는 숫자가 담긴 배열 numbers, 타겟 넘버 target이 매개변수로 주어질 때 숫자를 적절히 더하고 빼서 타겟 넘버를 만드는 방법의 수를 return 하도록 solution 함수를 작성해주세요.&lt;/p&gt;
+&lt;p&gt;예를 들어, 아래의 경우가 있으면&lt;/p&gt;
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A : 123
+B : 1스트라이크 1볼.
+A : 356
+B : 1스트라이크 0볼.
+A : 327
+B : 2스트라이크 0볼.
+A : 489
+B : 0스트라이크 1볼.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이때 가능한 답은 324와 328 두 가지입니다.&lt;br /&gt;
+질문한 세 자리의 수, 스트라이크의 수, 볼의 수를 담은 2차원 배열 baseball이 매개변수로 주어질 때, 가능한 답의 개수를 return 하도록 solution 함수를 작성해주세요.&lt;/p&gt;
 
 &lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;주어지는 숫자의 개수는 2개 이상 20개 이하입니다.&lt;/li&gt;
-  &lt;li&gt;각 숫자는 1 이상 50 이하인 자연수입니다.&lt;/li&gt;
-  &lt;li&gt;타겟 넘버는 1 이상 1000 이하인 자연수입니다.
+  &lt;li&gt;질문의 수는 1 이상 100 이하의 자연수입니다.&lt;/li&gt;
+  &lt;li&gt;baseball의 각 행은 [세 자리의 수, 스트라이크의 수, 볼의 수] 를 담고 있습니다.
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;ol&gt;
-  &lt;li&gt;recursive를 사용해서 풀어보자.&lt;/li&gt;
-  &lt;li&gt;parameter로 받은 vector의 길이에 따라서 길이가 0일 때와 나머지의 경우로 나눈다.&lt;/li&gt;
-  &lt;li&gt;vector의 길이가 0일 경우 지금까지의 합 sum이 target과 같으면 answer를 증가시켜 반환하고, 아니라면 그냥 반환한다.&lt;/li&gt;
-  &lt;li&gt;vector의 길이가 0이 아니면 answer를 구하기 위해 sum에 vector의 첫번째 원소를 각각 더한 경우와 뺀 경우의 answer 값을 더해 반환한다.&lt;br /&gt;
+  &lt;li&gt;문제에서 서로 다른 1~9까지의 숫자라고 했기 때문에 반복문의 범위를 123에서 987으로 정해준다.&lt;/li&gt;
+  &lt;li&gt;각 숫자에 0이 포함되거나, 같은 숫자가 있을 경우는 건너뛴다.&lt;/li&gt;
+  &lt;li&gt;각 숫자를 baseball에 담긴 숫자들과 비교해서 strike 수와 ball 수를 구한다.&lt;/li&gt;
+  &lt;li&gt;baseball에 담긴 숫자들과 strike, ball 갯수가 모두 같으면 answer을 증가시킨다.&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -3598,46 +3616,65 @@ vector를 초기화 할 때 vector v{n1, n2, …}; 식으로 바로 어떤 값�
 &lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;find_answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers_cp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;numbers_cp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baseball&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;988&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;find_answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers_cp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; 
-        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;find_answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers_cp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baseball&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baseball_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strike&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baseball_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strike&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baseball_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strike&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baseball_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strike&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;baseball_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;baseball_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;baseball_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strike&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strike&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;is_answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;find_answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;recursive는 비효율적이라는 고정관념에 빠져 recursive 사용하기를 꺼려했는데 그러지 말아야겠다&lt;/li&gt;
-  &lt;li&gt;vector의 첫 원소만 제외하고 vector를 만들어줄 때 assign() 함수를 사용하는건 메모리 측면에서 너무 비효율 적인 것 같은데 방법이 없을까?
+  &lt;li&gt;문제를 잘 읽자!&lt;/li&gt;
+  &lt;li&gt;string에 접근하는 방법으로 at() 함수 말고 다른 방법도 있었네..&lt;/li&gt;
+  &lt;li&gt;string.find() 함수를 쓸 때 찾고자하는 문자열이 없을 때 string::npos 외에도 -1을 사용해서 비교 가능
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;[C++ 공식문서] std:vector:assign &lt;a href=&quot;http://www.cplusplus.com/reference/vector/vector/assign/&quot;&gt;http://www.cplusplus.com/reference/vector/vector/assign/&lt;/a&gt;
+  &lt;li&gt;[C++] string 클래스, 문자열에 대해서 (총정리) &lt;a href=&quot;https://blockdmask.tistory.com/338&quot;&gt;https://blockdmask.tistory.com/338&lt;/a&gt;&lt;br /&gt;
+string에서 char로 접근할 때 at() 함수로 접근하는 방법 외에도 index로 접근 가능&lt;br /&gt;
+단, index로 접근했을 경우 형태는 char 형태로 다른 char과 비교할 때 ‘’ 을 사용
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 11 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/11/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%ED%83%80%EA%B2%9F%EB%84%98%EB%B2%84_level2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/11/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%ED%83%80%EA%B2%9F%EB%84%98%EB%B2%84_level2.html</guid>
+        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/11/%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8_%E1%84%89%E1%85%AE%E1%86%BA%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A3%E1%84%80%E1%85%AE_level2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/11/%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8_%E1%84%89%E1%85%AE%E1%86%BA%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%A3%E1%84%80%E1%85%AE_level2.html</guid>
         
         <category>programmershighscorekit</category>
         
-        <category>dfs-bfs</category>
+        <category>bruteforce</category>
         
         <category>level2</category>
         

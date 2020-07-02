@@ -1,4 +1,4 @@
-I")"<p>난이도 ★ ☆ ☆ ☆ ☆<br />
+I"�"<p>난이도 ★ ☆ ☆ ☆ ☆<br />
 본 문제를 푸는 데에 큰 어려움은 없었지만 vector를 사용하는 데에 있어서 조금 공부가 필요했다. 아직까지 문제가 많이 어렵지는 않아서 난이도에 있어서나 문제를 푸는 시간에 있어서 그렇게 오래 걸리지는 않지만 C++을 잘 몰라 찾고 공부하는 데에 시간 소요가 있는 것 같다.<br />
 <br /></p>
 
@@ -21,10 +21,11 @@
 
 <h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
 <ol>
-  <li>commands의 원소의 i, j, k 값을 각각 받는다.</li>
-  <li>array의 i부터 j까지 범위의 숫자를 cpVector에 복사한다.</li>
-  <li>cpVector의 k번째 수를 answer에 넣는다.</li>
-  <li>위 과정을 commands의 원소갯수만큼 반복한다.<br />
+  <li>commands 벡터의 원소를 반복하며 각 원소의 i, j, k 값을 받는다.</li>
+  <li>배열 array의 i부터 j까지 잘라 cpVector 벡터에 넣는다.</li>
+  <li>sort함수를 하용해서 cpVector 벡터를 오름차순으로 정렬한다.</li>
+  <li>정렬된 cpVector의 k번째 수를 answer에 넣는다.</li>
+  <li>commands 벡터의 반복이 끝나고 answer를 반환한다.<br />
 <br /><br /></li>
 </ol>
 

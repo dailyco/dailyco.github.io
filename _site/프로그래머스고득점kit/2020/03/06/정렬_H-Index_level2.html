@@ -142,10 +142,22 @@
 </ul>
 
 <h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<h4 id="뒤엎은-알고리즘으로-해결한-코드-통과-o">뒤엎은 알고리즘으로 해결한 코드 (통과 O)</h4>
 <ol>
-  <li>citations을 오름차순으로 정렬한다.</li>
-  <li>citations을 하나씩 돌면서 인용 횟수와 인용된 논문의 갯수 중 작은 값과 지금까지의 가장 큰 H-Index 중 큰 값을 H-Index의 값으로 설정한다.</li>
-  <li>citations을 모두 돌고 H-Index 값을 반환한다.<br />
+  <li>citations 벡터를 내림차순으로 정렬한다.</li>
+  <li>citations 벡터의 원소를 반복하며 논문의 인용 횟수와 인용된 논문의 갯수 중 작은 값,<br />
+그리고 이 값과 지금까지의 가장 큰 H-Index 중 큰 값을 H-Index의 값으로 설정한다.<br />
+(논문의 인용 횟수 = citations[i], 논문의 갯수 = citations.size() - i, 지금까지의 가장 큰 H-Index = h_index)</li>
+  <li>citations 벡터의 반복이 끝나면 H-Index 값을 반환한다.<br />
+<br /></li>
+</ol>
+
+<h4 id="해결-후-다른-사람-코드를-참고해-수정한-코드-통과-o">해결 후 다른 사람 코드를 참고해 수정한 코드 (통과 O)</h4>
+<ol>
+  <li>citations 벡터를 내림차순으로 정렬한다.</li>
+  <li>citations 벡터의 원소를 반복하다가 논문의 갯수가 논문의 인용 횟수보다 커지는 순간 논문의 갯수 - 1 값을 반환한다.<br />
+(H-Index는 어차피 h번 이상 인용된 논문이 h편 이상일 때 최대 h 값이다.<br />
+논문의 인용 횟수보다 논문의 갯수가 커지는 순간 H-Index를 만족 못하기 때문에 해당 값 - 1을 반환 → 이전 값 까지는 만족 했으니까)
 <br /><br /></li>
 </ol>
 
@@ -170,7 +182,7 @@
 </code></pre></div></div>
 <p><br /></p>
 
-<h4 id="뒤엎은-알고리즘으로-해결한-코드-통과-o">뒤엎은 알고리즘으로 해결한 코드 (통과 O)</h4>
+<h4 id="뒤엎은-알고리즘으로-해결한-코드-통과-o-1">뒤엎은 알고리즘으로 해결한 코드 (통과 O)</h4>
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
@@ -189,7 +201,7 @@
 </code></pre></div></div>
 <p><br /></p>
 
-<h4 id="해결-후-다른-사람-코드를-참고해-수정한-코드-통과-o">해결 후 다른 사람 코드를 참고해 수정한 코드 (통과 O)</h4>
+<h4 id="해결-후-다른-사람-코드를-참고해-수정한-코드-통과-o-1">해결 후 다른 사람 코드를 참고해 수정한 코드 (통과 O)</h4>
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;

@@ -144,9 +144,10 @@
 
 <h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
 <ol>
-  <li>vector의 마지막 원소부터 시작한다.</li>
-  <li>해당 원소 앞 쪽에 해당 원소보다 큰 값이 나오면 그 값을 answer vector에 insert 한다.</li>
-  <li>해당 원소보다 큰 값이 없으면 answer vector에 0을 insert 한다.<br />
+  <li>heights 벡터의 마지막 원소부터 시작해 처음 원소가 될 때까지 다음을 반복한다.</li>
+  <li>현재 원소 앞의 원소부터해서 계속해서 앞으로 반복하며 현재 원소보다 큰 값이 나오면 원소의 위치를 answer 벡터의 앞에 넣는다.</li>
+  <li>해당 원소보다 큰 값이 없으면 answer 벡터의 앞에 0을 넣는다.</li>
+  <li>heights 벡터의 반복이 끝나면, answer를 반환한다.<br />
 <br /><br /></li>
 </ol>
 
@@ -163,7 +164,7 @@
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">heights</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">bool</span> <span class="n">is_insert</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">heights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">heights</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">heights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">heights</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
                 <span class="n">is_insert</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
                 <span class="n">answer</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">answer</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
                 <span class="k">break</span><span class="p">;</span>

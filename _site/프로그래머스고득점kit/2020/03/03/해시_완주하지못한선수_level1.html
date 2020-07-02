@@ -145,9 +145,10 @@
 
 <h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
 <ol>
-  <li>completion의 이름을 key로하는 multiset에 전부 넣는다.</li>
-  <li>participant의 이름을 multiset에서 찾는다.</li>
-  <li>없으면 해당 이름을 반환하고, 있으면 multiset에서 해당 이름을 지운다.<br />
+  <li>completion 벡터의 원소를 반복하며 각 원소(완주한 선수 이름)를 name multiset에 넣는다.<br />
+(multiset은 중복되는 key를 허용)</li>
+  <li>participant 벡터의 원소를 반복하며 각 원소(참여한 선수 이름) 이름을 name multiset에서 찾는다.</li>
+  <li>name multiset에 이름이 없으면 해당 이름을 반환하고, 있으면 multiset에서 해당 이름을 지운다.<br />
 <br /><br /></li>
 </ol>
 
