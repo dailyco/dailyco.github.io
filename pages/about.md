@@ -6,7 +6,7 @@ title: "ABOUT ME"
 ───────────────  ✧ʕ·͡˔·ོʔ✧  ───────────────
 {: style="text-align: center;"}
 <br/>
-![my_photo](/assets/img/profile/my_photo(2).jpg){:width="300px"}  
+![my_photo](/assets/img/profile/my_photo(3).jpeg){:width="300px"}  
 <br/>
 코딩 재밌어 ⊙▽⊙  
 알고리즘 열심히 풀어보자  ฅʕ•ㅅ•ʔฅ
