@@ -1,0 +1,108 @@
+I"�+<p>난이도 ★ ★ ☆ ☆ ☆<br />
+오늘은 2020 부스트 캠프 1차 온라인 코딩 테스트를 대비해서 실제 시험 환경인 프로그래머스 사이트를 통해 코딩 테스트 준비를 했다. 작년 후기를 통해 문제의 난이도가 그렇게 높지 않다는 것을 듣고 2020, 2019 KAKAO BLIND RECRUITMENT 문제 중 level2 문제 4개를 뽑아 2시간 30분간 시간을 제한해서 문제를 풀었는데, 생각보다 어렵더라… 알고리즘 공부 더 열심히 해야지 o(╥﹏╥)o<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>데이터 처리 전문가가 되고 싶은 어피치는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다.<br />
+최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데,<br />
+문자열에서 같은 값이 연속해서 나타나는 것을 그 문자의 개수와 반복되는 값으로 표현해 더 짧은 문자열로 줄여서 표현하는 알고리즘을 공부하고 있습니다.<br />
+간단한 예로 aabbaccc의 경우 2a2ba3c(문자가 반복되지 않아 한번만 나타난 경우 1은 생략함)와 같이 표현할 수 있는데,<br />
+이러한 방식은 반복되는 문자가 적은 경우 압축률이 낮다는 단점이 있습니다.<br />
+예를 들면, abcabcdede와 같은 문자열은 전혀 압축되지 않습니다.<br />
+어피치는 이러한 단점을 해결하기 위해 문자열을 1개 이상의 단위로 잘라서 압축하여 더 짧은 문자열로 표현할 수 있는지 방법을 찾아보려고 합니다.</p>
+
+<p>예를 들어, ababcdcdababcdcd의 경우 문자를 1개 단위로 자르면 전혀 압축되지 않지만,<br />
+2개 단위로 잘라서 압축한다면 2ab2cd2ab2cd로 표현할 수 있습니다.<br />
+다른 방법으로 8개 단위로 잘라서 압축한다면 2ababcdcd로 표현할 수 있으며, 이때가 가장 짧게 압축하여 표현할 수 있는 방법입니다.</p>
+
+<p>다른 예로, abcabcdede와 같은 경우, 문자를 2개 단위로 잘라서 압축하면 abcabc2de가 되지만,<br />
+3개 단위로 자른다면 2abcdede가 되어 3개 단위가 가장 짧은 압축 방법이 됩니다.<br />
+이때 3개 단위로 자르고 마지막에 남는 문자열은 그대로 붙여주면 됩니다.</p>
+
+<p>압축할 문자열 s가 매개변수로 주어질 때, 위에 설명한 방법으로 1개 이상 단위로 문자열을 잘라 압축하여 표현한 문자열 중 가장 짧은 것의 길이를 return 하도록 solution 함수를 완성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>s의 길이는 1 이상 1,000 이하입니다.</li>
+  <li>s는 알파벳 소문자로만 이루어져 있습니다.
+<br />
+<br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li>answer 값을 문자열 길이로 초기화한다.</li>
+  <li>문자열은 압축하는 단위의 범위를 1~(문자열 길이/2)로 정하여 아래 내용을 반복한다.</li>
+  <li>해당 단위만큼 문자열을 나누어 string_set 벡터에 담는다.<br />
+(마지막에 빈 문자열을 push → 후에 벡터 크기)</li>
+  <li>length 값을 해당 단위만큼 문자열을 나누고난 나머지로 초기화한다.</li>
+  <li>string_set 벡터 크기만큼 아래 내용을 반복한다.</li>
+  <li>벡터의 이전 원소와 현재 원소가 같으면 count 값을 증가시킨다.</li>
+  <li>원소가 다르고 count 값이 1보다 크면 length에 count 값을 문자열로 변환시키고 그 길이만큼 더한다.<br />
+()</li>
+  <li><br />
+<br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">string_set</span><span class="p">;</span>
+        
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">string_set</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">));</span>
+        <span class="n">string_set</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+            
+        <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">%</span> <span class="n">i</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">string_set</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">string_set</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">string_set</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">length</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">to_string</span><span class="p">(</span><span class="n">count</span><span class="p">).</span><span class="n">length</span><span class="p">();</span>
+                <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="n">length</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">&lt;</span> <span class="n">answer</span><span class="p">)</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">length</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>문자열의 길이가 최대 7이기 때문에 결국 2부터 9999999까지 전부 돌려보는 수밖에…</li>
+  <li>조금이라도 효율성을 좋기 하기 위해 “2, 3을 제외한 모든 소수는 ‘6n - 1’, ‘6n + 1’ 꼴이다”라는 소수의 특징을 사용했다</li>
+  <li>어떤 숫자가 소수인지 확인하는 가장 빠른 알고리즘(으로 알고있는데 확실할진…)은 2부터 해당 숫자의 루트 값까지 1씩 증가시켜 나누어서 나눠 떨어지는 값이 없는 숫자이다</li>
+  <li>stoi() 함수가 먹지를 않아서 ASCII-code를 이용했다
+<br />
+<br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>[C++ 정리] 자료형의 크기 및 범위 <a href="http://myblog.opendocs.co.kr/archives/1230">http://myblog.opendocs.co.kr/archives/1230</a><br />
+9999999까지의 숫자를 나타내는데 int형을 사용해도 될지 확인하기 위해 검색 → 사용 가능!</li>
+  <li>[Convert a string to int in C++] <a href="https://www.techiedelight.com/convert-string-to-int-cpp/">https://www.techiedelight.com/convert-string-to-int-cpp/</a><br />
+string을 int형으로 나타내기위해 검색했으나 모두 에러 발생… 다른 사람들은 안그러던데 왜 이러지ㅠ</li>
+  <li>[ASCII code 활용 : char to int (문자형, 정수형 변환)] <a href="https://m.blog.naver.com/PostView.nhn?blogId=xxsaintxx&amp;logNo=220785227573&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">https://m.blog.naver.com/PostView.nhn?blogId=xxsaintxx&amp;logNo=220785227573&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F</a><br />
+char to int를 하기 위해서는 48을 빼면된다, 반대는 48을 더하면 되고 :)</li>
+  <li>[소수] <a href="https://opentutorials.org/course/1685/9469">https://opentutorials.org/course/1685/9469</a><br />
+소수의 특징, “2, 3을 제외한 모든 소수는 ‘6n - 1’, ‘6n + 1’ 꼴이다”</li>
+  <li>[C언어/C++] pow, sqrt 함수에 대해서(루트함수, 제곱, 제곱근) <a href="https://blockdmask.tistory.com/307">https://blockdmask.tistory.com/307</a><br />
+어떤 숫자의 제곱을 구하기 위해서는 sqrt() 함수 사용
+<br />
+<br /></li>
+</ul>
+:ET

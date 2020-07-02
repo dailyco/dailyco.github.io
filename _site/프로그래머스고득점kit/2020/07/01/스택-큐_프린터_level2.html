@@ -206,7 +206,6 @@
 
 <span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">priorities</span><span class="p">,</span> <span class="kt">int</span> <span class="n">location</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ps</span> <span class="p">(</span><span class="n">priorities</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">priorities</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-    <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="n">priorities</span><span class="p">[</span><span class="n">location</span><span class="p">];</span>
     <span class="kt">int</span> <span class="n">max</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     
@@ -245,7 +244,7 @@
 <ul>
   <li>[C++ 공식문서] std:queue:queue <a href="https://www.cplusplus.com/reference/queue/queue/queue/">https://www.cplusplus.com/reference/queue/queue/queue/</a></li>
   <li>[c++] 벡터(vector)에서 최대, 최소값 찾기 <a href="https://m.blog.naver.com/PostView.nhn?blogId=chansung0602&amp;logNo=221116097894&amp;proxyReferer=https:%2F%2Fwww.google.com%2F">https://m.blog.naver.com/PostView.nhn?blogId=chansung0602&amp;logNo=221116097894&amp;proxyReferer=https:%2F%2Fwww.google.com%2F</a><br />
-vector에서 최대값은 algorithm 라이브러리를 include하고, *max_element(vector&lt;&gt;vector 범위)를 사용 (list에서도 가능!)</li>
+vector에서 최대값은 algorithm 라이브러리를 include하고, *max_element(vector&lt;&gt; vector 범위)를 사용 (list에서도 가능!)</li>
   <li>Convert a vector to a list in C++ - <a href="https://www.techiedelight.com/convert-vector-list-cpp/">https://www.techiedelight.com/convert-vector-list-cpp/</a><br />
 list를 vector 베이스로 초기화할 때 파라미터로 vector의 범위를 넣어 변환 가능
 <br /><br /><br /></li>
