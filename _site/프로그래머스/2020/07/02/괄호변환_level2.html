@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<title>프로그래머스 2020 KAKAO BLIND RECRUITMENT : 괄호 변환</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>프로그래머스 2020 KAKAO BLIND RECRUITMENT : 괄호 변환 | Opencoding</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="프로그래머스 2020 KAKAO BLIND RECRUITMENT : 괄호 변환" />
+<meta name="author" content="YuJin Kim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="난이도 ★ ★ ☆ ☆ ☆ 해당 문제의 유형은 잘 모르겠다. 문제에 제시된 알고리즘 그대로 코드로 구현했더니 완성되어서… 재귀함수를 사용하긴 했으나 DFS/BFS 라기도 약간은 애매한 문제같다. 문제 유형을 떠나서는, 솔직히 왜 알고리즘 문제인지 잘 모르겠다는 생각이다. 문제 자체에 이미 알고리즘이 나와있어서 그대로 코드로만 변환하면 풀리는 문제이다. 그래서 나도 쉽게 풀었는데, 그만큼의 뿌듯함은 없었던 것 같다." />
+<meta property="og:description" content="난이도 ★ ★ ☆ ☆ ☆ 해당 문제의 유형은 잘 모르겠다. 문제에 제시된 알고리즘 그대로 코드로 구현했더니 완성되어서… 재귀함수를 사용하긴 했으나 DFS/BFS 라기도 약간은 애매한 문제같다. 문제 유형을 떠나서는, 솔직히 왜 알고리즘 문제인지 잘 모르겠다는 생각이다. 문제 자체에 이미 알고리즘이 나와있어서 그대로 코드로만 변환하면 풀리는 문제이다. 그래서 나도 쉽게 풀었는데, 그만큼의 뿌듯함은 없었던 것 같다." />
+<link rel="canonical" href="http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/02/%EA%B4%84%ED%98%B8%EB%B3%80%ED%99%98_level2.html" />
+<meta property="og:url" content="http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/02/%EA%B4%84%ED%98%B8%EB%B3%80%ED%99%98_level2.html" />
+<meta property="og:site_name" content="Opencoding" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-02T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"프로그래머스 2020 KAKAO BLIND RECRUITMENT : 괄호 변환","dateModified":"2020-07-02T00:00:00+09:00","datePublished":"2020-07-02T00:00:00+09:00","url":"http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/02/%EA%B4%84%ED%98%B8%EB%B3%80%ED%99%98_level2.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/02/%EA%B4%84%ED%98%B8%EB%B3%80%ED%99%98_level2.html"},"author":{"@type":"Person","name":"YuJin Kim"},"description":"난이도 ★ ★ ☆ ☆ ☆ 해당 문제의 유형은 잘 모르겠다. 문제에 제시된 알고리즘 그대로 코드로 구현했더니 완성되어서… 재귀함수를 사용하긴 했으나 DFS/BFS 라기도 약간은 애매한 문제같다. 문제 유형을 떠나서는, 솔직히 왜 알고리즘 문제인지 잘 모르겠다는 생각이다. 문제 자체에 이미 알고리즘이 나와있어서 그대로 코드로만 변환하면 풀리는 문제이다. 그래서 나도 쉽게 풀었는데, 그만큼의 뿌듯함은 없었던 것 같다.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/custom/header.css">
+    </head>
+
+    <body>
+        
+
+        <div class="masthead">
+            <div class="masthead__inner-wrap">
+                <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    
+                    <a class="site-logo" href="/"><img src="/assets/img/header//logo.png" alt=""></a>
+                    
+                    <a class="site-title" href="/">Opencoding</a>
+                    <!-- <button class="greedy-nav__toggle hidden" type="button"></button>
+                    <ul class="hidden-links hidden"><li class="masthead__menu-item">
+                                <a href="/about/" >ABOUT</a>
+                            </li><li class="masthead__menu-item">
+                                <a href="/tags/" >TAGS</a>
+                            </li></ul> -->
+                    <ul class="visible-links"><li class="masthead__menu-item">
+                        <a href="/about/" >ABOUT</a>
+                        </li><li class="masthead__menu-item">
+                        <a href="/tags/" >TAGS</a>
+                        </li></ul>
+                    <!-- <li class="masthead__menu-item">
+                            
+                                <button class="search__toggle " type="button">
+                                <span class="visually-hidden">Toggle search</span>
+                                <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+                                    <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+                                </svg>
+                                </button>
+                            
+                        </li> -->
+                </nav>
+                </div>
+            </div>
+        </div>
+
+        <section class="body_content">
+            <main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim"></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/02/%EA%B4%84%ED%98%B8%EB%B3%80%ED%99%98_level2.html">
+    <h2 class="post-title">프로그래머스 2020 KAKAO BLIND RECRUITMENT : 괄호 변환</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>프로그래머스</li>
+        
+          <li>Level 2</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 2, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>난이도 ★ ★ ☆ ☆ ☆<br />
+해당 문제의 유형은 잘 모르겠다. 문제에 제시된 알고리즘 그대로 코드로 구현했더니 완성되어서… 재귀함수를 사용하긴 했으나 DFS/BFS 라기도 약간은 애매한 문제같다. 문제 유형을 떠나서는, 솔직히 왜 알고리즘 문제인지 잘 모르겠다는 생각이다. 문제 자체에 이미 알고리즘이 나와있어서 그대로 코드로만 변환하면 풀리는 문제이다. 그래서 나도 쉽게 풀었는데, 그만큼의 뿌듯함은 없었던 것 같다.<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>카카오에 신입 개발자로 입사한 콘은 선배 개발자로부터 개발역량 강화를 위해 다른 개발자가 작성한 소스 코드를 분석하여 문제점을 발견하고 수정하라는 업무 과제를 받았습니다.<br />
+소스를 컴파일하여 로그를 보니 대부분 소스 코드 내 작성된 괄호가 개수는 맞지만 짝이 맞지 않은 형태로 작성되어 오류가 나는 것을 알게 되었습니다.<br />
+수정해야 할 소스 파일이 너무 많아서 고민하던 콘은 소스 코드에 작성된 모든 괄호를 뽑아서 올바른 순서대로 배치된 괄호 문자열을 알려주는 프로그램을 다음과 같이 개발하려고 합니다.</p>
+
+<h3 id="용어의-정의">용어의 정의</h3>
+<p>’(‘ 와 ‘)’ 로만 이루어진 문자열이 있을 경우, ‘(‘ 의 개수와 ‘)’ 의 개수가 같다면 이를 균형잡힌 괄호 문자열이라고 부릅니다.<br />
+그리고 여기에 ‘(‘와 ‘)’의 괄호의 짝도 모두 맞을 경우에는 이를 올바른 괄호 문자열이라고 부릅니다.<br />
+예를 들어, “(()))(“와 같은 문자열은 균형잡힌 괄호 문자열 이지만 올바른 괄호 문자열은 아닙니다.<br />
+반면에 “(())()”와 같은 문자열은 균형잡힌 괄호 문자열 이면서 동시에 올바른 괄호 문자열 입니다.</p>
+
+<p>’(‘ 와 ‘)’ 로만 이루어진 문자열 w가 균형잡힌 괄호 문자열 이라면 다음과 같은 과정을 통해 올바른 괄호 문자열로 변환할 수 있습니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 입력이 빈 문자열인 경우, 빈 문자열을 반환합니다. 
+2. 문자열 w를 두 "균형잡힌 괄호 문자열" u, v로 분리합니다. 단, u는 "균형잡힌 괄호 문자열"로 더 이상 분리할 수 없어야 하며, v는 빈 문자열이 될 수 있습니다. 
+3. 문자열 u가 "올바른 괄호 문자열" 이라면 문자열 v에 대해 1단계부터 다시 수행합니다. 
+  3-1. 수행한 결과 문자열을 u에 이어 붙인 후 반환합니다. 
+4. 문자열 u가 "올바른 괄호 문자열"이 아니라면 아래 과정을 수행합니다. 
+  4-1. 빈 문자열에 첫 번째 문자로 '('를 붙입니다. 
+  4-2. 문자열 v에 대해 1단계부터 재귀적으로 수행한 결과 문자열을 이어 붙입니다. 
+  4-3. ')'를 다시 붙입니다. 
+  4-4. u의 첫 번째와 마지막 문자를 제거하고, 나머지 문자열의 괄호 방향을 뒤집어서 뒤에 붙입니다. 
+  4-5. 생성된 문자열을 반환합니다.
+</code></pre></div></div>
+
+<p>균형잡힌 괄호 문자열 p가 매개변수로 주어질 때,<br />
+주어진 알고리즘을 수행해 올바른 괄호 문자열로 변환한 결과를 return 하도록 solution 함수를 완성해 주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>p는 ‘(‘ 와 ‘)’ 로만 이루어진 문자열이며 길이는 2 이상 1,000 이하인 짝수입니다.</li>
+  <li>문자열 p를 이루는 ‘(‘ 와 ‘)’ 의 개수는 항상 같습니다.</li>
+  <li>만약 p가 이미 올바른 괄호 문자열이라면 그대로 return 하면 됩니다.
+<br />
+<br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li>문제 상의 알고리즘을 만족하는 재귀함수 make_right_string을 구현한다.</li>
+  <li>입력이 빈 문자열인 경우, 빈 문자열을 반환한다.</li>
+  <li>문자열 w를 두 “균형잡힌 괄호 문자열” u, v로 분리한다.<br />
+(u는 “균형잡힌 괄호 문자열”로 더 이상 분리할 수 없어야 하며, v는 빈 문자열이 될 수 있다)</li>
+  <li>문자열 u가 “올바른 괄호 문자열” 이면 문자열 v에 대해 2번부터 다시 수행한다.</li>
+  <li>수행한 결과 문자열을 u에 이어 붙인 후 반환한다.</li>
+  <li>문자열 u가 “올바른 괄호 문자열”이 아니면 아래 과정을 수행한다.</li>
+  <li>빈 문자열을 ‘(‘로 초기화하고, 문자열 v에 대해 2번부터 재귀적으로 수행한 결과 문자열과 ‘)’를 이어 붙인다.</li>
+  <li>u의 첫 번째와 마지막 문자를 제거하고, 나머지 문자열의 괄호 방향을 뒤집어서 뒤에 붙인다.</li>
+  <li>생성된 문자열을 반환한다.<br />
+<br />
+<br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">string</span> <span class="nf">make_right_string</span><span class="p">(</span><span class="n">string</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">parenthesis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">u</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">w</span> <span class="o">==</span> <span class="s">""</span><span class="p">)</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+    
+    <span class="c1">// 균형잡힌 괄호 문자열 u, v 분리</span>
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">c</span> <span class="o">:</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">'('</span><span class="p">)</span> <span class="n">parenthesis</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">')'</span><span class="p">)</span> <span class="n">parenthesis</span><span class="o">--</span><span class="p">;</span>
+        <span class="n">length</span><span class="o">++</span><span class="p">;</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">parenthesis</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">u</span> <span class="o">=</span> <span class="n">w</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">.</span><span class="n">length</span><span class="p">())</span> <span class="n">v</span> <span class="o">=</span> <span class="n">w</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">length</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// 올바른 괄호 문자열인지 확인</span>
+    <span class="kt">bool</span> <span class="n">is_right_string</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">c</span><span class="o">:</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">'('</span><span class="p">)</span> <span class="n">parenthesis</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">')'</span><span class="p">)</span> <span class="n">parenthesis</span><span class="o">--</span><span class="p">;</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">parenthesis</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">is_right_string</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// 올바른 문자열이면</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">is_right_string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">u</span> <span class="o">+=</span> <span class="n">make_right_string</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">u</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// 올바른 문자열이 아니면</span>
+        <span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">"("</span><span class="p">;</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">make_right_string</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="s">")"</span><span class="p">;</span>
+        <span class="n">u</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+        <span class="n">u</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">c</span> <span class="o">:</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">'('</span><span class="p">)</span> <span class="n">s</span> <span class="o">+=</span> <span class="s">")"</span><span class="p">;</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">')'</span><span class="p">)</span> <span class="n">s</span> <span class="o">+=</span> <span class="s">"("</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">string</span> <span class="nf">solution</span><span class="p">(</span><span class="n">string</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">make_right_string</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>알고리즘이 문제에 다 제공된만큼 알고리즘 자체를 분석하고 공부해보면 좋을 것 같다.
+<br />
+<br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>스스로 해결 :)
+<br />
+<br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/02/%EA%B4%84%ED%98%B8%EB%B3%80%ED%99%98_level2.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/02/%EA%B4%84%ED%98%B8%EB%B3%80%ED%99%98_level2.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main><script async src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+  <script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+        </section>
+    </body>
+</html>
