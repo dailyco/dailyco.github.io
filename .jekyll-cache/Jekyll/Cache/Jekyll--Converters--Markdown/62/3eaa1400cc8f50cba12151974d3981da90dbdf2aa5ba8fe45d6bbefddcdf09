@@ -1,0 +1,182 @@
+I"�-<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/03/%ED%82%A4%ED%8C%A8%EB%93%9C%EB%88%84%EB%A5%B4%EA%B8%B0_level1.html">
+    <h2 class="post-title">프로그래머스 2020 카카오 인턴십 : 키패드 누르기</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>프로그래머스</li>
+        
+          <li>Level 1</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 3, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>난이도 ★ ☆ ☆ ☆ ☆<br />
+해당 문제의 
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>스마트폰 전화 키패드의 각 칸에 다음과 같이 숫자들이 적혀 있습니다.<br />
+이 전화 키패드에서 왼손과 오른손의 엄지손가락만을 이용해서 숫자만을 입력하려고 합니다.<br />
+맨 처음 왼손 엄지손가락은 * 키패드에 오른손 엄지손가락은 # 키패드 위치에서 시작하며, 엄지손가락을 사용하는 규칙은 다음과 같습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 엄지손가락은 상하좌우 4가지 방향으로만 이동할 수 있으며 키패드 이동 한 칸은 거리로 1에 해당합니다.
+2. 왼쪽 열의 3개의 숫자 1, 4, 7을 입력할 때는 왼손 엄지손가락을 사용합니다.
+3. 오른쪽 열의 3개의 숫자 3, 6, 9를 입력할 때는 오른손 엄지손가락을 사용합니다.
+4. 가운데 열의 4개의 숫자 2, 5, 8, 0을 입력할 때는 두 엄지손가락의 현재 키패드의 위치에서 더 가까운 엄지손가락을 사용합니다.
+   4-1. 만약 두 엄지손가락의 거리가 같다면, 오른손잡이는 오른손 엄지손가락, 왼손잡이는 왼손 엄지손가락을 사용합니다.
+</code></pre></div></div>
+
+<p>순서대로 누를 번호가 담긴 배열 numbers, 왼손잡이인지 오른손잡이인 지를 나타내는 문자열 hand가 매개변수로 주어질 때,<br />
+각 번호를 누른 엄지손가락이 왼손인 지 오른손인 지를 나타내는 연속된 문자열 형태로 return 하도록 solution 함수를 완성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>numbers 배열의 크기는 1 이상 1,000 이하입니다.</li>
+  <li>numbers 배열 원소의 값은 0 이상 9 이하인 정수입니다.</li>
+  <li>hand는 “left” 또는 “right” 입니다.
+    <ul>
+      <li>“left”는 왼손잡이, “right”는 오른손잡이를 의미합니다.</li>
+    </ul>
+  </li>
+  <li>왼손 엄지손가락을 사용한 경우는 L, 오른손 엄지손가락을 사용한 경우는 R을 순서대로 이어붙여 문자열 형태로 return 해주세요.
+<br />
+<br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li><br />
+<br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">string</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">string</span> <span class="n">hand</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">cur_L</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">cur_R</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">R</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">answer</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">:</span> <span class="n">numbers</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span> <span class="k">case</span> <span class="mi">4</span><span class="p">:</span> <span class="k">case</span> <span class="mi">7</span><span class="p">:</span>
+                <span class="n">answer</span> <span class="o">+=</span> <span class="s">"L"</span><span class="p">;</span>
+                <span class="n">cur_L</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span> <span class="k">case</span> <span class="mi">6</span><span class="p">:</span> <span class="k">case</span> <span class="mi">9</span><span class="p">:</span>
+                <span class="n">answer</span> <span class="o">+=</span> <span class="s">"R"</span><span class="p">;</span>
+                <span class="n">cur_R</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="nl">default:</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">num</span> <span class="o">+=</span> <span class="mi">11</span><span class="p">;</span>
+                
+                <span class="kt">int</span> <span class="n">left_dist</span> <span class="o">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="n">cur_L</span><span class="p">);</span>
+                <span class="kt">int</span> <span class="n">right_dist</span> <span class="o">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="n">cur_R</span><span class="p">);</span>
+                <span class="n">left_dist</span> <span class="o">=</span> <span class="p">(</span><span class="n">left_dist</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">left_dist</span><span class="o">%</span><span class="mi">3</span><span class="p">);</span>
+                <span class="n">right_dist</span> <span class="o">=</span> <span class="p">(</span><span class="n">right_dist</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">right_dist</span><span class="o">%</span><span class="mi">3</span><span class="p">);</span>
+                
+                <span class="kt">int</span> <span class="n">cur_hand</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">left_dist</span> <span class="o">==</span> <span class="n">right_dist</span><span class="p">)</span> <span class="n">cur_hand</span> <span class="o">=</span> <span class="n">hand</span> <span class="o">==</span> <span class="s">"right"</span><span class="o">?</span> <span class="n">R</span> <span class="o">:</span> <span class="n">L</span><span class="p">;</span>
+                <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">left_dist</span> <span class="o">&lt;</span> <span class="n">right_dist</span><span class="p">)</span> <span class="n">cur_hand</span> <span class="o">=</span> <span class="n">L</span><span class="p">;</span>
+                <span class="k">else</span> <span class="n">cur_hand</span> <span class="o">=</span> <span class="n">R</span><span class="p">;</span>
+                
+                <span class="k">if</span><span class="p">(</span><span class="n">cur_hand</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">cur_R</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+                    <span class="n">answer</span> <span class="o">+=</span> <span class="s">"R"</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">cur_L</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+                    <span class="n">answer</span> <span class="o">+=</span> <span class="s">"L"</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>알고리즘이 문제에 다 제공된만큼 알고리즘 자체를 분석하고 공부해보면 좋을 것 같다.
+<br />
+<br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>스스로 해결 :)
+<br />
+<br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/03/%ED%82%A4%ED%8C%A8%EB%93%9C%EB%88%84%EB%A5%B4%EA%B8%B0_level1.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/03/%ED%82%A4%ED%8C%A8%EB%93%9C%EB%88%84%EB%A5%B4%EA%B8%B0_level1.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
