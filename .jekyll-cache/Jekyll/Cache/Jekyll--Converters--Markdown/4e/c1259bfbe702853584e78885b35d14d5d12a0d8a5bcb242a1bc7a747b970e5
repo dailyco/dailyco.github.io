@@ -1,0 +1,160 @@
+I"�%<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/codingtest/2020/07/04/BoostCamp_2020_condingtest_review.html">
+    <h2 class="post-title">[Codingtest] 부스트캠프 2020 : 1차 온라인 코딩 테스트 후기</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>Codingtest</li>
+        
+          <li>Review</li>
+        
+          <li>Boostcamp</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 4, 2020</div>
+  </div>
+
+  <div class="post">
+    <p><br />
+부스트캠프 1차 온라인 코딩 테스트가 끝이났다. 문제는 총 2문제, 시간은 120분. 사실 문제의 난이도가 그렇게 어렵지 않다고해서 크게 걱정하지는 않았는데 정말 의외의 문제가 나와서 처음 문제를 봤을때 당황했다. 이내 정신을 가다듬고 풀긴했지만… 이번 포스팅에서는 내가 어떻게 부스트 캠프를 지원하게됐고, 오늘 봤던 1차 온라인 코딩 테스트가 어땠는지에 대해서 이야기해보려한다.<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-지원-동기">1. 지원 동기</h2>
+<p>지원 계기는 간단했다. 졸업이 다가오면서 취업에 관심이 생기고 교육이나 인턴 등 여러가지를 해봐야 할 때였기 때문에…<br />
+<br /></p>
+
+<p><img src="/assets/img/post/Review/boostcamp_talk.jpeg" alt="kakao_talk" width="350px" />
+<img src="/assets/img/post/Review/boostcamp_talk(2).jpeg" alt="kakao_talk" width="350px" /></p>
+
+<p>2020 봄학기 개강 후, 학교 생활에 어느정도 적응이 되었을 때였다.<br />
+여러가지 정보를 얻기 위해 들어가있던 오픈 카카오 채팅방에서 위와 같은 메세지를 보았고,<br />
+이제 취업을 준비해야하는 나는 ‘나한테 딱이다!’라는 생각과 함께 지원해야겠다고 마음을 먹었다.<br />
+저 때에는 아직 지원을 받지 않던 시기여서 날짜를 기억하고 다시 학교 생활에 집중하고 마무리할 무렵,<br />
+<br /></p>
+
+<p><img src="/assets/img/post/Review/boostcamp_talk(3).jpeg" alt="kakao_talk2" width="350px" /></p>
+
+<p>지인으로부터 위와 같은 메세지를 한 번 더 받았고, 학기 마무리 후에 본격적으로 지원서를 쓰기 시작했다.<br />
+<br /><br /><br /></p>
+
+<h2 id="2-부스트-캠프">2. 부스트 캠프?</h2>
+<p>사실 나는 위의 카톡을 시작으로 부스트 캠프를 처음 알게되었다.<br />
+그래서 지원서를 작성하고 자소서를 쓰면서 부스트 캠프가 어떤 캠프인지 자세히 찾아보았다.<br />
+공식적인 설명은 ‘지속 가능한 개발자’를 목표로 성장을 추구하는 부스트 캠프, 네이버가 설립한 비영리기관 커넥트 재단에서 진행하는 실무 교육 프로그램.<br />
+부스트 캠프에서는 어떤 교육을 진행하는지를 알고싶었던 나로써는 부스트 캠프를 경험해본 개발자들의 후기를 찾아보게 되었다.<br />
+그리고 내 마음은 흔들어놓은 부스트캠프 2019를 회고하며 작성한 글, <a href="https://hzoou.tistory.com/286">https://hzoou.tistory.com/286</a><br />
+정말 공감이 되었던건, 여성 개발자라는 것 그리고 출발선에서 많이 부족하지만 성장하고자하는 열정이 컸던 것.<br />
+글로부터 위로 받고 응원 받았다면 이야기하면 조금 웃길수 있겠지만, ‘너도 이만큼 성장할 수 있어’라는 말을 듣는 것 같았다.<br />
+그래서 더욱 마음을 굳혔다. 사실 다음 학기가 마지막 학기인데 휴학을 한다는 것은 나에게 있어서 졸업을 미루고 하는 도전이었기 때문에…ㅎㅎ<br />
+<br /></p>
+
+<p>그렇게 지원 마감일까지 자소서를 작성하고 다듬어 제출했다.<br />
+그런데 코딩테스트 날짜가 엄청 가깝더라… 6월 30일에 지원서를 마감하고 7월 4일에 바로 코딩테스트라니!<br />
+지원을하고 안내 메일을 기다리는데 엄청 긴장되었다.<br />
+7월 2일 목요일 오후, 코딩 테스트 보기 이틀 전까지 아무 메일이 없길래 ‘설마 지원서에서 컷당한 건가..’하는 불안함이 들었다.<br />
+점점 슬퍼지려는 찰나, 저녁에 메일이 오더라ㅠㅠ 정말 지원서 컷 당한줄ㅠㅡㅠ<br />
+그동안 꾸준히(?) 알고리즘 문제를 풀었지만, 코딩 테스트 준비를 위해서 남은 이틀동안 열심히 문제를 풀었다.<br />
+문제 연습은 카카오 코딩 테스트 문제들로ㅎㅎ (관련 없는 이야기지만, 카카오 코딩 테스트 문제들의 질이 정말 좋은 것 같다)<br />
+<br /><br /><br /></p>
+
+<h2 id="3-1차-온라인-코딩-테스트">3. 1차 온라인 코딩 테스트</h2>
+<p>1차 온라인 코딩 테스트를 준비하면서 자신감도 생기고 푸는 문제가 늘어가면서 약간의 자만심도 함께 생긴것 같다.<br />
+코딩 테스트를 보기 한 시간 전, 지금까지 풀었던 문제들을 다시 한 번 보면서 정리하는 시간을 가졌고,<br />
+오후 2시부터 4시까지 2시간동안 코딩 테스트를 치뤘다.</p>
+
+<p>문제 유출과 관련해서 문제 내용과 나의 풀이 코드는 작성하지 않았다.<br />
+또한 나의 풀이 방법이 정답임은 아니라는 것을 밝힌다(본 화자도 알고리즘을 막 공부하기 시작한 초보이다ㅠㅠ)</p>
+
+<h3 id="문제-1">문제 1.</h3>
+<p>처음에 프로그래머스 고득점 kit에 있는 문제와 동일하다고 생각해 그 알고리즘 그대로 작성했다.<br />
+그런데 제공되는 테스트 케이스가 모두 통과되더라..ㅋㅋㅋㅋ<br />
+후에 문제를 다시 제대로 읽고 틀렸다는 것을 알고 부랴부랴 수정했다.<br />
+문제의 난이도 자체는 전혀 어렵지 않았는데, 효율성있게 잘 짜려고 하다보니 더 꼬아서 생각한 것 같다.ㅠㅡㅠ</p>
+<ul>
+  <li>정렬을 사용해서 풀 수도 있고 사용하지 않아도 풀 수 있다. (나는 정렬을 사용했다)</li>
+  <li>시간 복잡도는 O(n2)에 가깝다. (O(n2)로 보면 될 듯) → 혹시 더 좋은 알고리즘이 있다면 알려주세요ㅠㅠ
+<br /></li>
+</ul>
+
+<h3 id="문제-2">문제 2.</h3>
+<p>처음에 문제보고 1차 당황, 문제 풀고 확인하면서 잘못 풀었는데 시간이 없어서 2차 당황<br />
+결국 후에 발견한 잘못된 부분은 고치지 못하고 제출했다ㅠㅠ<br />
+제출하고나서 깔끔하게 풀 수 있는 알고리즘 떠올라서 광광….·´¯<code class="highlighter-rouge">(&gt;⌂&lt;)´¯</code>·.</p>
+<ul>
+  <li>벡터에서 중복 원소를 제거하는 방법을 사용 (sort, erase, unique 함수 사용)</li>
+  <li>문제를 해결하도록 두 벡터를 비교하는 알고리즘을 잘 짠다면 패스</li>
+  <li>시간 복잡도는 해결해야하는 세 가지 함수에 대해 각각 O(n) 걸렸다
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="4-느낀점">4. 느낀점</h2>
+<p>너무너무 아쉬웠다ㅠㅠ 마지막에 발견한 잘못된 부분만 고치고 제출했어도 이렇게 아쉽지는 않았을텐데…<br />
+이번 1차 코딩 테스트 정말 붙었으면 좋겠는데, 다른 한 편으로는 붙어도 2차 코딩 테스트에 대한 부담감과 걱정이 든다.<br />
+1차에서도 이렇게 어려운 부분이 있고 잘 보지 못했는데 2차는 어떡하지하는…<br />
+일단 붙고나서 해야할 걱정이긴 하지만ㅠㅠ  결과가 언제 나올지 긴장된다.<br />
+2차 코딩 테스트가 다음주 토요일인걸로봐서 금방 나올 것 같은데..<br />
+떨어지든, 붙든 알고리즘 공부를 더 열심히 해야하는 것은 똑같기 때문에 문제를 더 풀어보고 준비해야겠다..!ㅠㅠ<br />
+그래도… 그래도… 제발 붙길…!🙏🏻🙏🏻
+<br /><br /><br /></p>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/codingtest/2020/07/04/BoostCamp_2020_condingtest_review.html';
+      this.page.identifier = 'http://localhost:4000/codingtest/2020/07/04/BoostCamp_2020_condingtest_review.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET

@@ -6,9 +6,110 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Jul 2020 11:16:05 +0900</pubDate>
-    <lastBuildDate>Sat, 04 Jul 2020 11:16:05 +0900</lastBuildDate>
+    <pubDate>Sat, 04 Jul 2020 19:27:01 +0900</pubDate>
+    <lastBuildDate>Sat, 04 Jul 2020 19:27:01 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>[Codingtest] 부스트캠프 2020 : 1차 온라인 코딩 테스트 후기</title>
+        <description>&lt;p&gt;&lt;br /&gt;
+부스트캠프 1차 온라인 코딩 테스트가 끝이났다. 문제는 총 2문제, 시간은 120분. 사실 문제의 난이도가 그렇게 어렵지 않다고해서 크게 걱정하지는 않았는데 정말 의외의 문제가 나와서 처음 문제를 봤을때 당황했다. 이내 정신을 가다듬고 풀긴했지만… 이번 포스팅에서는 내가 어떻게 부스트 캠프를 지원하게됐고, 오늘 봤던 1차 온라인 코딩 테스트가 어땠는지에 대해서 이야기해보려한다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-지원-동기&quot;&gt;1. 지원 동기&lt;/h2&gt;
+&lt;p&gt;지원 계기는 간단했다. 졸업이 다가오면서 취업에 관심이 생기고 교육이나 인턴 등 여러가지를 해봐야 할 때였기 때문에…&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Review/boostcamp_talk.jpeg&quot; alt=&quot;kakao_talk&quot; width=&quot;350px&quot; /&gt;
+&lt;img src=&quot;/assets/img/post/Review/boostcamp_talk(2).jpeg&quot; alt=&quot;kakao_talk&quot; width=&quot;350px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2020 봄학기 개강 후, 학교 생활에 어느정도 적응이 되었을 때였다.&lt;br /&gt;
+여러가지 정보를 얻기 위해 들어가있던 오픈 카카오 채팅방에서 위와 같은 메세지를 보았고,&lt;br /&gt;
+이제 취업을 준비해야하는 나는 ‘나한테 딱이다!’라는 생각과 함께 지원해야겠다고 마음을 먹었다.&lt;br /&gt;
+저 때에는 아직 지원을 받지 않던 시기여서 날짜를 기억하고 다시 학교 생활에 집중하고 마무리할 무렵,&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/Review/boostcamp_talk(3).jpeg&quot; alt=&quot;kakao_talk2&quot; width=&quot;350px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;지인으로부터 위와 같은 메세지를 한 번 더 받았고, 학기 마무리 후에 본격적으로 지원서를 쓰기 시작했다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-부스트-캠프&quot;&gt;2. 부스트 캠프?&lt;/h2&gt;
+&lt;p&gt;사실 나는 위의 카톡을 시작으로 부스트 캠프를 처음 알게되었다.&lt;br /&gt;
+그래서 지원서를 작성하고 자소서를 쓰면서 부스트 캠프가 어떤 캠프인지 자세히 찾아보았다.&lt;br /&gt;
+공식적인 설명은 ‘지속 가능한 개발자’를 목표로 성장을 추구하는 부스트 캠프, 네이버가 설립한 비영리기관 커넥트 재단에서 진행하는 실무 교육 프로그램.&lt;br /&gt;
+부스트 캠프에서는 어떤 교육을 진행하는지를 알고싶었던 나로써는 부스트 캠프를 경험해본 개발자들의 후기를 찾아보게 되었다.&lt;br /&gt;
+그리고 내 마음은 흔들어놓은 부스트캠프 2019를 회고하며 작성한 글, &lt;a href=&quot;https://hzoou.tistory.com/286&quot;&gt;https://hzoou.tistory.com/286&lt;/a&gt;&lt;br /&gt;
+정말 공감이 되었던건, 여성 개발자라는 것 그리고 출발선에서 많이 부족하지만 성장하고자하는 열정이 컸던 것.&lt;br /&gt;
+글로부터 위로 받고 응원 받았다면 이야기하면 조금 웃길수 있겠지만, ‘너도 이만큼 성장할 수 있어’라는 말을 듣는 것 같았다.&lt;br /&gt;
+그래서 더욱 마음을 굳혔다. 사실 다음 학기가 마지막 학기인데 휴학을 한다는 것은 나에게 있어서 졸업을 미루고 하는 도전이었기 때문에…ㅎㅎ&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그렇게 지원 마감일까지 자소서를 작성하고 다듬어 제출했다.&lt;br /&gt;
+그런데 코딩테스트 날짜가 엄청 가깝더라… 6월 30일에 지원서를 마감하고 7월 4일에 바로 코딩테스트라니!&lt;br /&gt;
+지원을하고 안내 메일을 기다리는데 엄청 긴장되었다.&lt;br /&gt;
+7월 2일 목요일 오후, 코딩 테스트 보기 이틀 전까지 아무 메일이 없길래 ‘설마 지원서에서 컷당한 건가..’하는 불안함이 들었다.&lt;br /&gt;
+점점 슬퍼지려는 찰나, 저녁에 메일이 오더라ㅠㅠ 정말 지원서 컷 당한줄ㅠㅡㅠ&lt;br /&gt;
+그동안 꾸준히(?) 알고리즘 문제를 풀었지만, 코딩 테스트 준비를 위해서 남은 이틀동안 열심히 문제를 풀었다.&lt;br /&gt;
+문제 연습은 카카오 코딩 테스트 문제들로ㅎㅎ (관련 없는 이야기지만, 카카오 코딩 테스트 문제들의 질이 정말 좋은 것 같다)&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-1차-온라인-코딩-테스트&quot;&gt;3. 1차 온라인 코딩 테스트&lt;/h2&gt;
+&lt;p&gt;1차 온라인 코딩 테스트를 준비하면서 자신감도 생기고 푸는 문제가 늘어가면서 약간의 자만심도 함께 생긴것 같다.&lt;br /&gt;
+코딩 테스트를 보기 한 시간 전, 지금까지 풀었던 문제들을 다시 한 번 보면서 정리하는 시간을 가졌고,&lt;br /&gt;
+오후 2시부터 4시까지 2시간동안 코딩 테스트를 치뤘다.&lt;/p&gt;
+
+&lt;p&gt;문제 유출과 관련해서 문제 내용과 나의 풀이 코드는 작성하지 않았다.&lt;br /&gt;
+또한 나의 풀이 방법이 정답임은 아니라는 것을 밝힌다(본 화자도 알고리즘을 막 공부하기 시작한 초보이다ㅠㅠ)&lt;/p&gt;
+
+&lt;h3 id=&quot;문제-1&quot;&gt;문제 1.&lt;/h3&gt;
+&lt;p&gt;처음에 프로그래머스 고득점 kit에 있는 문제와 동일하다고 생각해 그 알고리즘 그대로 작성했다.&lt;br /&gt;
+그런데 제공되는 테스트 케이스가 모두 통과되더라..ㅋㅋㅋㅋ&lt;br /&gt;
+후에 문제를 다시 제대로 읽고 틀렸다는 것을 알고 부랴부랴 수정했다.&lt;br /&gt;
+문제의 난이도 자체는 전혀 어렵지 않았는데, 효율성있게 잘 짜려고 하다보니 더 꼬아서 생각한 것 같다.ㅠㅡㅠ&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;정렬을 사용해서 풀 수도 있고 사용하지 않아도 풀 수 있다. (나는 정렬을 사용했다)&lt;/li&gt;
+  &lt;li&gt;시간 복잡도는 O(n2)에 가깝다. (O(n2)로 보면 될 듯) → 혹시 더 좋은 알고리즘이 있다면 알려주세요ㅠㅠ
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;문제-2&quot;&gt;문제 2.&lt;/h3&gt;
+&lt;p&gt;처음에 문제보고 1차 당황, 문제 풀고 확인하면서 잘못 풀었는데 시간이 없어서 2차 당황&lt;br /&gt;
+결국 후에 발견한 잘못된 부분은 고치지 못하고 제출했다ㅠㅠ&lt;br /&gt;
+제출하고나서 깔끔하게 풀 수 있는 알고리즘 떠올라서 광광….·´¯&lt;code class=&quot;highlighter-rouge&quot;&gt;(&amp;gt;⌂&amp;lt;)´¯&lt;/code&gt;·.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;벡터에서 중복 원소를 제거하는 방법을 사용 (sort, erase, unique 함수 사용)&lt;/li&gt;
+  &lt;li&gt;문제를 해결하도록 두 벡터를 비교하는 알고리즘을 잘 짠다면 패스&lt;/li&gt;
+  &lt;li&gt;시간 복잡도는 해결해야하는 세 가지 함수에 대해 각각 O(n) 걸렸다
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-느낀점&quot;&gt;4. 느낀점&lt;/h2&gt;
+&lt;p&gt;너무너무 아쉬웠다ㅠㅠ 마지막에 발견한 잘못된 부분만 고치고 제출했어도 이렇게 아쉽지는 않았을텐데…&lt;br /&gt;
+이번 1차 코딩 테스트 정말 붙었으면 좋겠는데, 다른 한 편으로는 붙어도 2차 코딩 테스트에 대한 부담감과 걱정이 든다.&lt;br /&gt;
+1차에서도 이렇게 어려운 부분이 있고 잘 보지 못했는데 2차는 어떡하지하는…&lt;br /&gt;
+일단 붙고나서 해야할 걱정이긴 하지만ㅠㅠ  결과가 언제 나올지 긴장된다.&lt;br /&gt;
+2차 코딩 테스트가 다음주 토요일인걸로봐서 금방 나올 것 같은데..&lt;br /&gt;
+떨어지든, 붙든 알고리즘 공부를 더 열심히 해야하는 것은 똑같기 때문에 문제를 더 풀어보고 준비해야겠다..!ㅠㅠ&lt;br /&gt;
+그래도… 그래도… 제발 붙길…!🙏🏻🙏🏻
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 04 Jul 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/codingtest/2020/07/04/BoostCamp_2020_condingtest_review.html</link>
+        <guid isPermaLink="true">http://localhost:4000/codingtest/2020/07/04/BoostCamp_2020_condingtest_review.html</guid>
+        
+        <category>codingtest</category>
+        
+        <category>review</category>
+        
+        <category>boostcamp</category>
+        
+        
+        <category>Codingtest</category>
+        
+      </item>
     
       <item>
         <title>프로그래머스 2020 카카오 인턴십 : 키패드 누르기</title>
@@ -3845,113 +3946,6 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
         <category>gui</category>
         
         <category>graphics</category>
-        
-        
-        <category>JavaCamp</category>
-        
-      </item>
-    
-      <item>
-        <title>[Java-GUI] ROUND1. 계산기 만들기</title>
-        <description>&lt;p&gt;이제 본 프로젝트의 진정한 실전 시작이다. ‘Round 0 책 읽기’ 에서 지쳐버렸을텐데 이제부터 실전이니 힘내서 한 단계 더 나아가길! 첫번째 프로젝트는 계산기 만들기다. GUI를 접해보지 않은 사람이라는 가정하에, 이번 프로젝트에서는 Java GUI 사용 방법에 대해서 공부하고, 익숙해지면 시간이 될 것 같다. 그리고 프로젝트를 진행하지 않는 사람들에게는 나의 코드가 유용한 정보가 되길 바란다 :)&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;-기간-ㅤ3일&quot;&gt;⏰ 기간 ⏰ㅤ3일&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-기능&quot;&gt;1. 기능&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;계산: 덧셈, 뺄셈, 곱셈, 나눗셈, 결과(=)&lt;/li&gt;
-  &lt;li&gt;버튼: 0 부터 9까지의 숫자, 초기화, 지우기&lt;/li&gt;
-  &lt;li&gt;이외에 자유롭게 자신이 선보이고 싶은 기능, 있으면 좋겠다 싶은 기능 추가 (필수 1개)
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-시작&quot;&gt;2. 시작!&lt;/h2&gt;
-&lt;p&gt;내가 할 일은 여기에서 끝이지만, 그래도 검색을 좀 더 수월하게 하기위해 약간의 Reference를 제공할 생각이다.&lt;br /&gt;
-하지만 내가 제공하는 자료는 정말 한정적이기 때문에 필요한 자료는 더 열심히 찾고 공부해야한다.&lt;br /&gt;
-그리고 Reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
-꼭 3일 후에 본 프로젝트를 마무리하고 확인하길 바란다.&lt;br /&gt;
-그냥 내 코드와 결과물을 보고 공부한다면 그것도 물론 공부가 되겠지만 자신이 직접 찾아가며 한 공부보다는 훨씬 못할 것이다.&lt;br /&gt;
-그리고 그 당시에는 몰랐지만 지금보면 내 코드도 잘 짜여진 코드는 아니다 (-﹏-。;)&lt;/p&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docsplayer.org/84194920-Microsoft-powerpoint-java%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-9%EC%9E%A5gui.html&quot;&gt;Java GUI - AWT 와 Swing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://brian-s.tistory.com/97&quot;&gt;Java GUI 로 프로그램 만들어보기&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3-결과물&quot;&gt;3. 결과물&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/calculator.png&quot; alt=&quot;calculator&quot; width=&quot;300px&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;구현-기능&quot;&gt;구현 기능&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;계산: 덧셈, 뺄셈, 곱셈, 나눗셈, 결과(=)&lt;/li&gt;
-  &lt;li&gt;버튼: 0 부터 9까지의 숫자, 초기화, 지우기&lt;/li&gt;
-  &lt;li&gt;나만의 기능: 키보드 모드, 최근 계산 목록&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;보완-해야할-부분&quot;&gt;보완 해야할 부분&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;숫자가 길어질 때 뒷 부분이 “…” 으로 표시 → 숫자가 뒤로 밀어지게 보이게&lt;/li&gt;
-  &lt;li&gt;나만의 기능 아이콘 표시 → 어떤 기능인지 직관적으로 알 수 있게 표시&lt;/li&gt;
-  &lt;li&gt;소수점 아래 숫자가 0일 때는 소수점 아래로 숫자 보여지지 않게&lt;/li&gt;
-  &lt;li&gt;아무 숫자도 입력하지 않고 ‘=’ 버튼을 눌렀을 때 오류가 나지 않게&lt;/li&gt;
-  &lt;li&gt;계산 버튼을 눌렀을 때 기존에 입력되었던 숫자가 지워지게 (이 부분은 좀 더 고민)
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;4-세부-기능-캡쳐&quot;&gt;4. 세부 기능 캡쳐&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-ㅤ&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/calculator_detail.png&quot; alt=&quot;calculator_detail&quot; width=&quot;700px&quot; /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;5-코드-세부-설명&quot;&gt;5. 코드 세부 설명&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/calculator_uml.gif&quot; alt=&quot;calculator_uml&quot; width=&quot;250px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 사진은 내 코드를 UML Diagram으로 나타낸 것이다.&lt;br /&gt;
-이 때 Java로 GUI를 처음 만들어 본 것이고 OODP이니, 객체 지향이니 하나도 모르고 만들어서 class 하나에 다 때려 넣었다.&lt;br /&gt;
-지금 생각하면 정말… 부끄러운 코드이다.&lt;/p&gt;
-
-&lt;p&gt;코드를 세부적으로 설명하면 아래와 같다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt;&lt;/strong&gt; : Calculator 객체를 만들어 &lt;code class=&quot;highlighter-rouge&quot;&gt;displayFrame()&lt;/code&gt; 실행&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;displayFrame()&lt;/code&gt;&lt;/strong&gt; : 계산기 Frame을 보여주고 닫기 버튼을 누르면 닫아주는 역할&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Calculator()&lt;/code&gt;&lt;/strong&gt; : &lt;code class=&quot;highlighter-rouge&quot;&gt;createFrame()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setButton()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setEvent()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setPnl()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;addFrame()&lt;/code&gt; 실행&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;createFrame()&lt;/code&gt;&lt;/strong&gt; : Frame들 (계산기, 키보드 모드 알림, 최근 계산 목록)의 크기, 위치를 설정하고 계산 결과 영역과 copyright 설정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setButton()&lt;/code&gt;&lt;/strong&gt; : 각 버튼들의 색상, 글자 설정해서 만드는 역할&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setEvent()&lt;/code&gt;&lt;/strong&gt; : 각 버튼들을 눌렀을 때의 event 와 키보드 모드에서 키보드를 눌렀을 때의 event 설정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setPnl()&lt;/code&gt;&lt;/strong&gt; : 각 버튼들을 역할에 맞게 Panel에 나누어 담는 역할&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;addFrame()&lt;/code&gt;&lt;/strong&gt; : 위에서 만들었던 계산 결과 영역과 버튼, copyright를 Frame에 추가하는 역할&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clear()&lt;/code&gt;&lt;/strong&gt; : 계산 결과 영역을 clear 해주는 역할&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;calculateAddSbtr(), calculateMltpDivs&lt;/code&gt;&lt;/strong&gt; : 덧셈, 뺄셈, 곱셈, 나눗셈을 계산해주는 역할&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;UML Diagram을 보면 알겠지만, 다른 함수들도 있지만 크게 중요하지 않아 주요 함수들만 설명했다.&lt;br /&gt;
-혹시 코드를 보고 궁금한 점이나 문의할 내용이 있으면 댓글로 남겨주세요!
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;6-github&quot;&gt;6. GitHub&lt;/h2&gt;
-&lt;p&gt;제 코드는 아래 GitHub에서 확인 가능합니다 :)&lt;br /&gt;
-&lt;a href=&quot;https://github.com/0pencoding/JavaCamp-Round1-Calculator&quot;&gt;https://github.com/0pencoding/JavaCamp-Round1-Calculator&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 style=&quot;text-align: right;&quot; id=&quot;round-2-그림판-구현--&quot;&gt;&lt;a href=&quot;https://0pencoding.github.io/javacamp/2020/03/13/JavaCamp_Round2_%EA%B7%B8%EB%A6%BC%ED%8C%90.html&quot;&gt;[Round 2] 그림판 구현 ➜ &lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/javacamp/2020/03/13/JavaCamp_Round1_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5.html</link>
-        <guid isPermaLink="true">http://localhost:4000/javacamp/2020/03/13/JavaCamp_Round1_%E1%84%80%E1%85%A8%E1%84%89%E1%85%A1%E1%86%AB%E1%84%80%E1%85%B5.html</guid>
-        
-        <category>about</category>
-        
-        <category>java</category>
-        
-        <category>gui</category>
         
         
         <category>JavaCamp</category>
