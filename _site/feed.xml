@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Jul 2020 00:17:14 +0900</pubDate>
-    <lastBuildDate>Sat, 04 Jul 2020 00:17:14 +0900</lastBuildDate>
+    <pubDate>Sat, 04 Jul 2020 11:16:05 +0900</pubDate>
+    <lastBuildDate>Sat, 04 Jul 2020 11:16:05 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -15,6 +15,8 @@
         <description>&lt;p&gt;난이도 ★ ☆ ☆ ☆ ☆&lt;br /&gt;
 해당 문제의 유형은 모르겠다..ㅎㅎ 어떠한 자료구조를 사용한게 아니기도하고 그냥 문제를 보고 특정 유형을 생각하고 알고리즘을 세운게 아니라, ‘이렇게 이렇게하면 풀릴 것 같은데?’라는 생각으로 해결한 문제이기 때문이다. 처음에 이 문제를 풀 때는 풀이 접근을 잘못했었다. 미리 스마트폰 전화 키패드의 거리를 정의할 생각을 했는데 이것도 엄청 복잡하더라…ㅠㅠ 결국 설거지하면서 계속 생각하다 퍼뜩하고 아이디어가 떠올랐고 그대로 구현하니 풀려서 기분이 조금 싱숭생숭했다. 좋은듯 안좋은듯… =(:з」∠)_&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;스마트폰 전화 키패드의 각 칸에 다음과 같이 숫자들이 적혀 있습니다.&lt;/p&gt;
@@ -44,8 +46,7 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;왼손 엄지손가락을 사용한 경우는 L, 오른손 엄지손가락을 사용한 경우는 R을 순서대로 이어붙여 문자열 형태로 return 해주세요.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -65,8 +66,7 @@
   &lt;li&gt;왼손 엄지에서 목적지까지가 더 가까우면 L, 오른손 엄지에서 목적지까지가 더 가까우면 R로 설정한다.&lt;/li&gt;
   &lt;li&gt;R, L을 판단하여 answer에 해당 값을 이어붙이고, 사용한 손의 엄지 위치를 목적지 번호로 바꿔준다.&lt;/li&gt;
   &lt;li&gt;numbers 벡터의 반복이 끝나면 answer를 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
@@ -117,8 +117,7 @@
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
@@ -126,17 +125,18 @@
   &lt;li&gt;star, hash 버튼을 static 변수로 각각 10, 12로 초기화해서 코드를 작성하면 좀 더 깔끔한 코드가 되지 않을까…&lt;/li&gt;
   &lt;li&gt;현재 왼쪽 엄지 손가락과 현재 오른쪽 엄지 손가락으로부터 목적지 버튼까지 거리 구하는 알고리즘을 잘 세운것 같다(뿌–듯!)&lt;/li&gt;
   &lt;li&gt;어떤 손가락으로 버튼을 누를지 정해지고, 해당 손가락의 위치와 answer를 더할 때 좀 더 효율적인/깔끔한 방법이 없을까?
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;[C언어/C++] 절대값 함수 abs, fabs에 대해서 &lt;a href=&quot;https://blockdmask.tistory.com/335&quot;&gt;https://blockdmask.tistory.com/335&lt;/a&gt;&lt;br /&gt;
 절대값을 구할때는 abs(Number)를 사용&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 03 Jul 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/03/%ED%82%A4%ED%8C%A8%EB%93%9C%EB%88%84%EB%A5%B4%EA%B8%B0_level1.html</link>
@@ -160,6 +160,8 @@
         <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
 문제… 완전… 못 풀었어…ㅠㅠ 이번 문제는 정말 지저분하게 풀고 알고리즘이 깔끔하지 못하다는 생각이 들었다ㅠㅠ (세상에 3중 for문 이라니..) C++에서 문자열 split 관련 함수를 정식적으로 지원해주지 않는다는 것도 코드가 지저분해진데에 한 몫 하기 했지만, 그래도 제일 큰 문제는 내 알고리즘이 잘못된거겠지…?ㅠㅠ 문제를 봤을때 완전탐색 문제라는 생각은 들었는데 어떻게 풀어야할지는 잘 감이 오지 않았다.. 지저분한 코드로 해결은 했으나, 아직 다른 사람의 풀이도 보지 않은 상태이기 때문에 좀 더 깔끔한 알고리즘을 더 생각해보고 다시 풀어볼 생각이다..!&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;IT 벤처 회사를 운영하고 있는 라이언은 매년 사내 해커톤 대회를 개최하여 우승자에게 상금을 지급하고 있습니다.&lt;br /&gt;
@@ -206,8 +208,7 @@
   &lt;li&gt;expression은 적어도 1개 이상의 연산자를 포함하고 있습니다.&lt;/li&gt;
   &lt;li&gt;연산자 우선순위를 어떻게 적용하더라도, expression의 중간 계산값과 최종 결괏값은 절댓값이 263 - 1 이하가 되도록 입력이 주어집니다.&lt;/li&gt;
   &lt;li&gt;같은 연산자끼리는 앞에 있는 것의 우선순위가 더 높습니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -222,8 +223,7 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
   &lt;li&gt;operand_priority 벡터를 반복하며 각 원소의 우선순위에 따라 수식을 계산한다.&lt;/li&gt;
   &lt;li&gt;수식을 계산한 후, 결과 값의 절대값이 answer보다 크면 answer를 해당 값으로 바꿔준다.&lt;/li&gt;
   &lt;li&gt;operand_priority 벡터의 반복이 끝나면 answer를 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
@@ -324,8 +324,7 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
@@ -333,8 +332,7 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
   &lt;li&gt;문자열 split하는 함수 생성 (내가 원하는대로 자유롭게 사용할 수 있도록 구현할 정도로 실력 쌓자!)&lt;br /&gt;
 (위의 strtok_s()는 본래 C, C++의 strtok_s() 기능을 생각해서 내 나름대로 스스로 구현해 보았다)&lt;/li&gt;
   &lt;li&gt;문자열 정수형으로 바꾸기
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -343,9 +341,11 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
 재귀함수를 사용해서 순열을 구하는 함수 작성, 결과적으로 DFS의 느낌, 잘 공부해두자!&lt;/li&gt;
   &lt;li&gt;[Stack overflow] convert string to int - &lt;a href=&quot;https://stackoverflow.com/questions/7663709/how-can-i-convert-a-stdstring-to-int&quot;&gt;https://stackoverflow.com/questions/7663709/how-can-i-convert-a-stdstring-to-int&lt;/a&gt;&lt;br /&gt;
 문자열을 정수형으로 바꿀때는 “isstream(string) » 정수형 변수” 으로 초기화와 동시에 정수형 변수에 할당 가능&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 03 Jul 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/03/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89_%EC%88%98%EC%8B%9D%EC%B5%9C%EB%8C%80%ED%99%94_level2.html</link>
@@ -373,6 +373,8 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
         <description>&lt;p&gt;난이도 ★ ☆ ☆ ☆ ☆&lt;br /&gt;
 이 문제는 해결하는데 시간이 오래 걸리지도 않았고, 디버깅 시간 없이 바로 해결되었다. 난이도가 level인 만큼 쉬웠던 것 같다. 다만 문제의 지문이 조금 길어서 읽는데 시간 소모가 조금 있었다. 이 문제를 풀고, 다른 사람 풀이를 봤는데 굳이 나 처럼 스택 생성해 사용하지 않고도 그냥 매개변수로 주어지는 2차원 벡터 형태 그대로 사용해서 문제를 해결할 수 있다는 사실을 알고 내가 너무 알고리즘 “문제 풀이 = 자료구조 선택”에 집중해 있었다는 생각이 들었다. 문제를 풀 때, 편협한 생각에서 벗어나서 좀 더 자유롭게 사고할 수 있었으면 좋겠다!&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;게임개발자인 죠르디는 크레인 인형뽑기 기계를 모바일 게임으로 만들려고 합니다.&lt;br /&gt;
@@ -413,8 +415,7 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
   &lt;/li&gt;
   &lt;li&gt;moves 배열의 크기는 1 이상 1,000 이하입니다.&lt;/li&gt;
   &lt;li&gt;moves 배열 각 원소들의 값은 1 이상이며 board 배열의 가로 크기 이하인 자연수입니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -431,8 +432,7 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
   &lt;li&gt;board_stack에 해당 스택에 값이 있고, 스택의 맨 위의 값과 basket의 맨 위의 값을 비교해&lt;br /&gt;
 다르면 basket 스택에 해당 인형을 push하고 board_stack의 해당 스택에서는 pop 해준다. (board 스택에서 basket에 인형을 옮긴 경우)&lt;/li&gt;
   &lt;li&gt;moves 벡터의 반복이 끝나면, answer를 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
@@ -473,24 +473,24 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;스택이 비었는지 확인하는 방법&lt;/li&gt;
   &lt;li&gt;마지막에 basket 스택에 굳이 -1 넣지 않고 for문을 반복하면서 basket이 비었는지 확인하며 진행하면 코드가 더 깔끔!
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;[C++ 공식문서] std:stack:empty &lt;a href=&quot;https://www.cplusplus.com/reference/stack/stack/empty/&quot;&gt;https://www.cplusplus.com/reference/stack/stack/empty/&lt;/a&gt;&lt;br /&gt;
 스택이 비었는지 확인하는 방법은 stack.empty()를 사용&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 03 Jul 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/03/%EC%8A%A4%ED%83%9D-%ED%81%90_%ED%81%AC%EB%A0%88%EC%9D%B8%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0%EA%B2%8C%EC%9E%84_level1.html</link>
@@ -515,6 +515,7 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
         <title>프로그래머스 2019 KAKAO BLIND RECRUITMENT : [정렬] 실패율</title>
         <description>&lt;p&gt;난이도 ★ ☆ ☆ ☆ ☆&lt;br /&gt;
 해당 문제는 level1인 만큼 쉬운편에 속했다. 다만 내가 생각하지 못한 부분이 있어서, 디버깅하는 데에 시간이 좀 걸렸다ㅠㅠ 카카오 문제를 풀면서 느끼는 건데, 카카오 코딩 테스트 문제의 질이 정말 좋은 것 같다. 그냥 우리가 흔히 아는 자료구조를 선택해서 바로 코드를 작성하는 문제들이 아니라 자료 구조를 어떤 것을 사용할지 선택하고 그 자료구조를 사용해서 어떻게 풀지 제대로 알고리즘을 세워 문제를 풀어야한다는 느낌이랄까…? 정확하게 설명하기는 어려운데 코딩 테스트 연습을 하는데에 정말 많은 도움이 된다. (&lt;em&gt;•̀ᴗ•́&lt;/em&gt;)و ̑̑&lt;br /&gt;
+&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
@@ -551,8 +552,7 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
   &lt;/li&gt;
   &lt;li&gt;만약 실패율이 같은 스테이지가 있다면 작은 번호의 스테이지가 먼저 오도록 하면 된다.&lt;/li&gt;
   &lt;li&gt;스테이지에 도달한 유저가 없는 경우 해당 스테이지의 실패율은 0 으로 정의한다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -566,8 +566,7 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
 (compare 함수는 실패율을 기준으로 실패율 높은 순서대로, 실패율이 같을 경우 스테이지가 낮은 순서대로 정렬)&lt;/li&gt;
   &lt;li&gt;정렬된 stage_frate 벡터를 반복하며 스테이지만 answer 벡터에 push한다.&lt;/li&gt;
   &lt;li&gt;stage_frate 벡터의 반복이 끝나면, answer를 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
@@ -606,23 +605,23 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;벡터 정렬할 때, 내가 직접 생성한 함수 기준으로 정렬하는데, 정렬 기준이 두 개인 경우 유의하기
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;[C++] sort algorithm 정리 및 예시 &lt;a href=&quot;https://blockdmask.tistory.com/178&quot;&gt;https://blockdmask.tistory.com/178&lt;/a&gt;&lt;br /&gt;
 사용자 정의 함수를 기준으로 정렬할 경우 sort()의 세번째 파라미터로 해당 변수를 넣어주고, 정렬 기준이 두 개인 경우 사용자 정의 함수에 1순위 정렬 기준이 같을 경우 2순위 정렬 기준으로 정렬한다는 내용을 담아서 사용
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 03 Jul 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/03/%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%89%E1%85%B5%E1%86%AF%E1%84%91%E1%85%A2%E1%84%8B%E1%85%B2%E1%86%AF_level1.html</link>
@@ -648,6 +647,8 @@ operand_priority 2차원 벡터에 담는다.&lt;/li&gt;
         <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
 이 문제는 처음에 문제를 자세히 읽지 않아서 문제를 풀고 디버깅을 했던 문제이다. 문제가 너무 길어서 읽지 않고 넘어간 부분이 좀 있었는데 제한조건은 꼭 제대로 읽어야겠다는 생각을 했다. 문제의 난이도는 그렇게 어렵지 않았지만, 자료구조를 어떻게 구성해서 문제를 풀지를 조금 고민했던 문제같다. 그리고 문제를 풀고나서 다른 사람 풀이를 봤는데 내 알고리즘과 비슷하지만, 코드를 좀 더 깔끔하게 푼 사람이 있어서 많이 배웠고, 변수의 이름을 좀 더 직관적으로 잘 지어야겠다는 생각을 했다 ;)&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;카카오톡 오픈채팅방에서는 친구가 아닌 사람들과 대화를 할 수 있는데, 본래 닉네임이 아닌 가상의 닉네임을 사용하여 채팅방에 들어갈 수 있다.&lt;/p&gt;
@@ -716,8 +717,7 @@ Prodo님이 들어왔습니다.
       &lt;li&gt;유저 아이디와 닉네임은 알파벳 대문자, 소문자를 구별한다.&lt;/li&gt;
       &lt;li&gt;유저 아이디와 닉네임의 길이는 1 이상 10 이하이다.&lt;/li&gt;
       &lt;li&gt;채팅방에서 나간 유저가 닉네임을 변경하는 등 잘못 된 입력은 주어지지 않는다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -735,8 +735,7 @@ Prodo님이 들어왔습니다.
   &lt;li&gt;record 벡터 반복문이 끝나고 result_pair 벡터에 있는 원소들을 반복하면서&lt;br /&gt;
 앞의 uid와 매칭되는 닉네임과 뒤의 메세지를 합쳐 answer 벡터에 push 한다.&lt;/li&gt;
   &lt;li&gt;answer 벡터를 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
@@ -774,15 +773,13 @@ Prodo님이 들어왔습니다.
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;string을 split 하는 방법&lt;/li&gt;
   &lt;li&gt;pair 사용하는 방법
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -793,9 +790,11 @@ splite 하고자하는 문자열을 파라미터로 stringstream 인스턴스를
 ‘stringstream » split한 결과 값을 담는 문자열’ 명령 사용&lt;/li&gt;
   &lt;li&gt;C++ pair 사용하여 쌍으로 값저장 &lt;a href=&quot;https://godog.tistory.com/entry/c-vector-and-pair-%EC%82%AC%EC%9A%A9&quot;&gt;https://godog.tistory.com/entry/c-vector-and-pair-%EC%82%AC%EC%9A%A9&lt;/a&gt;&lt;br /&gt;
 pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, type» 으로 생성 가능하고, pair 쌍을 만들어 저장할 때는 make_pair()를 사용
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 02 Jul 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/02/%ED%95%B4%EC%8B%9C_%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9_level2.html</link>
@@ -822,6 +821,8 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
 오늘은 2020 부스트 캠프 1차 온라인 코딩 테스트를 대비해서 실제 시험 환경인 프로그래머스 사이트를 통해 코딩 테스트 준비를 했다. 작년 후기를 통해 문제의 난이도가 그렇게 높지 않다는 것을 듣고 2020, 2019 KAKAO BLIND RECRUITMENT 문제 중 level2 문제 4개를 뽑아 2시간 30분간 시간을 제한해서 문제를 풀었는데, 생각보다 어렵더라… 알고리즘 공부 더 열심히 해야지 o(╥﹏╥)o&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;데이터 처리 전문가가 되고 싶은 어피치는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다.&lt;br /&gt;
 최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데,&lt;br /&gt;
@@ -845,8 +846,7 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
 &lt;ul&gt;
   &lt;li&gt;s의 길이는 1 이상 1,000 이하입니다.&lt;/li&gt;
   &lt;li&gt;s는 알파벳 소문자로만 이루어져 있습니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -863,8 +863,7 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
   &lt;li&gt;count 값이 그대로 1이면 length에 해당 단위의 길이만큼 더한다.&lt;/li&gt;
   &lt;li&gt;string_set 벡터 반복문이 끝나고 length 값이 answer보다 작으면 answer에 length 값을 할당한다.&lt;/li&gt;
   &lt;li&gt;문자열을 압축하는 단위의 반복문이 끝나고 answer를 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
@@ -900,15 +899,13 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;문자열에서 일부 가져오는 방법&lt;/li&gt;
   &lt;li&gt;정수를 string으로 변환하는 방법
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
@@ -918,9 +915,11 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
 첫 번째 파라미터는 시작 인덱스, 두 번째 파라미터는 갯수, 두 번째 파라미터는 생략 가능하며 생략시 문자열의 끝까지 반환&lt;/li&gt;
   &lt;li&gt;[C++]to_string 함수에 대해서 (int to string) &lt;a href=&quot;https://blockdmask.tistory.com/334&quot;&gt;https://blockdmask.tistory.com/334&lt;/a&gt;&lt;br /&gt;
 정수를 string으로 변환할 때는 to_string()을 사용&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 02 Jul 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/02/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89_%EB%AC%B8%EC%9E%90%EC%97%B4%EC%95%95%EC%B6%95_level2.html</link>
@@ -946,6 +945,8 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
         <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
 해당 문제의 유형은 잘 모르겠다. 문제에 제시된 알고리즘 그대로 코드로 구현했더니 완성되어서… 재귀함수를 사용하긴 했으나 DFS/BFS 라기도 약간은 애매한 문제같다. 문제 유형을 떠나서는, 솔직히 왜 알고리즘 문제인지 잘 모르겠다는 생각이다. 문제 자체에 이미 알고리즘이 나와있어서 그대로 코드로만 변환하면 풀리는 문제이다. 그래서 나도 쉽게 풀었는데, 그만큼의 뿌듯함은 없었던 것 같다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
 &lt;p&gt;카카오에 신입 개발자로 입사한 콘은 선배 개발자로부터 개발역량 강화를 위해 다른 개발자가 작성한 소스 코드를 분석하여 문제점을 발견하고 수정하라는 업무 과제를 받았습니다.&lt;br /&gt;
@@ -979,8 +980,7 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
   &lt;li&gt;p는 ‘(‘ 와 ‘)’ 로만 이루어진 문자열이며 길이는 2 이상 1,000 이하인 짝수입니다.&lt;/li&gt;
   &lt;li&gt;문자열 p를 이루는 ‘(‘ 와 ‘)’ 의 개수는 항상 같습니다.&lt;/li&gt;
   &lt;li&gt;만약 p가 이미 올바른 괄호 문자열이라면 그대로 return 하면 됩니다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
@@ -995,8 +995,7 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
   &lt;li&gt;빈 문자열을 ‘(‘로 초기화하고, 문자열 v에 대해 2번부터 재귀적으로 수행한 결과 문자열과 ‘)’를 이어 붙인다.&lt;/li&gt;
   &lt;li&gt;u의 첫 번째와 마지막 문자를 제거하고, 나머지 문자열의 괄호 방향을 뒤집어서 뒤에 붙인다.&lt;/li&gt;
   &lt;li&gt;생성된 문자열을 반환한다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
@@ -1059,22 +1058,22 @@ pair를 벡터의 원소로 사용할 때는 vector&amp;lt;pair&amp;lt;type, typ
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;make_right_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;알고리즘이 문제에 다 제공된만큼 알고리즘 자체를 분석하고 공부해보면 좋을 것 같다.
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;스스로 해결 :)
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 02 Jul 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2020/07/02/%EA%B4%84%ED%98%B8%EB%B3%80%ED%99%98_level2.html</link>
@@ -1227,6 +1226,9 @@ vector에서 최대값은 algorithm 라이브러리를 include하고, *max_eleme
 list를 vector 베이스로 초기화할 때 파라미터로 vector의 범위를 넣어 변환 가능
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Wed, 01 Jul 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/01/%EC%8A%A4%ED%83%9D-%ED%81%90_%ED%94%84%EB%A6%B0%ED%84%B0_level2.html</link>
@@ -1418,7 +1420,7 @@ Boot Camp를 선택하면 Window로 실행되고, Macintosh HD를 선택하면 M
 &lt;h2 id=&quot;1-window10-iso-파일-다운&quot;&gt;1. Window10 ISO 파일 다운&lt;/h2&gt;
 &lt;p&gt;ISO 파일을 다운 받지 않고 바로 이 포스팅으로 온 사람들을 위해,&lt;br /&gt;
 아래 링크에 들어가 나온 순서대로 따라하면 ISO 파일을 다운 받을 수 있을 것이다.&lt;br /&gt;
-&lt;a href=&quot;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&quot;&gt;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&lt;/a&gt;
+&lt;a href=&quot;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&quot;&gt;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&lt;/a&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-bootcamp로-window-설치&quot;&gt;2. BootCamp로 Window 설치&lt;/h2&gt;
@@ -1562,7 +1564,7 @@ Boot Camp를 선택하면 Window로 실행되고, Macintosh HD를 선택하면 M
 &lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/38.png&quot; alt=&quot;step38&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;4-네트워크-설정&quot;&gt;4. 네트워크 설정&lt;/h2&gt;
+&lt;h2 id=&quot;3-네트워크-설정&quot;&gt;3. 네트워크 설정&lt;/h2&gt;
 &lt;p&gt;위와 같은 단계를 마무리하고, 실제로 엣지나 크롬 인터넷을 사용하기 위해서는 네트워크를 설정해야한다.&lt;br /&gt;
 자신이 사용하는 와이파이를 연결시키고 나면, 나머지 환경설정을 마무리할 수 있다는 화면이 나오게 되는데, 이 부분까지 마무리해보자.&lt;/p&gt;
 
@@ -1591,7 +1593,7 @@ Boot Camp를 선택하면 Window로 실행되고, Macintosh HD를 선택하면 M
 &lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/44.jpeg&quot; alt=&quot;step44&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;5-마무리&quot;&gt;5. 마무리&lt;/h2&gt;
+&lt;h2 id=&quot;4-마무리&quot;&gt;4. 마무리&lt;/h2&gt;
 &lt;p&gt;드디어 끝이 났다.&lt;br /&gt;
 나는 설치하는 데에 정말 오래걸렸는데 이걸 따라하는 사람들은 잘 따라해서 도움이 되었으면 좋겠다.&lt;/p&gt;
 
@@ -1600,7 +1602,7 @@ Boot Camp를 선택하면 Window로 실행되고, Macintosh HD를 선택하면 M
 &lt;a href=&quot;https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html&quot;&gt;https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html&lt;/a&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;6-reference&quot;&gt;6. Reference&lt;/h2&gt;
+&lt;h2 id=&quot;5-reference&quot;&gt;5. Reference&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;맥(Mac) 부트캠프 윈도우10 설치 방법 &lt;a href=&quot;https://extrememanual.net/12760&quot;&gt;https://extrememanual.net/12760&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;맥에 윈도우 설치하기 (초보자를 위한 맥라이프 4편) &lt;a href=&quot;https://www.youtube.com/watch?v=YytE1SKavpc&quot;&gt;https://www.youtube.com/watch?v=YytE1SKavpc&lt;/a&gt;
@@ -1827,6 +1829,9 @@ number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 �
 string의 문자를 삭제할 때는 erase() 함수 사용, 파라미터로 위치와 갯수가 할당
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/22/%ED%83%90%EC%9A%95%EB%B2%95_%ED%81%B0%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0_level2.html</link>
@@ -1924,6 +1929,9 @@ string의 문자를 삭제할 때는 erase() 함수 사용, 파라미터로 위�
 사용하진 않았지만 vector에서 마지막 원소를 더하고 빼는 함수 vector.push_back(), vector.pop_back()
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/22/%ED%83%90%EC%9A%95%EB%B2%95_%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8_level2.html</link>
@@ -2041,6 +2049,9 @@ vector의 마지막에 있는 원소에 접근하기 위해서는 vector.back() 
   &lt;li&gt;ASCII Table - 아스키 코드표 &lt;a href=&quot;https://shaeod.tistory.com/228&quot;&gt;https://shaeod.tistory.com/228&lt;/a&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 21 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/21/%ED%83%90%EC%9A%95%EB%B2%95_%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1_level2.html</link>
@@ -2153,6 +2164,9 @@ vector의 마지막에 있는 원소에 접근하기 위해서는 vector.back() 
   &lt;li&gt;없다 :)
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 20 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/20/%ED%83%90%EC%9A%95%EB%B2%95_%EC%B2%B4%EC%9C%A1%EB%B3%B5_level1.html</link>
@@ -2264,6 +2278,9 @@ vector의 마지막에 있는 원소에 접근하기 위해서는 vector.back() 
 그냥 push() 함수를 사용해서 push
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%ED%9E%99_%EB%9D%BC%EB%A9%B4%EA%B3%B5%EC%9E%A5_level2.html</link>
@@ -2376,6 +2393,9 @@ make_heap() 함수는 임의 반복 접근자가 있는 모든 컨테이너를 h
 make_heap() 함수는 기본적으로 max-heap을 생성, min-heap을 생성하기 위해서는 세 번째 인자로 비교 함수 greater&lt;int&gt;() 함수 할당
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/int&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%ED%9E%99_%EB%8D%94%EB%A7%B5%EA%B2%8C_level2.html</link>
@@ -2513,6 +2533,9 @@ make_heap() 함수는 기본적으로 max-heap을 생성, min-heap을 생성하�
   &lt;li&gt;처음으로 없다! 스스로 해결 :)
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0_level2.html</link>
@@ -2684,6 +2707,9 @@ list에 새로운 트럭이 가지 못했다는 것을 나타내기 위해 0을 
   &lt;li&gt;[C++ 공식문서] std:list &lt;a href=&quot;http://www.cplusplus.com/reference/list/list/&quot;&gt;http://www.cplusplus.com/reference/list/list/&lt;/a&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EB%8B%A4%EB%A6%AC%EB%A5%BC%EC%A7%80%EB%82%98%EB%8A%94%ED%8A%B8%EB%9F%AD_level2.html</link>
@@ -2790,6 +2816,9 @@ ceil() 함수와 floor() 함수를 사용하기 위해서는 &lt;code class=&quo
 명시적 형변환은 ‘(자료형) 변환하고자하는 변수’ 로 사용
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%EC%8A%A4%ED%83%9D-%ED%81%90_%EA%B8%B0%EB%8A%A5%EA%B0%9C%EB%B0%9C_level2.html</link>
@@ -2875,6 +2904,9 @@ ceil() 함수와 floor() 함수를 사용하기 위해서는 &lt;code class=&quo
   &lt;li&gt;없다! 점점 스스로 해결해 가는 것 같아 뿌듯 :)
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 17 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/17/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A2%E1%86%A8-%E1%84%8F%E1%85%B2_%E1%84%8C%E1%85%AE%E1%84%89%E1%85%B5%E1%86%A8%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%A8_level2.html</link>

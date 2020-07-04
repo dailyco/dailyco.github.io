@@ -123,6 +123,8 @@
 해당 문제의 유형은 모르겠다..ㅎㅎ 어떠한 자료구조를 사용한게 아니기도하고 그냥 문제를 보고 특정 유형을 생각하고 알고리즘을 세운게 아니라, ‘이렇게 이렇게하면 풀릴 것 같은데?’라는 생각으로 해결한 문제이기 때문이다. 처음에 이 문제를 풀 때는 풀이 접근을 잘못했었다. 미리 스마트폰 전화 키패드의 거리를 정의할 생각을 했는데 이것도 엄청 복잡하더라…ㅠㅠ 결국 설거지하면서 계속 생각하다 퍼뜩하고 아이디어가 떠올랐고 그대로 구현하니 풀려서 기분이 조금 싱숭생숭했다. 좋은듯 안좋은듯… =(:з」∠)_<br />
 <br /></p>
 
+<p><br /></p>
+
 <h2 id="1-문제">1. 문제</h2>
 <p>스마트폰 전화 키패드의 각 칸에 다음과 같이 숫자들이 적혀 있습니다.</p>
 
@@ -151,8 +153,7 @@
     </ul>
   </li>
   <li>왼손 엄지손가락을 사용한 경우는 L, 오른손 엄지손가락을 사용한 경우는 R을 순서대로 이어붙여 문자열 형태로 return 해주세요.
-<br />
-<br /></li>
+<br /><br /><br /></li>
 </ul>
 
 <h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
@@ -172,8 +173,7 @@
   <li>왼손 엄지에서 목적지까지가 더 가까우면 L, 오른손 엄지에서 목적지까지가 더 가까우면 R로 설정한다.</li>
   <li>R, L을 판단하여 answer에 해당 값을 이어붙이고, 사용한 손의 엄지 위치를 목적지 번호로 바꿔준다.</li>
   <li>numbers 벡터의 반복이 끝나면 answer를 반환한다.<br />
-<br />
-<br /></li>
+<br /><br /></li>
 </ol>
 
 <h2 id="3-해결코드">3. 해결코드</h2>
@@ -224,8 +224,7 @@
     <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p><br />
-<br /></p>
+<p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
 <ul>
@@ -233,17 +232,18 @@
   <li>star, hash 버튼을 static 변수로 각각 10, 12로 초기화해서 코드를 작성하면 좀 더 깔끔한 코드가 되지 않을까…</li>
   <li>현재 왼쪽 엄지 손가락과 현재 오른쪽 엄지 손가락으로부터 목적지 버튼까지 거리 구하는 알고리즘을 잘 세운것 같다(뿌–듯!)</li>
   <li>어떤 손가락으로 버튼을 누를지 정해지고, 해당 손가락의 위치와 answer를 더할 때 좀 더 효율적인/깔끔한 방법이 없을까?
-<br />
-<br /></li>
+<br /><br /><br /></li>
 </ul>
 
 <h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
 <ul>
   <li>[C언어/C++] 절대값 함수 abs, fabs에 대해서 <a href="https://blockdmask.tistory.com/335">https://blockdmask.tistory.com/335</a><br />
 절대값을 구할때는 abs(Number)를 사용<br />
-<br />
-<br /></li>
+<br /><br /><br /></li>
 </ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
 
   </div><div id="disqus_thread" style="margin-top:25px"></div>
   <script>

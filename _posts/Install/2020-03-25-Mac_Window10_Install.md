@@ -16,7 +16,7 @@ sitemap:
 ## 1. Window10 ISO 파일 다운
 ISO 파일을 다운 받지 않고 바로 이 포스팅으로 온 사람들을 위해,  
 아래 링크에 들어가 나온 순서대로 따라하면 ISO 파일을 다운 받을 수 있을 것이다.  
-<https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html>
+<https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html>  
 <br/><br/><br/>
 
 ## 2. BootCamp로 Window 설치
@@ -160,7 +160,7 @@ ISO 파일을 다운 받지 않고 바로 이 포스팅으로 온 사람들을 �
 ![step38](/assets/img/post/Install/Window10/38.png){:width="600px"}  
 <br/><br/><br/>
 
-## 4. 네트워크 설정
+## 3. 네트워크 설정
 위와 같은 단계를 마무리하고, 실제로 엣지나 크롬 인터넷을 사용하기 위해서는 네트워크를 설정해야한다.  
 자신이 사용하는 와이파이를 연결시키고 나면, 나머지 환경설정을 마무리할 수 있다는 화면이 나오게 되는데, 이 부분까지 마무리해보자.  
 
@@ -189,7 +189,7 @@ ISO 파일을 다운 받지 않고 바로 이 포스팅으로 온 사람들을 �
 ![step44](/assets/img/post/Install/Window10/44.jpeg){:width="600px"}  
 <br/><br/><br/>
 
-## 5. 마무리
+## 4. 마무리
 드디어 끝이 났다.  
 나는 설치하는 데에 정말 오래걸렸는데 이걸 따라하는 사람들은 잘 따라해서 도움이 되었으면 좋겠다.  
 
@@ -198,7 +198,7 @@ ISO 파일을 다운 받지 않고 바로 이 포스팅으로 온 사람들을 �
 <https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html>
 <br/><br/><br/>
 
-## 6. Reference
+## 5. Reference
 - 맥(Mac) 부트캠프 윈도우10 설치 방법 <https://extrememanual.net/12760>
 - 맥에 윈도우 설치하기 (초보자를 위한 맥라이프 4편) <https://www.youtube.com/watch?v=YytE1SKavpc>
 <br/><br/><br/>

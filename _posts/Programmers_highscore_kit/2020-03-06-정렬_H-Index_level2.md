@@ -118,3 +118,7 @@ int solution(vector<int> citations) {
 - [C++] 최초값, 최대값 함수 min, max 에 대해서 (클래스, vector 사용법까지) <https://blockdmask.tistory.com/366>
 최대값, 최소값을 구하기 위해서는 max(), min() 함수를 사용
 <br/><br/><br/>
+
+```
+출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+```

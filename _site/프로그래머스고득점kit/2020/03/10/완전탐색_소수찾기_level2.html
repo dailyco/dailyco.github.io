@@ -125,6 +125,8 @@
 본 문제는 고민을 많이 했던 문제였다. 완전탐색이기 때문에 효율성을 중요하게 생각하지 않는 알고리즘을 생각해보려고해도 어려웠었는데, 포기하고 이 다음 문제를 풀다가 키 포인트를 잡을 수 있었다. 효율성이 그렇게 좋지는 않지만, 나름 수학 공부도 되고 풀면서 재밌었던 것 같다.<br />
 <br /></p>
 
+<p><br /></p>
+
 <h2 id="1-문제">1. 문제</h2>
 <p>한자리 숫자가 적힌 종이 조각이 흩어져있습니다.<br />
 흩어진 종이 조각을 붙여 소수를 몇 개 만들 수 있는지 알아내려 합니다.<br />
@@ -135,8 +137,7 @@
   <li>numbers는 길이 1 이상 7 이하인 문자열입니다.</li>
   <li>numbers는 0~9까지 숫자만으로 이루어져 있습니다.</li>
   <li>013은 0, 1, 3 숫자가 적힌 종이 조각이 흩어져있다는 의미입니다.
-<br />
-<br /></li>
+<br /><br /><br /></li>
 </ul>
 
 <h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
@@ -145,8 +146,7 @@
   <li>6n - 1, 6n + 1 꼴의 자연수가 소수가 맞는지 is_prime() 함수를 통해 확인한다.</li>
   <li>소수가 맞으면, numbers 카드들로 해당 소수를 만들수있는지 make_prime_number() 함수를 통해 확인한다.</li>
   <li>만들수 있으면 answer값을 증가시킨다.<br />
-<br />
-<br /></li>
+<br /><br /></li>
 </ol>
 
 <h2 id="3-해결코드">3. 해결코드</h2>
@@ -193,8 +193,7 @@
     <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p><br />
-<br /></p>
+<p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
 <ul>
@@ -202,8 +201,7 @@
   <li>조금이라도 효율성을 좋기 하기 위해 “2, 3을 제외한 모든 소수는 ‘6n - 1’, ‘6n + 1’ 꼴이다”라는 소수의 특징을 사용했다</li>
   <li>어떤 숫자가 소수인지 확인하는 가장 빠른 알고리즘(으로 알고있는데 확실할진…)은 2부터 해당 숫자의 루트 값까지 1씩 증가시켜 나누어서 나눠 떨어지는 값이 없는 숫자이다</li>
   <li>stoi() 함수가 먹지를 않아서 ASCII-code를 이용했다
-<br />
-<br /></li>
+<br /><br /><br /></li>
 </ul>
 
 <h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
@@ -218,9 +216,11 @@ char to int를 하기 위해서는 48을 빼면된다, 반대는 48을 더하면
 소수의 특징, “2, 3을 제외한 모든 소수는 ‘6n - 1’, ‘6n + 1’ 꼴이다”</li>
   <li>[C언어/C++] pow, sqrt 함수에 대해서(루트함수, 제곱, 제곱근) <a href="https://blockdmask.tistory.com/307">https://blockdmask.tistory.com/307</a><br />
 어떤 숫자의 제곱을 구하기 위해서는 sqrt() 함수 사용
-<br />
-<br /></li>
+<br /><br /><br /></li>
 </ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
 
   </div><div id="disqus_thread" style="margin-top:25px"></div>
   <script>
