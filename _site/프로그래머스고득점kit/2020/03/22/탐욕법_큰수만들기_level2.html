@@ -145,9 +145,11 @@ number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 �
 
 <h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
 <ol>
-  <li>각 number의 문자를 비교하면서 앞의 문자가 뒤의 문자보다 작으면 지우고 k 값을 감소시킨다.</li>
-  <li>앞의 문자가 뒤의 문자보다 작은경우가 없어서 마지막까지 왔고, 앞 문자와 뒷 문자가 같으면 지우고 k 값을 감소시킨다.</li>
-  <li>제거하는 문자 개수 k가 0이 될 때까지 위 과정을 반복한다.<br />
+  <li>k 값이 0이 될 때까지 다음을 반복한다.<br />
+(다음 반복 과정에서 k값을 감소시키면서 제거할 수의 개수가 0이 될 때까지 반복하는 것이다)</li>
+  <li>해당 문자가 마지막 원소이거나, 뒤의 문자보다 작으면 지우고 k 값을 감소시킨다.<br />
+(break를 하는 이유는 한 번 비교하면서 제거했으니 다시 처음부터 비교해야하기 때문)</li>
+  <li>반복이 끝나면 number를 반환한다.<br />
 <br /><br /></li>
 </ol>
 
@@ -161,15 +163,12 @@ number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 �
 <span class="n">string</span> <span class="nf">solution</span><span class="p">(</span><span class="n">string</span> <span class="n">number</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
     
     <span class="k">while</span> <span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">number</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span> 
+                <span class="o">||</span> <span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
                 <span class="n">number</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
                 <span class="n">k</span><span class="o">--</span><span class="p">;</span>
                 <span class="k">break</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">number</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span> 
-                       <span class="o">&amp;&amp;</span> <span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
-                <span class="n">number</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-                <span class="n">k</span><span class="o">--</span><span class="p">;</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
