@@ -1,78 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<title>LeetCode Weekly Contest 196 : Last Moment Before All Ants Fall Out of a Plank</title>
-<!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>LeetCode Weekly Contest 196 : Last Moment Before All Ants Fall Out of a Plank | Opencoding</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="LeetCode Weekly Contest 196 : Last Moment Before All Ants Fall Out of a Plank" />
-<meta name="author" content="YuJin Kim" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Difficulty: Medium It was a little hard to understand the problem. I could see and understand the picture of the example, and it didn’t take very long to write the code. As you can see from solving the problem, there is a cute trick hidden in the problem. It’s a tiny trick that gives you the fear of being a complicated problem before you write the code. (*´o`*)" />
-<meta property="og:description" content="Difficulty: Medium It was a little hard to understand the problem. I could see and understand the picture of the example, and it didn’t take very long to write the code. As you can see from solving the problem, there is a cute trick hidden in the problem. It’s a tiny trick that gives you the fear of being a complicated problem before you write the code. (*´o`*)" />
-<link rel="canonical" href="http://localhost:4000/leetcode/2020/07/11/%EB%84%90%ED%8C%90%EC%A7%80%EC%97%90%EC%84%9C%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%EA%B0%9C%EB%AF%B8_medium.html" />
-<meta property="og:url" content="http://localhost:4000/leetcode/2020/07/11/%EB%84%90%ED%8C%90%EC%A7%80%EC%97%90%EC%84%9C%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%EA%B0%9C%EB%AF%B8_medium.html" />
-<meta property="og:site_name" content="Opencoding" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-07-11T00:00:00+09:00" />
-<script type="application/ld+json">
-{"headline":"LeetCode Weekly Contest 196 : Last Moment Before All Ants Fall Out of a Plank","dateModified":"2020-07-11T00:00:00+09:00","datePublished":"2020-07-11T00:00:00+09:00","url":"http://localhost:4000/leetcode/2020/07/11/%EB%84%90%ED%8C%90%EC%A7%80%EC%97%90%EC%84%9C%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%EA%B0%9C%EB%AF%B8_medium.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/leetcode/2020/07/11/%EB%84%90%ED%8C%90%EC%A7%80%EC%97%90%EC%84%9C%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%EA%B0%9C%EB%AF%B8_medium.html"},"author":{"@type":"Person","name":"YuJin Kim"},"description":"Difficulty: Medium It was a little hard to understand the problem. I could see and understand the picture of the example, and it didn’t take very long to write the code. As you can see from solving the problem, there is a cute trick hidden in the problem. It’s a tiny trick that gives you the fear of being a complicated problem before you write the code. (*´o`*)","@type":"BlogPosting","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/css/custom/header.css">
-    </head>
-
-    <body>
-        
-
-        <div class="masthead">
-            <div class="masthead__inner-wrap">
-                <div class="masthead__menu">
-                <nav id="site-nav" class="greedy-nav">
-                    
-                    <a class="site-logo" href="/"><img src="/assets/img/header//logo.png" alt=""></a>
-                    
-                    <a class="site-title" href="/">Opencoding</a>
-                    <!-- <button class="greedy-nav__toggle hidden" type="button"></button>
-                    <ul class="hidden-links hidden"><li class="masthead__menu-item">
-                                <a href="/about/" >ABOUT</a>
-                            </li><li class="masthead__menu-item">
-                                <a href="/tags/" >TAGS</a>
-                            </li></ul> -->
-                    <ul class="visible-links"><li class="masthead__menu-item">
-                        <a href="/about/" >ABOUT</a>
-                        </li><li class="masthead__menu-item">
-                        <a href="/tags/" >TAGS</a>
-                        </li></ul>
-                    <!-- <li class="masthead__menu-item">
-                            
-                                <button class="search__toggle " type="button">
-                                <span class="visually-hidden">Toggle search</span>
-                                <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
-                                    <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
-                                </svg>
-                                </button>
-                            
-                        </li> -->
-                </nav>
-                </div>
-            </div>
-        </div>
-
-        <section class="body_content">
-            <main class="container">
+I"�2<main class="container">
   <section class="about">
-    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim"></a>
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
     <h2 id="title">
       <a href="/">YuJin Kim</a>
     </h2>
@@ -258,14 +186,15 @@ increase the anwer by the position of the last ant in each direction.</li>
       powered by Disqus.</a></noscript></div>
 
   </section>
-</main><script async src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
-  <script>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 
 gtag('config', 'UA-150778693-1');
 </script>
-        </section>
-    </body>
-</html>
+
+:ET

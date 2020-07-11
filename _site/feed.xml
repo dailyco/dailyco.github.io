@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 11 Jul 2020 17:28:05 +0900</pubDate>
-    <lastBuildDate>Sat, 11 Jul 2020 17:28:05 +0900</lastBuildDate>
+    <pubDate>Sat, 11 Jul 2020 18:04:40 +0900</pubDate>
+    <lastBuildDate>Sat, 11 Jul 2020 18:04:40 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -140,7 +140,127 @@ increase the anwer by the position of the last ant in each direction.&lt;/li&gt;
         
         <category>codingtest</category>
         
-        <category>level2</category>
+        <category>medium</category>
+        
+        <category>algorithm</category>
+        
+        <category>cplusplus</category>
+        
+        
+        <category>LeetCode</category>
+        
+      </item>
+    
+      <item>
+        <title>LeetCode Weekly Contest 196 : Minimum Possible Integer After at Most K Adjacent Swaps On Digits</title>
+        <description>&lt;p&gt;Difficulty: Hard&lt;br /&gt;
+The difficulty of this problem was hard, but when I saw the problem, I thought I could solve. So, I challenged it with curiosity, but the result was a little insufficient. It passed 49 of the total 51 test cases. It’s a little lacking, but I hope you focus on the algorithm. And if you know where my code is wrong, please let me know. ´•ﻌ•`&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-problem&quot;&gt;1. Problem&lt;/h2&gt;
+&lt;p&gt;Given a string num representing the digits of a very large integer and an integer k.&lt;br /&gt;
+You are allowed to swap any two adjacent digits of the integer at most k times.&lt;br /&gt;
+Return the minimum integer you can obtain also as a string.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example1 :&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;https://assets.leetcode.com/uploads/2020/06/17/q4_1.jpg&quot; alt=&quot;example1&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; num = “4321”, k = 4&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; “1342”&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; The steps to obtain the minimum integer from 4321 with 4 adjacent swaps are shown.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Example2 :&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; num = “22”, k = 22&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; “22”&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;constraints&quot;&gt;Constraints&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;1 &amp;lt;= num.length &amp;lt;= 30000&lt;/li&gt;
+  &lt;li&gt;num contains digits only and doesn’t have leading zeros.&lt;/li&gt;
+  &lt;li&gt;1 &amp;lt;= k &amp;lt;= 10^9
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-thinking-algorithm&quot;&gt;2. Thinking Algorithm&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create sorted_num string which initialize num var.&lt;/li&gt;
+  &lt;li&gt;Sort the sorted_num var in ascending order.&lt;/li&gt;
+  &lt;li&gt;Start with the first element of the sorted_num var,&lt;br /&gt;
+find its location at num, and verify that it can be brought forward.&lt;/li&gt;
+  &lt;li&gt;If it can be brought forward, reduce k by the number of movements and add it to the answer string.&lt;/li&gt;
+  &lt;li&gt;For the num and sorted_num var, erase the corresponding character and repeat the first element of the sorted_num again. (Go back to setp 3)&lt;/li&gt;
+  &lt;li&gt;If it cannot be brought forward, check the following elements of the sorted_num var.&lt;/li&gt;
+  &lt;li&gt;If k is zero or all characters are moved to form the smallest number (num var is empty string),&lt;br /&gt;
+the repetition statement ends.&lt;/li&gt;
+  &lt;li&gt;If all the strings of num var are not moved to answer var (k ==0),&lt;br /&gt;
+paste the remaining num string after answer string.
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-solution&quot;&gt;3. Solution&lt;/h2&gt;
+&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;public:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;minInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sorted_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sorted_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sorted_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sorted_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sorted_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sorted_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;erase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sorted_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;sorted_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;erase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-to-think-deeper&quot;&gt;4. To Think Deeper&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;I checked the test case that didn’t pass, and it was a timeout, so is the algorithm itself correct?&lt;/li&gt;
+  &lt;li&gt;I think the algorithm is simple and well-organized
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-reference-٩-ᐛ-و&quot;&gt;5. Reference ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[C++ official doc] std:string:erase &lt;a href=&quot;https://www.cplusplus.com/reference/string/string/erase/&quot;&gt;https://www.cplusplus.com/reference/string/string/erase/&lt;/a&gt;&lt;br /&gt;
+Use erase() to erase a string, first parameter is starting point of erasing and second is number of erasing
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: LeetCode Contest, https://leetcode.com/contest/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sat, 11 Jul 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/leetcode/2020/07/11/%EA%B0%80%EC%9E%A5%EC%9E%91%EC%9D%80%EC%88%98_hard.html</link>
+        <guid isPermaLink="true">http://localhost:4000/leetcode/2020/07/11/%EA%B0%80%EC%9E%A5%EC%9E%91%EC%9D%80%EC%88%98_hard.html</guid>
+        
+        <category>leetcode</category>
+        
+        <category>codingtest</category>
+        
+        <category>hard</category>
         
         <category>algorithm</category>
         
@@ -243,7 +363,7 @@ A sequence of numbers is called an arithmetic progression if the difference betw
         
         <category>sorting</category>
         
-        <category>level1</category>
+        <category>easy</category>
         
         <category>algorithm</category>
         
@@ -3784,140 +3904,6 @@ Reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
         <pubDate>Sat, 14 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/javacamp/2020/03/14/JavaCamp_Round3_%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3.html</link>
         <guid isPermaLink="true">http://localhost:4000/javacamp/2020/03/14/JavaCamp_Round3_%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3.html</guid>
-        
-        <category>about</category>
-        
-        <category>java</category>
-        
-        <category>gui</category>
-        
-        <category>database</category>
-        
-        <category>mysql</category>
-        
-        
-        <category>JavaCamp</category>
-        
-      </item>
-    
-      <item>
-        <title>[Java-GUI] ROUND3. 번외 ) MySQL 설치 및 Eclipse Java - MySQL 연동</title>
-        <description>&lt;p&gt;프로젝트의 번외편으로 자바로 MySQL을 연동시키는 방법에 대해 이야기 하려한다. 나도 프로젝트를 진행할 당시에 데이터베이스에 대한 개념이 없어 힘들었던 기억이 있기 때문에… 본 포스팅은 eclipse에서 자바와 MySQL을 연동시킬 수 있는 간단한 방법에 대해 이야기한다. &lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-mysql-connectorj-다운로드&quot;&gt;1. MySQL connector/J 다운로드&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://dev.mysql.com/downloads/connector/j/&quot;&gt;https://dev.mysql.com/downloads/connector/j/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;위 사이트에서 MySQL connector/J를 다운받는다.&lt;br /&gt;
-Operating System은 &lt;span style=&quot;color: #c70000&quot;&gt;Platform Independent&lt;/span&gt;를 선택하고 &lt;span style=&quot;color: #c70000&quot;&gt;ZIP&lt;/span&gt; 파일을 다운 받는다.&lt;br /&gt;
-해당 파일의 압축을 풀어 mysql-connector-java-8.0.11.jar 파일이 있는 것을 확인한다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-mysql-다운로드&quot;&gt;2. MySQL 다운로드&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://dev.mysql.com/downloads/mysql/&quot;&gt;https://dev.mysql.com/downloads/mysql/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;위 사이트에서 MySQL을 다운 받는다.&lt;br /&gt;
-Operating System은 자신의 컴퓨터에 맞는 OS를 선택한다.&lt;br /&gt;
-또한 &lt;span style=&quot;color: #c70000&quot;&gt;Window는 ZIP&lt;/span&gt; 파일을, &lt;span style=&quot;color: #c70000&quot;&gt;macOS는 DMG&lt;/span&gt; 파일을 다운 받는다.&lt;br /&gt;
-설치 도중에 비밀번호를 입력하는 과정이 있을텐데 이때의 비밀번호는 잘 기억해둬야 한다.&lt;br /&gt;
-다운로드 과정이 복잡해서 어려운 사람들은 아래 블로그를 참고하면 좋을 것 같다.&lt;br /&gt;
-Window : &lt;a href=&quot;https://dog-developers.tistory.com/20&quot;&gt;https://dog-developers.tistory.com/20&lt;/a&gt;,&lt;br /&gt;
-macOS : &lt;a href=&quot;https://daimhada.tistory.com/121&quot;&gt;https://daimhada.tistory.com/121&lt;/a&gt;&lt;br /&gt;
-다운 받은 파일은 압축을 풀어 준비한다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-mysql-서버-실행&quot;&gt;3. MySQL 서버 실행&lt;/h2&gt;
-&lt;p&gt;MySQL 다운로드에서 블로그를 참고해서 다운받았던 사람들은 이 과정을 넘겨도 무방하며,&lt;br /&gt;
-MySQL 서버를 실행시킨 상태로 두고 다음 단계로 넘어가면 된다.&lt;/p&gt;
-
-&lt;p&gt;이제 다운로드는 마쳤으니 MySQL 서버를 실행시켜 Database를 사용할 준비를 해야한다.&lt;br /&gt;
-MySQL을 다운 받아 압축을 풀었던 폴더로 이동해서 &lt;span style=&quot;color: #c70000&quot;&gt;Window는 cmd&lt;/span&gt;를, &lt;span style=&quot;color: #c70000&quot;&gt;macOS는 터미널&lt;/span&gt;을 실행시킨다.&lt;br /&gt;
-해당 폴더 안의 bin 폴더로 들어가 mysql을 실행시킨다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-Window의 경우 해당 폴더에서 cmd를 실행시켜 아래 명령어를 이용하면 된다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd bin
-mysql.exe --initialize
-mysqld --console --explicit_defaults_for_timestamp --skip-grant-tables &amp;amp;
-
-// 새로운 cmd를 켜서 다시 bin 폴더로 이동 및 mysql 실행
-cd bin
-mysql -u root mysql
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-macOS의 경우 해당 폴더에서 터미널을 실행시켜 아래 명령어를 이용하면 된다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd bin
-./mysql -u root -p
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;만약 위 과정이 잘 되지 않거나 어렵다면, 아래 블로그를 참고하면 좋을 것 같다.  &lt;br /&gt;
-Window : &lt;a href=&quot;https://dog-developers.tistory.com/20&quot;&gt;https://dog-developers.tistory.com/20&lt;/a&gt;&lt;br /&gt;
-macOS : &lt;a href=&quot;https://daimhada.tistory.com/121&quot;&gt;https://daimhada.tistory.com/121&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-mysql-database-table-생성&quot;&gt;4. MySQL database, table 생성&lt;/h2&gt;
-&lt;p&gt;MySQL은 다운받고 실행시켰지만 다음으로 MySQL 데이터 베이스를 사용하기 위한 준비 과정이 필요하다.&lt;br /&gt;
-바로 데이터베이스와 테이블, 칼럼을 생성시키는 과정이다.&lt;/p&gt;
-
-&lt;p&gt;이 과정은 아래 블로그를 참고하면 좋을 것 같다.&lt;br /&gt;
-&lt;a href=&quot;https://futurists.tistory.com/11?category=587334wkqkhttp://futurists.tistory.com/11?category=587334&quot;&gt;https://futurists.tistory.com/11?category=587334wkqkhttp://futurists.tistory.com/11?category=587334&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;5-java---mysql-연동&quot;&gt;5. Java - MySQL 연동&lt;/h2&gt;
-&lt;p&gt;드디어 모든 준비가 마쳤다.&lt;br /&gt;
-이제 Eclipse를 사용해서 Java와 MySQL을 연동시켜보자.&lt;/p&gt;
-
-&lt;p&gt;1) Eclipse에서 MySQL과 연동할 Java 프로젝트를 생성한다.&lt;br /&gt;
-2) 해당 프로젝트 ‘우클릭 - Build Path - Add External Archives’ 를 선택한다.&lt;br /&gt;
-3) 처음에 다운 받았던 mysql-connector-java-8.0.11.jar 파일을 추가한다.&lt;br /&gt;
-4) 아래 코드를 이용해서 주석 부분을 잘 보고 수정해야할 부분은 수정한 뒤 실행시켜 MySQL과 연동이 되었는지 확인한다.&lt;br /&gt;
-5) 코드의 실행 결과로 “연결완료”라고 프린트 된다면 성공적으로 연결된 것이다!&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.database&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 패키지명 수정&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.sql.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MysqlConnection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nc&quot;&gt;Connection&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;conn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;nc&quot;&gt;Statement&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stmt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;nc&quot;&gt;PreparedStatement&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pstmt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;nc&quot;&gt;ResultSet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-	&lt;span class=&quot;nc&quot;&gt;MysqlConnection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;nc&quot;&gt;Try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;nc&quot;&gt;Class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.mysql.cj.jdbc.Driver&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;newInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// JDBC 드라이버 로드&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;conn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DriverManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getConnection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jdbc:mysql://localhost:3306/[table name]?serverTimezone=UTC&amp;amp;&amp;amp;useSSL=false&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;root&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;[pwd]&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// []부분 ([table name], [pwd]) 수정&lt;/span&gt;
-			&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;연결&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;완료&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ClassNotFoundException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ce&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;ce&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;SQLException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;se&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;se&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;finally&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 연결 해제(한정돼 있으므로)&lt;/span&gt;
-				&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();}&lt;/span&gt;
-				&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pstmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pstmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();}&lt;/span&gt;
-				&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();}&lt;/span&gt;
-				&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();}&lt;/span&gt;
-			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;SQLException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;se2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-				&lt;span class=&quot;n&quot;&gt;se2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/javacamp/2020/03/14/13-JavaCamp_Round3.5_%EC%9E%90%EB%B0%94MySQL%EC%97%B0%EA%B2%B0.html</link>
-        <guid isPermaLink="true">http://localhost:4000/javacamp/2020/03/14/13-JavaCamp_Round3.5_%EC%9E%90%EB%B0%94MySQL%EC%97%B0%EA%B2%B0.html</guid>
         
         <category>about</category>
         
