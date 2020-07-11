@@ -6,12 +6,256 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Jul 2020 18:22:00 +0900</pubDate>
-    <lastBuildDate>Thu, 09 Jul 2020 18:22:00 +0900</lastBuildDate>
+    <pubDate>Sat, 11 Jul 2020 17:28:05 +0900</pubDate>
+    <lastBuildDate>Sat, 11 Jul 2020 17:28:05 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title>[Codingtest] 부스트캠프 2020 : 1차 온라인 코딩 테스트 후기</title>
+        <title>LeetCode Weekly Contest 196 : Last Moment Before All Ants Fall Out of a Plank</title>
+        <description>&lt;p&gt;Difficulty: Medium&lt;br /&gt;
+It was a little hard to understand the problem. I could see and understand the picture of the example, and it didn’t take very long to write the code. As you can see from solving the problem, there is a cute trick hidden in the problem. It’s a tiny trick that gives you the fear of being a complicated problem before you write the code. (*´o`*)&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-problem&quot;&gt;1. Problem&lt;/h2&gt;
+&lt;p&gt;We have a wooden plank of the length n units.&lt;br /&gt;
+Some ants are walking on the plank, each ant moves with speed 1 unit per second.&lt;br /&gt;
+Some of the ants move to the left, the other move to the right.&lt;/p&gt;
+
+&lt;p&gt;When two ants moving in two different directions meet at some point,&lt;br /&gt;
+they change their directions and continue moving again.&lt;br /&gt;
+Assume changing directions doesn’t take any additional time.&lt;/p&gt;
+
+&lt;p&gt;When an ant reaches one end of the plank at a time t, it falls out of the plank imediately.&lt;/p&gt;
+
+&lt;p&gt;Given an integer n and two integer arrays left and right, the positions of the ants moving to the left and the right.&lt;br /&gt;
+Return the moment when the last ant(s) fall out of the plank.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example1 :&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;https://assets.leetcode.com/uploads/2020/06/17/ants.jpg&quot; alt=&quot;example1&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; n = 4, left = [4,3], right = [0,1]&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; 4&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; In the image above:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;The ant at index 0 is named A and going to the right.&lt;/li&gt;
+    &lt;li&gt;The ant at index 1 is named B and going to the right.&lt;/li&gt;
+    &lt;li&gt;The ant at index 3 is named C and going to the left.&lt;/li&gt;
+    &lt;li&gt;The ant at index 4 is named D and going to the left.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note that the last moment when an ant was on the plank is t = 4 second, after that it falls imediately out of the plank. (i.e. We can say that at t = 4.0000000001, there is no ants on the plank).&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Example2 :&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; n = 7, left = [], right = [0,1,2,3,4,5,6,7]&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; 7&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; All ants are going to the right, the ant at index 0 needs 7 seconds to fall.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;constraints&quot;&gt;Constraints&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;1 &amp;lt;= n &amp;lt;= 10^4&lt;/li&gt;
+  &lt;li&gt;0 &amp;lt;= left.length &amp;lt;= n + 1&lt;/li&gt;
+  &lt;li&gt;0 &amp;lt;= left[i] &amp;lt;= n&lt;/li&gt;
+  &lt;li&gt;0 &amp;lt;= right.length &amp;lt;= n + 1&lt;/li&gt;
+  &lt;li&gt;0 &amp;lt;= right[i] &amp;lt;= n&lt;/li&gt;
+  &lt;li&gt;1 &amp;lt;= left.length + right.length &amp;lt;= n + 1&lt;/li&gt;
+  &lt;li&gt;All values of left and right are unique, and each value can appear only in one of the two arrays.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-thinking-algorithm&quot;&gt;2. Thinking Algorithm&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Sort the left and right vector received by parameter.&lt;br /&gt;
+(left is descending order, right is ascending order)&lt;/li&gt;
+  &lt;li&gt;Consider the ants at the end of a plank from the beginning and drop them off.&lt;/li&gt;
+  &lt;li&gt;Repeat the following while both left and right sizes are not zero.&lt;/li&gt;
+  &lt;li&gt;Increase the answer var, decrease the elements in left vector and increase in right vector.&lt;br /&gt;
+(answer var: time (seconds), decreasing in left: ants move left, increasing in right: ants move right)&lt;/li&gt;
+  &lt;li&gt;If there is an ant at the end of the plank, drop(pop) it.&lt;/li&gt;
+  &lt;li&gt;After the repeat statement (while loop) is complete, if the left and right vectors are not empty,&lt;br /&gt;
+increase the anwer by the position of the last ant in each direction.&lt;/li&gt;
+  &lt;li&gt;Returns answer var.
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-solution&quot;&gt;3. Solution&lt;/h2&gt;
+&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;public:&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getLastMoment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-to-think-deeper&quot;&gt;4. To Think Deeper&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;A cute trick in which the left and right ants change direction when they encounter each other&lt;/li&gt;
+  &lt;li&gt;You have to think of the ants at the end of a plank from the beginning (at the moment, T = 0)
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-reference-٩-ᐛ-و&quot;&gt;5. Reference ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Nothing ¯＼&lt;em&gt;(ツ)&lt;/em&gt;/¯
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: LeetCode Contest, https://leetcode.com/contest/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sat, 11 Jul 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/leetcode/2020/07/11/%EB%84%90%ED%8C%90%EC%A7%80%EC%97%90%EC%84%9C%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%EA%B0%9C%EB%AF%B8_medium.html</link>
+        <guid isPermaLink="true">http://localhost:4000/leetcode/2020/07/11/%EB%84%90%ED%8C%90%EC%A7%80%EC%97%90%EC%84%9C%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%EA%B0%9C%EB%AF%B8_medium.html</guid>
+        
+        <category>leetcode</category>
+        
+        <category>codingtest</category>
+        
+        <category>level2</category>
+        
+        <category>algorithm</category>
+        
+        <category>cplusplus</category>
+        
+        
+        <category>LeetCode</category>
+        
+      </item>
+    
+      <item>
+        <title>LeetCode Weekly Contest 196 : [Sorting] Can Make Arithmetic Progression From Sequence</title>
+        <description>&lt;p&gt;Difficulty: Easy&lt;br /&gt;
+Because it was the first time to solve a problem presented in English when studying algorithms, besides the competition, I was a little embarrassed. However the problem was short and the examples were out, so I wasn’t really tired. It was a little hard to figure out the problem by just looking for words that I didn’t know… Well, I think it is okay because I can study English while solving the algorithm problem | ᐕ)੭*⁾⁾&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-problem&quot;&gt;1. Problem&lt;/h2&gt;
+&lt;p&gt;Given an array of numbers arr.&lt;br /&gt;
+A sequence of numbers is called an arithmetic progression if the difference between any two consecutive elements is the same.&lt;/p&gt;
+
+&lt;p&gt;Return true if the array can be rearranged to form an arithmetic progression, otherwise, return false.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example1 :&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; arr = [3,5,1]&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; true&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; We can reorder the elements as [1,3,5] or [5,3,1] with differences 2 and -2 respectively, between each consecutive elements.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Example2 :&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; arr = [1,2,4]&lt;br /&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; false&lt;br /&gt;
+&lt;strong&gt;Explanation:&lt;/strong&gt; There is no way to reorder the elements to obtain an arithmetic progression.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;constraints&quot;&gt;Constraints&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2 &amp;lt;= arr.length &amp;lt;= 1000&lt;/li&gt;
+  &lt;li&gt;10^6 &amp;lt;= arr[i] &amp;lt;= 10^6
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-thinking-algorithm&quot;&gt;2. Thinking Algorithm&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Sort the arr received by parameter in ascending order.&lt;/li&gt;
+  &lt;li&gt;Find the difference between the first and second elements of arr.&lt;br /&gt;
+(This value is tolerance unit)&lt;/li&gt;
+  &lt;li&gt;Start with the second element of arr and check if the next element increases in tolerance unit.&lt;/li&gt;
+  &lt;li&gt;If it does not increase in tolerance unit, return false.&lt;/li&gt;
+  &lt;li&gt;When all elements are increased in tolerance unit, the repeating statement (for loop) ends and returns true.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-solution&quot;&gt;3. Solution&lt;/h2&gt;
+&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;public:&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;canMakeArithmeticProgression&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+        
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;diff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-to-think-deeper&quot;&gt;4. To Think Deeper&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;The point is that sorting arr at first.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-reference-٩-ᐛ-و&quot;&gt;5. Reference ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Nothing ¯＼&lt;em&gt;(ツ)&lt;/em&gt;/¯
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: LeetCode Contest, https://leetcode.com/contest/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sat, 11 Jul 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/leetcode/2020/07/11/%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%83%E1%85%B3%E1%86%BC%E1%84%8E%E1%85%A1%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A7%E1%86%AF_easy.html</link>
+        <guid isPermaLink="true">http://localhost:4000/leetcode/2020/07/11/%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%83%E1%85%B3%E1%86%BC%E1%84%8E%E1%85%A1%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A7%E1%86%AF_easy.html</guid>
+        
+        <category>leetcode</category>
+        
+        <category>codingtest</category>
+        
+        <category>sorting</category>
+        
+        <category>level1</category>
+        
+        <category>algorithm</category>
+        
+        <category>cplusplus</category>
+        
+        
+        <category>LeetCode</category>
+        
+      </item>
+    
+      <item>
+        <title>부스트캠프 2020 : [Codingtest] 1차 온라인 코딩 테스트 후기</title>
         <description>&lt;p&gt;&lt;br /&gt;
 부스트캠프 1차 온라인 코딩 테스트가 끝이났다. 문제는 총 2문제, 시간은 120분. 사실 문제의 난이도가 그렇게 어렵지 않다고해서 크게 걱정하지는 않았는데 정말 의외의 문제가 나와서 처음 문제를 봤을때 당황했다. 이내 정신을 가다듬고 풀긴했지만… 이번 포스팅에서는 내가 어떻게 부스트 캠프를 지원하게됐고, 오늘 봤던 1차 온라인 코딩 테스트가 어땠는지에 대해서 이야기해보려한다.&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
@@ -3684,273 +3928,6 @@ macOS : &lt;a href=&quot;https://daimhada.tistory.com/121&quot;&gt;https://daimh
         <category>database</category>
         
         <category>mysql</category>
-        
-        
-        <category>JavaCamp</category>
-        
-      </item>
-    
-      <item>
-        <title>[Java-GUI] Java 프로젝트 도전기 : 계산기, 그림판, 데이터베이스, 이미지 프로세싱, 육목, 네트워크</title>
-        <description>&lt;p&gt;본 포스팅의 시작에 앞서 내가 이 포스팅을 올리게된 계기를 설명하면, 나는 이 6개의 프로젝트를 학교에서 Java라는 언어를 배우고 그 학기가 끝난 방학 때 교수님의 지도 아래 3주동안 진행하였다. GUI에 대한 지식이 없었던 상태에서 이 프로젝트는 나에게 정말 많은 도움이 되었고, 이 프로젝트 후에는 어떤 것이든 할 수 있을 것 같은 자신감이 생겼다. 그래서 나는 이 경험을 Java를 배우고 얼마되지 않은 친구들이 GUI를 공부해보고 싶다거나, Java를 좀 더 다양하게 활용해 보고 싶은 마음이 있는 친구들에게 나누고, 그 때했던 프로젝트들을 하나씩 정리하고 싶어 본 포스팅을 작성한다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;1-들어가기에-앞서&quot;&gt;1. 들어가기에 앞서…&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;만약 본 프로젝트를 해볼까하는 마음이 있다면 중간에 포기하지 않도록 마음을 잘 다잡고 했으면 좋겠다.&lt;/li&gt;
-  &lt;li&gt;만약 본 프로젝트를 하려면 3주라는 시간이 생각보다 짧기 때문에 3주동안은 다른 일과 병행하지 않고 절대 이 프로젝트에만 집중해야한다.&lt;/li&gt;
-  &lt;li&gt;다시 한번 말하지만 Java를 배운지 얼마 안됐는데 GUI에 대해 더 공부해보고 싶거나 활용해보고 싶은 사람들에게 추천한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;그리고 참고로 나의 프로젝트 결과물들은 Java를 배운지 얼마되지 않은 상태에서 서툴게 만들었기 때문에 부족한 부분이 많은데, 부끄럽지만 그 부분은 감안해주었으면 좋겠다…(o´▽`o)/
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-준비-단계&quot;&gt;2. 준비 단계&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;‘Java의 정석’ 이라는 책 구매 (꼭 이 책이 아니어도 괜찮다)&lt;/li&gt;
-  &lt;li&gt;함께 진행하는 친구들 (있다면 더 많이 배울 수 있을 것 같다)&lt;/li&gt;
-  &lt;li&gt;성공적으로 마무리 해보겠다는 마음가짐
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3-과정&quot;&gt;3. 과정&lt;/h2&gt;
-&lt;p&gt;프로젝트가 어떤 식으로 진행되는지 간략하게 개요만 설명하면,&lt;/p&gt;
-&lt;h3 id=&quot;ㅤ일정&quot;&gt;ㅤ일정&lt;/h3&gt;
-&lt;p&gt;ㅤㅤ&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/process.png&quot; alt=&quot;process&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ㅤㅤ위와 같은 일정으로 3주 (21일) 동안 진행된다.&lt;/p&gt;
-&lt;h3 id=&quot;ㅤ방법&quot;&gt;ㅤ방법&lt;/h3&gt;
-&lt;p&gt;ㅤㅤ나는 사람들에게 이렇게해라, 저렇게 해라 가르칠만한 실력을 갖추고있지 않다.&lt;br /&gt;
-ㅤㅤ나는 교수님의 지도하에 이렇게 프로젝트를 진행했고, 그 과정이 너무 좋았기 때문에 다른 사람들에게 도움이 되고자 남기는 것이다.&lt;br /&gt;
-ㅤㅤ또한 이 프로젝트는 순전히 자신이 적극적으로 찾아가면서 하는 것이다.&lt;br /&gt;
-ㅤㅤ그래서 나의 역할은 위와 같은 일정동안 어떤 프로젝트를 만들어야 하는지를 알려주는 것 뿐이다.&lt;br /&gt;
-ㅤㅤ어떻게 만들어야 하는지는 스스로 검색하고 찾아가면서 해야한다.&lt;br /&gt;
-ㅤㅤ물론 나의 결과물과 코드, 코드 설명도 하지만 그건 자신이 프로젝트를 완성한 후에 확인하면서 이 사람은 이렇게 했구나 하고 확인했으면 좋겠다.&lt;br /&gt;
-ㅤㅤ그리고 친구와 함께 하지 않는 친구들은 나의 결과물을 보면서 함께 한단계씩 해결해 나가고 있다는 느낌을 받으면 좋겠다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-실전이다-한-단계씩&quot;&gt;4. 실전이다, 한 단계씩!&lt;/h2&gt;
-&lt;h3 id=&quot;ㅤ--round0-java의-정석-책-읽기&quot;&gt;ㅤ- [Round0] ‘Java의 정석’ 책 읽기&lt;/h3&gt;
-&lt;p&gt;ㅤㅤ&lt;a href=&quot;https://0pencoding.github.io/javacamp/2020/03/12/JavaCamp_Round0_%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D%EC%B1%85%EC%9D%BD%EA%B8%B0.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;ㅤ--round1-계산기-구현&quot;&gt;ㅤ- [Round1] ‘계산기’ 구현&lt;/h3&gt;
-&lt;p&gt;ㅤㅤ&lt;a href=&quot;https://0pencoding.github.io/javacamp/2020/03/13/JavaCamp_Round1_%EA%B3%84%EC%82%B0%EA%B8%B0.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;ㅤ--round2-그림판-구현&quot;&gt;ㅤ- [Round2] ‘그림판’ 구현&lt;/h3&gt;
-&lt;p&gt;ㅤㅤ&lt;a href=&quot;https://0pencoding.github.io/javacamp/2020/03/13/JavaCamp_Round2_%EA%B7%B8%EB%A6%BC%ED%8C%90.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;ㅤ--round3-데이터베이스&quot;&gt;ㅤ- [Round3] 데이터베이스&lt;/h3&gt;
-&lt;p&gt;ㅤㅤ&lt;a href=&quot;https://0pencoding.github.io/javacamp/2020/03/14/JavaCamp_Round3_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;ㅤ--round4-이미지-프로세싱&quot;&gt;ㅤ- [Round4] 이미지 프로세싱&lt;/h3&gt;
-&lt;p&gt;ㅤㅤ&lt;a href=&quot;https://0pencoding.github.io/javacamp/2020/03/14/JavaCamp_Round4_%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;ㅤ--round5-육목-구현&quot;&gt;ㅤ- [Round5] ‘육목’ 구현&lt;/h3&gt;
-&lt;p&gt;ㅤㅤ&lt;a href=&quot;https://0pencoding.github.io/javacamp/2020/03/14/JavaCamp_Round5_%EC%9C%A1%EB%AA%A9.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;ㅤ--round6-네트워크-적용&quot;&gt;ㅤ- [Round6] 네트워크 적용&lt;/h3&gt;
-&lt;p&gt;ㅤㅤ&lt;a href=&quot;https://0pencoding.github.io/javacamp/2020/03/14/JavaCamp_Round6_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9C%A1%EB%AA%A9.html&quot;&gt;[포스팅 바로가기]&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-마무리&quot;&gt;4. 마무리&lt;/h2&gt;
-&lt;p&gt;포스팅을 마무리하며, 모두 3주간의 프로젝트를 잘 마무리해서 실력도 늘고 자신감도 생겼으면 좋겠다.&lt;br /&gt;
-배운 것은 함께 나누는 우리 학교의 모토 ‘배워서 남주자’를 실현하는 한 걸음이었길 바라며 이만 포스팅을 마친다.&lt;br /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/javacamp/2020/03/14/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</link>
-        <guid isPermaLink="true">http://localhost:4000/javacamp/2020/03/14/JavaCamp_%E1%84%80%E1%85%A2%E1%84%8B%E1%85%AD.html</guid>
-        
-        <category>about</category>
-        
-        <category>java</category>
-        
-        <category>gui</category>
-        
-        <category>graphics</category>
-        
-        <category>database</category>
-        
-        <category>imageprocessing</category>
-        
-        <category>network</category>
-        
-        <category>socketprogramming</category>
-        
-        
-        <category>JavaCamp</category>
-        
-      </item>
-    
-      <item>
-        <title>[Java-GUI] ROUND2. 그림판 만들기</title>
-        <description>&lt;p&gt;첫 실전을 마무리했다. ‘Round1 계산기 만들기’ 에서 Java GUI에 대해서 조금 감을 잡았길 바라며, 다음 단계로 넘어가 보자! 두번째 프로젝트는 그림판이다. Round1에서는 GUI에 대해 익히는 것이었다면 이번 라운드에서는 java GUI를 좀 더 깊게 공부하게 되지 않을까 생각한다. 마찬가지로 프로젝트를 진행하지 않는 사람들에게는 나의 코드가 유용한 정보가 되길 바란다 :)&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;-기간-ㅤ4일&quot;&gt;⏰ 기간 ⏰ㅤ4일&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-기능&quot;&gt;1. 기능&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;그리기: 선, 사각형, 원, Polyline, Sketch(Pen), Spray, Pattern 中 최소 4가지 이상 필수 선택&lt;/li&gt;
-  &lt;li&gt;속성: 굵기, 색, Style, 채우기 中 최소 2가지 이상 필수 선택&lt;/li&gt;
-  &lt;li&gt;부가기능: drag &amp;amp; drop, resize, rotate, undo/redo, 지우기, 저장/불러오기, 복사/붙여넣기, grouping/ungrouping&lt;br /&gt;
-中 최소 2가지 이상 필수 선택&lt;/li&gt;
-  &lt;li&gt;이외에 자유롭게 자신이 선보이고 싶은 기능, 있으면 좋겠다 싶은 기능 추가
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-시작&quot;&gt;2. 시작!&lt;/h2&gt;
-&lt;p&gt;마찬가지로 검색을 좀 더 수월하게 하기위해 약간의 Reference를 제공한다.&lt;br /&gt;
-하지만 말했듯이 내가 제공하는 자료는 정말 한정적이기 때문에 필요한 자료는 더 열심히 찾고 공부해야한다.&lt;br /&gt;
-Reference 아래로는 나의 결과물과 설명이 이어진다.&lt;br /&gt;
-꼭 4일 후에 본 프로젝트를 마무리하고 확인하길 바란다.&lt;br /&gt;
-그냥 내 코드와 결과물을 보고 공부한다면 그것도 물론 공부가 되겠지만 자신이 직접 찾아가며 한 공부보다는 훨씬 못할 것이다.&lt;br /&gt;
-또한 역시 말했듯이 그 당시에는 몰랐지만 지금보면 내 코드도 잘 짜여진 코드는 아니다 (-﹏-。;)&lt;/p&gt;
-
-&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://aiden1004.tistory.com/entry/%EC%9E%90%EB%B0%94-GUI-%EA%B7%B8%EB%9E%98%ED%94%BD-%EA%B7%B8%EB%A6%AC%EA%B8%B0-%EA%B8%B0%EC%B4%88&quot;&gt;자바 GUI Graphics (그래픽) 그리기 기초&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/khk6435/50112360444&quot;&gt;자바GUI강의 8.[패널에 그림그리기]&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3-결과물&quot;&gt;3. 결과물&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/drawboard.png&quot; alt=&quot;drawboard&quot; width=&quot;750px&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;구현-기능&quot;&gt;구현 기능&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;그리기: 선, 사각형, 원, Sketch(Pen)&lt;/li&gt;
-  &lt;li&gt;속성: 굵기, 색&lt;/li&gt;
-  &lt;li&gt;부가 기능: undo/redo, 지우기, 저장/불러오기&lt;/li&gt;
-  &lt;li&gt;나만의 기능: 텍스트 모드, 캔버스 여러개, 캔버스 삭제&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;보완-해야할-부분&quot;&gt;보완 해야할 부분&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;텍스트 모드에서 클릭하면 글 쓰기를 시작할 수 있게&lt;/li&gt;
-  &lt;li&gt;텍스트 모드에서 txt 파일이 저장되도록&lt;/li&gt;
-  &lt;li&gt;캔버스 별로 메모리가 분리 되도록&lt;/li&gt;
-  &lt;li&gt;지우개 사용할 때 지우개의 크기를 알 수 있도록&lt;/li&gt;
-  &lt;li&gt;파일을 불러왔을 때 수정 가능하도록
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;4-세부-기능-캡쳐&quot;&gt;4. 세부 기능 캡쳐&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-ㅤ&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/drawboard_detail(1).png&quot; alt=&quot;drawboard_detail&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ㅤ&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/drawboard_detail(2).png&quot; alt=&quot;drawboard_detail&quot; width=&quot;700px&quot; /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;5-코드-세부-설명&quot;&gt;5. 코드 세부 설명&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&quot;/assets/img/post/About_me/JavaCamp/drawboard_uml.gif&quot; alt=&quot;drawboard_uml&quot; width=&quot;900px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 사진은 내 코드를 UML Diagram으로 나타낸 것이다.&lt;br /&gt;
-그래도 처음 계산기에 비하면 나름 class 별로 짜려고 노력한 흔적이 보인다.&lt;/p&gt;
-
-&lt;p&gt;코드를 세부적으로 설명하면 아래와 같다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Main class&lt;/code&gt;&lt;/strong&gt; : Drawboard의 전체적인 큰 프레임
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Main()&lt;/code&gt;&lt;/strong&gt; : Frame의 제목, 크기를 설정해주고, 닫기를 눌렀을 때 닫아지도록 설정, 또한 MenuBar와 ToolBar, Canvas 탭을 추가&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MenuBar class&lt;/code&gt;&lt;/strong&gt; : 프레임의 메뉴바 부분
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MenuBar()&lt;/code&gt;&lt;/strong&gt; : 저장과 불러오기를 만들고 여기에 각각 알맞은 ActionListener를 더해주는 역할&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;actionPerformed()&lt;/code&gt;&lt;/strong&gt; : 저장과 불러오기를 눌렀을 때 각각 JFileChoose를 사용해서 해당 이벤트를 실행&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ToolBar class&lt;/code&gt;&lt;/strong&gt; : 프레임의 메뉴바 아래에 툴바 부분
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ToolBar()&lt;/code&gt;&lt;/strong&gt; : 툴바의 배경색을 설정하고, 툴바에 Buttons 클래스를 추가해 툴바를 완성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Buttons class&lt;/code&gt;&lt;/strong&gt; : 툴바의 버튼들을 구성
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Buttons()&lt;/code&gt;&lt;/strong&gt; : 툴바에 필요한 버튼들을 생성하고 각 버튼들에 MouseListener를 추가&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;moustClicked()&lt;/code&gt;&lt;/strong&gt; : 툴바의 각 버튼들을 눌렀을 때 해당 버튼에 맞는 행동들을 실행&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;undo()&lt;/code&gt;&lt;/strong&gt; : undo 버튼을 누를 때마다 지금까지 실행되었던 것들을 한개씩 pop해서 redo에 넣고 다시 그려주는 역할&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;redo()&lt;/code&gt;&lt;/strong&gt; : redo 버튼을 누를 때 마다 redo 메모리에서 한개씩 pop해서 메모리에 넣고 다시 그려주는 역할&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;addCanvas()&lt;/code&gt;&lt;/strong&gt; : new canvas 버튼을 누를 때 마다 새로운 Canvas 생성 및 Canvas group에 넣어주는 역할&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setEraser()&lt;/code&gt;&lt;/strong&gt; : eraser 버튼을 눌렀을 때 버튼 세팅&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setText()&lt;/code&gt;&lt;/strong&gt; : new text 버튼을 눌렀을 때 버튼 세팅하고 TextBoard 생성 및 Canvas group에 넣어주는 역할&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setInit()&lt;/code&gt;&lt;/strong&gt; : clear 버튼을 눌렀을 때 버튼 세팅 및 캔버스 초기화&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setDraw()&lt;/code&gt;&lt;/strong&gt; : draw 버튼을 눌렀을 때 각각의 맞는 도형이 그려지도록 세팅&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CanvasGroup class&lt;/code&gt;&lt;/strong&gt; : 생성된 Canvas들과 TextBoard들을 모아두는 곳&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Canvas class&lt;/code&gt;&lt;/strong&gt; : 그림을 그리기위한 Canvas
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Canvas()&lt;/code&gt;&lt;/strong&gt; : MyMouseListener 클래스를 Canvas에 추가&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MyMouseListener를 class&lt;/code&gt;&lt;/strong&gt; : 마우스가 눌렸을 때와 드레그 되었을 때, 놓였을 때로 나누어 MouseListener를 설정
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;paintComponent()&lt;/code&gt;&lt;/strong&gt; : 실제로 Canvas에 그림이 그려지도록 Graphics를 사용해서 그림을 그리는 역할&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TextBoard class&lt;/code&gt;&lt;/strong&gt; : 텍스트 모드에서 글을 쓰기위한 TextBoard
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TextBoard()&lt;/code&gt;&lt;/strong&gt; : 글을 쓸 수 있는 TextArea 설정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Sketch class&lt;/code&gt;&lt;/strong&gt; : 스케치를 위해 스케치의 시작점과 끝점을 저장하는 클래스&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Memory class&lt;/code&gt;&lt;/strong&gt; : redo, undo를 위해 지금까지 그렸던 도형들을 저장하는 클래스&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ColorFrame class&lt;/code&gt;&lt;/strong&gt; : 스케치나 도형을 그릴 때 색을 선택할 수 있도록 해주는 클래스
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ColorFrame()&lt;/code&gt;&lt;/strong&gt; : ChangeListener를 추가&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stateChanged()&lt;/code&gt;&lt;/strong&gt; : 색이 바뀔 때 마다 해당 색으로 지정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CheckFrame class&lt;/code&gt;&lt;/strong&gt; : Delete 버튼을 눌렀을 때 정말로 삭제할지 묻는 창
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CheckFrame()&lt;/code&gt;&lt;/strong&gt; : 정말로 삭제할지 묻는 라벨과 ActionListener를 추가한 yes, no 버튼 추가&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;actionPerformed()&lt;/code&gt;&lt;/strong&gt; : yes 버튼 - Canvas 삭제 및 모든 메모리를 비워주고 창을 삭제,&lt;br /&gt;
-  no 버튼 - 해당 CheckFrame을 닫아주는 행동을 실행&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Stroke class&lt;/code&gt;&lt;/strong&gt; : 라인의 굵기를 설정하는 클래스
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Stroke()&lt;/code&gt;&lt;/strong&gt; : ChangeListener를 추가&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stateChanged()&lt;/code&gt;&lt;/strong&gt; : 굵기가 바뀔 때마다 해당 굵기로 지정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Clear class&lt;/code&gt;&lt;/strong&gt; : 창을 초기화 시킬 때에 캔버스 화면에 맞는 하연 사각형 객체를 만들어주는 class&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했다.&lt;br /&gt;
-혹시 코드를 보고 궁금한 점이나 문의할 내용이 있으면 댓글로 남겨주세요!
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;6-github-및-프로젝트-보고서&quot;&gt;6. GitHub 및 프로젝트 보고서&lt;/h2&gt;
-&lt;p&gt;제 코드는 아래 GitHub에서 확인 가능합니다 :)&lt;br /&gt;
-&lt;a href=&quot;https://github.com/0pencoding/JavaCamp-Round2-DrawBoard&quot;&gt;https://github.com/0pencoding/JavaCamp-Round2-DrawBoard&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;또한 위 코드 설명보다 더 자세한 설명이나 실행 결과가 필요하다면 아래 링크에서 보고서를 다운받을 수 있습니다 :)&lt;br /&gt;
-&lt;a href=&quot;https://drive.google.com/file/d/15mE3ce3AQZ2JYinjSA9cl54PlF53mcJc/view?usp=sharing&quot;&gt;https://drive.google.com/file/d/15mE3ce3AQZ2JYinjSA9cl54PlF53mcJc/view?usp=sharing&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 style=&quot;text-align: right;&quot; id=&quot;round-3-데이터-베이스-구현--&quot;&gt;&lt;a href=&quot;https://0pencoding.github.io/javacamp/2020/03/14/JavaCamp_Round3_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4.html&quot;&gt;[Round 3] 데이터 베이스 구현 ➜ &lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 13 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/javacamp/2020/03/13/JavaCamp_Round2_%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%E1%84%91%E1%85%A1%E1%86%AB.html</link>
-        <guid isPermaLink="true">http://localhost:4000/javacamp/2020/03/13/JavaCamp_Round2_%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%E1%84%91%E1%85%A1%E1%86%AB.html</guid>
-        
-        <category>about</category>
-        
-        <category>java</category>
-        
-        <category>gui</category>
-        
-        <category>graphics</category>
         
         
         <category>JavaCamp</category>

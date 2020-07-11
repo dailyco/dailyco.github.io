@@ -9,6 +9,20 @@
             <lastmod>2019-06-07T00:00:00+00:00</lastmod>
             <priority>1.00</priority>
         </url><url>
+                <loc>http://localhost:4000/leetcode/2020/07/11/%EB%84%90%ED%8C%90%EC%A7%80%EC%97%90%EC%84%9C%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%EA%B0%9C%EB%AF%B8_medium.html</loc>
+                <lastmod>2020-07-11T00:00:00+09:00</lastmod>
+                
+                    <changefreq>daily</changefreq>
+                
+                <priority>0.80</priority>
+            </url><url>
+                <loc>http://localhost:4000/leetcode/2020/07/11/%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF_%E1%84%83%E1%85%B3%E1%86%BC%E1%84%8E%E1%85%A1%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A7%E1%86%AF_easy.html</loc>
+                <lastmod>2020-07-11T00:00:00+09:00</lastmod>
+                
+                    <changefreq>daily</changefreq>
+                
+                <priority>0.80</priority>
+            </url><url>
                 <loc>http://localhost:4000/codingtest/2020/07/04/BoostCamp_2020_condingtest_review.html</loc>
                 <lastmod>2020-07-04T00:00:00+09:00</lastmod>
                 

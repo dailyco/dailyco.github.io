@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<title>LeetCode Weekly Contest 196 : [Sorting] Can Make Arithmetic Progression From Sequence</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>LeetCode Weekly Contest 196 : [Sorting] Can Make Arithmetic Progression From Sequence | Opencoding</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="LeetCode Weekly Contest 196 : [Sorting] Can Make Arithmetic Progression From Sequence" />
+<meta name="author" content="YuJin Kim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Difficulty: Easy Because it was the first time to solve a problem presented in English when studying algorithms, besides the competition, I was a little embarrassed. However the problem was short and the examples were out, so I wasn’t really tired. It was a little hard to figure out the problem by just looking for words that I didn’t know… Well, I think it is okay because I can study English while solving the algorithm problem | ᐕ)੭*⁾⁾" />
+<meta property="og:description" content="Difficulty: Easy Because it was the first time to solve a problem presented in English when studying algorithms, besides the competition, I was a little embarrassed. However the problem was short and the examples were out, so I wasn’t really tired. It was a little hard to figure out the problem by just looking for words that I didn’t know… Well, I think it is okay because I can study English while solving the algorithm problem | ᐕ)੭*⁾⁾" />
+<link rel="canonical" href="http://localhost:4000/leetcode/2020/07/11/%EC%A0%95%EB%A0%AC_%EB%93%B1%EC%B0%A8%EC%88%98%EC%97%B4_easy.html" />
+<meta property="og:url" content="http://localhost:4000/leetcode/2020/07/11/%EC%A0%95%EB%A0%AC_%EB%93%B1%EC%B0%A8%EC%88%98%EC%97%B4_easy.html" />
+<meta property="og:site_name" content="Opencoding" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-11T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"LeetCode Weekly Contest 196 : [Sorting] Can Make Arithmetic Progression From Sequence","dateModified":"2020-07-11T00:00:00+09:00","datePublished":"2020-07-11T00:00:00+09:00","url":"http://localhost:4000/leetcode/2020/07/11/%EC%A0%95%EB%A0%AC_%EB%93%B1%EC%B0%A8%EC%88%98%EC%97%B4_easy.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/leetcode/2020/07/11/%EC%A0%95%EB%A0%AC_%EB%93%B1%EC%B0%A8%EC%88%98%EC%97%B4_easy.html"},"author":{"@type":"Person","name":"YuJin Kim"},"description":"Difficulty: Easy Because it was the first time to solve a problem presented in English when studying algorithms, besides the competition, I was a little embarrassed. However the problem was short and the examples were out, so I wasn’t really tired. It was a little hard to figure out the problem by just looking for words that I didn’t know… Well, I think it is okay because I can study English while solving the algorithm problem | ᐕ)੭*⁾⁾","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/custom/header.css">
+    </head>
+
+    <body>
+        
+
+        <div class="masthead">
+            <div class="masthead__inner-wrap">
+                <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    
+                    <a class="site-logo" href="/"><img src="/assets/img/header//logo.png" alt=""></a>
+                    
+                    <a class="site-title" href="/">Opencoding</a>
+                    <!-- <button class="greedy-nav__toggle hidden" type="button"></button>
+                    <ul class="hidden-links hidden"><li class="masthead__menu-item">
+                                <a href="/about/" >ABOUT</a>
+                            </li><li class="masthead__menu-item">
+                                <a href="/tags/" >TAGS</a>
+                            </li></ul> -->
+                    <ul class="visible-links"><li class="masthead__menu-item">
+                        <a href="/about/" >ABOUT</a>
+                        </li><li class="masthead__menu-item">
+                        <a href="/tags/" >TAGS</a>
+                        </li></ul>
+                    <!-- <li class="masthead__menu-item">
+                            
+                                <button class="search__toggle " type="button">
+                                <span class="visually-hidden">Toggle search</span>
+                                <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+                                    <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+                                </svg>
+                                </button>
+                            
+                        </li> -->
+                </nav>
+                </div>
+            </div>
+        </div>
+
+        <section class="body_content">
+            <main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim"></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/leetcode/2020/07/11/%EC%A0%95%EB%A0%AC_%EB%93%B1%EC%B0%A8%EC%88%98%EC%97%B4_easy.html">
+    <h2 class="post-title">LeetCode Weekly Contest 196 : [Sorting] Can Make Arithmetic Progression From Sequence</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>LeetCode</li>
+        
+          <li>Codingtest</li>
+        
+          <li>Sorting</li>
+        
+          <li>Level 1</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 11, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>Difficulty: Easy<br />
+Because it was the first time to solve a problem presented in English when studying algorithms, besides the competition, I was a little embarrassed. However the problem was short and the examples were out, so I wasn’t really tired. It was a little hard to figure out the problem by just looking for words that I didn’t know… Well, I think it is okay because I can study English while solving the algorithm problem | ᐕ)੭*⁾⁾<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-problem">1. Problem</h2>
+<p>Given an array of numbers arr.<br />
+A sequence of numbers is called an arithmetic progression if the difference between any two consecutive elements is the same.</p>
+
+<p>Return true if the array can be rearranged to form an arithmetic progression, otherwise, return false.<br />
+<br /></p>
+
+<p><strong>Example1 :</strong></p>
+<blockquote>
+  <p><strong>Input:</strong> arr = [3,5,1]<br />
+<strong>Output:</strong> true<br />
+<strong>Explanation:</strong> We can reorder the elements as [1,3,5] or [5,3,1] with differences 2 and -2 respectively, between each consecutive elements.<br />
+<br /></p>
+</blockquote>
+
+<p><strong>Example2 :</strong></p>
+<blockquote>
+  <p><strong>Input:</strong> arr = [1,2,4]<br />
+<strong>Output:</strong> false<br />
+<strong>Explanation:</strong> There is no way to reorder the elements to obtain an arithmetic progression.<br />
+<br /></p>
+</blockquote>
+
+<h3 id="constraints">Constraints</h3>
+<ul>
+  <li>2 &lt;= arr.length &lt;= 1000</li>
+  <li>10^6 &lt;= arr[i] &lt;= 10^6
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-thinking-algorithm">2. Thinking Algorithm</h2>
+<ol>
+  <li>Sort the arr received by parameter in ascending order.</li>
+  <li>Find the difference between the first and second elements of arr.<br />
+(This value is tolerance unit)</li>
+  <li>Start with the second element of arr and check if the next element increases in tolerance unit.</li>
+  <li>If it does not increase in tolerance unit, return false.</li>
+  <li>When all elements are increased in tolerance unit, the repeating statement (for loop) ends and returns true.<br />
+<br /><br /></li>
+</ol>
+
+<h2 id="3-solution">3. Solution</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">bool</span> <span class="n">canMakeArithmeticProgression</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        
+        <span class="kt">int</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">diff</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-to-think-deeper">4. To Think Deeper</h2>
+<ul>
+  <li>The point is that sorting arr at first.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-reference-٩-ᐛ-و">5. Reference ٩( ᐛ )و</h2>
+<ul>
+  <li>Nothing ¯＼<em>(ツ)</em>/¯
+<br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: LeetCode Contest, https://leetcode.com/contest/
+</code></pre></div></div>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/leetcode/2020/07/11/%EC%A0%95%EB%A0%AC_%EB%93%B1%EC%B0%A8%EC%88%98%EC%97%B4_easy.html';
+      this.page.identifier = 'http://localhost:4000/leetcode/2020/07/11/%EC%A0%95%EB%A0%AC_%EB%93%B1%EC%B0%A8%EC%88%98%EC%97%B4_easy.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main><script async src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+  <script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+        </section>
+    </body>
+</html>

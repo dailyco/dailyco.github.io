@@ -1,0 +1,108 @@
+I"%<p>Difficulty: Medium<br />
+It was a little hard to understand the problem. I could see and understand the picture of the example, and it didn’t take very long to write the code. As you can see from solving the problem, there is a cute trick hidden in the problem. It’s a tiny trick that gives you the fear of being a complicated problem before you write the code. (<em>´o`</em>)<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-problem">1. Problem</h2>
+<p>We have a wooden plank of the length n units.<br />
+Some ants are walking on the plank, each ant moves with speed 1 unit per second.<br />
+Some of the ants move to the left, the other move to the right.</p>
+
+<p>When two ants moving in two different directions meet at some point,<br />
+they change their directions and continue moving again.<br />
+Assume changing directions doesn’t take any additional time.</p>
+
+<p>When an ant reaches one end of the plank at a time t, it falls out of the plank imediately.</p>
+
+<p>Given an integer n and two integer arrays left and right, the positions of the ants moving to the left and the right.<br />
+Return the moment when the last ant(s) fall out of the plank.<br />
+<br /></p>
+
+<p><strong>Example1 :</strong><br />
+<img src="https://assets.leetcode.com/uploads/2020/06/17/ants.jpg" alt="example1" width="300" /></p>
+<blockquote>
+  <p><strong>Input:</strong> n = 4, left = [4,3], right = [0,1]<br />
+<strong>Output:</strong> 4<br />
+<strong>Explanation:</strong> In the image above:</p>
+  <ul>
+    <li>The ant at index 0 is named A and going to the right.</li>
+    <li>The ant at index 1 is named B and going to the right.</li>
+    <li>The ant at index 3 is named C and going to the left.</li>
+    <li>The ant at index 4 is named D and going to the left.</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Note that the last moment when an ant was on the plank is t = 4 second, after that it falls imediately out of the plank. (i.e. We can say that at t = 4.0000000001, there is no ants on the plank).<br />
+<br /></p>
+</blockquote>
+
+<p><strong>Example2 :</strong></p>
+<blockquote>
+  <p><strong>Input:</strong> n = 7, left = [], right = [0,1,2,3,4,5,6,7]<br />
+<strong>Output:</strong> 7<br />
+<strong>Explanation:</strong> All ants are going to the right, the ant at index 0 needs 7 seconds to fall.<br />
+<br /></p>
+</blockquote>
+
+<h3 id="constraints">Constraints</h3>
+<ul>
+  <li>1 &lt;= n &lt;= 10^4</li>
+  <li>0 &lt;= left.length &lt;= n + 1</li>
+  <li>0 &lt;= left[i] &lt;= n</li>
+  <li>0 &lt;= right.length &lt;= n + 1</li>
+  <li>0 &lt;= right[i] &lt;= n</li>
+  <li>1 &lt;= left.length + right.length &lt;= n + 1</li>
+  <li>All values of left and right are unique, and each value can appear only in one of the two arrays.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-thinking-algorithm">2. Thinking Algorithm</h2>
+<ol>
+  <li><br /><br /></li>
+</ol>
+
+<h2 id="3-solution">3. Solution</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">getLastMoment</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">left</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        
+        <span class="n">sort</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">left</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">right</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">right</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">left</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">left</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">right</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">right</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="n">right</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">right</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">left</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">left</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">right</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">left</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">right</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="n">right</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">answer</span> <span class="o">+=</span> <span class="n">left</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">right</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">answer</span> <span class="o">+=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">right</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+        
+        <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-to-think-deeper">4. To Think Deeper</h2>
+<ul>
+  <li><br /><br /><br /></li>
+</ul>
+
+<h2 id="5-reference-٩-ᐛ-و">5. Reference ٩( ᐛ )و</h2>
+<ul>
+  <li>Nothing ¯＼<em>(ツ)</em>/¯
+<br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: LeetCode Contest, https://leetcode.com/contest/
+</code></pre></div></div>
+:ET
