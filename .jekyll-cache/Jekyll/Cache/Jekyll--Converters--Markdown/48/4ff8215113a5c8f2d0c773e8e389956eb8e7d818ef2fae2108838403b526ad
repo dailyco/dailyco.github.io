@@ -1,0 +1,178 @@
+I"�:<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/13/%ED%95%B4%EC%8B%9C_%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%95%A8%EB%B2%94_level3.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [해시] 베스트 앨범</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>프로그래머스 고득점 Kit</li>
+        
+          <li>Hash</li>
+        
+          <li>Level 3</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 13, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>난이도 ★ ★ ★ ☆ ☆<br />
+드디어 첫 level3 문제이다. 문제 자체는 어렵지 않았는데, 좀 더 효율적으로 짜고싶다는 욕심이 생기니까 문제를 풀고나서 더 고민해보면서 시간을 많이 소모한 것 같다. 그런데도 결국 마음에 드는 코드는 나오지 않아서 좀 더 고민해야 할 듯… 알고리즘 공부가 아직 많이 부족한가보다ㅠㅠ 문제를 풀수록 자신감이 생겼는데 이번 부스트 캠프 코딩 테스트에 떨어지고 ʕ ཀ ⌂ ཀ ʔ 다시 자신감이 많이 낮아졌다. 아직 내가 많이 부족하다는 것을 인정하고 더 열심히 해야겠다는 생각이 든다. (사실 알고리즘 공부한지 얼마 되지도 않았는데 자만심이 컸던 것 같다) 앞으로의 나에게 화이팅!<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>스트리밍 사이트에서 장르 별로 가장 많이 재생된 노래를 두 개씩 모아 베스트 앨범을 출시하려 합니다. 노래는 고유 번호로 구분하며, 노래를 수록하는 기준은 다음과 같습니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 속한 노래가 많이 재생된 장르를 먼저 수록합니다.
+2. 장르 내에서 많이 재생된 노래를 먼저 수록합니다.
+3. 장르 내에서 재생 횟수가 같은 노래 중에서는 고유 번호가 낮은 노래를 먼저 수록합니다.
+</code></pre></div></div>
+<p>노래의 장르를 나타내는 문자열 배열 genres와 노래별 재생 횟수를 나타내는 정수 배열 plays가 주어질 때,<br />
+베스트 앨범에 들어갈 노래의 고유 번호를 순서대로 return 하도록 solution 함수를 완성하세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>genres[i]는 고유번호가 i인 노래의 장르입니다.</li>
+  <li>plays[i]는 고유번호가 i인 노래가 재생된 횟수입니다.</li>
+  <li>genres와 plays의 길이는 같으며, 이는 1 이상 10,000 이하입니다.</li>
+  <li>장르 종류는 100개 미만입니다.</li>
+  <li>장르에 속한 곡이 하나라면, 하나의 곡만 선택합니다.</li>
+  <li>모든 장르는 재생된 횟수가 다릅니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li>genres 벡터를 노래의 장르를 key, 해당 장르의 총 play 횟수를 value하는 맵인 genres_count에 나누어 넣고,<br />
+장르를 key, 각 노래의 고유 번호와 play 횟수 쌍을 원소로 갖는 벡터를 value로 하는 맵인 genres_musics에도 나누어 넣는다.</li>
+  <li>genres_count 맵을 이용해서 반대로 해당 장르의 총 play 횟수를 key로 하고 노래의 장르를 value로 하는 맵 count_genres에 바꿔 넣는다.<br />
+(이 작업을 해주는 이유는 총 play 횟수별로 장르를 정렬해주기 위해서이고,<br />
+문제 상에서 모든 장르는 재생된 횟수가 다르다는 제한조건이 있기 때문에 장르의 총 play 횟수가 key 값이 될 수 있다)</li>
+  <li>genres_musics맵에서 value값인 벡터를 play 횟수가 많은 순으로, 횟수가 같을 경우 고유번호가 작은 순으로 정렬한다.</li>
+  <li>count_genres맵의 value 장르 순서대로 genres_musics맵의 정렬된 벡터에서 노래 두 곡씩 answer 벡터에 담는다.<br />
+(노래가 한 곡일 경우 한 곡만 담는다)</li>
+  <li>answer 벡터에 모든 장르의 노래를 두(한) 곡씩 담은 후, answer를 반환한다.<br />
+<br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;map&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">bool</span> <span class="nf">compare</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">second</span> <span class="o">==</span> <span class="n">b</span><span class="p">.</span><span class="n">second</span><span class="p">)</span> <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">second</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">genres</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">plays</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">genres_count</span><span class="p">;</span>
+    <span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">count_genres</span><span class="p">;</span>
+    <span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;&gt;</span> <span class="n">genres_musics</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">answer</span><span class="p">;</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">genres</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">genres_count</span><span class="p">[</span><span class="n">genres</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">plays</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">genres_musics</span><span class="p">[</span><span class="n">genres</span><span class="p">[</span><span class="n">i</span><span class="p">]].</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_pair</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">plays</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+    <span class="p">}</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">genres_count</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">genres_count</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">count_genres</span><span class="p">[</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">]</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">;</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">genres_musics</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">genres_musics</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">compare</span><span class="p">);</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">count_genres</span><span class="p">.</span><span class="n">rbegin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">count_genres</span><span class="p">.</span><span class="n">rend</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">answer</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">genres_musics</span><span class="p">[</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">][</span><span class="mi">0</span><span class="p">].</span><span class="n">first</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">genres_musics</span><span class="p">[</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">].</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">answer</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">genres_musics</span><span class="p">[</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">][</span><span class="mi">1</span><span class="p">].</span><span class="n">first</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>더 간단하게 푸는 방법을 고민해봤는데 더 이상 방법이 없는 것 같다..</li>
+  <li>맵의 특징으로 정렬이 자동으로 된다는 것! 기억해 두자</li>
+  <li>문제를 잘 읽고 예외의 경우도 잘 고려해주기
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>없다! v｡◕‿◕｡v
+<br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/13/%ED%95%B4%EC%8B%9C_%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%95%A8%EB%B2%94_level3.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/13/%ED%95%B4%EC%8B%9C_%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%95%A8%EB%B2%94_level3.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
