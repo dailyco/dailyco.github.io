@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 11 Jul 2020 18:04:40 +0900</pubDate>
-    <lastBuildDate>Sat, 11 Jul 2020 18:04:40 +0900</lastBuildDate>
+    <pubDate>Mon, 13 Jul 2020 23:00:30 +0900</pubDate>
+    <lastBuildDate>Mon, 13 Jul 2020 23:00:30 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -201,7 +201,7 @@ find its location at num, and verify that it can be brought forward.&lt;/li&gt;
   &lt;li&gt;If k is zero or all characters are moved to form the smallest number (num var is empty string),&lt;br /&gt;
 the repetition statement ends.&lt;/li&gt;
   &lt;li&gt;If all the strings of num var are not moved to answer var (k ==0),&lt;br /&gt;
-paste the remaining num string after answer string.
+paste the remaining num string after answer string.&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -2694,12 +2694,13 @@ vector의 마지막에 있는 원소에 접근하기 위해서는 vector.back() 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;priority_queue를 생성한다.&lt;/li&gt;
-  &lt;li&gt;stock에 계속해서 공급받은 밀가루를 더해줄 것이기 때문에 (k - stock)이 0보다 큰 동안 반복한다.&lt;/li&gt;
-  &lt;li&gt;stock 갯수 만큼 버틸 수 있기 때문에 stock 갯수 보다 작거나 같은 날짜의 supplies는 전부 priority_queue에 넣어준다.&lt;/li&gt;
-  &lt;li&gt;priority_queue 안의 숫자들이 stock으로 버틸 수 있는 날짜들의 공급 받을 수 있는 밀가루 수량들이다.&lt;/li&gt;
-  &lt;li&gt;그 중 가장 많이 공급 받을 수 있는 밀가루 priority_queue의 top()을 pop한다.&lt;/li&gt;
+  &lt;li&gt;stock에 계속해서 공급받은 밀가루를 더해줄 것이기 때문에 (k - stock)이 0보다 큰 동안 반복한다.&lt;br /&gt;
+(k - stock이 0보다 작거나 같아지는 순간이 더 이상 밀가루를 공급 받지 않아도 k일까지 버틸 수 있는 시점이 된다)&lt;/li&gt;
+  &lt;li&gt;stock 갯수 만큼 버틸 수 있기 때문에 stock 갯수 보다 작거나 같은 날짜의 supplies를 전부 priority_queue에 넣는다.&lt;/li&gt;
+  &lt;li&gt;priority_queue 안의 숫자들이 stock으로 버틸 수 있는 동안 새로 공급 받을 수 있는 밀가루 수량들이다.&lt;/li&gt;
+  &lt;li&gt;그 중 가장 많이 공급 받을 수 있는 밀가루인 priority_queue의 top()을 pop한다.&lt;/li&gt;
   &lt;li&gt;pop한 밀가루만큼을 공급받았다고 생각하고 answer를 증가시키고 그 값만큼 stock에 더해준다.&lt;/li&gt;
-  &lt;li&gt;다시 stock이 늘어났으므로 공급받을 수 있는 날짜에 맞게 priority_queue에 넣어주고 3번부터의 과정을 반복한다.&lt;br /&gt;
+  &lt;li&gt;반복문이 끝날 때까지 위 과정을 반복하고, 끝나면 answer를 반환한다.&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -2802,11 +2803,12 @@ Leo가 가진 음식의 스코빌 지수를 담은 배열 scoville과 원하는 
 &lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;scoville 를 min-heap으로 만든다.&lt;/li&gt;
-  &lt;li&gt;가장 작은 스코빌 지수가 K 이하, 음식을 섞어서 스코빌 지수를 높일 수 있기 때문에 벡터의 크기가 2 이상인 동안 아래를 반복한다.&lt;/li&gt;
+  &lt;li&gt;가장 작은 스코빌 지수가 K 이하, 음식을 섞어서 스코빌 지수를 높일 수 있기 때문에 벡터의 크기가 2 이상인 동안 다음을 반복한다.&lt;/li&gt;
   &lt;li&gt;가장 작은 스코빌 지수 smallest1과 그 다음으로 작은 스코빌 지수 smallest2를 pop한다.&lt;/li&gt;
   &lt;li&gt;섞은 음식의 스코빌 지수를 다시 heap에 넣고 answer는 증가시킨다.&lt;/li&gt;
-  &lt;li&gt;모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우를 고려해 그 경우에는 -1을 반환한다.&lt;/li&gt;
-  &lt;li&gt;나머지의 경우에는 answer를 반환한다.&lt;br /&gt;
+  &lt;li&gt;반복문이 끝나고, 가장 작은 스코빌 지수가 K보다 작은 경우에 -1을 반환한다.&lt;br /&gt;
+(이 경우는 모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우이다)&lt;/li&gt;
+  &lt;li&gt;그렇지 않으면 음식을 섞어 K이상의 스코빌 지수를 만들었기 때문에 섞은 횟수 answer를 반환한다.&lt;br /&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 

@@ -148,10 +148,13 @@
 <h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
 <ol>
   <li>phone_book의 원소를 모두 set에 담는다.</li>
-  <li>set에서 각 phone_book의 upper bound를 찾는다.</li>
-  <li>upper bound가 마지막 원소일 경우는 pass.</li>
-  <li>각 phone_book이 해당 upper_bound의 접두어인지 확인한다.</li>
-  <li>접두어이면 false를 반환한다.<br />
+  <li>set에서 각 phone_book 원소의 upper bound를 찾는다.<br />
+(upper bound는 해당 값을 가지는 맨 마지막 원소를 가르킨다)</li>
+  <li>upper bound가 마지막 원소일 경우는 pass한다.</li>
+  <li>각 phone_book 원소가 해당 upper_bound의 접두어인지 확인한다.<br />
+(find() 함수를 사용해서 해당 문자열을 찾지못하면 -1(npos), 찾으면 위치 인덱스를 반환하는 것을 이용)</li>
+  <li>접두어(-1(npos)이 아니면)이면 false를 반환한다.</li>
+  <li>접두어가 없어 반복문이 끝나면 true를 반환한다.<br />
 <br /><br /></li>
 </ol>
 
