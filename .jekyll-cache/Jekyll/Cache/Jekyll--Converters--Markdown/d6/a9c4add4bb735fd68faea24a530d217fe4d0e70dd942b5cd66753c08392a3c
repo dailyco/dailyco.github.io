@@ -1,0 +1,67 @@
+I"|<p>난이도 ★ ★ ★ ☆ ☆<br />
+이 문제는 엄청 빨리 풀었다. level3라고 생각이 안 들만큼! 문제를 읽고 어떻게 풀어야겠다하는 알고리즘이 바로 생각나서 생각난 알고리즘을 토대로 코드를 작성했는데 한 번에 해결되었다. 그래서 문제가 쉬웠던건지, 아니면 꾸준히 문제를 해결하면서 문제 해결 능력이 길러지고 있는건지 잘은 모르겠지만, 어쨌든 문제가 빨리 풀려서 기분은 무척 좋았다(˵¯̴͒ꇴ¯̴͒˵)<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>고속도로를 이동하는 모든 차량이 고속도로를 이용하면서 단속용 카메라를 한 번은 만나도록 카메라를 설치하려고 합니다.</p>
+
+<p>고속도로를 이동하는 차량의 경로 routes가 매개변수로 주어질 때, 모든 차량이 한 번은 단속용 카메라를 만나도록 하려면<br />
+최소 몇 대의 카메라를 설치해야 하는지를 return 하도록 solution 함수를 완성하세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>차량의 대수는 1대 이상 10,000대 이하입니다.</li>
+  <li>routes에는 차량의 이동 경로가 포함되어 있으며 routes[i][0]에는 i번째 차량이 고속도로에 진입한 지점, routes[i][1]에는 i번째 차량이 고속도로에서 나간 지점이 적혀 있습니다.</li>
+  <li>차량의 진입/진출 지점에 카메라가 설치되어 있어도 카메라를 만난것으로 간주합니다.</li>
+  <li>차량의 진입 지점, 진출 지점은 -30,000 이상 30,000 이하입니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li>설치해야할 카메라 수인 answer 변수를 처음에 한 개는 무조건 설치해야하므로 1로 초기화하여 생성한다.</li>
+  <li>고속도로에 진입하고 진출한 차량의 최소 진출 지점을 나타내는 min을 처음에는 최댓값 30000으로 초기화하여 생성한다.</li>
+  <li>차량이 고속도로로 진입한 지점
+<br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">routes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">;</span>
+    
+    <span class="n">sort</span><span class="p">(</span><span class="n">routes</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">routes</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">car</span> <span class="o">:</span> <span class="n">routes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">car</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">min</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">min</span> <span class="o">=</span> <span class="n">car</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">car</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min</span><span class="p">)</span> <span class="n">min</span> <span class="o">=</span> <span class="n">car</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li><br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li><br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
+:ET

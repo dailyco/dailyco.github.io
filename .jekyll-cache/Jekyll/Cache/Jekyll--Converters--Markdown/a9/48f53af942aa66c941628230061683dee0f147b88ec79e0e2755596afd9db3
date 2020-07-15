@@ -1,0 +1,113 @@
+I"�$<p>난이도 ★ ★ ★ ☆ ☆<br />
+이전 문제에 비해 이 문제는 빨리 끝나서 좋았다. 그런데 처음에 우선순위 큐를 사용해서 풀려고 했다가 망해서 멀티셋을 사용했는데, 멀티셋에서 내가 잘 모르는 부분에 대해서 끙끙대다가 겨우 해결했다. 힘들긴 했지만 새롭게 알게된 것도 있었고, 앞으로 어떻게 사용해야겠다는 생각이 세워져서 많이 배울 수 있는 문제였다 ˘ڡ˘४<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>하드디스크는 한 번에 하나의 작업만 수행할 수 있습니다.<br />
+디스크 컨트롤러를 구현하는 방법은 여러 가지가 있습니다.<br />
+가장 일반적인 방법은 요청이 들어온 순서대로 처리하는 것입니다.</p>
+
+<p>예를들어,</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 0ms 시점에 3ms가 소요되는 A작업 요청
+- 1ms 시점에 9ms가 소요되는 B작업 요청
+- 2ms 시점에 6ms가 소요되는 C작업 요청
+</code></pre></div></div>
+
+<p>와 같은 요청이 들어왔습니다. 이를 그림으로 표현하면 아래와 같습니다.<br />
+<img src="https://grepp-programmers.s3.amazonaws.com/files/production/b68eb5cec6/38dc6a53-2d21-4c72-90ac-f059729c51d5.png" alt="disk_controller1" width="600" /></p>
+
+<p>한 번에 하나의 요청만을 수행할 수 있기 때문에 각각의 작업을 요청받은 순서대로 처리하면 다음과 같이 처리 됩니다.</p>
+
+<p><img src="https://grepp-programmers.s3.amazonaws.com/files/production/5e677b4646/90b91fde-cac4-42c1-98b8-8f8431c52dcf.png" alt="disk_controller2" width="600" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- A: 3ms 시점에 작업 완료 (요청에서 종료까지 : 3ms)
+- B: 1ms부터 대기하다가, 3ms 시점에 작업을 시작해서 12ms 시점에 작업 완료(요청에서 종료까지 : 11ms)
+- C: 2ms부터 대기하다가, 12ms 시점에 작업을 시작해서 18ms 시점에 작업 완료(요청에서 종료까지 : 16ms)
+</code></pre></div></div>
+
+<p>이 때 각 작업의 요청부터 종료까지 걸린 시간의 평균은 10ms(= (3 + 11 + 16) / 3)가 됩니다.<br />
+<br /></p>
+
+<p>하지만 A → C → B 순서대로 처리하면<br />
+<img src="https://grepp-programmers.s3.amazonaws.com/files/production/9eb7c5a6f1/a6cff04d-86bb-4b5b-98bf-6359158940ac.png" alt="disk_controller3" width="600" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- A: 3ms 시점에 작업 완료(요청에서 종료까지 : 3ms)
+- C: 2ms부터 대기하다가, 3ms 시점에 작업을 시작해서 9ms 시점에 작업 완료(요청에서 종료까지 : 7ms)
+- B: 1ms부터 대기하다가, 9ms 시점에 작업을 시작해서 18ms 시점에 작업 완료(요청에서 종료까지 : 17ms)
+</code></pre></div></div>
+
+<p>이렇게 A → C → B의 순서로 처리하면 각 작업의 요청부터 종료까지 걸린 시간의 평균은 9ms(= (3 + 7 + 17) / 3)가 됩니다.<br />
+<br /></p>
+
+<p>각 작업에 대해 [작업이 요청되는 시점, 작업의 소요시간]을 담은 2차원 배열 jobs가 매개변수로 주어질 때,<br />
+작업의 요청부터 종료까지 걸린 시간의 평균을 가장 줄이는 방법으로 처리하면 평균이 얼마가 되는지 return 하도록 solution 함수를 작성해주세요.<br />
+(단, 소수점 이하의 수는 버립니다)</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>jobs의 길이는 1 이상 500 이하입니다.</li>
+  <li>jobs의 각 행은 하나의 작업에 대한 [작업이 요청되는 시점, 작업의 소요시간] 입니다.</li>
+  <li>각 작업에 대해 작업이 요청되는 시간은 0 이상 1,000 이하입니다.</li>
+  <li>각 작업에 대해 작업의 소요시간은 1 이상 1,000 이하입니다.</li>
+  <li>하드디스크가 작업을 수행하고 있지 않을 때에는 먼저 요청이 들어온 작업부터 처리합니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li><br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;sstream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;set&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">getNum</span><span class="p">(</span><span class="n">string</span> <span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">str_num</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    
+    <span class="n">stringstream</span> <span class="n">ssInt</span><span class="p">(</span><span class="n">str_num</span><span class="p">);</span>
+    <span class="n">ssInt</span> <span class="o">&gt;&gt;</span> <span class="n">num</span><span class="p">;</span>
+    
+    <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">operations</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">multiset</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pq</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">answer</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="n">string</span> <span class="n">op</span> <span class="o">:</span> <span class="n">operations</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'I'</span><span class="p">)</span> <span class="n">pq</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">getNum</span><span class="p">(</span><span class="n">op</span><span class="p">));</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'D'</span> <span class="o">&amp;&amp;</span> <span class="n">pq</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'-'</span><span class="p">)</span> <span class="n">pq</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">pq</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+            <span class="k">else</span> <span class="n">pq</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="o">--</span><span class="n">pq</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">pq</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">return</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+    <span class="k">return</span> <span class="p">{</span><span class="o">*--</span><span class="n">pq</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="o">*</span><span class="n">pq</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li><br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li><a href="https://coding-insider.tistory.com/entry/sort-사용법-priorityqueue에서의-sort-차이">https://coding-insider.tistory.com/entry/sort-사용법-priorityqueue에서의-sort-차이</a>
+<br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
+:ET
