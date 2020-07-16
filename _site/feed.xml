@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Jul 2020 15:59:14 +0900</pubDate>
-    <lastBuildDate>Thu, 16 Jul 2020 15:59:14 +0900</lastBuildDate>
+    <pubDate>Thu, 16 Jul 2020 16:03:01 +0900</pubDate>
+    <lastBuildDate>Thu, 16 Jul 2020 16:03:01 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -104,6 +104,7 @@ hit -&amp;gt; hot -&amp;gt; dot -&amp;gt; dog -&amp;gt; cog와 같이 4단계를
 
 &lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
 &lt;ul&gt;
+  &lt;li&gt;벡터 원소 삭제 방법&lt;/li&gt;
   &lt;li&gt;기본으로 제공해주는 테스트 케이스가 잘못되었다&lt;/li&gt;
   &lt;li&gt;빨리 해결해서 기분이 좋다&lt;/li&gt;
   &lt;li&gt;재귀 함수는 생각하기 힘들어…&lt;/li&gt;
@@ -113,7 +114,8 @@ hit -&amp;gt; hot -&amp;gt; dot -&amp;gt; dog -&amp;gt; cog와 같이 4단계를
 
 &lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;없다 *(*´∀｀*)☆
+  &lt;li&gt;[C++ 공식문서] std:vector:erase &lt;a href=&quot;https://www.cplusplus.com/reference/vector/vector/erase/&quot;&gt;https://www.cplusplus.com/reference/vector/vector/erase/&lt;/a&gt;&lt;br /&gt;
+벡터의 원소를 삭제할 때는 이터레이터를 사용해서 삭제 가능, &lt;code class=&quot;highlighter-rouge&quot;&gt;vector.erase(iterator)&lt;/code&gt; 형식으로 사용
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
