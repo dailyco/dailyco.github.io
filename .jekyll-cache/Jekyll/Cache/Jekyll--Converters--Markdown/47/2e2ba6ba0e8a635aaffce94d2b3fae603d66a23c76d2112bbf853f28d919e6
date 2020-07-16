@@ -1,0 +1,155 @@
+I"�)<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/16/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%EB%8B%A8%EC%96%B4%EB%B3%80%ED%99%98_level3.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [깊이/너비 우선 탐색] 단어 변환</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>프로그래머스 고득점 Kit</li>
+        
+          <li>DFS / BFS</li>
+        
+          <li>Level 3</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 16, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>난이도 ★ ★ ★ ☆ ☆<br />
+어제 저녁에 문제를 읽고 자기 전에 어떻게 풀어야할지 생각하면서 알고리즘을 대충 세우고 오늘 일어나서 풀어보았는데 생각했던 알고리즘이 맞아서 빨리 풀 수 있었다. 다만, 문제에서 기본적으로 제공해주는 기본 테스트 케이스를 틀려서 살펴보았더니 테스트 케이스가 잘못된 것을 발견했다. 혹시나 나와 같이 뭐지? 싶었던 분은 그냥 테스트 케이스가 잘못된 것이니 무시하고 코드를 제출하여 채점해보길 바란다(*´∇｀)ﾉ<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li><br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li><br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">bool</span> <span class="nf">canChange</span><span class="p">(</span><span class="n">string</span> <span class="n">prev</span><span class="p">,</span> <span class="n">string</span> <span class="n">next</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">diff</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">prev</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">prev</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">next</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="k">else</span> <span class="n">diff</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">string</span> <span class="n">begin</span><span class="p">,</span> <span class="n">string</span> <span class="n">target</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">canChange</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">target</span><span class="p">))</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">cAnswer</span><span class="p">,</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">words</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">canChange</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="p">{</span>
+                <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">words_cp</span> <span class="o">=</span> <span class="n">words</span><span class="p">;</span>
+                <span class="n">words_cp</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">words_cp</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+                <span class="n">cAnswer</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">target</span><span class="p">,</span> <span class="n">words_cp</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">cAnswer</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">answer</span> <span class="o">&gt;</span> <span class="n">cAnswer</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">cAnswer</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="mi">50</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">string</span> <span class="n">begin</span><span class="p">,</span> <span class="n">string</span> <span class="n">target</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">dfs</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">words</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li><br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>없다 <em>(</em>´∀｀*)☆
+<br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/16/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%EB%8B%A8%EC%96%B4%EB%B3%80%ED%99%98_level3.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/16/%EA%B9%8A%EC%9D%B4-%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89_%EB%8B%A8%EC%96%B4%EB%B3%80%ED%99%98_level3.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
