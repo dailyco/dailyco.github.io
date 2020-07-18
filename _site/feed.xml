@@ -6,9 +6,608 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 Jul 2020 20:58:50 +0900</pubDate>
-    <lastBuildDate>Sat, 18 Jul 2020 20:58:50 +0900</lastBuildDate>
+    <pubDate>Sat, 18 Jul 2020 22:28:01 +0900</pubDate>
+    <lastBuildDate>Sat, 18 Jul 2020 22:28:01 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>WEB Front-end 공부 일기 : HTML 요소 - 인라인 텍스트 &amp; 수정</title>
+        <description>&lt;p&gt;이번 포스팅에서는 저번 포스팅과 마찬가지로 HTML의 태그에 대해서 자세히 하나씩 살펴보는데, 태그 중에서도 인라인 텍스트 태그와 수정 태그를 공부한다. 처음에 이 부분의 강의를 들었을때 내가 모르는 처음 듣는 태그들이 많아서 ‘내가 아직 모르는 알아야할, 공부해야할 내용이 많구나’ 하는 생각에 시무룩하다가도 배워가는 재미 때문에 금방 이해하고 습득할 수 있어서 너무 좋았다! (&lt;em&gt;•̀ᴗ•́&lt;/em&gt;)و ̑̑&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;알림&quot;&gt;💡알림💡&lt;/h3&gt;
+&lt;p&gt;본 일기는 패스트 캠프의 ‘프론트엔드 개발 올인원 패키지 with React Online’ 강의를 기반으로 공부한 내용을 복습할 목적으로 작성함을 밝히며, 잘못된 부분이 존재할 수도 있음을 알립니다! 잘못된 부분은 댓글로 말씀해주시면 감사하겠습니다 ʕ•̀ω•́ʔ✧
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ㅤweb-front-end-공부-일기-2&quot;&gt;⏰ㅤWEB Front-end 공부 일기 2&lt;/h3&gt;
+&lt;p&gt;먼저는 HTML 태그에는 어떤 종류가 있는지 전체적인 개요를 알아보고, 블록 요소와 인라인 요소들에 대해서 배우면서 무엇이 다른지 그 특성에 대해 알아보았다. 그리고 구체적으로 요소를 하나씩 알아보면서 어디에 쓰는 요소이고 어떤 속성과 특성을 가지는지 공부했다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-인라인-텍스트&quot;&gt;1. 인라인 텍스트&lt;/h2&gt;
+&lt;h3 id=&quot;a&quot;&gt;&amp;lt;a&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;현재 문서에서 링크를 걸어서 보낼 때 사용&lt;/li&gt;
+  &lt;li&gt;다른 페이지, 같은 페이지(#), 파일, 이메일 주소, 전화번호 등 다른 URL로 연결되는 하이퍼링크 설정&lt;/li&gt;
+  &lt;li&gt;Anchor의 약어&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;속성&quot;&gt;속성&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;href&lt;/code&gt; : 현재 문서에서 다른 문서 어디로 나갈지를 명시&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt; : 링크 URL의 표시 위치 (다른 문서를 띄워줄 창을 선택 - 현재 창/새로운 탭) → 기본 값은 현재 창&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rel&lt;/code&gt; : 현재 문서와 링크 URL의 관계&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;download&lt;/code&gt; : 다운로드 파일의 링크를 명시 (다운로드 되도록 만들어주는 것이 아님)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;hreflang&lt;/code&gt; : 넘어가는 다른 문서의 언어 명시 (자주 사용X)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type&lt;/code&gt; : 링크 URL의 MIME 타입 (생략O)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;✨ &amp;lt;a&amp;gt;는 인라인 요소이지만, 현대로 넘어오면서 버튼으로 많이 사용 되어지면서 &lt;code class=&quot;highlighter-rouge&quot;&gt;'display: block'&lt;/code&gt; 형태로 많이 사용된다.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;abbr&quot;&gt;&amp;lt;abbr&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Abbreviation(약어)의 약어&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;속성-1&quot;&gt;속성&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;(전역 속성) : 어떤 단어의 약어인지 명명 (hint message 생성)
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;b-mark-em-i&quot;&gt;&amp;lt;b&amp;gt;, &amp;lt;mark&amp;gt;, &amp;lt;em&amp;gt;, &amp;lt;i&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;b&amp;gt;
+    &lt;ul&gt;
+      &lt;li&gt;문체가 다른 글자의 범위를 나타냄&lt;/li&gt;
+      &lt;li&gt;특별한 의미를 가지지 않으며, 다른 태그(&amp;lt;mark&amp;gt;, &amp;lt;em&amp;gt;, &amp;lt;strong&amp;gt;)가 적합하지 않을 경우 마지막 수단으로 사용해야함&lt;/li&gt;
+      &lt;li&gt;기본적으로 글자를 두껍게 표시 (글자를 두껍게 하기 위해 사용해서는 X)
+  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&amp;lt;mark&amp;gt;
+    &lt;ul&gt;
+      &lt;li&gt;하이라이팅을 위해 사용 (형광펜을 사용해 관심 있는 것을 표시하는 것과 동일)&lt;/li&gt;
+      &lt;li&gt;글자 배경이 노란색으로 표시&lt;/li&gt;
+      &lt;li&gt;의미보다는 시각에 특화
+  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&amp;lt;em&amp;gt;
+    &lt;ul&gt;
+      &lt;li&gt;의미 강조를 위해 사용&lt;/li&gt;
+      &lt;li&gt;중첩 사용이 가능 (ex. &amp;lt;em&amp;gt;&amp;lt;em&amp;gt;…&amp;lt;/em&amp;gt;&amp;lt;/em&amp;gt;)&lt;/li&gt;
+      &lt;li&gt;중첩될 수록 강조 의미가 강해짐&lt;/li&gt;
+      &lt;li&gt;정보통신보조기기 등에서 구두로 강조됨&lt;/li&gt;
+      &lt;li&gt;기본적으로 이탤릭체로 표시
+  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&amp;lt;strong&amp;gt;
+    &lt;ul&gt;
+      &lt;li&gt;의미의 중요성을 나타내기 위해 사용&lt;/li&gt;
+      &lt;li&gt;기본적으로 글자가 두껍게 표시
+  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&amp;lt;i&amp;gt;
+    &lt;ul&gt;
+      &lt;li&gt;&amp;lt;mark&amp;gt;, &amp;lt;em&amp;gt;, &amp;lt;strong&amp;gt;, &amp;lt;cite&amp;gt;, &amp;lt;dfn&amp;gt; 가 적합한 의미가 아닐 경우 사용&lt;/li&gt;
+      &lt;li&gt;평범한 글자와 다른 아이콘이나 특수 기호를 나타낼 때 사용&lt;/li&gt;
+      &lt;li&gt;기본적으로 이탤릭체로 표시
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dfn&quot;&gt;&amp;lt;dfn&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Definition의 약어&lt;/li&gt;
+  &lt;li&gt;용어 정의에 사용&lt;/li&gt;
+  &lt;li&gt;&amp;lt;dl&amp;gt;&amp;lt;dt&amp;gt;&amp;lt;dd&amp;gt; 는 용어들, 묶음을 설명한다면 &amp;lt;dfn&amp;gt;은 용어 한 개 자체를 정의 할 때에 사용
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cite&quot;&gt;&amp;lt;cite&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;창작물에 대한 참조 설정 (책, 논문, 영화, TV 프로그램, 노래, 게임 등의 제목)&lt;/li&gt;
+  &lt;li&gt;기본적으로 이탤릭체로 표시
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;q&quot;&gt;&amp;lt;q&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Inline Quotation으로 짧은 인용문에 사용&lt;/li&gt;
+  &lt;li&gt;긴 인용문은 &amp;lt;blockquote&amp;gt; 사용
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;u&quot;&gt;&amp;lt;u&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Underline, 밑줄이 있는 글자 설정&lt;/li&gt;
+  &lt;li&gt;순수하게 꾸미는 용도(밑줄)로만 사용&lt;/li&gt;
+  &lt;li&gt;&amp;lt;a&amp;gt;와 헷갈리게 사용될 수 있으니 유의&lt;/li&gt;
+  &lt;li&gt;밑줄은 CSS로도 제어할 수 있기 때문에 CSS 를 사용할 수 있는 환경에서 밑줄 용도로만 사용하는 것은 비추천 (&amp;lt;span&amp;gt; + css 추천)
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;&amp;lt;code&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;컴퓨터 코드 범위 설정&lt;/li&gt;
+  &lt;li&gt;기본적으로 Monospace 글꼴 계열로 표시 (고정 폭)
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;kbd&quot;&gt;&amp;lt;kbd&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;keyboard 약어&lt;/li&gt;
+  &lt;li&gt;키보드 키를 나타낼 때 사용&lt;/li&gt;
+  &lt;li&gt;기본적으로 Monospace 글꼴 계열로 표시
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;sup-sub&quot;&gt;&amp;lt;sup&amp;gt;, &amp;lt;sub&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;sup&amp;gt;
+    &lt;ul&gt;
+      &lt;li&gt;Superscripted text (위첨자) 설정&lt;/li&gt;
+      &lt;li&gt;ex. 지수, 참조 번호 등
+  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&amp;lt;sub&amp;gt;
+    &lt;ul&gt;
+      &lt;li&gt;Subscript text (아래첨자) 설정&lt;/li&gt;
+      &lt;li&gt;ex. 원소 갯수 등
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;time&quot;&gt;&amp;lt;time&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;날짜와 시간을 나타낼 때 사용&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;datetime&lt;/code&gt; 속성을 사용해 정확한 날짜를 명시 (값: YYYY-MM-DD)&lt;/li&gt;
+  &lt;li&gt;주의: IE(인터넷 익스프롤러)에서 사용 불가능
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;span&quot;&gt;&amp;lt;span&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;div&amp;gt;와 비슷, 아무것도 나타내지 않음&lt;/li&gt;
+  &lt;li&gt;텍스트를 CSS로 꾸밀 때 많이 사용
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;br&quot;&gt;&amp;lt;br&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;줄바꿈 설정&lt;/li&gt;
+  &lt;li&gt;빈 태그&lt;/li&gt;
+  &lt;li&gt;줄바꿈을 위해 사용할 것&lt;/li&gt;
+  &lt;li&gt;간격을 넓히기위해 &amp;lt;br&amp;gt; 태그를 여러번 사용하는 행위는 X&lt;br /&gt;
+→ 이것은 CSS로 다뤄야 할 부분 (line-height 사용)
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-수정--삭제&quot;&gt;2. 수정 / 삭제&lt;/h2&gt;
+&lt;h3 id=&quot;del-ins&quot;&gt;&amp;lt;del&amp;gt;, &amp;lt;ins&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;del&amp;gt;
+    &lt;ul&gt;
+      &lt;li&gt;삭제된 텍스트 범위 지정&lt;/li&gt;
+      &lt;li&gt;기본적으로 텍스트의 가운데에 삭제줄&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;strong&gt;속성&lt;/strong&gt;&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cite&lt;/code&gt;: 변경 사항을 설명하는 정보의 주소&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;datetime&lt;/code&gt;: 언제 변경됐는지 날짜
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&amp;lt;ins&amp;gt;
+    &lt;ul&gt;
+      &lt;li&gt;새로 추가된 텍스트 범위 지정&lt;/li&gt;
+      &lt;li&gt;속성은 &amp;lt;del&amp;gt;과 동일&lt;/li&gt;
+      &lt;li&gt;기본적으로 밑줄
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-refernece&quot;&gt;3. Refernece&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://heropy.blog/2019/05/26/html-elements/&quot;&gt;HEROPY Tech - 한눈에 보는 HTML 요소(Elements &amp;amp; Attributes) 총정리&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 18 Jul 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/front-end/2020/07/18/WEB_Frontend_html(3).html</link>
+        <guid isPermaLink="true">http://localhost:4000/front-end/2020/07/18/WEB_Frontend_html(3).html</guid>
+        
+        <category>web</category>
+        
+        <category>front</category>
+        
+        <category>study</category>
+        
+        <category>html</category>
+        
+        
+        <category>Front-end</category>
+        
+      </item>
+    
+      <item>
+        <title>WEB Front-end 공부 일기 : HTML 요소 - 콘텐츠 구분 &amp; 문자 콘텐츠</title>
+        <description>&lt;p&gt;역시 내용이 많아서 세 포스팅으로 나누게 되었다. 이번 포스팅에서는 HTML의 태그에 대해서 자세히 하나씩 살펴보는데, 태그 중에서도 콘텐츠를 구분하는데 사용하는 태그들과 문자 콘텐츠를 나타내는 태그들에 대해서 공부한다. 그냥 무작정 무슨 태그인지 배우는 것보다 하나씩 어디에 사용하는건지 공부하니까 훨씬 이해가 잘되고 웹 페이지를 만들때 어떤 태그를 사용하는 것이 옳은 것인지를 배울 수 있어서 좋은 것 같다 (*´ ˘ `*)&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;알림&quot;&gt;💡알림💡&lt;/h3&gt;
+&lt;p&gt;본 일기는 패스트 캠프의 ‘프론트엔드 개발 올인원 패키지 with React Online’ 강의를 기반으로 공부한 내용을 복습할 목적으로 작성함을 밝히며, 잘못된 부분이 존재할 수도 있음을 알립니다! 잘못된 부분은 댓글로 말씀해주시면 감사하겠습니다 ʕ•̀ω•́ʔ✧
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ㅤweb-front-end-공부-일기-2&quot;&gt;⏰ㅤWEB Front-end 공부 일기 2&lt;/h3&gt;
+&lt;p&gt;먼저는 HTML 태그에는 어떤 종류가 있는지 전체적인 개요를 알아보고, 블록 요소와 인라인 요소들에 대해서 배우면서 무엇이 다른지 그 특성에 대해 알아보았다. 그리고 구체적으로 요소를 하나씩 알아보면서 어디에 쓰는 요소이고 어떤 속성과 특성을 가지는지 공부했다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-콘텐츠-구분-요소&quot;&gt;1. 콘텐츠 구분 요소&lt;/h2&gt;
+&lt;h3 id=&quot;header&quot;&gt;&amp;lt;header&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;웹사이트 상단에 로고, 메뉴 등이 있은 곳에 사용&lt;/li&gt;
+  &lt;li&gt;&amp;lt;header&amp;gt;는 &amp;lt;address&amp;gt;, &amp;lt;footer&amp;gt;, 다른 &amp;lt;header&amp;gt;의 자식 요소가 될 수 없다&lt;/li&gt;
+  &lt;li&gt;속성: 전역 속성&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/header&quot;&gt;MDN: &amp;lt;header&amp;gt;&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;footer&quot;&gt;&amp;lt;footer&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;header와 반대로 웹사이트 하단에 위치&lt;/li&gt;
+  &lt;li&gt;일반적으로 저작권자, 연락처 등의 정보를 담고있다&lt;/li&gt;
+  &lt;li&gt;&amp;lt;footer&amp;gt;는 &amp;lt;address&amp;gt;, &amp;lt;header&amp;gt;, 다른 &amp;lt;footer&amp;gt;의 자식 요소가 될 수 없다&lt;/li&gt;
+  &lt;li&gt;속성: 전역 속성&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/footer&quot;&gt;MDN: &amp;lt;footer&amp;gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;✨ 사실 레이아웃을 만들 때 footer 대신 div를 사용해도 되지만, HTML5에서는 semantic tag라고 불리는 의미를 가진 태그들이 존재한다.&lt;br /&gt;
+그래서 이를 적재적소에 사용하는 것이 중요하다.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;h1---h6&quot;&gt;&amp;lt;h1&amp;gt; - &amp;lt;h6&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;h1&amp;gt; - &amp;lt;h6&amp;gt; 요소는 6단계의 구획 요소를 나타낸다&lt;/li&gt;
+  &lt;li&gt;글씨 크기를 줄이기 위해서는 낮은 단계의 &lt;h&gt;를 사용하지 말고 CSS의 font-size 속성을 사용해야한다&lt;/h&gt;&lt;/li&gt;
+  &lt;li&gt;중첩의 경우 h1부터 h6로 내려가면서 컨텐츠 구조를 나타내야한다&lt;/li&gt;
+  &lt;li&gt;되도록 &amp;lt;h1&amp;gt;은 한 번만&lt;/li&gt;
+  &lt;li&gt;속성: 전역 속성&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/Heading_Elements&quot;&gt;MDN: &amp;lt;h1&amp;gt; - &amp;lt;h2&amp;gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;예시&quot;&gt;예시&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a4604b2e-7d8f-4a55-b5b1-eba5899908cb/_2020-07-15__6.44.50.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200718%2Fus-west-2%2Fs3%2Faws4_request&amp;amp;X-Amz-Date=20200718T124733Z&amp;amp;X-Amz-Expires=86400&amp;amp;X-Amz-Signature=972721f9b1d19a051c89a3270ce1b06d50b44f47f8b739b039cef7618fdfb9b4&amp;amp;X-Amz-SignedHeaders=host&amp;amp;response-content-disposition=filename%20%3D%22_2020-07-15__6.44.50.png%22&quot; alt=&quot;h1-h6&quot; /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;main&quot;&gt;&amp;lt;main&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;main&amp;gt;은 문서나 앱의 주요 콘텐츠를 나타낸다&lt;/li&gt;
+  &lt;li&gt;hidden 속성 없이는 문서에 하나만 존재&lt;/li&gt;
+  &lt;li&gt;IE 지원 X&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main&quot;&gt;MDN: &amp;lt;main&amp;gt;&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;article&quot;&gt;&amp;lt;article&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;article&amp;gt;은 ‘독립적으로’구분되거나 ‘재사용 가능’한 영역을 설정&lt;br /&gt;
+독립적으로 구분된다: 따로 분리 하더라도 해당 컨텐츠 그대로 다른 곳에서 사용 가능한 경우&lt;/li&gt;
+  &lt;li&gt;주로 신문 기사나 블로그 글에 쓰인다&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/article&quot;&gt;MDN: &amp;lt;article&amp;gt;&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;&amp;lt;section&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;section&amp;gt;은 문서의 일반적인 영역을 설정&lt;/li&gt;
+  &lt;li&gt;일반적으로 제목을 포함해서 의미를 가진다&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/section&quot;&gt;MDN: &amp;lt;section&amp;gt;&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;article&amp;gt;&lt;/span&gt; vs &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&amp;gt;&lt;/span&gt; vs &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+모두 구획하는 역할을 하지만 &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;는 의미가 없고 &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&amp;gt;&lt;/span&gt;은 포함된 제목을 통해 의미를 가진다.
+그리고 &lt;span class=&quot;nt&quot;&gt;&amp;lt;article&amp;gt;&lt;/span&gt;은 독립적으로 구분되고 제목을 통해 의미를 가진다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;aside&quot;&gt;&amp;lt;aside&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;aside&amp;gt;는 문서의 별도 콘텐츠(광고나 기타 링크 등의 사이드바 등)를 설정&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/aside&quot;&gt;MDN: &amp;lt;aside&amp;gt;&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;nav&quot;&gt;&amp;lt;nav&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;nav&amp;gt;는 다른 페이지 링크를 제공하는 영역을 설정&lt;/li&gt;
+  &lt;li&gt;보통 메뉴(Home, About, Contact), 목차, 색인 등의 영역을 설정&lt;/li&gt;
+  &lt;li&gt;주로 &amp;lt;ol&amp;gt; 혹은 &amp;lt;ul&amp;gt;과 같이 쓰인다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/nav&quot;&gt;MDN: &amp;lt;nav&amp;gt;&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;address&quot;&gt;&amp;lt;address&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;address&amp;gt;는 연락처 정보(주소, 전화번호, 이메일 주소 등)을 제공하는 영역을 설정&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/address&quot;&gt;MDN: &amp;lt;address&amp;gt;&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;div&quot;&gt;&amp;lt;div&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;div&amp;gt;는 아무것도 나타내지 않는 콘텐츠 영역을 설정&lt;/li&gt;
+  &lt;li&gt;주로 css를 통해 꾸미거나 JS를 통해 제어하기 위해 사용&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/div&quot;&gt;MDN: &amp;lt;div&amp;gt;&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-문자-콘텐츠-요소&quot;&gt;2. 문자 콘텐츠 요소&lt;/h2&gt;
+&lt;h3 id=&quot;ol-ul-li&quot;&gt;&amp;lt;ol&amp;gt;, &amp;lt;ul&amp;gt;, &amp;lt;li&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;ol&amp;gt;, &amp;lt;ul&amp;gt;, &amp;lt;li&amp;gt;은 목록을 만드는 태그&lt;/li&gt;
+  &lt;li&gt;각각 ordered list(순서가 필요한 목록), unordered list(순서가 필요없는 목록), list item을 의미&lt;/li&gt;
+  &lt;li&gt;&amp;lt;ol&amp;gt;과 &amp;lt;ul&amp;gt;은 자식 요소로 &amp;lt;li&amp;gt;만 포함 가능&lt;/li&gt;
+  &lt;li&gt;&amp;lt;li&amp;gt;는 &amp;lt;ol&amp;gt; 혹은 &amp;lt;ul&amp;gt;의 자식으로 포함되어야만 사용 가능&lt;/li&gt;
+  &lt;li&gt;&amp;lt;ol&amp;gt;의 항목 순서는 중요도를 의미할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;✨ 일반적으로 &amp;lt;ol&amp;gt;보다 &amp;lt;ul&amp;gt;을 많이 사용한다.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;dl-dt-dd&quot;&gt;&amp;lt;dl&amp;gt;, &amp;lt;dt&amp;gt;, &amp;lt;dd&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;용어 (&amp;lt;dt&amp;gt;)와 정의 (&amp;lt;dd&amp;gt;) 쌍들(리스트)의 영역(&amp;lt;dl&amp;gt;)을 설정&lt;/li&gt;
+  &lt;li&gt;&amp;lt;dl&amp;gt;, &amp;lt;dt&amp;gt;, &amp;lt;dd&amp;gt;은 각각 Definition list, Definition Term, Definition Details를 의미&lt;/li&gt;
+  &lt;li&gt;&amp;lt;dl&amp;gt;은 &amp;lt;dt&amp;gt;와 &amp;lt;dd&amp;gt;만 자식 요소로 가질 수 있다&lt;/li&gt;
+  &lt;li&gt;Key, Value 형태를 표시할 때 유용하다 (용어-설명 ⇒ key-value)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;✨ &amp;lt;dl&amp;gt;은 자식 요소로 &amp;lt;dt&amp;gt;와 &amp;lt;dd&amp;gt;만 가질 수 있기 때문에 꾸미기 까다롭다. 그래서 일반적으로 &amp;lt;ul&amp;gt; + &amp;lt;li&amp;gt; + &amp;lt;p&amp;gt; 로 대체해서 사용한다.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;p-hr&quot;&gt;&amp;lt;p&amp;gt;, &amp;lt;hr&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;p&amp;gt;는 paragraph를 의미하며 하나의 문단을 설정하기 위해 사용&lt;/li&gt;
+  &lt;li&gt;&amp;lt;p&amp;gt; 태그 내부에 있는 텍스트는 줄바꿈 혹은 탭이 적용 X&lt;/li&gt;
+  &lt;li&gt;&amp;lt;hr&amp;gt;은 self-closing tag이며 horizontal rule을 의미&lt;/li&gt;
+  &lt;li&gt;&amp;lt;hr&amp;gt;은 문단을 분리하기 위해 사용&lt;/li&gt;
+  &lt;li&gt;&amp;lt;hr&amp;gt;을 시각적 관점에서 수평선(border)을 표시하기 위해 사용하지 말고 의미적 관점에서 문단을 분리하기 위해 사용
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pre&quot;&gt;&amp;lt;pre&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;pre&amp;gt;는 Preformatted Text 이라는 뜻&lt;/li&gt;
+  &lt;li&gt;서식이 미리 지정된 텍스트를 설정&lt;/li&gt;
+  &lt;li&gt;문자가 입력된 그대로 보여진다&lt;/li&gt;
+  &lt;li&gt;기본적으로 문자들의 가로 길이가 같은 Monospace 글꼴 계열로 표시&lt;/li&gt;
+  &lt;li&gt;&amp;lt;pre&amp;gt;는 시작하는 그 부분부터 그대로 보여지기 때문에 텍스트 앞, 뒤에 &amp;lt;pre&amp;gt; 태그를 딱 붙여야 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;✨ 사용자가 ‘입력한 그대로’ 보여주고 싶을 때 주로 사용 (블로그에 코드 올릴 때 등)
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;blockquote&quot;&gt;&amp;lt;blockquote&amp;gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&amp;lt;blockquote&amp;gt;는 Block Quotation의 약어&lt;/li&gt;
+  &lt;li&gt;일반적인 인용문을 설정하기 위해 사용
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-refernece&quot;&gt;3. Refernece&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://heropy.blog/2019/05/26/html-elements/&quot;&gt;HEROPY Tech - 한눈에 보는 HTML 요소(Elements &amp;amp; Attributes) 총정리&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 18 Jul 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/front-end/2020/07/18/WEB_Frontend_html(2).html</link>
+        <guid isPermaLink="true">http://localhost:4000/front-end/2020/07/18/WEB_Frontend_html(2).html</guid>
+        
+        <category>web</category>
+        
+        <category>front</category>
+        
+        <category>study</category>
+        
+        <category>html</category>
+        
+        
+        <category>Front-end</category>
+        
+      </item>
+    
+      <item>
+        <title>WEB Front-end 공부 일기 : HTML 개요 및 요소</title>
+        <description>&lt;p&gt;공부를 시작한지 이틀째 되는 날이었다. 본격적으로 HTML 공부에 들어갔고, 전체적인 개요부터 시작해서 어떤 요소들이 있고, 요소마다 특성들에 대해 배우기 시작했다. HTML을 제대로 공부해본적이 없기도하고, 웹과 관련된 수업을 학교에서도 한 번도 들어본적이 없어서 조금 낯설게 느껴졌지만 평소에 무척 공부해보고 싶었던 분야라서 재미있게 들은것 같다 :)&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;알림&quot;&gt;💡알림💡&lt;/h3&gt;
+&lt;p&gt;본 일기는 패스트 캠프의 ‘프론트엔드 개발 올인원 패키지 with React Online’ 강의를 기반으로 공부한 내용을 복습할 목적으로 작성함을 밝히며, 잘못된 부분이 존재할 수도 있음을 알립니다! 잘못된 부분은 댓글로 말씀해주시면 감사하겠습니다 ʕ•̀ω•́ʔ✧
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ㅤweb-front-end-공부-일기-2&quot;&gt;⏰ㅤWEB Front-end 공부 일기 2&lt;/h3&gt;
+&lt;p&gt;먼저는 HTML 태그에는 어떤 종류가 있는지 전체적인 개요를 알아보고, 블록 요소와 인라인 요소들에 대해서 배우면서 무엇이 다른지 그 특성에 대해 알아보았다. 그리고 구체적으로 요소를 하나씩 알아보면서 어디에 쓰는 요소이고 어떤 속성과 특성을 가지는지 공부했다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-html-요소-개요&quot;&gt;1. HTML 요소 개요&lt;/h2&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ko&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+        문서의 정보
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 기타 정보 --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;author&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;YJ&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;description&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;YJ's blog&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;IE=edge&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 최신 IE 지원하도록 --&amp;gt;&lt;/span&gt;
+        
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- HTML 문서 제목 --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;HTML 요소 레퍼런스&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 기본 파일의 경로 설정 --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;base&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;./css/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 스타일 외부에서 가져와서 연결 --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 스타일 직접 입력 --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;style &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+            문서의 구조
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;br /&gt;
+html5 버전으로 해석해서 브라우저에 표현
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ko, en...&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;br /&gt;
+html 문서로 작성함을 표현하며 어느 나라 언어를 사용하는지 설정
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;...&amp;lt;/head&amp;gt;&lt;/code&gt; 문서의 정보
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/meta&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meta&amp;gt;&lt;/code&gt;&lt;/a&gt; 속성
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;charset&lt;/code&gt;: 페이지의 문자의 인코딩 방법&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;http-equiv&lt;/code&gt; 속성을 사용할 때 해당 속성의 값을 입력&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http-equiv&lt;/code&gt;: 렌더링 방식 등 서버나 사용자의 환경에 맞게 작동 방식을 변경시키는 지시 사항 명시&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;: 문서 레벨의 메타 데이터 이름 정의 (정보를 지칭할 때 그 정보가 무엇인지)
+            &lt;ul&gt;
+              &lt;li&gt;author, description, viewport,  …&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/link&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;link&amp;gt;&lt;/code&gt;&lt;/a&gt; 속성&lt;br /&gt;
+  현재 문서와 외부 리소스와의 관계 명시 (가지고 오는 것 까지)
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;crossorigin&lt;/code&gt; 다른 도메인 사이트와 정보를 어떻게 주고 받을지를 명시(?)&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;href&lt;/code&gt; 링크된 리소스의 URL (절대/상대 경로)&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;hreflang&lt;/code&gt; 링크된 리소스의 언어 (보통 생략)&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rel&lt;/code&gt; 링크된 문서와 현재 문서와의 관계 명명
+            &lt;ul&gt;
+              &lt;li&gt;링크 타입 값: stylesheet, icon, …&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type&lt;/code&gt; : css의 경우 생략 가능
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types&quot;&gt;MIME type&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTML/Element/style&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;style&amp;gt;&lt;/code&gt;&lt;/a&gt; 속성
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type&lt;/code&gt; : 생략 가능 (ex. type = “text/css”)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;base&amp;gt;&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;주의: html 문서에 한 번만 사용 가능
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;...&amp;lt;/body&amp;gt;&lt;/code&gt; 문서의 구조&lt;br /&gt;
+HTML 문서 구조의 정보를 표현
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-블록--인라인-요소&quot;&gt;2. 블록 / 인라인 요소&lt;/h2&gt;
+&lt;h3 id=&quot;블록-요소&quot;&gt;블록 요소&lt;/h3&gt;
+&lt;p&gt;header, footer, h1~h6, main, article, section, aside, nav, address, div, ol, ul, dl, dt, dd, p, hr, pre, blockquote, figure, form
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;인라인-요소&quot;&gt;인라인 요소&lt;/h3&gt;
+&lt;p&gt;a, abbr, b, mark, em, strong, i, dfn, cite, q, u, code, kbd, sup, sub, time, span, br, del, ins, img, audio, video, figcaption, iframe, canvas, noscript
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-블록--인라인-요소의-특성&quot;&gt;3. 블록 / 인라인 요소의 특성&lt;/h2&gt;
+&lt;h3 id=&quot;블록-요소-1&quot;&gt;블록 요소&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;사용 가능한 최대 가로 너비를 사용&lt;/li&gt;
+  &lt;li&gt;크기를 지정할 수 있다&lt;/li&gt;
+  &lt;li&gt;width: 100%, height: 0 에서 시작&lt;/li&gt;
+  &lt;li&gt;수직으로 쌓인다&lt;/li&gt;
+  &lt;li&gt;margin과 padding의 위, 아래, 좌, 우 모두 사용 가능&lt;/li&gt;
+  &lt;li&gt;레이아웃 작업
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;인라인-요소-1&quot;&gt;인라인 요소&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;필요한 만큼의 너비만 사용&lt;/li&gt;
+  &lt;li&gt;크기를 지정할 수 없다&lt;/li&gt;
+  &lt;li&gt;width: 0, height: 0 에서 시작&lt;/li&gt;
+  &lt;li&gt;수평으로 쌓인다&lt;br /&gt;
+(줄바꿈을 하면 오른쪽으로 약간의 여백이 들어가고, 줄바꿈을 하지 않으면 여백 없이 그대로 옆으로 쭉 이어진다)&lt;/li&gt;
+  &lt;li&gt;margin, padding의 위, 아래는 사용 할 수 없다&lt;br /&gt;
+(padding 위, 아래가 들어간 것 처럼 보이나 아래에 다른 요소들이 있을 경우 실제로는 그 위에 덮어 씌워짐)&lt;/li&gt;
+  &lt;li&gt;TEXT 작업
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;블록--인라인-요소의-특성을-가져다-쓰기&quot;&gt;블록 / 인라인 요소의 특성을 가져다 쓰기&lt;/h3&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;inline&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;block&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;블록 요소의 경우의 위의 코드 처럼 &lt;code class=&quot;highlighter-rouge&quot;&gt;display: inline&lt;/code&gt; 을 사용해서 인라인 요소 처럼 (인라인 요소의 특성을 적용) 사용할 수 있으며,&lt;br /&gt;
+인라인 요소의 경우도 마찬가지로 &lt;code class=&quot;highlighter-rouge&quot;&gt;display: block&lt;/code&gt; 을 사용해서 블록 요소처럼 (블록 요소의 특성을 적용) 사용 할 수 있다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-refernece&quot;&gt;4. Refernece&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://heropy.blog/2019/05/26/html-elements/&quot;&gt;HEROPY Tech - 한눈에 보는 HTML 요소(Elements &amp;amp; Attributes) 총정리&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 18 Jul 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/front-end/2020/07/18/WEB_Frontend_html(1).html</link>
+        <guid isPermaLink="true">http://localhost:4000/front-end/2020/07/18/WEB_Frontend_html(1).html</guid>
+        
+        <category>web</category>
+        
+        <category>front</category>
+        
+        <category>study</category>
+        
+        <category>html</category>
+        
+        
+        <category>Front-end</category>
+        
+      </item>
     
       <item>
         <title>WEB Front-end 공부 일기 : HTML, CSS, JS 개요 (3)</title>
@@ -3639,327 +4238,6 @@ Mac에 Window 운영체제를 설치하기 위한 ISO 파일을 다운 받는 �
         
         
         <category>Install</category>
-        
-      </item>
-    
-      <item>
-        <title>프로그래머스 코딩테스트 고득점 Kit : [탐욕법] 큰 수 만들기</title>
-        <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
-본 문제는 생각보다 빨리 푼 문제였다. 예외 케이스를 질문하기에서 찾아볼 수 있어서 그런지 모르겠지만 처음에 바로 떠올랐던 알고리즘대로 쉽게 풀 수 있었고, 효율성도 나름 괜찮게 풀어서 기분이 좋았다. 근데 string에서 erase() 함수를 어떻게 쓰는지 까먹어서 다시 찾아보았다ㅋㅋ 까먹지 않으려고 항상 블로그에 정리하고 하는건데… 앞으로 더 정신 차리고 열심히 정리해야지!&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
-&lt;p&gt;어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하려 합니다.&lt;/p&gt;
-
-&lt;p&gt;예를 들어, 숫자 1924에서 수 두 개를 제거하면 [19, 12, 14, 92, 94, 24] 를 만들 수 있습니다.&lt;br /&gt;
-이 중 가장 큰 숫자는 94 입니다.&lt;/p&gt;
-
-&lt;p&gt;문자열 형식으로 숫자 number와 제거할 수의 개수 k가 solution 함수의 매개변수로 주어집니다.&lt;br /&gt;
-number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 큰 숫자를 문자열 형태로 return 하도록 solution 함수를 완성하세요.&lt;/p&gt;
-
-&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;number는 1자리 이상, 1,000,000자리 이하인 숫자입니다.&lt;/li&gt;
-  &lt;li&gt;k는 1 이상 &lt;code class=&quot;highlighter-rouge&quot;&gt;number의 자릿수&lt;/code&gt; 미만인 자연수입니다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;k 값이 0이 될 때까지 다음을 반복한다.&lt;br /&gt;
-(다음 반복 과정에서 k값을 감소시키면서 제거할 수의 개수가 0이 될 때까지 반복하는 것이다)&lt;/li&gt;
-  &lt;li&gt;해당 문자가 마지막 원소이거나, 뒤의 문자보다 작으면 지우고 k 값을 감소시킨다.&lt;br /&gt;
-(break를 하는 이유는 한 번 비교하면서 제거했으니 다시 처음부터 비교해야하기 때문)&lt;/li&gt;
-  &lt;li&gt;반복이 끝나면 number를 반환한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
-&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;string&amp;gt;
-#include &amp;lt;vector&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; 
-                &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;erase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;string의 문자 지우는 방법&lt;/li&gt;
-  &lt;li&gt;연속적인 같은 숫자가 들어왔을 경우 고려
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;C++ 레퍼런스 - string 의 erase 함수 &lt;a href=&quot;https://modoocode.com/240&quot;&gt;https://modoocode.com/240&lt;/a&gt;&lt;br /&gt;
-string의 문자를 삭제할 때는 erase() 함수 사용, 파라미터로 위치와 갯수가 할당
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/22/%ED%83%90%EC%9A%95%EB%B2%95_%ED%81%B0%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0_level2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/22/%ED%83%90%EC%9A%95%EB%B2%95_%ED%81%B0%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0_level2.html</guid>
-        
-        <category>programmershighscorekit</category>
-        
-        <category>greedy</category>
-        
-        <category>level2</category>
-        
-        <category>algorithm</category>
-        
-        <category>cplusplus</category>
-        
-        
-        <category>프로그래머스고득점Kit</category>
-        
-      </item>
-    
-      <item>
-        <title>프로그래머스 코딩테스트 고득점 Kit : [탐욕법] 구명보트</title>
-        <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
-본 문제는 굉장히 빨리 풀었지만 효율성 때문에 엄청 헤멨다. 효율성 때문에 코드를 엎고, 질문하기를 찾아보면서 어떻게 해야 더 좋은 코드를 짤 수 있는지 굉장히 고민을 많이 했던 문제였다. 정확도는 다 맞았는데 효율성 때문에 통과 못하니 너무 답답하고 스트레스를 받았는데, 알고리즘을 공부하는 이유가 결국 효율성 좋게 문제를 해결하기 위함이므로 좋은 코드를 짤 수 있도록 계속해서 고민하고 노력해야겠다고 생각했다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
-&lt;p&gt;무인도에 갇힌 사람들을 구명보트를 이용하여 구출하려고 합니다.&lt;br /&gt;
-구명보트는 작아서 한 번에 최대 2명씩 밖에 탈 수 없고, 무게 제한도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;예를 들어, 사람들의 몸무게가 [70kg, 50kg, 80kg, 50kg]이고 구명보트의 무게 제한이 100kg이라면 2번째 사람과 4번째 사람은 같이 탈 수 있지만 1번째 사람과 3번째 사람의 무게의 합은 150kg이므로 구명보트의 무게 제한을 초과하여 같이 탈 수 없습니다.&lt;/p&gt;
-
-&lt;p&gt;구명보트를 최대한 적게 사용하여 모든 사람을 구출하려고 합니다.&lt;/p&gt;
-
-&lt;p&gt;사람들의 몸무게를 담은 배열 people과 구명보트의 무게 제한 limit가 매개변수로 주어질 때, 모든 사람을 구출하기 위해 필요한 구명보트 개수의 최솟값을 return 하도록 solution 함수를 작성해주세요.&lt;/p&gt;
-
-&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;무인도에 갇힌 사람은 1명 이상 50,000명 이하입니다.&lt;/li&gt;
-  &lt;li&gt;각 사람의 몸무게는 40kg 이상 240kg 이하입니다.&lt;/li&gt;
-  &lt;li&gt;구명보트의 무게 제한은 40kg 이상 240kg 이하입니다.&lt;/li&gt;
-  &lt;li&gt;구명보트의 무게 제한은 항상 사람들의 몸무게 중 최댓값보다 크게 주어지므로 사람들을 구출할 수 없는 경우는 없습니다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;사람들의 몸무게를 담은 people 벡터를 오름차 순으로 정렬한다.&lt;/li&gt;
-  &lt;li&gt;j는 왼쪽(처음)부터, i는 오른쪽(끝)에서 시작한다.&lt;/li&gt;
-  &lt;li&gt;몇 명이 보트에 타든, 보트 한 개가 필요할 것이기 때문에 answer를 증가시킨다.&lt;/li&gt;
-  &lt;li&gt;i와 j가 같으면 모든 사람이 보트에 탔다는 말이므로 반복문을 나간다(break).&lt;/li&gt;
-  &lt;li&gt;people의 j와 i를 더했을 때 limit을 넘지않으면 j를 증가시켜 다음으로 무게가 적은 사람을 가리키게 한다.&lt;br /&gt;
-(limit을 넘지 않으면 두 명을 한 보트에 태울 수 있는 것이므로 i도 감소시켜야하지만,&lt;br /&gt;
-i는 for문에서 계속해서 감소되기 때문에 건들지 않는다)&lt;/li&gt;
-  &lt;li&gt;반복문이 끝나면, answer를 반환한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
-&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;
-#include &amp;lt;algorithm&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;people&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;people&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;people&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;people&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;people&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;people&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;처음에 복잡도 O(n^2)로 풀었는데 생각해보니까 O(n)으로 풀 수 있었어..&lt;/li&gt;
-  &lt;li&gt;vector.pop_back() 함수나 vector.erase() 함수 사용하면 효율성 통과 못함&lt;/li&gt;
-  &lt;li&gt;효율성이 진짜 중요하구나
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;vector::push_back() and vector::pop_back() in C++ STL&lt;br /&gt;
-&lt;a href=&quot;https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/&quot;&gt;https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/&lt;/a&gt;&lt;br /&gt;
-사용하진 않았지만 vector에서 마지막 원소를 더하고 빼는 함수 vector.push_back(), vector.pop_back()
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/22/%ED%83%90%EC%9A%95%EB%B2%95_%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8_level2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/22/%ED%83%90%EC%9A%95%EB%B2%95_%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8_level2.html</guid>
-        
-        <category>programmershighscorekit</category>
-        
-        <category>greedy</category>
-        
-        <category>level2</category>
-        
-        <category>algorithm</category>
-        
-        <category>cplusplus</category>
-        
-        
-        <category>프로그래머스고득점Kit</category>
-        
-      </item>
-    
-      <item>
-        <title>프로그래머스 코딩테스트 고득점 Kit : [탐욕법] 조이스틱</title>
-        <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
-개인적으로 본 문제는 정확하지 못한 문제라고 생각한다. 나 또한 많은 테스트 케이스가 실패해 이것저것 시도해 본 결과 문제의 최적해가 아니더라도 통과되었기 때문이다. 확인을 해보니 본 문제의 질문하기 게시판에서도 많은 사람들이 문제가 이상하다는 말이 계속해서 나왔다. 그래서 개인적으로는 현재 프로그래머스 고득점Kit 문제를 도전하고 있는 사람들 중 본 문제가 너무 풀리지 않아 스트레스 받는다 하시는 분들은 사실 이 문제를 건너뛰어도 크게 문제가 있지 않을 것 같다고 생각한다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
-&lt;p&gt;조이스틱으로 알파벳 이름을 완성하세요. 맨 처음엔 A로만 이루어져 있습니다.&lt;br /&gt;
-ex) 완성해야 하는 이름이 세 글자면 AAA, 네 글자면 AAAA&lt;/p&gt;
-
-&lt;p&gt;조이스틱을 각 방향으로 움직이면 아래와 같습니다.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;▲ - 다음 알파벳
-▼ - 이전 알파벳 (A에서 아래쪽으로 이동하면 Z로)
-◀ - 커서를 왼쪽으로 이동 (첫 번째 위치에서 왼쪽으로 이동하면 마지막 문자에 커서)
-▶ - 커서를 오른쪽으로 이동
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;예를 들어 아래의 방법으로 JAZ를 만들 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 첫 번째 위치에서 조이스틱을 위로 9번 조작하여 J를 완성합니다.
-- 조이스틱을 왼쪽으로 1번 조작하여 커서를 마지막 문자 위치로 이동시킵니다.
-- 마지막 위치에서 조이스틱을 아래로 1번 조작하여 Z를 완성합니다.
-따라서 11번 이동시켜 &quot;JAZ&quot;를 만들 수 있고, 이때가 최소 이동입니다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;만들고자 하는 이름 name이 매개변수로 주어질 때, 이름에 대해 조이스틱 조작 횟수의 최솟값을 return 하도록 solution 함수를 만드세요.&lt;/p&gt;
-
-&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;name은 알파벳 대문자로만 이루어져 있습니다.&lt;/li&gt;
-  &lt;li&gt;name의 길이는 1 이상 20 이하입니다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;각 name을 한 글자씩 보면서, A가 아닌 알파벳이 나왔을 때 조이스틱을 조작해줘야 한다.&lt;/li&gt;
-  &lt;li&gt;A가 아닌 알파벳이 나오면, 다음을 실행한다.&lt;/li&gt;
-  &lt;li&gt;A가 아닌 알파벳을 만들기위해 조이스틱의 조작이 필요한만큼 answer에 더해준다.&lt;br /&gt;
-(조이스틱을 위, 아래로 조작하는 경우)&lt;/li&gt;
-  &lt;li&gt;그 전의 A가 아닌 알파벳(idx)에서 현재 위치(i)까지 앞으로 가는 것과 뒤로 돌아가서 가는 것 중&lt;br /&gt;
-어느 것이 더 빠른지 비교한다.&lt;/li&gt;
-  &lt;li&gt;더 빠른 방법만큼 answer에 더하고, 뒤로 돌아갔다면 endBack을 true로 바꿔준다.&lt;/li&gt;
-  &lt;li&gt;A가 아닌 알파벳의 위치(현재 위치, i 값)를 idx에 할당한다.&lt;/li&gt;
-  &lt;li&gt;모든 글자를 다 돌고난 후(반복문이 끝나고), 뒤로 돌아간 적(endBack이 true인 경우)이 있는데 A로 끝나는 name일 경우를 고려해준다.&lt;/li&gt;
-  &lt;li&gt;위와 같은 경우 A가 아닌 알파벳 중 마지막에 있는 것의 위치에서부터 마지막 A까지만큼 더해준다.&lt;/li&gt;
-  &lt;li&gt;answer 값을 반환한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
-&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;string&amp;gt;
-#include &amp;lt;vector&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endBack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;78&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;78&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;91&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;65&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;endBack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endBack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;문제 이상해…&lt;/li&gt;
-  &lt;li&gt;탐욕법(Greedy)은 부분적인 최적해가 전체적인 최적해가 되어야하는데 본 문제는 그 조건을 충족하지 않는다&lt;/li&gt;
-  &lt;li&gt;BBAABAA를 예시로 이야기하면, Greedy로 풀었을 때 답이 8이 되는데 실제 최소 값은 7이 된다&lt;/li&gt;
-  &lt;li&gt;미리 알파벳마다 수를 정의해두는 방법도 나쁘지 않을듯&lt;/li&gt;
-  &lt;li&gt;나는 ASCII 코드를 활용
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;[C++ 공식문서] std:vector:back &lt;a href=&quot;http://www.cplusplus.com/reference/vector/vector/back/&quot;&gt;http://www.cplusplus.com/reference/vector/vector/back/&lt;/a&gt;&lt;br /&gt;
-vector의 마지막에 있는 원소에 접근하기 위해서는 vector.back() 함수를 사용&lt;/li&gt;
-  &lt;li&gt;ASCII Table - 아스키 코드표 &lt;a href=&quot;https://shaeod.tistory.com/228&quot;&gt;https://shaeod.tistory.com/228&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sat, 21 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/21/%ED%83%90%EC%9A%95%EB%B2%95_%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1_level2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/21/%ED%83%90%EC%9A%95%EB%B2%95_%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1_level2.html</guid>
-        
-        <category>programmershighscorekit</category>
-        
-        <category>greedy</category>
-        
-        <category>level2</category>
-        
-        <category>algorithm</category>
-        
-        <category>cplusplus</category>
-        
-        
-        <category>프로그래머스고득점Kit</category>
         
       </item>
     

@@ -1,0 +1,212 @@
+I"�"<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/front-end/2020/07/18/WEB_Frontend_html(2).html">
+    <h2 class="post-title">WEB Front-end 공부 일기 : HTML 요소 - 콘텐츠 구분 &amp; 문자 콘텐츠</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>WEB</li>
+        
+          <li>Front</li>
+        
+          <li>Self Study</li>
+        
+          <li>HTML</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 18, 2020</div>
+  </div>
+
+  <div class="post">
+    <p><br /></p>
+
+<p><br /></p>
+
+<h3 id="알림">💡알림💡</h3>
+<p>본 일기는 패스트 캠프의 ‘프론트엔드 개발 올인원 패키지 with React Online’ 강의를 기반으로 공부한 내용을 복습할 목적으로 작성함을 밝히며, 잘못된 부분이 존재할 수도 있음을 알립니다! 잘못된 부분은 댓글로 말씀해주시면 감사하겠습니다 ʕ•̀ω•́ʔ✧
+<br /><br /></p>
+
+<h3 id="ㅤweb-front-end-공부-일기-2">⏰ㅤWEB Front-end 공부 일기 2</h3>
+<p>먼저는 HTML 태그에는 어떤 종류가 있는지 전체적인 개요를 알아보고, 블록 요소와 인라인 요소들에 대해서 배우면서 무엇이 다른지 그 특성에 대해 알아보았다. 그리고 구체적으로 요소를 하나씩 알아보면서 어디에 쓰는 요소이고 어떤 속성과 특성을 가지는지 공부했다.
+<br /><br /><br /></p>
+
+<h2 id="1-콘텐츠-구분-요소">1. 콘텐츠 구분 요소</h2>
+<h3 id="header">&lt;header&gt;</h3>
+<ul>
+  <li>웹사이트 상단에 로고, 메뉴 등이 있은 곳에 사용</li>
+  <li>&lt;header&gt;는 &lt;address&gt;, &lt;footer&gt;, 다른 &lt;header&gt;의 자식 요소가 될 수 없다</li>
+  <li>속성: 전역 속성</li>
+  <li><a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/header">MDN: &lt;header&gt;</a>
+<br /><br /></li>
+</ul>
+
+<h3 id="footer">&lt;footer&gt;</h3>
+<ul>
+  <li>header와 반대로 웹사이트 하단에 위치</li>
+  <li>일반적으로 저작권자, 연락처 등의 정보를 담고있다</li>
+  <li>&lt;footer&gt;는 &lt;address&gt;, &lt;header&gt;, 다른 &lt;footer&gt;의 자식 요소가 될 수 없다</li>
+  <li>속성: 전역 속성</li>
+  <li><a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/footer">MDN: &lt;footer&gt;</a></li>
+</ul>
+
+<p>✨ 사실 레이아웃을 만들 때 footer 대신 div를 사용해도 되지만, HTML5에서는 semantic tag라고 불리는 의미를 가진 태그들이 존재한다.<br />
+그래서 이를 적재적소에 사용하는 것이 중요하다.
+<br /><br /></p>
+
+<h3 id="h1---h6">&lt;h1&gt; - &lt;h6&gt;</h3>
+<ul>
+  <li>&lt;h1&gt; - &lt;h6&gt; 요소는 6단계의 구획 요소를 나타낸다</li>
+  <li>글씨 크기를 줄이기 위해서는 낮은 단계의 <h>를 사용하지 말고 CSS의 font-size 속성을 사용해야한다</h></li>
+  <li>중첩의 경우 h1부터 h6로 내려가면서 컨텐츠 구조를 나타내야한다</li>
+  <li>되도록 &lt;h1&gt;은 한 번만</li>
+  <li>속성: 전역 속성</li>
+  <li><a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/Heading_Elements">MDN: &lt;h1&gt; - &lt;h2&gt;</a></li>
+</ul>
+
+<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a4604b2e-7d8f-4a55-b5b1-eba5899908cb/_2020-07-15__6.44.50.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200718%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20200718T124733Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=972721f9b1d19a051c89a3270ce1b06d50b44f47f8b739b039cef7618fdfb9b4&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22_2020-07-15__6.44.50.png%22" alt="h1-h6" /></p>
+
+<ol>
+  <li>
+    <main>
+
+ <main>은 문서나 앱의 주요 콘텐츠를 나타낸다. 자세한 내용은 MDN doc을 확인하는 것이 좋다.
+
+ [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)
+
+ - 주의할 점
+     - hidden 속성 없이는 문서에 하나만 존재해야 한다.
+     - IE는 지원하지 않는다.
+
+</main></main>
+  </li>
+  <li>
+    <article>
+
+ <article>은 **'독립적으로'** 구분되거나 '재사용 가능'한 영역을 설정한다. 주로 신문 기사나 블로그 글에 쓰인다.
+
+ - 독립적으로 구분된다: 따로 분리 하더라도 해당 컨텐츠 그대로 다른 곳에서 사용 가능한 경우
+
+ 자세한 예제와 사용법은 아래 MDN doc을 살펴보길 바란다.
+
+ [https://developer.mozilla.org/ko/docs/Web/HTML/Element/article](https://developer.mozilla.org/ko/docs/Web/HTML/Element/article)
+
+</article></article>
+  </li>
+  <li>
+    <section>
+
+ <section>은 문서의 일반적인 영역을 설정한다. 이때 일반적으로 제목을 포함해서 의미를 가진다.
+
+ 자세한 예제와 사용법은 아래 MDN doc을 살펴보는 것을 추천한다.
+
+ [https://developer.mozilla.org/ko/docs/Web/HTML/Element/section](https://developer.mozilla.org/ko/docs/Web/HTML/Element/section)
+
+ - <article> vs <section> vs <div>
+     - 모두 구획하는 역할을 하지만 <div>는 의미가 없고 <section>은 포함된 제목을 통해 의미를 가진다. 그리고 <article>은 독립적으로 구분되고 제목을 통해 의미를 가진다.
+
+</article></section></div></div></section></article></section></section>
+  </li>
+  <li>
+    <aside>
+</aside>
+  </li>
+</ol>
+<aside>는 문서의 별도 콘텐츠(광고나 기타 링크 등의 사이드바 등)를 설정한다. 
+
+    자세한 내용은 아래 문서 참고.
+
+    [https://developer.mozilla.org/ko/docs/Web/HTML/Element/aside](https://developer.mozilla.org/ko/docs/Web/HTML/Element/aside)
+
+8. <nav>
+
+    <nav>는 다른 페이지 링크를 제공하는 영역을 설정하기 위해 쓰인다.
+
+    보통 메뉴(Home, About, Contact), 목차, 색인 등의 영역을 설정한다. 
+
+    그리고 <nav>는 주로 <ol> 혹은 <ul>과 같이 쓰인다.
+
+    자세한 내용은 아래 문서를 참고하면 좋다.
+
+    [https://developer.mozilla.org/ko/docs/Web/HTML/Element/nav](https://developer.mozilla.org/ko/docs/Web/HTML/Element/nav)
+
+9. <address>
+
+    <address>는 연락처 정보(주소, 전화번호, 이메일 주소 등)을 제공하는 영역을 설정한다.
+
+    자세한 예제와 설명은 아래 문서를 참고하면 좋다.
+
+    [https://developer.mozilla.org/ko/docs/Web/HTML/Element/address](https://developer.mozilla.org/ko/docs/Web/HTML/Element/address)
+
+10. <div>
+
+    <div>는 아무것도 나타내지 않는 콘텐츠 영역을 설정한다. 
+    주로 css를 통해 꾸미거나 JS를 통해 제어하기 위해 사용한다.
+
+    자세한 예제와 설명은 아래 문서를 참고하면 좋다.
+
+    [https://developer.mozilla.org/ko/docs/Web/HTML/Element/div](https://developer.mozilla.org/ko/docs/Web/HTML/Element/div)
+
+
+## 4. Refernece
+- [HEROPY Tech - 한눈에 보는 HTML 요소(Elements &amp; Attributes) 총정리](https://heropy.blog/2019/05/26/html-elements/)
+<br /><br /><br /><br />
+</div></div></address></address></ul></ol></nav></nav></nav></aside>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/front-end/2020/07/18/WEB_Frontend_html(2).html';
+      this.page.identifier = 'http://localhost:4000/front-end/2020/07/18/WEB_Frontend_html(2).html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET

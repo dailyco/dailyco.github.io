@@ -1,0 +1,195 @@
+I"�'<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/front-end/2020/07/18/WEB_Frontend_html(1).html">
+    <h2 class="post-title">WEB Front-end 공부 일기 : HTML 개요 및 요소</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>WEB</li>
+        
+          <li>Front</li>
+        
+          <li>Self Study</li>
+        
+          <li>HTML</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 18, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>공부를 시작한지 이틀째 되는 날이었다. 본격적으로 HTML 공부에 들어갔고, 전체적인 개요부터 시작해서 어떤 요소들이 있고, 요소마다 특성들에 대해 배우기 시작했다. HTML을 제대로 공부해본적이 없기도하고, 웹과 관련된 수업을 학교에서도 한 번도 들어본적이 없어서 조금 낯설게 느껴졌지만 평소에 무척 공부해보고 싶었던 분야라서 재미있게 들은것 같다 :)<br />
+<br /></p>
+
+<p><br /></p>
+
+<h3 id="알림">💡알림💡</h3>
+<p>본 일기는 패스트 캠프의 ‘프론트엔드 개발 올인원 패키지 with React Online’ 강의를 기반으로 공부한 내용을 복습할 목적으로 작성함을 밝히며, 잘못된 부분이 존재할 수도 있음을 알립니다! 잘못된 부분은 댓글로 말씀해주시면 감사하겠습니다 ʕ•̀ω•́ʔ✧
+<br /><br /></p>
+
+<h3 id="ㅤweb-front-end-공부-일기-2">⏰ㅤWEB Front-end 공부 일기 2</h3>
+<p>먼저는 HTML 태그에는 어떤 종류가 있는지 전체적인 개요를 알아보고, 블록 요소와 인라인 요소들에 대해서 배우면서 무엇이 다른지 그 특성에 대해 알아보았다. 그리고 구체적으로 요소를 하나씩 알아보면서 어디에 쓰는 요소이고 어떤 속성과 특성을 가지는지 공부했다.
+<br /><br /><br /></p>
+
+<h2 id="1-html-태그">1. HTML 태그</h2>
+
+<ul>
+  <li>
+    <p>태그 종류</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
+  	<span class="nt">&lt;head&gt;</span>
+  			문서의 정보
+  			<span class="c">&lt;!-- 기타 정보 --&gt;</span>
+  			<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="na">name</span> <span class="na">content</span><span class="nt">&gt;</span>
+  			<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">"YJ"</span><span class="nt">&gt;</span>
+  			<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"YJ's blog"</span><span class="nt">&gt;</span>
+  			<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- 최신 IE 지원하도록 --&gt;</span>
+    			
+  			<span class="c">&lt;!-- HTML 문서 제목 --&gt;</span>
+  			<span class="nt">&lt;title&gt;</span>HTML 요소 레퍼런스<span class="nt">&lt;/title&gt;</span>
+
+  			<span class="c">&lt;!-- 기본 파일의 경로 설정 --&gt;</span>
+  			<span class="nt">&lt;base</span> <span class="na">href=</span><span class="s">"./css/"</span><span class="nt">&gt;</span>
+  			<span class="c">&lt;!-- 스타일 외부에서 가져와서 연결 --&gt;</span>
+  			<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"main.css"</span><span class="nt">&gt;</span>
+
+  			<span class="c">&lt;!-- 스타일 직접 입력 --&gt;</span>
+  			<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  					<span class="nt">div</span> <span class="p">{</span>
+  						<span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  						<span class="nl">background</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+  					<span class="p">}</span>
+  			<span class="nt">&lt;/style&gt;</span>
+  	<span class="nt">&lt;/head&gt;</span>
+
+  	<span class="nt">&lt;body&gt;</span>
+  			문서의 구조
+  	<span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+    <p><br /></p>
+    <ul>
+      <li><code class="highlighter-rouge"><span class="cp">&lt;!DOCTYPE html&gt;</span></code><br />
+  html5 버전으로 해석해서 브라우저에 표현
+  <br /><br /></li>
+      <li><code class="highlighter-rouge"><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko, en..."</span><span class="nt">&gt;</span>...<span class="nt">&lt;/html&gt;</span></code><br />
+  html 문서로 작성함을 표현하며 어느 나라 언어를 사용하는지 설정
+  <br /><br /></li>
+      <li><code class="highlighter-rouge">&lt;head&gt;...&lt;/head&gt;</code> 문서의 정보
+        <ul>
+          <li><a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/meta"><code class="highlighter-rouge">&lt;meta&gt;</code></a> 속성
+            <ul>
+              <li><code class="highlighter-rouge">charset</code>: 페이지의 문자의 인코딩 방법</li>
+              <li><code class="highlighter-rouge">content</code>: <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">http-equiv</code> 속성을 사용할 때 해당 속성의 값을 입력</li>
+              <li><code class="highlighter-rouge">http-equiv</code>: 렌더링 방식 등 서버나 사용자의 환경에 맞게 작동 방식을 변경시키는 지시 사항 명시</li>
+              <li><code class="highlighter-rouge">name</code>: 문서 레벨의 메타 데이터 이름 정의 (정보를 지칭할 때 그 정보가 무엇인지)
+                <ul>
+                  <li>author, description, viewport,  …</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/link"><code class="highlighter-rouge">link</code></a> 속성<br />
+  현재 문서와 외부 리소스와의 관계 명시 (가지고 오는 것 까지)
+            <ul>
+              <li><code class="highlighter-rouge">crossorigin</code> 다른 도메인 사이트와 정보를 어떻게 주고 받을지를 명시(?)</li>
+              <li><code class="highlighter-rouge">href</code> 링크된 리소스의 URL (절대/상대 경로)</li>
+              <li><code class="highlighter-rouge">hreflang</code> 링크된 리소스의 언어 (보통 생략)</li>
+              <li><code class="highlighter-rouge">rel</code> 링크된 문서와 현재 문서와의 관계 명명
+                <ul>
+                  <li>링크 타입 값: stylesheet, icon, …</li>
+                </ul>
+              </li>
+              <li><code class="highlighter-rouge">type</code> : css의 경우 생략 가능
+                <ul>
+                  <li><a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types">MIME type</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/style"><code class="highlighter-rouge">style</code></a> 속성
+            <ul>
+              <li><code class="highlighter-rouge">type</code> : 생략 가능 (ex. type = “text/css”)</li>
+            </ul>
+          </li>
+          <li><code class="highlighter-rouge">base</code>
+            <ul>
+              <li>주의: html 문서에 한 번만 사용 가능
+  <br /><br /></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><code class="highlighter-rouge">&lt;body&gt;...&lt;/body&gt;</code> 문서의 구조</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /><br /><br /><br /></p>
+
+<h2 id="4-refernece">4. Refernece</h2>
+<ul>
+  <li><a href="https://heropy.blog/2019/04/24/html-css-starter/">HEROPY Tech - 입문자에게 추천하는 HTML, CSS 첫걸음</a>
+<br /><br /><br /><br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/front-end/2020/07/18/WEB_Frontend_html(1).html';
+      this.page.identifier = 'http://localhost:4000/front-end/2020/07/18/WEB_Frontend_html(1).html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
