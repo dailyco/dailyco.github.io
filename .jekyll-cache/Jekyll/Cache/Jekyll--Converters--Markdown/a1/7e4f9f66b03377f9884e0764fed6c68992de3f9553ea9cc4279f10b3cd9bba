@@ -1,0 +1,153 @@
+I"�<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/front-end/2020/07/18/WEB2.html">
+    <h2 class="post-title">WEB Front-end 공부 일기 : HTML, CSS, JS 개요 (2)</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>WEB</li>
+        
+          <li>Front</li>
+        
+          <li>Self Study</li>
+        
+          <li>HTML</li>
+        
+          <li>CSS</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 18, 2020</div>
+  </div>
+
+  <div class="post">
+    <p><br /></p>
+
+<p><br /></p>
+
+<h3 id="알림">💡알림💡</h3>
+<p>본 일기는 패스트 캠프의 ‘프론트엔드 개발 올인원 패키지 with React Online’ 강의를 기반으로 공부한 내용을 복습할 목적으로 작성함을 밝히며, 잘못된 부분이 존재할 수도 있음을 알립니다! 잘못된 부분은 댓글로 말씀해주시면 감사하겠습니다 ʕ•̀ω•́ʔ✧
+<br /><br /></p>
+
+<h3 id="ㅤweb-front-end-공부-일기-2">⏰ㅤWEB Front-end 공부 일기 2</h3>
+<p>첫 날 공부한 내용은 HTML과 CSS의 개요이다. HTML, CSS, JS가 뭔지 그리고 아주 기본적인 내용들에 대해 공부했다.
+<br /><br /><br /></p>
+
+<h2 id="1-기본-형태">1. 기본 형태</h2>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TAG&gt;&lt;/TAG&gt;</span>
+<span class="nt">&lt;TAG&gt;</span>CONTENT<span class="nt">&lt;/TAG&gt;</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<ul>
+  <li>예시</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>토끼와 거북이<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>옛날 옛적에 토끼와 거북이가 살았습니다 ...<span class="nt">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- 아래와 같이 이해할 수 있습니다 --&gt;</span>
+<span class="nt">&lt;</span><span class="err">주제</span><span class="na">1</span><span class="nt">&gt;</span>토끼와 거북이<span class="nt">&lt;/</span><span class="err">주제</span><span class="nt">1&gt;</span>
+<span class="nt">&lt;</span><span class="err">문단</span><span class="nt">&gt;</span>옛날 옛적에 토끼와 거북이가 살았습니다 ...<span class="nt">&lt;/</span><span class="err">문단</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<p><br /><br /><br /><br /></p>
+
+<h2 id="2-속성attributes과-값value">2. 속성(Attributes)과 값(Value)</h2>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;TAG</span> <span class="err">속성="값"</span><span class="nt">&gt;&lt;/TAG&gt;</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<ul>
+  <li>예시</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"./my_photo.jpg"</span> <span class="na">alt=</span><span class="s">"내 프로필 사진"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"name"</span><span class="nt">&gt;</span>홍길동<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- 다음과 같이 이해할 수 있습니다. --&gt;</span>
+<span class="nt">&lt;</span><span class="err">이미지삽입</span> <span class="err">소스위치="./</span><span class="na">my_photo</span><span class="err">.</span><span class="na">jpg</span><span class="err">"</span> <span class="err">대체텍스트="내</span> <span class="err">프로필</span> <span class="err">사진"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;</span><span class="err">의미없는분할</span> <span class="err">태그별명="</span><span class="na">name</span><span class="err">"</span><span class="nt">&gt;</span>홍길동<span class="nt">&lt;/</span><span class="err">의미없는분할</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<p><br /><br /><br /><br /></p>
+
+<h2 id="3-부모와-자식-요소">3. 부모와 자식 요소</h2>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;PARENT&gt;</span>
+  <span class="nt">&lt;CHILD&gt;&lt;/CHILD&gt;</span>
+<span class="nt">&lt;/PARENT&gt;</span>
+</code></pre></div></div>
+<p><br /><br /><br /><br /></p>
+
+<h2 id="4-빈-태그empty-tagself-closing-tag">4. 빈 태그(Empty tag/Self-closing tag)</h2>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- `/`가 없는 빈 태그 --&gt;</span>
+<span class="nt">&lt;TAG&gt;</span>
+
+<span class="c">&lt;!-- `/`가 있는 빈 태그 --&gt;</span>
+<span class="nt">&lt;TAG/&gt;</span>
+<span class="nt">&lt;TAG</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p><br /><br /><br /><br /></p>
+
+<h2 id="6-refernece">6. Refernece</h2>
+<ul>
+  <li><a href="https://heropy.blog/2019/04/24/html-css-starter/">HEROPY Tech - 입문자에게 추천하는 HTML, CSS 첫걸음</a>
+<br /><br /><br /><br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/front-end/2020/07/18/WEB2.html';
+      this.page.identifier = 'http://localhost:4000/front-end/2020/07/18/WEB2.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET

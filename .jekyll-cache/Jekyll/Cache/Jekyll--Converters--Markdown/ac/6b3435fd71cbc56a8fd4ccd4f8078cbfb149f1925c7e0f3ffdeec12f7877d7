@@ -1,0 +1,73 @@
+I"/<p><br /></p>
+
+<p><br /></p>
+
+<h3 id="알림">💡알림💡</h3>
+<p>본 일기는 패스트 캠프의 ‘프론트엔드 개발 올인원 패키지 with React Online’ 강의를 기반으로 공부한 내용을 복습할 목적으로 작성함을 밝히며, 잘못된 부분이 존재할 수도 있음을 알립니다! 잘못된 부분은 댓글로 말씀해주시면 감사하겠습니다 ʕ•̀ω•́ʔ✧
+<br /><br /></p>
+
+<h3 id="ㅤweb-front-end-공부-일기-1">⏰ㅤWEB Front-end 공부 일기 1</h3>
+<p>첫 날 공부한 내용은 HTML과 CSS의 개요이다. HTML, CSS, JS가 뭔지 그리고 아주 기본적인 내용들에 대해 공부했다.
+<br /><br /><br /></p>
+
+<h2 id="1-기본-형태">1. 기본 형태</h2>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">선택자</span> <span class="p">{</span>
+	<span class="err">속성:</span> <span class="err">값;</span>
+	<span class="err">속성:</span> <span class="err">값;</span>
+	<span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<ul>
+  <li>예시</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+	<span class="nl">font-size</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span> <span class="c">/* 글자 크기는 20px */</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> <span class="c">/* 글자 색은 빨간색 */</span>
+	<span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span> <span class="c">/* 가로 너비는 300px */</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span> <span class="c">/* 바깥 여백은 20px */</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span><span class="p">;</span> <span class="c">/* 안쪽 여백 위아래 10px, 좌우 20px */</span>
+	<span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span> <span class="c">/* 위치는 부모요소 기준 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /><br /></p>
+
+<h2 id="2-선택자-종류">2. 선택자 종류</h2>
+<ul>
+  <li>태그로 찾기</li>
+  <li>클래스로 찾기
+<br /><br /><br /><br /></li>
+</ul>
+
+<h2 id="3-속성-종류-기본">3. 속성 종류 (기본)</h2>
+<ul>
+  <li>width (가로 너비) / 단위: px</li>
+  <li>height (세로 너비) / 단위: px</li>
+  <li>font-size (글자 크기) / 단위: px</li>
+  <li>단축 속성: margin (요소 바깥 여백) 
+개별 속성: margin-top, margin-right, margin-bottom, margin-left</li>
+  <li>단축 속성: padding (요소 내부 여백)
+개별 속성: padding-top, padding-right, padding-bottom, padding-left</li>
+  <li>color (글자 색상)</li>
+  <li>단축 속성: background (요소 배경 색상 + @)
+개별 속성: background-color (요소 배경 색상)</li>
+</ul>
+
+<h2 id="4-css-선언방식-3가지">4. CSS 선언방식 3가지</h2>
+<ol>
+  <li>인라인 선언 형식</li>
+  <li>HTML 내장 형식</li>
+  <li>외부에서 불러오는 형식
+<br /><br /><br /><br /></li>
+</ol>
+
+<p><br /><br /><br /><br /></p>
+
+<h2 id="6-refernece">6. Refernece</h2>
+<ul>
+  <li><a href="https://heropy.blog/2019/04/24/html-css-starter/">HEROPY Tech - 입문자에게 추천하는 HTML, CSS 첫걸음</a>
+<br /><br /><br /><br /></li>
+</ul>
+:ET

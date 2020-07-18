@@ -1,42 +1,46 @@
+about: About
 algorithm: Algorithm
+boostcamp: Boostcamp
+bootcamp: BootCamp
+bruteforce: Brute Force
+codingtest: Codingtest
+compiler: Compiler
+cplusplus: C++
+css: CSS
+database: Database
+dfs-bfs: DFS / BFS
+easy: Easy
+front: Front
+graphics: Graphics
+greedy: Greedy
+gui: GUI
+hard: Hard
+hash: Hash
+heap: Heap
+html: HTML
+ide: IDE
+imageprocessing: Image Processing
+install: Install
+java: Java
+javascript: Javascript
+keil: Keil
 leetcode: LeetCode
-programmers: 프로그래머스
-programmershighscorekit: 프로그래머스 고득점 Kit
 level1: Level 1
 level2: Level 2
 level3: Level 3
-easy: Easy
-medium: Medium
-hard: Hard
-hash: Hash
-sorting: Sorting
-bruteforce: Brute Force
-dfs-bfs: DFS / BFS
-stack-queue: Stack / Queue
-greedy: Greedy
-heap: Heap
-graphics: Graphics
-database: Database
-imageprocessing: Image Processing
-network: Network
-socketprogramming: Socket Programming
-mysql: MySQL
-gui: GUI
-cplusplus: C++
-java: Java
-javascript: Javascript
-about: About
 mac: Mac
+mdk-arm: MDK-ARM
+medium: Medium
+mysql: MySQL
+network: Network
+programmers: 프로그래머스
+programmershighscorekit: 프로그래머스 고득점 Kit
+review: Review
+socketprogramming: Socket Programming
+sorting: Sorting
+stack-queue: Stack / Queue
+study: Self Study
+web: WEB
 window: Window
 window10: Window10
-bootcamp: BootCamp
-install: Install
-mdk-arm: MDK-ARM
-ide: IDE
-keil: Keil
 μvision: μVision
-compiler: Compiler
-study: 공부
-codingtest: Codingtest
-review: Review
-boostcamp: Boostcamp

@@ -1,0 +1,214 @@
+I"�&<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/front-end/2020/07/18/WEB3.html">
+    <h2 class="post-title">WEB Front-end 공부 일기 : HTML, CSS, JS 개요 (3)</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>WEB</li>
+        
+          <li>Front</li>
+        
+          <li>Self Study</li>
+        
+          <li>HTML</li>
+        
+          <li>CSS</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 18, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>본 포스팅은 CSS에 관련한 내용으로 기본적인 CSS 형태, 선택자와 속성의 종류, CSS를 선언하는 세 가지 방식에 대해 이야기한다. 매우 기본적인 이야기이기도 하고 추 후에 CSS를 자세히 다루기 때문에 굳이 정리할 필요는 없지만, HTML과 마찬가지로 살짝 맛보기만 해보려 한다.<br />
+<br /></p>
+
+<p><br /></p>
+
+<h3 id="알림">💡알림💡</h3>
+<p>본 일기는 패스트 캠프의 ‘프론트엔드 개발 올인원 패키지 with React Online’ 강의를 기반으로 공부한 내용을 복습할 목적으로 작성함을 밝히며, 잘못된 부분이 존재할 수도 있음을 알립니다! 잘못된 부분은 댓글로 말씀해주시면 감사하겠습니다 ʕ•̀ω•́ʔ✧
+<br /><br /></p>
+
+<h3 id="ㅤweb-front-end-공부-일기-1">⏰ㅤWEB Front-end 공부 일기 1</h3>
+<p>첫 날 공부한 내용은 HTML과 CSS의 개요이다. HTML, CSS, JS가 뭔지 그리고 아주 기본적인 내용들에 대해 공부했다.
+<br /><br /><br /></p>
+
+<h2 id="1-기본-형태">1. 기본 형태</h2>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">선택자</span> <span class="p">{</span>
+	<span class="err">속성:</span> <span class="err">값;</span>
+	<span class="err">속성:</span> <span class="err">값;</span>
+	<span class="err">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>선택자(Selector): HTML에 스타일을 적용할 때 적용하고자 하는 HTML 특정 요소(태그)를 선택하는 sign</li>
+  <li>속성(Properties): 스타일을 적용할 내용</li>
+  <li>값(Value): 속성에 해당하는 실제 값
+<br /><br /></li>
+</ul>
+
+<h3 id="예시">예시</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+	<span class="nl">font-size</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span> <span class="c">/* 글자 크기는 20px */</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> <span class="c">/* 글자 색은 빨간색 */</span>
+	<span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span> <span class="c">/* 가로 너비는 300px */</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span> <span class="c">/* 바깥 여백은 20px */</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span><span class="p">;</span> <span class="c">/* 안쪽 여백 위아래 10px, 좌우 20px */</span>
+	<span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span> <span class="c">/* 위치는 부모요소 기준 */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /><br /></p>
+
+<h2 id="2-선택자-종류">2. 선택자 종류</h2>
+<h3 id="태그로-찾기">태그로 찾기</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">태그</span> <span class="err">이름</span> <span class="p">{</span>
+	<span class="err">속성:</span> <span class="err">값;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="클래스로-찾기">클래스로 찾기</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* CSS */</span>
+<span class="o">.</span><span class="err">클래스이름</span> <span class="p">{</span>    <span class="c">/* .은 클래스 선택자 */</span>
+	<span class="err">속성:</span> <span class="err">값;</span>
+<span class="p">}</span>
+
+<span class="c">/* HTML */</span>
+<span class="o">&lt;</span><span class="nt">TAG</span> <span class="nt">class</span><span class="o">=</span><span class="s1">"클래스이름"</span><span class="o">&gt;</span><span class="nt">CONTENTS</span><span class="o">&lt;/</span><span class="nt">TAG</span><span class="o">&gt;</span>
+</code></pre></div></div>
+<p><br /><br /><br /><br /></p>
+
+<h2 id="3-속성-종류-기본">3. 속성 종류 (기본)</h2>
+<ul>
+  <li>속성의 기본값은 16px</li>
+  <li>width (가로 너비) / 단위: px</li>
+  <li>height (세로 너비) / 단위: px</li>
+  <li>font-size (글자 크기) / 단위: px</li>
+  <li>단축 속성: margin (요소 바깥 여백) 
+개별 속성: margin-top, margin-right, margin-bottom, margin-left</li>
+  <li>단축 속성: padding (요소 내부 여백)
+개별 속성: padding-top, padding-right, padding-bottom, padding-left</li>
+  <li>color (글자 색상)</li>
+  <li>단축 속성: background (요소 배경 색상 + @)
+개별 속성: background-color (요소 배경 색상) + @
+<br /><br /><br /><br /></li>
+</ul>
+
+<h2 id="4-css-선언방식-3가지">4. CSS 선언방식 3가지</h2>
+<ol>
+  <li>인라인 선언 형식</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"color: red;"</span><span class="nt">&gt;</span>CONTENTS<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<ul>
+  <li>선택자가 필요없다</li>
+  <li>적용해야할 동일한 태그가 많을 때, 수정시 비효율적</li>
+</ul>
+
+<ol>
+  <li>HTML 내장 형식</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nt">div</span> <span class="p">{</span>
+      <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>  
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div&gt;</span>HTML에 포함1<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- 색상: 빨강 --&gt;</span>
+  <span class="nt">&lt;div&gt;</span>HTML에 포함2<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- 색상: 빨강 --&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>외부에서 불러오는 형식</li>
+</ol>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* /css/main.css */</span>
+<span class="nt">div</span> <span class="p">{</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/css/main.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div&gt;</span>HTML에 외부에서 불러오기1<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- red --&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+<ul>
+  <li>한 번 선언해 둔 것을 여러 HTML에 적용 가능</li>
+</ul>
+
+<p><br /><br /><br /><br /></p>
+
+<h2 id="5-refernece">5. Refernece</h2>
+<ul>
+  <li><a href="https://heropy.blog/2019/04/24/html-css-starter/">HEROPY Tech - 입문자에게 추천하는 HTML, CSS 첫걸음</a>
+<br /><br /><br /><br /></li>
+</ul>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/front-end/2020/07/18/WEB3.html';
+      this.page.identifier = 'http://localhost:4000/front-end/2020/07/18/WEB3.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
