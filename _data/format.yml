@@ -11,6 +11,7 @@ database: Database
 dfs-bfs: DFS / BFS
 easy: Easy
 front: Front
+graph: Graph
 graphics: Graphics
 greedy: Greedy
 gui: GUI

@@ -1,0 +1,173 @@
+I"W-<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/29/%EA%B7%B8%EB%9E%98%ED%94%84_%EA%B0%80%EC%9E%A5%EB%A8%BC%EB%85%B8%EB%93%9C_level3.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [그래프] 가장 먼 노드</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>프로그래머스 고득점 Kit</li>
+        
+          <li>Graph</li>
+        
+          <li>Level 3</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 29, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>난이도 ★ ★ ★ ☆ ☆<br />
+첫 그래프 문제를 풀었다. 그래프는 첫 문제부터 level3이어서 이번에 처음 푸는데 DFS/BFS 문제를 먼저 접하고 풀어서 그런지 생각보다 괜찮았다. 그래프 문제이긴 했지만 BFS를 사용해서 풀었고, 나는 DFS/BFS 문제도 모두 DFS로 풀었는데 처음 BFS로 풀면서 확실히 어떤 문제에 DFS를 써야하고 어떤 문제에 BFS를 써야하는지를 알게된 것 같다. 그리고 문제를 풀면서 또 느꼈던건 알고리즘 수업을 들으면서 배웠던 것이 다 기억이 안나서… 다시 공부해야겠다고 생각했다..ㅠㅠ 화이팅! (و ˃̵ᴗ˂̵)و<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>n개의 노드가 있는 그래프가 있습니다. 각 노드는 1부터 n까지 번호가 적혀있습니다.<br />
+1번 노드에서 가장 멀리 떨어진 노드의 갯수를 구하려고 합니다.<br />
+가장 멀리 떨어진 노드란 최단경로로 이동했을 때 간선의 개수가 가장 많은 노드들을 의미합니다.</p>
+
+<p>노드의 개수 n, 간선에 대한 정보가 담긴 2차원 배열 vertex가 매개변수로 주어질 때,<br />
+1번 노드로부터 가장 멀리 떨어진 노드가 몇 개인지를 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>노드의 개수 n은 2 이상 20,000 이하입니다.</li>
+  <li>간선은 양방향이며 총 1개 이상 50,000개 이하의 간선이 있습니다.</li>
+  <li>vertex 배열 각 행 [a, b]는 a번 노드와 b번 노드 사이에 간선이 있다는 의미입니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li>노드의 방문 여부를 확인하는 visited 함수를 false로 초기화하여 (노드 수 + 1) 만큼 생성하다.<br />
+(노드가 1번부터 시작하기 때문에 인덱스 또한 1부터 사용했다)</li>
+  <li>각 노드의 연결 상태를 나타내는 그래프를 key 값은 노드 번호, value 값은 해당 노드와 연결된 노드의 번호로 하는 map을 생성한다.</li>
+  <li>BFS에서 노드의 방문을 확인을 확인하기 위해 큐를 한 개를 생성하고, 정답을 나타내는 변수 answer를 생성한다.</li>
+  <li><br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;vector&gt;
+#include &lt;queue&gt;
+#include &lt;map&gt;
+#include &lt;set&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">edge</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">visited</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">graph</span><span class="p">;</span>
+    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">answer</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">e</span> <span class="o">:</span> <span class="n">edge</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]].</span><span class="n">insert</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]].</span><span class="n">insert</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="p">}</span>
+    
+    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">cur_size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        
+        <span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span> <span class="o">:</span> <span class="n">graph</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">visited</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">visited</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">--</span><span class="n">cur_size</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+            <span class="n">cur_size</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>BFS 공부</li>
+  <li>map의 value 값으로 꼭 set을 쓰지 않아도 됐겠다 (vector 써도 무방했을 듯!)</li>
+  <li>level 별로 원소의 갯수를 구하기 위해 cur_size 변수를 사용한 것은 잘한듯ㅎㅎ
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>[알고리즘] 너비 우선 탐색(BFS)이란 <a href="https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html">https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html</a><br />
+BFS의 특징은 재귀함수를 사용하지 않는다는 것과, 큐와 해당 노드를 방문했는지 확인하는 변수가 필요하다는 것!
+<br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/29/%EA%B7%B8%EB%9E%98%ED%94%84_%EA%B0%80%EC%9E%A5%EB%A8%BC%EB%85%B8%EB%93%9C_level3.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/29/%EA%B7%B8%EB%9E%98%ED%94%84_%EA%B0%80%EC%9E%A5%EB%A8%BC%EB%85%B8%EB%93%9C_level3.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
