@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<title>프로그래머스 코딩테스트 고득점 Kit : [그래프] 순위</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>프로그래머스 코딩테스트 고득점 Kit : [그래프] 순위 | Opencoding</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="프로그래머스 코딩테스트 고득점 Kit : [그래프] 순위" />
+<meta name="author" content="YuJin Kim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="난이도 ★ ★ ★ ☆ ☆ 이 문제는 문제 풀면서 조금 짜증났던 문제였다. 처음에 문제를 읽고 알고리즘을 세우는 데에는 10분 가량?이었는데 세운 알고리즘대로 코드를 작성했더니 정확도가 60점이어서 왜 안되는지 이유를 몰라 30분 가량 이도저도 못하고 있었다. 그러다가 스터디 시간에 친구에게 왜 내 코드가 안되는지 모르겠다며 알고리즘을 설명해 주다가 깨달았고…^^ 코드를 한 줄만 더해주었더니 해결 되었다. 뭔가 허무하기도 했는데 정확한 이유를 깨닫고 그에 맞게 정확한 알고리즘을 세울 수 있어서 좋았다. 하지만 효율성은 마음에 들지 않는다 ^_^" />
+<meta property="og:description" content="난이도 ★ ★ ★ ☆ ☆ 이 문제는 문제 풀면서 조금 짜증났던 문제였다. 처음에 문제를 읽고 알고리즘을 세우는 데에는 10분 가량?이었는데 세운 알고리즘대로 코드를 작성했더니 정확도가 60점이어서 왜 안되는지 이유를 몰라 30분 가량 이도저도 못하고 있었다. 그러다가 스터디 시간에 친구에게 왜 내 코드가 안되는지 모르겠다며 알고리즘을 설명해 주다가 깨달았고…^^ 코드를 한 줄만 더해주었더니 해결 되었다. 뭔가 허무하기도 했는데 정확한 이유를 깨닫고 그에 맞게 정확한 알고리즘을 세울 수 있어서 좋았다. 하지만 효율성은 마음에 들지 않는다 ^_^" />
+<link rel="canonical" href="http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/29/%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%9C%EC%9C%84_level3.html" />
+<meta property="og:url" content="http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/29/%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%9C%EC%9C%84_level3.html" />
+<meta property="og:site_name" content="Opencoding" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-29T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"프로그래머스 코딩테스트 고득점 Kit : [그래프] 순위","dateModified":"2020-07-29T00:00:00+09:00","datePublished":"2020-07-29T00:00:00+09:00","url":"http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/29/%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%9C%EC%9C%84_level3.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/29/%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%9C%EC%9C%84_level3.html"},"author":{"@type":"Person","name":"YuJin Kim"},"description":"난이도 ★ ★ ★ ☆ ☆ 이 문제는 문제 풀면서 조금 짜증났던 문제였다. 처음에 문제를 읽고 알고리즘을 세우는 데에는 10분 가량?이었는데 세운 알고리즘대로 코드를 작성했더니 정확도가 60점이어서 왜 안되는지 이유를 몰라 30분 가량 이도저도 못하고 있었다. 그러다가 스터디 시간에 친구에게 왜 내 코드가 안되는지 모르겠다며 알고리즘을 설명해 주다가 깨달았고…^^ 코드를 한 줄만 더해주었더니 해결 되었다. 뭔가 허무하기도 했는데 정확한 이유를 깨닫고 그에 맞게 정확한 알고리즘을 세울 수 있어서 좋았다. 하지만 효율성은 마음에 들지 않는다 ^_^","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/custom/header.css">
+    </head>
+
+    <body>
+        
+
+        <div class="masthead">
+            <div class="masthead__inner-wrap">
+                <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    
+                    <a class="site-logo" href="/"><img src="/assets/img/header//logo.png" alt=""></a>
+                    
+                    <a class="site-title" href="/">Opencoding</a>
+                    <!-- <button class="greedy-nav__toggle hidden" type="button"></button>
+                    <ul class="hidden-links hidden"><li class="masthead__menu-item">
+                                <a href="/about/" >ABOUT</a>
+                            </li><li class="masthead__menu-item">
+                                <a href="/tags/" >TAGS</a>
+                            </li></ul> -->
+                    <ul class="visible-links"><li class="masthead__menu-item">
+                        <a href="/about/" >ABOUT</a>
+                        </li><li class="masthead__menu-item">
+                        <a href="/tags/" >TAGS</a>
+                        </li></ul>
+                    <!-- <li class="masthead__menu-item">
+                            
+                                <button class="search__toggle " type="button">
+                                <span class="visually-hidden">Toggle search</span>
+                                <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+                                    <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+                                </svg>
+                                </button>
+                            
+                        </li> -->
+                </nav>
+                </div>
+            </div>
+        </div>
+
+        <section class="body_content">
+            <main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim"></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/29/%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%9C%EC%9C%84_level3.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [그래프] 순위</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>프로그래머스 고득점 Kit</li>
+        
+          <li>Graph</li>
+        
+          <li>Level 3</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 29, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>난이도 ★ ★ ★ ☆ ☆<br />
+이 문제는 문제 풀면서 조금 짜증났던 문제였다. 처음에 문제를 읽고 알고리즘을 세우는 데에는 10분 가량?이었는데 세운 알고리즘대로 코드를 작성했더니 정확도가 60점이어서 왜 안되는지 이유를 몰라 30분 가량 이도저도 못하고 있었다. 그러다가 스터디 시간에 친구에게 왜 내 코드가 안되는지 모르겠다며 알고리즘을 설명해 주다가 깨달았고…^^ 코드를 한 줄만 더해주었더니 해결 되었다. 뭔가 허무하기도 했는데 정확한 이유를 깨닫고 그에 맞게 정확한 알고리즘을 세울 수 있어서 좋았다. 하지만 효율성은 마음에 들지 않는다 ^_^<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>n명의 권투선수가 권투 대회에 참여했고 각각 1번부터 n번까지 번호를 받았습니다.<br />
+권투 경기는 1대1 방식으로 진행이 되고, 만약 A 선수가 B 선수보다 실력이 좋다면 A 선수는 B 선수를 항상 이깁니다.<br />
+심판은 주어진 경기 결과를 가지고 선수들의 순위를 매기려 합니다.<br />
+하지만 몇몇 경기 결과를 분실하여 정확하게 순위를 매길 수 없습니다.</p>
+
+<p>선수의 수 n, 경기 결과를 담은 2차원 배열 results가 매개변수로 주어질 때<br />
+정확하게 순위를 매길 수 있는 선수의 수를 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>선수의 수는 1명 이상 100명 이하입니다.</li>
+  <li>경기 결과는 1개 이상 4,500개 이하입니다.</li>
+  <li>results 배열 각 행 [A, B]는 A 선수가 B 선수를 이겼다는 의미입니다.</li>
+  <li>모든 경기 결과에는 모순이 없습니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li>각 선수가 이긴 선수와 진 선수의 번호를 나타내는 맵 win과 defeat을 생성한다.</li>
+  <li>답을 나타내는 변수 answer 를 0으로 초기화하여 생성한다.</li>
+  <li>매개변수로 받은 results를 각 win, defeat 맵에 초기화 시켜준다.</li>
+  <li>초기화된 맵을 기반으로 각 선수의 이긴 선수와 진 선수를 모두 찾아준다.<br />
+(1번 선수부터 n번 선수까지 win 맵을 돌면서 자신이 이긴 선수가 이긴 선수 또한 자신의 value 셋에 넣어준다.<br />
+defeat 맵도 자신을 이긴 선수를 이긴 선수에게도 지기 때문에 마찬가지로 value 셋에 넣어준다.<br />
+이 작업을 n-1번 반복하는 이유는 각 선수의 win, defeat 맵의 업데이트가 진행된 결과가<br />
+다른 선수에게 반영이 되지 않는 경우가 있을 수 있기 때문이다.)</li>
+  <li>각 선수의 이긴 선수 win 맵과 진 선수 defeat 맵의 크기를 합하여 그 값이 n-1이면 확실히 등수를 알 수 있으므로 answer를 증가시킨다.</li>
+  <li>반복문이 끝나 answer 값이 구해지면 answer를 반환하다.<br />
+<br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;vector&gt;
+#include &lt;map&gt;
+#include &lt;set&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">results</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">win</span><span class="p">;</span>
+    <span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">defeat</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">result</span> <span class="o">:</span> <span class="n">results</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">win</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]].</span><span class="n">insert</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="n">defeat</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]].</span><span class="n">insert</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="p">}</span>
+    
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="o">--</span><span class="n">count</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">loser</span> <span class="o">:</span> <span class="n">win</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">win</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="n">win</span><span class="p">[</span><span class="n">loser</span><span class="p">].</span><span class="n">begin</span><span class="p">(),</span> <span class="n">win</span><span class="p">[</span><span class="n">loser</span><span class="p">].</span><span class="n">end</span><span class="p">());</span>
+
+            <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">winner</span> <span class="o">:</span> <span class="n">defeat</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">defeat</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="n">defeat</span><span class="p">[</span><span class="n">winner</span><span class="p">].</span><span class="n">begin</span><span class="p">(),</span> <span class="n">defeat</span><span class="p">[</span><span class="n">winner</span><span class="p">].</span><span class="n">end</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">win</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">()</span> <span class="o">+</span> <span class="n">defeat</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
+        
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>set에 다른 set을 삽입하는 방법
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>std:set:insert <a href="http://cplusplus.com/reference/set/set/insert/">http://cplusplus.com/reference/set/set/insert/</a><br />
+set에 다른 set을 삽입할 때는 <code class="highlighter-rouge">set.insert()</code> 함수를 사용,<br />
+<code class="highlighter-rouge">set1.insert(set2.begin(), set2.end())</code>의 형태로 set2를 set1에 삽입 가능
+<br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/29/%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%9C%EC%9C%84_level3.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/29/%EA%B7%B8%EB%9E%98%ED%94%84_%EC%88%9C%EC%9C%84_level3.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main><script async src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+  <script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+        </section>
+    </body>
+</html>
