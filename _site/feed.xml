@@ -6,9 +6,152 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jul 2020 01:25:51 +0900</pubDate>
-    <lastBuildDate>Thu, 30 Jul 2020 01:25:51 +0900</lastBuildDate>
+    <pubDate>Fri, 31 Jul 2020 00:20:57 +0900</pubDate>
+    <lastBuildDate>Fri, 31 Jul 2020 00:20:57 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>프로그래머스 코딩테스트 고득점 Kit : [이분탐색] 예산</title>
+        <description>&lt;p&gt;난이도 ★ ★ ★ ☆ ☆&lt;br /&gt;
+이 문제를 풀기 전 이분탐색이 무엇인지 대충은 기억나는데 어떤 자료 형태로 생성해야하는지를 몰라 검색해보았다. 덕분에 데이터 베이스, 알고리즘 수업을 들으면서 배웠던게 제대로 기억이 났다. 이분탐색 문제라서 이분탐색을 사용해서 풀어보려고 다른 알고리즘은 세워보지 않았는데, 문제를 풀고나서 다른 사람 풀이를 보니 이분탐색이 아닌 완전 다른 알고리즘으로 푼 코드가 있었다. 엄청 신박하기도하고 쉽게 생각할 수 없는 알고리즘이었는데 정말 대단하다는 생각이 들었다. 그래서 해당 알고리즘을 참고한 코드도 함께 게시글에 올리니, 다른 분들도 참고해서 보시길! (▰˘◡˘▰)&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
+&lt;p&gt;국가의 역할 중 하나는 여러 지방의 예산요청을 심사하여 국가의 예산을 분배하는 것입니다.&lt;br /&gt;
+국가예산의 총액은 미리 정해져 있어서 모든 예산요청을 배정해 주기는 어려울 수도 있습니다.&lt;br /&gt;
+그래서 정해진 총액 이하에서 가능한 한 최대의 총 예산을 다음과 같은 방법으로 배정합니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 모든 요청이 배정될 수 있는 경우에는 요청한 금액을 그대로 배정합니다.
+2. 모든 요청이 배정될 수 없는 경우에는 특정한 정수 상한액을 계산하여 그 이상인 예산요청에는 모두 상한액을 배정합니다. 
+   상한액 이하의 예산요청에 대해서는 요청한 금액을 그대로 배정합니다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+예를 들어, 전체 국가예산이 485이고 4개 지방의 예산요청이 각각 120, 110, 140, 150일 때,&lt;br /&gt;
+상한액을 127로 잡으면 위의 요청들에 대해서 각각 120, 110, 127, 127을 배정하고 그 합이 484로 가능한 최대가 됩니다.&lt;br /&gt;
+각 지방에서 요청하는 예산이 담긴 배열 budgets과 총 예산 M이 매개변수로 주어질 때,&lt;br /&gt;
+위의 조건을 모두 만족하는 상한액을 return 하도록 solution 함수를 작성해주세요.&lt;/p&gt;
+
+&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;지방의 수는 3 이상 100,000 이하인 자연수입니다.&lt;/li&gt;
+  &lt;li&gt;각 지방에서 요청하는 예산은 1 이상 100,000 이하인 자연수입니다.&lt;/li&gt;
+  &lt;li&gt;총 예산은 지방의 수 이상 1,000,000,000 이하인 자연수입니다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;is_ceiling() 함수는 solution에서 매개변수로 받은 budgets, M 변수와 배정한 상한액을 인수로 주고&lt;br /&gt;
+해당 상한액을 총 예산 M으로 해결 가능하면 true, 못하면 false를 반환하는 함수로, 해당 함수를 먼저 정의해준다.&lt;/li&gt;
+  &lt;li&gt;제한조건이 각 지방에서 요청하는 예산이 1 이상 100,000 이하이기 때문에 시작값 left를 1, 끝 값 right를 100,000으로 초기화하여 생성한다.&lt;/li&gt;
+  &lt;li&gt;이분탐색을 위해 left와 right의 중간값을 mid 변수에 초기화하여 생성한다.&lt;/li&gt;
+  &lt;li&gt;문제의 총 예산 배정 방법 1번에 의해 모든 요청이 배정될 수 있는 경우에&lt;br /&gt;
+요청한 금액(budgets의 최댓값) 그대로 반환해야하기 때문에 max 변수를 생성해 최댓값으로 초기화 한다.&lt;/li&gt;
+  &lt;li&gt;left가 right보다 작은 동안 다음을 반복해 이분탐색을 진행한다.&lt;/li&gt;
+  &lt;li&gt;상한액 mid를 총 예산 M으로 해결 가능하면 mid가 max 이상인지 확인해 max보다 크거나 같으면 max를 반환하고,&lt;br /&gt;
+그렇지 않으면 mid+1을 총 예산 M으로 해결 가능한지 확인해 가능하지 않으면 mid가 최대 상한액이라는 의미이므로 mid를 반환한다.&lt;/li&gt;
+  &lt;li&gt;mid+1을 총 예산 M으로 해결 가능하면, 상한액이 더 커질수 있다는 뜻이므로 left를 mid로, mid는 재할당하여 이분탐색을 진행한다.&lt;/li&gt;
+  &lt;li&gt;6번에서 상한액 mid를 총 예산 M으로 해결할 수 없으면 상한액을 더 낮춰야 하므로 right를 mid로, mid는 재할당하여 이분탐색을 진행한다.&lt;/li&gt;
+  &lt;li&gt;반복문 내에서 값들이 반환되지만, 반복문이 끝나면 마지막에 0을 반환해주고 끝낸다. &lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
+&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
+&lt;h4 id=&quot;내가-푼-알고리즘-코드-통과-o&quot;&gt;내가 푼 알고리즘 코드 (통과 O)&lt;/h4&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;vector&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;is_ceiling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ceiling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budget&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;budget&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ceiling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ceiling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_ceiling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_ceiling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;다른-사람-알고리즘-참고한-코드-통과-o&quot;&gt;다른 사람 알고리즘 참고한 코드 (통과 O)&lt;/h4&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;vector&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budget&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;budget&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;M&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;budgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;정수형 데이터 타입 int 범위
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터 형식 범위 &lt;a href=&quot;https://blog.kimtae.xyz/133&quot;&gt;https://blog.kimtae.xyz/133&lt;/a&gt;&lt;br /&gt;
+정수형 데이터 타입 int 범위는 –2,147,483,648 ~ 2,147,483,647 이다
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 30 Jul 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/30/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89_%EC%98%88%EC%82%B0_level3.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/30/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89_%EC%98%88%EC%82%B0_level3.html</guid>
+        
+        <category>programmershighscorekit</category>
+        
+        <category>binarysearch</category>
+        
+        <category>level3</category>
+        
+        <category>algorithm</category>
+        
+        <category>cplusplus</category>
+        
+        
+        <category>프로그래머스고득점Kit</category>
+        
+      </item>
     
       <item>
         <title>프로그래머스 코딩테스트 고득점 Kit : [그래프] 순위</title>
@@ -3806,130 +3949,6 @@ i는 for문에서 계속해서 감소되기 때문에 건들지 않는다)&lt;/l
         <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/22/%ED%83%90%EC%9A%95%EB%B2%95_%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8_level2.html</link>
         <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/22/%ED%83%90%EC%9A%95%EB%B2%95_%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8_level2.html</guid>
-        
-        <category>programmershighscorekit</category>
-        
-        <category>greedy</category>
-        
-        <category>level2</category>
-        
-        <category>algorithm</category>
-        
-        <category>cplusplus</category>
-        
-        
-        <category>프로그래머스고득점Kit</category>
-        
-      </item>
-    
-      <item>
-        <title>프로그래머스 코딩테스트 고득점 Kit : [탐욕법] 조이스틱</title>
-        <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
-개인적으로 본 문제는 정확하지 못한 문제라고 생각한다. 나 또한 많은 테스트 케이스가 실패해 이것저것 시도해 본 결과 문제의 최적해가 아니더라도 통과되었기 때문이다. 확인을 해보니 본 문제의 질문하기 게시판에서도 많은 사람들이 문제가 이상하다는 말이 계속해서 나왔다. 그래서 개인적으로는 현재 프로그래머스 고득점Kit 문제를 도전하고 있는 사람들 중 본 문제가 너무 풀리지 않아 스트레스 받는다 하시는 분들은 사실 이 문제를 건너뛰어도 크게 문제가 있지 않을 것 같다고 생각한다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
-&lt;p&gt;조이스틱으로 알파벳 이름을 완성하세요. 맨 처음엔 A로만 이루어져 있습니다.&lt;br /&gt;
-ex) 완성해야 하는 이름이 세 글자면 AAA, 네 글자면 AAAA&lt;/p&gt;
-
-&lt;p&gt;조이스틱을 각 방향으로 움직이면 아래와 같습니다.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;▲ - 다음 알파벳
-▼ - 이전 알파벳 (A에서 아래쪽으로 이동하면 Z로)
-◀ - 커서를 왼쪽으로 이동 (첫 번째 위치에서 왼쪽으로 이동하면 마지막 문자에 커서)
-▶ - 커서를 오른쪽으로 이동
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;예를 들어 아래의 방법으로 JAZ를 만들 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 첫 번째 위치에서 조이스틱을 위로 9번 조작하여 J를 완성합니다.
-- 조이스틱을 왼쪽으로 1번 조작하여 커서를 마지막 문자 위치로 이동시킵니다.
-- 마지막 위치에서 조이스틱을 아래로 1번 조작하여 Z를 완성합니다.
-따라서 11번 이동시켜 &quot;JAZ&quot;를 만들 수 있고, 이때가 최소 이동입니다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;만들고자 하는 이름 name이 매개변수로 주어질 때, 이름에 대해 조이스틱 조작 횟수의 최솟값을 return 하도록 solution 함수를 만드세요.&lt;/p&gt;
-
-&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;name은 알파벳 대문자로만 이루어져 있습니다.&lt;/li&gt;
-  &lt;li&gt;name의 길이는 1 이상 20 이하입니다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;각 name을 한 글자씩 보면서, A가 아닌 알파벳이 나왔을 때 조이스틱을 조작해줘야 한다.&lt;/li&gt;
-  &lt;li&gt;A가 아닌 알파벳이 나오면, 다음을 실행한다.&lt;/li&gt;
-  &lt;li&gt;A가 아닌 알파벳을 만들기위해 조이스틱의 조작이 필요한만큼 answer에 더해준다.&lt;br /&gt;
-(조이스틱을 위, 아래로 조작하는 경우)&lt;/li&gt;
-  &lt;li&gt;그 전의 A가 아닌 알파벳(idx)에서 현재 위치(i)까지 앞으로 가는 것과 뒤로 돌아가서 가는 것 중&lt;br /&gt;
-어느 것이 더 빠른지 비교한다.&lt;/li&gt;
-  &lt;li&gt;더 빠른 방법만큼 answer에 더하고, 뒤로 돌아갔다면 endBack을 true로 바꿔준다.&lt;/li&gt;
-  &lt;li&gt;A가 아닌 알파벳의 위치(현재 위치, i 값)를 idx에 할당한다.&lt;/li&gt;
-  &lt;li&gt;모든 글자를 다 돌고난 후(반복문이 끝나고), 뒤로 돌아간 적(endBack이 true인 경우)이 있는데 A로 끝나는 name일 경우를 고려해준다.&lt;/li&gt;
-  &lt;li&gt;위와 같은 경우 A가 아닌 알파벳 중 마지막에 있는 것의 위치에서부터 마지막 A까지만큼 더해준다.&lt;/li&gt;
-  &lt;li&gt;answer 값을 반환한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
-&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;string&amp;gt;
-#include &amp;lt;vector&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endBack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;78&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;78&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;91&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;65&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;endBack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endBack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;문제 이상해…&lt;/li&gt;
-  &lt;li&gt;탐욕법(Greedy)은 부분적인 최적해가 전체적인 최적해가 되어야하는데 본 문제는 그 조건을 충족하지 않는다&lt;/li&gt;
-  &lt;li&gt;BBAABAA를 예시로 이야기하면, Greedy로 풀었을 때 답이 8이 되는데 실제 최소 값은 7이 된다&lt;/li&gt;
-  &lt;li&gt;미리 알파벳마다 수를 정의해두는 방법도 나쁘지 않을듯&lt;/li&gt;
-  &lt;li&gt;나는 ASCII 코드를 활용
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;[C++ 공식문서] std:vector:back &lt;a href=&quot;http://www.cplusplus.com/reference/vector/vector/back/&quot;&gt;http://www.cplusplus.com/reference/vector/vector/back/&lt;/a&gt;&lt;br /&gt;
-vector의 마지막에 있는 원소에 접근하기 위해서는 vector.back() 함수를 사용&lt;/li&gt;
-  &lt;li&gt;ASCII Table - 아스키 코드표 &lt;a href=&quot;https://shaeod.tistory.com/228&quot;&gt;https://shaeod.tistory.com/228&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sat, 21 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/21/%ED%83%90%EC%9A%95%EB%B2%95_%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1_level2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/21/%ED%83%90%EC%9A%95%EB%B2%95_%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1_level2.html</guid>
         
         <category>programmershighscorekit</category>
         

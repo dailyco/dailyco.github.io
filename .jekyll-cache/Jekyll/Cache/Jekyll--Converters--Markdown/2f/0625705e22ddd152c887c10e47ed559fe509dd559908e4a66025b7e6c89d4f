@@ -1,0 +1,190 @@
+I"�4<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/30/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89_%EC%98%88%EC%82%B0_level3.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [이분탐색] 예산</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>프로그래머스 고득점 Kit</li>
+        
+          <li>Binary Search</li>
+        
+          <li>Level 3</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jul 30, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>난이도 ★ ★ ★ ☆ ☆<br />
+이 문제를 풀기 전 이분탐색이 무엇인지 대충은 기억나는데 어떤 자료 형태로 생성해야하는지를 몰라 검색해보았다. 덕분에 데이터 베이스, 알고리즘 수업을 들으면서 배웠던게 제대로 기억이 났다. 이분탐색 문제라서 이분탐색을 사용해서 풀어보려고 다른 알고리즘은 세워보지 않았는데, 문제를 풀고나서 다른 사람 풀이를 보니 이분탐색이 아닌 완전 다른 알고리즘으로 푼 코드가 있었다. 엄청 신박하기도하고 쉽게 생각할 수 없는 알고리즘이었는데 정말 대단하다는 생각이 들었다. 그래서 해당 알고리즘을 참고한 코드도 함께 게시글에 올리니, 다른 분들도 참고해서 보시길! (▰˘◡˘▰)<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>국가의 역할 중 하나는 여러 지방의 예산요청을 심사하여 국가의 예산을 분배하는 것입니다.<br />
+국가예산의 총액은 미리 정해져 있어서 모든 예산요청을 배정해 주기는 어려울 수도 있습니다.<br />
+그래서 정해진 총액 이하에서 가능한 한 최대의 총 예산을 다음과 같은 방법으로 배정합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 모든 요청이 배정될 수 있는 경우에는 요청한 금액을 그대로 배정합니다.
+2. 모든 요청이 배정될 수 없는 경우에는 특정한 정수 상한액을 계산하여 그 이상인 예산요청에는 모두 상한액을 배정합니다. 
+   상한액 이하의 예산요청에 대해서는 요청한 금액을 그대로 배정합니다.
+</code></pre></div></div>
+<p><br />
+예를 들어, 전체 국가예산이 485이고 4개 지방의 예산요청이 각각 120, 110, 140, 150일 때,<br />
+상한액을 127로 잡으면 위의 요청들에 대해서 각각 120, 110, 127, 127을 배정하고 그 합이 484로 가능한 최대가 됩니다.<br />
+각 지방에서 요청하는 예산이 담긴 배열 budgets과 총 예산 M이 매개변수로 주어질 때,<br />
+위의 조건을 모두 만족하는 상한액을 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>지방의 수는 3 이상 100,000 이하인 자연수입니다.</li>
+  <li>각 지방에서 요청하는 예산은 1 이상 100,000 이하인 자연수입니다.</li>
+  <li>총 예산은 지방의 수 이상 1,000,000,000 이하인 자연수입니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li><br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<h4 id="내가-푼-알고리즘-코드-통과-o">내가 푼 알고리즘 코드 (통과 O)</h4>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">bool</span> <span class="nf">is_ceiling</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">budgets</span><span class="p">,</span> <span class="kt">int</span> <span class="n">M</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ceiling</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">budget</span> <span class="o">:</span> <span class="n">budgets</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">budget</span> <span class="o">&gt;</span> <span class="n">ceiling</span><span class="p">)</span> <span class="n">total</span> <span class="o">+=</span> <span class="n">ceiling</span><span class="p">;</span>
+        <span class="k">else</span> <span class="n">total</span> <span class="o">+=</span> <span class="n">budget</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="n">M</span><span class="o">?</span> <span class="nb">false</span> <span class="o">:</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">budgets</span><span class="p">,</span> <span class="kt">int</span> <span class="n">M</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">right</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="o">*</span><span class="n">max_element</span><span class="p">(</span><span class="n">budgets</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">budgets</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    
+    <span class="k">while</span><span class="p">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">is_ceiling</span><span class="p">(</span><span class="n">budgets</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">mid</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">mid</span> <span class="o">&gt;=</span> <span class="n">max</span><span class="p">)</span> <span class="k">return</span> <span class="n">max</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">is_ceiling</span><span class="p">(</span><span class="n">budgets</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="k">return</span> <span class="n">mid</span><span class="p">;</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="다른-사람-알고리즘-참고한-코드-통과-o">다른 사람 알고리즘 참고한 코드 (통과 O)</h4>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">budgets</span><span class="p">,</span> <span class="kt">int</span> <span class="n">M</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">numbers</span> <span class="o">=</span> <span class="n">budgets</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    
+    <span class="n">sort</span><span class="p">(</span><span class="n">budgets</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">budgets</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">budget</span> <span class="o">:</span> <span class="n">budgets</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">budget</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">M</span> <span class="o">/</span> <span class="n">numbers</span><span class="p">))</span> <span class="k">return</span> <span class="n">M</span><span class="o">/</span><span class="n">numbers</span><span class="p">;</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="n">M</span> <span class="o">-=</span> <span class="n">budget</span><span class="p">;</span>
+            <span class="n">numbers</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">budgets</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>정수형 데이터 타입 int 범위
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>데이터 형식 범위 <a href="https://blog.kimtae.xyz/133">https://blog.kimtae.xyz/133</a><br />
+정수형 데이터 타입 int 범위는 –2,147,483,648 ~ 2,147,483,647 이다
+<br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/30/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89_%EC%98%88%EC%82%B0_level3.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/30/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89_%EC%98%88%EC%82%B0_level3.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
