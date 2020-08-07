@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<title>프로그래머스 코딩테스트 고득점 Kit : [동적계획법] N으로 표현</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>프로그래머스 코딩테스트 고득점 Kit : [동적계획법] N으로 표현 | Opencoding</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="프로그래머스 코딩테스트 고득점 Kit : [동적계획법] N으로 표현" />
+<meta name="author" content="YuJin Kim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="난이도 ★ ★ ★ ☆ ☆ 이 문제는 조금 많이 고민했고, 아직까지도 왜 DP 문제인지 잘 모르겠는 문제이다. 어떻게 어떻게 풀기는 했으나 진짜 효율성이 너무 똥망…(●´⌓`●) 아직 다른 사람 코드는 보지 않은 상태인데, 다른 사람 코드를 보면서 많이 공부해야하는 문제이다. 이 문제를 Dynamic Programming으로 푼 사람이 얼마나 될까..? 내가 푼 방법은 Dynamic Programming 이라기 보다는 Brute Force에 가까운 알고리즘 풀이 방식인 것 같다 ʘ̥﹏ʘ" />
+<meta property="og:description" content="난이도 ★ ★ ★ ☆ ☆ 이 문제는 조금 많이 고민했고, 아직까지도 왜 DP 문제인지 잘 모르겠는 문제이다. 어떻게 어떻게 풀기는 했으나 진짜 효율성이 너무 똥망…(●´⌓`●) 아직 다른 사람 코드는 보지 않은 상태인데, 다른 사람 코드를 보면서 많이 공부해야하는 문제이다. 이 문제를 Dynamic Programming으로 푼 사람이 얼마나 될까..? 내가 푼 방법은 Dynamic Programming 이라기 보다는 Brute Force에 가까운 알고리즘 풀이 방식인 것 같다 ʘ̥﹏ʘ" />
+<link rel="canonical" href="http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_N%EC%9C%BC%EB%A1%9C%ED%91%9C%ED%98%84_level3.html" />
+<meta property="og:url" content="http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_N%EC%9C%BC%EB%A1%9C%ED%91%9C%ED%98%84_level3.html" />
+<meta property="og:site_name" content="Opencoding" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-07T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"프로그래머스 코딩테스트 고득점 Kit : [동적계획법] N으로 표현","dateModified":"2020-08-07T00:00:00+09:00","datePublished":"2020-08-07T00:00:00+09:00","url":"http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_N%EC%9C%BC%EB%A1%9C%ED%91%9C%ED%98%84_level3.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_N%EC%9C%BC%EB%A1%9C%ED%91%9C%ED%98%84_level3.html"},"author":{"@type":"Person","name":"YuJin Kim"},"description":"난이도 ★ ★ ★ ☆ ☆ 이 문제는 조금 많이 고민했고, 아직까지도 왜 DP 문제인지 잘 모르겠는 문제이다. 어떻게 어떻게 풀기는 했으나 진짜 효율성이 너무 똥망…(●´⌓`●) 아직 다른 사람 코드는 보지 않은 상태인데, 다른 사람 코드를 보면서 많이 공부해야하는 문제이다. 이 문제를 Dynamic Programming으로 푼 사람이 얼마나 될까..? 내가 푼 방법은 Dynamic Programming 이라기 보다는 Brute Force에 가까운 알고리즘 풀이 방식인 것 같다 ʘ̥﹏ʘ","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/custom/header.css">
+    </head>
+
+    <body>
+        
+
+        <div class="masthead">
+            <div class="masthead__inner-wrap">
+                <div class="masthead__menu">
+                <nav id="site-nav" class="greedy-nav">
+                    
+                    <a class="site-logo" href="/"><img src="/assets/img/header//logo.png" alt=""></a>
+                    
+                    <a class="site-title" href="/">Opencoding</a>
+                    <!-- <button class="greedy-nav__toggle hidden" type="button"></button>
+                    <ul class="hidden-links hidden"><li class="masthead__menu-item">
+                                <a href="/about/" >ABOUT</a>
+                            </li><li class="masthead__menu-item">
+                                <a href="/tags/" >TAGS</a>
+                            </li></ul> -->
+                    <ul class="visible-links"><li class="masthead__menu-item">
+                        <a href="/about/" >ABOUT</a>
+                        </li><li class="masthead__menu-item">
+                        <a href="/tags/" >TAGS</a>
+                        </li></ul>
+                    <!-- <li class="masthead__menu-item">
+                            
+                                <button class="search__toggle " type="button">
+                                <span class="visually-hidden">Toggle search</span>
+                                <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+                                    <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+                                </svg>
+                                </button>
+                            
+                        </li> -->
+                </nav>
+                </div>
+            </div>
+        </div>
+
+        <section class="body_content">
+            <main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim"></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_N%EC%9C%BC%EB%A1%9C%ED%91%9C%ED%98%84_level3.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [동적계획법] N으로 표현</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>프로그래머스 고득점 Kit</li>
+        
+          <li>Dynamic Programming</li>
+        
+          <li>Level 3</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Aug 7, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>난이도 ★ ★ ★ ☆ ☆<br />
+이 문제는 조금 많이 고민했고, 아직까지도 왜 DP 문제인지 잘 모르겠는 문제이다. 어떻게 어떻게 풀기는 했으나 진짜 효율성이 너무 똥망…(●´⌓`●) 아직 다른 사람 코드는 보지 않은 상태인데, 다른 사람 코드를 보면서 많이 공부해야하는 문제이다. 이 문제를 Dynamic Programming으로 푼 사람이 얼마나 될까..? 내가 푼 방법은 Dynamic Programming 이라기 보다는 Brute Force에 가까운 알고리즘 풀이 방식인 것 같다 ʘ̥﹏ʘ<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>아래와 같이 5와 사칙연산만으로 12를 표현할 수 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>12 = 5 + 5 + (5 / 5) + (5 / 5)
+12 = 55 / 5 + 5 / 5
+12 = (55 + 5) / 5
+</code></pre></div></div>
+
+<p>5를 사용한 횟수는 각각 6,5,4 입니다. 그리고 이중 가장 작은 경우는 4입니다.<br />
+이처럼 숫자 N과 number가 주어질 때, N과 사칙연산만 사용해서 표현 할 수 있는 방법 중 N 사용횟수의 최솟값을 return 하도록 solution 함수를 작성하세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>N은 1 이상 9 이하입니다.</li>
+  <li>number는 1 이상 32,000 이하입니다.</li>
+  <li>수식에는 괄호와 사칙연산만 가능하며 나누기 연산에서 나머지는 무시합니다.</li>
+  <li>최솟값이 8보다 크면 -1을 return 합니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li>N을 key만큼 사용해서 만들 수 있는 숫자들을 value로 하는 맵 c_values를 생성한다.</li>
+  <li>answer 변수는 9로 초기화하여 해당 값보다 더 적은 숫자로 number를 만들 수 있으면 줄여주는 식으로 진행한다.</li>
+  <li>처음에 N을 1개부터 8개까지 이어붙인 숫자를 생성하여 c_values에 넣어주고,<br />
+해당 숫자중 number와 일치하는 숫자가 있다면 N을 이어붙인 갯수를 반환시켜준다.</li>
+  <li>N 1개로 만들 수 있는 숫자들부터 7개로 만들 수 있는 숫자들끼리 반복해서 사칙 연산을 한 숫자가 number와 일치하는지 확인하고,<br />
+일치한다면 해당 숫자를 만든 N의 갯수를 확인해 answer보다 적은 갯수로 만들었다면 answer의 갯수를 해당 갯수로 할당한다.<br />
+(사칙연산 중 나눗셈을 할 때에는 나누는 값이 0이 되어서는 안되므로 확인하는 과정을 추가한다)</li>
+  <li>반복문이 끝나고 answer를 확인해 처음과 그대로인 9면 number와 일치하는 값을 못찾았다는 이야기이므로 -1을 반환한고<br />
+그렇지 않은 경우에는 answer 값을 반환한다.<br />
+<br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;vector&gt;
+#include &lt;map&gt;
+#include &lt;set&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="kt">int</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">c_values</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">8</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="n">N</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">number</span><span class="p">)</span> <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+        <span class="n">c_values</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">c_values</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">begin</span><span class="p">();</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">c_values</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">end</span><span class="p">();</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c_values</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">begin</span><span class="p">();</span> <span class="n">b</span> <span class="o">!=</span> <span class="n">c_values</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">end</span><span class="p">();</span> <span class="n">b</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">a</span> <span class="o">+</span> <span class="o">*</span><span class="n">b</span> <span class="o">==</span> <span class="n">number</span> <span class="o">||</span> <span class="o">*</span><span class="n">a</span> <span class="o">-</span> <span class="o">*</span><span class="n">b</span> <span class="o">==</span> <span class="n">number</span> 
+                       <span class="o">||</span> <span class="o">*</span><span class="n">a</span> <span class="o">*</span> <span class="o">*</span><span class="n">b</span> <span class="o">==</span> <span class="n">number</span> <span class="o">||</span> <span class="p">(</span><span class="o">*</span><span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="o">*</span><span class="n">a</span> <span class="o">/</span> <span class="o">*</span><span class="n">b</span> <span class="o">==</span> <span class="n">number</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">answer</span><span class="p">)</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="n">c_values</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="o">*</span><span class="n">a</span> <span class="o">+</span> <span class="o">*</span><span class="n">b</span><span class="p">);</span>
+                    <span class="n">c_values</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="o">*</span><span class="n">a</span> <span class="o">-</span> <span class="o">*</span><span class="n">b</span><span class="p">);</span>
+                    <span class="n">c_values</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="o">*</span><span class="n">a</span> <span class="o">*</span> <span class="o">*</span><span class="n">b</span><span class="p">);</span>
+                    <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="n">c_values</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">].</span><span class="n">insert</span><span class="p">(</span><span class="o">*</span><span class="n">a</span> <span class="o">/</span> <span class="o">*</span><span class="n">b</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span> <span class="o">==</span> <span class="mi">9</span><span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li>효율성이 O(n<sup>4</sup>)… 더 좋은 방법 생각해보기!</li>
+  <li>DP로 푸는 방법 생각/찾아보기!
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>없다 (´∩｡• ᵕ •｡∩`) ♡
+<br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_N%EC%9C%BC%EB%A1%9C%ED%91%9C%ED%98%84_level3.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_N%EC%9C%BC%EB%A1%9C%ED%91%9C%ED%98%84_level3.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main><script async src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+  <script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+        </section>
+    </body>
+</html>

@@ -6,9 +6,329 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 Jul 2020 16:24:44 +0900</pubDate>
-    <lastBuildDate>Fri, 31 Jul 2020 16:24:44 +0900</lastBuildDate>
+    <pubDate>Fri, 07 Aug 2020 09:55:58 +0900</pubDate>
+    <lastBuildDate>Fri, 07 Aug 2020 09:55:58 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>프로그래머스 코딩테스트 고득점 Kit : [동적계획법] 등굣길</title>
+        <description>&lt;p&gt;난이도 ★ ★ ★ ☆ ☆&lt;br /&gt;
+이 문제는 예전에 남자친구가 나에게 냈었던 문제였기 때문에 알고리즘 자체는 그 때 풀었던대로 빠르게 세울 수 있었다. 그런데 빨리 풀겠다는 자만심 때문이었는지 알고리즘을 세우는 데에 있어서 조그만 실수를 한 부분 때문에 어디가 잘못되었는지 찾느라고 30분 정도를 소비한 것 같다. 이미 알고있는 문제라고, level3 문제 좀 푼다고 자만하면 안되는데 인간은 정말 끝없이 실수를 반복하는 것 같다 へ[ •́ ‸ •̀ ]ʋ&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
+&lt;p&gt;계속되는 폭우로 일부 지역이 물에 잠겼습니다. 물에 잠기지 않은 지역을 통해 학교를 가려고 합니다.&lt;br /&gt;
+집에서 학교까지 가는 길은 m x n 크기의 격자모양으로 나타낼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;아래 그림은 m = 4, n = 3 인 경우입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grepp-programmers.s3.amazonaws.com/files/ybm/056f54e618/f167a3bc-e140-4fa8-a8f8-326a99e0f567.png&quot; alt=&quot;mn_board&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;가장 왼쪽 위, 즉 집이 있는 곳의 좌표는 (1, 1)로 나타내고 가장 오른쪽 아래, 즉 학교가 있는 곳의 좌표는 (m, n)으로 나타냅니다.&lt;/p&gt;
+
+&lt;p&gt;격자의 크기 m, n과 물이 잠긴 지역의 좌표를 담은 2차원 배열 puddles이 매개변수로 주어집니다.&lt;br /&gt;
+집에서 학교까지 갈 수 있는 최단경로의 개수를 1,000,000,007로 나눈 나머지를 return 하도록 solution 함수를 작성해주세요.&lt;/p&gt;
+
+&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;격자의 크기 m, n은 1 이상 100 이하인 자연수입니다.
+    &lt;ul&gt;
+      &lt;li&gt;m과 n이 모두 1인 경우는 입력으로 주어지지 않습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;물에 잠긴 지역은 0개 이상 10개 이하입니다.&lt;/li&gt;
+  &lt;li&gt;집과 학교가 물에 잠긴 경우는 입력으로 주어지지 않습니다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;(m+1)×(n+1) 크기의 이차원 벡터의 값을 모두 -1로 초기화한 mn 변수를 생성한다.&lt;br /&gt;
+(해당 변수는 각 지역까지 최단경로로 갈 수 있는 경우의 수를 나타낼 변수이다)&lt;/li&gt;
+  &lt;li&gt;이차원 벡터의 [1][1] 좌표는 1로, [0][x] 좌표와 [x][0] 좌표는 모두 0으로 초기화한다.&lt;/li&gt;
+  &lt;li&gt;puddle 이차원 벡터를 사용해서 물에 잠긴 지역은 어차피 해당 지역으로 갈 수 없으니 0을 할당한다.&lt;/li&gt;
+  &lt;li&gt;이차원 벡터 mn을 돌면서 아직 최단경로로 갈 수 있는 경우의 수를 구하지 않았다면(해당 지역 값이 -1이라면)&lt;br /&gt;
+해당 지역의 왼쪽과 위쪽 지역에 최단경로로 갈 수 있는 경우의 수를 더해 1,000,000,007로 나눈 나머지로 나타낸다.&lt;br /&gt;
+(최단 경로로 해당 지역에 도착하기 위해서는 오른쪽과 아래로만 이동해야한다(물론 예외 케이스가 있긴하다)&lt;br /&gt;
+따라서 왼쪽에서 해당 지역에 오는 경우와 위쪽에서 해당 지역에 오는 경우를 합하여 경우의 수를 구해주고,&lt;br /&gt;
+문제 상에서 최단경로의 개수를 1,000,000,007로 나눈 나머지를 구하라고 했으므로&lt;br /&gt;
+계산 중에 overflow가 일어나는 것을 고려해 해당 값으로 나눈 나머지를 넣어준다.)&lt;/li&gt;
+  &lt;li&gt;반복문이 끝나면 (m, n) 좌표의 값을 반환한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
+&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puddles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;mn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puddle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;puddles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puddle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;puddle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;mn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000000007&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;2차원 벡터 초기화 방법&lt;/li&gt;
+  &lt;li&gt;알고리즘을 세우고 꼼꼼히 확인하기!
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;2 차원 std :: vector 초기화 &lt;a href=&quot;https://www.it-swarm.dev/ko/c%2B%2B/2-%EC%B0%A8%EC%9B%90-std-vector-%EC%B4%88%EA%B8%B0%ED%99%94/1041384922/&quot;&gt;https://www.it-swarm.dev/ko/c%2B%2B/2-%EC%B0%A8%EC%9B%90-std-vector-%EC%B4%88%EA%B8%B0%ED%99%94/1041384922/&lt;/a&gt;&lt;br /&gt;
+2차원 벡터를 생성과 동시에 초기화를 시킬 때는 &lt;code class=&quot;highlighter-rouge&quot;&gt;vector&amp;lt;vector&amp;lt;data_type&amp;gt;&amp;gt; var_name(row_number, vector&amp;lt;data_type&amp;gt;(col_number, initialize_value))&lt;/code&gt; 형태를 사용
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Fri, 07 Aug 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_%EB%93%B1%EA%B5%A3%EA%B8%B8_level3.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_%EB%93%B1%EA%B5%A3%EA%B8%B8_level3.html</guid>
+        
+        <category>programmershighscorekit</category>
+        
+        <category>dynamicprogramming</category>
+        
+        <category>level3</category>
+        
+        <category>algorithm</category>
+        
+        <category>cplusplus</category>
+        
+        
+        <category>프로그래머스고득점Kit</category>
+        
+      </item>
+    
+      <item>
+        <title>프로그래머스 코딩테스트 고득점 Kit : [동적계획법] N으로 표현</title>
+        <description>&lt;p&gt;난이도 ★ ★ ★ ☆ ☆&lt;br /&gt;
+이 문제는 조금 많이 고민했고, 아직까지도 왜 DP 문제인지 잘 모르겠는 문제이다. 어떻게 어떻게 풀기는 했으나 진짜 효율성이 너무 똥망…(●´⌓`●) 아직 다른 사람 코드는 보지 않은 상태인데, 다른 사람 코드를 보면서 많이 공부해야하는 문제이다. 이 문제를 Dynamic Programming으로 푼 사람이 얼마나 될까..? 내가 푼 방법은 Dynamic Programming 이라기 보다는 Brute Force에 가까운 알고리즘 풀이 방식인 것 같다 ʘ̥﹏ʘ&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
+&lt;p&gt;아래와 같이 5와 사칙연산만으로 12를 표현할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;12 = 5 + 5 + (5 / 5) + (5 / 5)
+12 = 55 / 5 + 5 / 5
+12 = (55 + 5) / 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;5를 사용한 횟수는 각각 6,5,4 입니다. 그리고 이중 가장 작은 경우는 4입니다.&lt;br /&gt;
+이처럼 숫자 N과 number가 주어질 때, N과 사칙연산만 사용해서 표현 할 수 있는 방법 중 N 사용횟수의 최솟값을 return 하도록 solution 함수를 작성하세요.&lt;/p&gt;
+
+&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;N은 1 이상 9 이하입니다.&lt;/li&gt;
+  &lt;li&gt;number는 1 이상 32,000 이하입니다.&lt;/li&gt;
+  &lt;li&gt;수식에는 괄호와 사칙연산만 가능하며 나누기 연산에서 나머지는 무시합니다.&lt;/li&gt;
+  &lt;li&gt;최솟값이 8보다 크면 -1을 return 합니다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;N을 key만큼 사용해서 만들 수 있는 숫자들을 value로 하는 맵 c_values를 생성한다.&lt;/li&gt;
+  &lt;li&gt;answer 변수는 9로 초기화하여 해당 값보다 더 적은 숫자로 number를 만들 수 있으면 줄여주는 식으로 진행한다.&lt;/li&gt;
+  &lt;li&gt;처음에 N을 1개부터 8개까지 이어붙인 숫자를 생성하여 c_values에 넣어주고,&lt;br /&gt;
+해당 숫자중 number와 일치하는 숫자가 있다면 N을 이어붙인 갯수를 반환시켜준다.&lt;/li&gt;
+  &lt;li&gt;N 1개로 만들 수 있는 숫자들부터 7개로 만들 수 있는 숫자들끼리 반복해서 사칙 연산을 한 숫자가 number와 일치하는지 확인하고,&lt;br /&gt;
+일치한다면 해당 숫자를 만든 N의 갯수를 확인해 answer보다 적은 갯수로 만들었다면 answer의 갯수를 해당 갯수로 할당한다.&lt;br /&gt;
+(사칙연산 중 나눗셈을 할 때에는 나누는 값이 0이 되어서는 안되므로 확인하는 과정을 추가한다)&lt;/li&gt;
+  &lt;li&gt;반복문이 끝나고 answer를 확인해 처음과 그대로인 9면 number와 일치하는 값을 못찾았다는 이야기이므로 -1을 반환한고&lt;br /&gt;
+그렇지 않은 경우에는 answer 값을 반환한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
+&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;
+#include &amp;lt;map&amp;gt;
+#include &amp;lt;set&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;c_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; 
+                       &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;c_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;c_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;c_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;효율성이 O(n&lt;sup&gt;4&lt;/sup&gt;)… 더 좋은 방법 생각해보기!&lt;/li&gt;
+  &lt;li&gt;DP로 푸는 방법 생각/찾아보기!
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;없다 (´∩｡• ᵕ •｡∩`) ♡
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Fri, 07 Aug 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%92%E1%85%AC%E1%86%A8%E1%84%87%E1%85%A5%E1%86%B8_N%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%E1%84%91%E1%85%AD%E1%84%92%E1%85%A7%E1%86%AB_level3.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%92%E1%85%AC%E1%86%A8%E1%84%87%E1%85%A5%E1%86%B8_N%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%E1%84%91%E1%85%AD%E1%84%92%E1%85%A7%E1%86%AB_level3.html</guid>
+        
+        <category>programmershighscorekit</category>
+        
+        <category>dynamicprogramming</category>
+        
+        <category>level3</category>
+        
+        <category>algorithm</category>
+        
+        <category>cplusplus</category>
+        
+        
+        <category>프로그래머스고득점Kit</category>
+        
+      </item>
+    
+      <item>
+        <title>프로그래머스 코딩테스트 고득점 Kit : [동적계획법] 정수 삼각형</title>
+        <description>&lt;p&gt;난이도 ★ ★ ★ ☆ ☆&lt;br /&gt;
+이 문제를 푼지는 꽤 됐는데, 요즘 이래저래 정신이 없다보니까 문제를 풀기만하고 블로그에 정리를 못했다. 덕분에 정리할 문제가 밀린 상태..😅 문제를 풀고 그때그때 정리해야 기억에도 더 오래 남고 공부가 제대로 될텐데 요즘 조금씩 지친건지, 나태해진건지… 다시 한 번 마음을 다잡고 열심히 해야겠다는 생각이 든다. 이 문제는 동적 계획법 문제를 처음 푸는거라 조금 헤맸었는데, 계속해서 알고리즘을 생각해보면서 효율성 좋게 알고리즘을 탄탄히 세워갈 수 있었다. 문제를 풀고 나서는 꽤 뿌듯-(ღ˘⌣˘ღ)&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://grepp-programmers.s3.amazonaws.com/files/production/97ec02cc39/296a0863-a418-431d-9e8c-e57f7a9722ac.png&quot; alt=&quot;정수_삼각형&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위와 같은 삼각형의 꼭대기에서 바닥까지 이어지는 경로 중, 거쳐간 숫자의 합이 가장 큰 경우를 찾아보려고 합니다.&lt;br /&gt;
+아래 칸으로 이동할 때는 대각선 방향으로 한 칸 오른쪽 또는 왼쪽으로만 이동 가능합니다.&lt;br /&gt;
+예를 들어 3에서는 그 아래칸의 8 또는 1로만 이동이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;삼각형의 정보가 담긴 배열 triangle이 매개변수로 주어질 때, 거쳐간 숫자의 최댓값을 return 하도록 solution 함수를 완성하세요.&lt;/p&gt;
+
+&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;삼각형의 높이는 1 이상 500 이하입니다.&lt;/li&gt;
+  &lt;li&gt;삼각형을 이루고 있는 숫자는 0 이상 9,999 이하의 정수입니다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;테스트 케이스에서 2차원 배열의 행 사이즈가 같기 때문에,&lt;br /&gt;
+첫 번째 행의 사이즈를 이용해서 삼각형의 아래에서 두번째 줄의 실질적인 사이즈를 구해 count 변수를 생성하고 해당 값으로 초기화한다.&lt;/li&gt;
+  &lt;li&gt;아래에서 두번째 줄부터 시작해서 원소를 한 개씩 돌면서, 아랫줄의 오른쪽/왼쪽 값 중 더 큰 수가 될 수 있는 수를 골라 더한다.&lt;br /&gt;
+(어쨋든 아래에서 위로 올라오면서 오른쪽/왼쪽 값 중 한 개의 값을 받을 것인데, 최댓값을 구해야하기 때문에 큰 수가 되는 방향으로 더하는 것)&lt;/li&gt;
+  &lt;li&gt;첫 번째 줄까지 올라와 반복이 끝나면, 꼭대기(첫번째 줄, 첫번째 값) 값을 반환한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
+&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
+                &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Java는 안그런데 C++ 테스트 케이스는 2차원 배열에서 모든 행이 갖는 배열 사이즈가 모두 똑같더라, 유의할 것!
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;없다 (◞ꈍ∇ꈍ)◞
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 06 Aug 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/06/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_%EC%A0%95%EC%88%98%EC%82%BC%EA%B0%81%ED%98%95_level3.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/06/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_%EC%A0%95%EC%88%98%EC%82%BC%EA%B0%81%ED%98%95_level3.html</guid>
+        
+        <category>programmershighscorekit</category>
+        
+        <category>dynamicprogramming</category>
+        
+        <category>level3</category>
+        
+        <category>algorithm</category>
+        
+        <category>cplusplus</category>
+        
+        
+        <category>프로그래머스고득점Kit</category>
+        
+      </item>
     
       <item>
         <title>프로그래머스 코딩테스트 고득점 Kit : [이분탐색] 입국심사</title>
@@ -57,7 +377,6 @@
 
 &lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
 &lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
-&lt;h4 id=&quot;내가-푼-알고리즘-코드-통과-o&quot;&gt;내가 푼 알고리즘 코드 (통과 O)&lt;/h4&gt;
 &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;
 &lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -3532,447 +3851,6 @@ Boot Camp를 선택하면 Window로 실행되고, Macintosh HD를 선택하면 M
         
         
         <category>Install</category>
-        
-      </item>
-    
-      <item>
-        <title>[Mac] 맥 BootCamp를 사용해서 윈도우10 설치</title>
-        <description>&lt;p&gt;본 포스팅에서는 Mac의 BootCamp를 사용해서 윈도우10 운영체제를 설치하는 방법에 대해서 설명한다. 여러 블로그를 검색하다가 전부 잘 이해가 되지 않아 열심히 검색하고 또 찾아보고 포스팅한다. 나처럼 방법을 잘 몰라 헤메었던 사람들에게 많은 도움이 되길 바라며…ㅠㅠ&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-window10-iso-파일-다운&quot;&gt;1. Window10 ISO 파일 다운&lt;/h2&gt;
-&lt;p&gt;ISO 파일을 다운 받지 않고 바로 이 포스팅으로 온 사람들을 위해,&lt;br /&gt;
-아래 링크에 들어가 나온 순서대로 따라하면 ISO 파일을 다운 받을 수 있을 것이다.&lt;br /&gt;
-&lt;a href=&quot;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&quot;&gt;https://0pencoding.github.io/install/2020/03/24/Window10_ISO_download.html&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-bootcamp로-window-설치&quot;&gt;2. BootCamp로 Window 설치&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-command--space-버튼을-눌러-spotlight-검색창을-띄우고-boot-camp-지원을-검색해-해당-창을-띄워준다&quot;&gt;1. ‘command + space’ 버튼을 눌러 spotlight 검색창을 띄우고, ‘Boot Camp 지원’을 검색해 해당 창을 띄워준다.&lt;/h3&gt;
-
-&lt;p&gt;꼭 이 방법으로 하지 않아도되고, ‘finder-응용프로그램-Utility-Boot Camp 지원’ 을 통해서 창을 띄워줘도 된다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-아래와-같은-boot-camp-지원-창을-볼-수-있는데-계속-버튼을-클릭한다&quot;&gt;2. 아래와 같은 ‘Boot Camp 지원’ 창을 볼 수 있는데, ‘계속’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/9.png&quot; alt=&quot;step9&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-이전에위에서-다운받았던-iso-파일을-선택하고-용량을-설정해준다&quot;&gt;3. 이전에(위에서) 다운받았던 ISO 파일을 선택하고, 용량을 설정해준다.&lt;/h3&gt;
-&lt;p&gt;보통의 서류작업은 30~40GB면 충분하고 노란색 바를 드래그해서 용량을 설정할 수 있다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/10.png&quot; alt=&quot;step10&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-아래와-같이-설정해주고-설치-버튼을-클릭한다&quot;&gt;4. 아래와 같이 설정해주고 ‘설치’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/11.png&quot; alt=&quot;step11&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;5-아래와-같은-작업이-끝나고-설치가-완료된다&quot;&gt;5. 아래와 같은 작업이 끝나고 설치가 완료된다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/12.png&quot; alt=&quot;step12&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;6-설치가-완료되면-아래와-같은-노란창이-뜨는데-암호를-입력하고-확인-버튼을-누르면-컴퓨터가-재부팅된다&quot;&gt;6. 설치가 완료되면 아래와 같은 노란창이 뜨는데, 암호를 입력하고 ‘확인’ 버튼을 누르면 컴퓨터가 재부팅된다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/13.png&quot; alt=&quot;step13&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;7-재부팅되고-로딩이-되면-아래-화면과-같이-보인다&quot;&gt;7. 재부팅되고 로딩이 되면 아래 화면과 같이 보인다.&lt;/h3&gt;
-&lt;p&gt;이 아래부터는 캡쳐를 하기가 힘들어 핸드폰으로 찍은 사진이라 화질이 좋지않고 프레임이 바르지 않다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/14.jpeg&quot; alt=&quot;step14&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;8-재부팅이-되고나면-아래와-같은-창이-뜨는데-다음-버튼을-클릭한다&quot;&gt;8. 재부팅이 되고나면 아래와 같은 창이 뜨는데, ‘다음’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/15.jpeg&quot; alt=&quot;step15&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;9-아까-적어두었던-제품-키-번호를-입력하고-다음-버튼을-클릭한다&quot;&gt;9. 아까 적어두었던 제품 키 번호를 입력하고, ‘다음’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;제품 키 번호는 차후에 변경 가능하므로 잘 모르겠다면 그냥 넘아가도 된다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/16.jpeg&quot; alt=&quot;step16&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;10-동의함-에-체크를-하고-다음-버튼을-클릭한다&quot;&gt;10. ‘동의함’ 에 체크를 하고 ‘다음’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/17.jpeg&quot; alt=&quot;step17&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;11-아래-창과-같이-설치가-되는-창이-보여진다&quot;&gt;11. 아래 창과 같이 설치가 되는 창이 보여진다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/18-1.jpeg&quot; alt=&quot;step18-1&quot; width=&quot;300px&quot; /&gt;
-&lt;img src=&quot;/assets/img/post/Install/Window10/18-2.jpeg&quot; alt=&quot;step18-2&quot; width=&quot;300px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;12-설치가-완료되면-컴퓨터가-다시-시작-된다&quot;&gt;12. 설치가 완료되면 컴퓨터가 다시 시작 된다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/19.jpeg&quot; alt=&quot;step19&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;13-아래와-같이-로딩-화면이-나오고&quot;&gt;13. 아래와 같이 로딩 화면이 나오고&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/20.jpeg&quot; alt=&quot;step20&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;14-다시-시작이-되면-아래-화면과-같이-나오는데-한국-으로-설정하고-예-버튼을-클릭한다&quot;&gt;14. 다시 시작이 되면 아래 화면과 같이 나오는데, ‘한국’ 으로 설정하고 ‘예’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/21.jpeg&quot; alt=&quot;step21&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;15-microsoft-입력기-로-설정하고-예-버튼을-클릭한다&quot;&gt;15. ‘Microsoft 입력기’ 로 설정하고 ‘예’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/22.jpeg&quot; alt=&quot;step22&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;16-두번째-레이아웃으로-영어를-추가해도되고-건너뛰기를-선택해도된다-본인은-건너뛰었는데-영어-자판에-문제-없었다&quot;&gt;16. 두번째 레이아웃으로 영어를 추가해도되고, 건너뛰기를 선택해도된다. (본인은 건너뛰었는데 영어 자판에 문제 없었다)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/23.jpeg&quot; alt=&quot;step23&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;17-네트워크-설정은-만약-네트워크가-나온다면-해당-네트워크를-설정해주고-아래와-같다면-인터넷이-없음을-선택한다&quot;&gt;17. 네트워크 설정은 만약 네트워크가 나온다면 해당 네트워크를 설정해주고, 아래와 같다면 ‘인터넷이 없음’을 선택한다.&lt;/h3&gt;
-&lt;p&gt;네트워크가 나와 설정하면, 몇 가지 창이 더 나올텐데 그 부분은 아래에서 설명하겠다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/24.jpeg&quot; alt=&quot;step24&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;18-제한된-설치로-계속을-선택한다-네트워크-설정을-해준-사람은-해당x&quot;&gt;18. ‘제한된 설치로 계속’을 선택한다. (네트워크 설정을 해준 사람은 해당X)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/25.jpeg&quot; alt=&quot;step25&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;19-이름과-비밀번호를-설정하고-비밀번호-분실시-질문-답변을-모두-설정한다&quot;&gt;19. 이름과 비밀번호를 설정하고 비밀번호 분실시 질문 답변을 모두 설정한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/26-1.jpeg&quot; alt=&quot;step26-1&quot; width=&quot;300px&quot; /&gt;
-&lt;img src=&quot;/assets/img/post/Install/Window10/26-2.jpeg&quot; alt=&quot;step26-2&quot; width=&quot;300px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;20-예를-클릭한다&quot;&gt;20. ‘예’를 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/27.jpeg&quot; alt=&quot;step27&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;21-수락을-클릭한다&quot;&gt;21. ‘수락’을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/28.jpeg&quot; alt=&quot;step28&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;22-아래-화면이-나오면서-조금-기다리면&quot;&gt;22. 아래 화면이 나오면서 조금 기다리면&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/29.jpeg&quot; alt=&quot;step29&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;23-이렇게-window-화면이-나온다-하지만-여기에서-끝이-아니다&quot;&gt;23. 이렇게 Window 화면이 나온다! 하지만 여기에서 끝이 아니다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/30.png&quot; alt=&quot;step30&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;24-내-문서에서-내-pc-osxreservedd-를-클릭한다&quot;&gt;24. 내 문서에서 ‘내 PC-OSXRESERVED(D:)’ 를 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/31.png&quot; alt=&quot;step31&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;25-bootcamp-를-클릭하고&quot;&gt;25. ‘BootCamp’ 를 클릭하고,&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/32.png&quot; alt=&quot;step32&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;26-setup-을-클릭하면&quot;&gt;26. ‘Setup’ 을 클릭하면&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/33.png&quot; alt=&quot;step33&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;27-아래와-같은-창이-나온다-예-를-클릭하면&quot;&gt;27. 아래와 같은 창이 나온다. ‘예’ 를 클릭하면&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/34.jpeg&quot; alt=&quot;step34&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;28-bootcamp-설치-창이-나온다-window에-bootcamp를-설치하는-과정이다-다음-버튼을-클릭한다&quot;&gt;28. ‘BootCamp’ 설치 창이 나온다. Window에 BootCamp를 설치하는 과정이다. ‘다음’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/35.png&quot; alt=&quot;step35&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;29-사용-약관에-동의해주고-설치-버튼을-클릭한다&quot;&gt;29. 사용 약관에 동의해주고, ‘설치’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/36.png&quot; alt=&quot;step36&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;30-아래와-같이-설치되는동안-조금-기다려주고&quot;&gt;30. 아래와 같이 설치되는동안 조금 기다려주고&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/37.png&quot; alt=&quot;step37&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;31-설치가-다-되어-아래와-같은-화면이-나오면-마침-버튼을-눌러준다-컴퓨터가-재부팅되고-다시-켜지면-완료&quot;&gt;31. 설치가 다 되어 아래와 같은 화면이 나오면 ‘마침’ 버튼을 눌러준다. 컴퓨터가 재부팅되고 다시 켜지면 완료!&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/38.png&quot; alt=&quot;step38&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-네트워크-설정&quot;&gt;3. 네트워크 설정&lt;/h2&gt;
-&lt;p&gt;위와 같은 단계를 마무리하고, 실제로 엣지나 크롬 인터넷을 사용하기 위해서는 네트워크를 설정해야한다.&lt;br /&gt;
-자신이 사용하는 와이파이를 연결시키고 나면, 나머지 환경설정을 마무리할 수 있다는 화면이 나오게 되는데, 이 부분까지 마무리해보자.&lt;/p&gt;
-
-&lt;h3 id=&quot;1-설정을-위해-시작-버튼을-클릭한다&quot;&gt;1. 설정을 위해 ‘시작’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/39.jpeg&quot; alt=&quot;step39&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-microsoft-계정으로-로그인을-해준다-없으면-만들도록-하자&quot;&gt;2. Microsoft 계정으로 로그인을 해준다. (없으면 만들도록 하자)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/40-1.jpeg&quot; alt=&quot;step40-1&quot; width=&quot;300px&quot; /&gt;
-&lt;img src=&quot;/assets/img/post/Install/Window10/40-2.jpeg&quot; alt=&quot;step40-2&quot; width=&quot;300px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-사실-여기부터는-원하는대로-설정하면-된다-본인은-넘어가기위해-다음을-클릭&quot;&gt;3. 사실 여기부터는 원하는대로 설정하면 된다. (본인은 넘어가기위해 ‘다음’을 클릭)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/41.jpeg&quot; alt=&quot;step41&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-넘어가려면-다음-을-클릭한다&quot;&gt;4. 넘어가려면 ‘다음’ 을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/42.jpeg&quot; alt=&quot;step42&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;5-본인은-학교에서-제공하는-microsoft-서비스가-있기-때문에-제품키가-있습니다-클릭-그냥-넘어가기-위해-클릭해도-된다&quot;&gt;5. 본인은 학교에서 제공하는 Microsoft 서비스가 있기 때문에 ‘제품키가 있습니다’ 클릭 (그냥 넘어가기 위해 클릭해도 된다)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/43.jpeg&quot; alt=&quot;step43&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;6-드디어-끝이-났다-닫기-버튼을-클릭한다&quot;&gt;6. 드디어 끝이 났다! ‘닫기’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/44.jpeg&quot; alt=&quot;step44&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-마무리&quot;&gt;4. 마무리&lt;/h2&gt;
-&lt;p&gt;드디어 끝이 났다.&lt;br /&gt;
-나는 설치하는 데에 정말 오래걸렸는데 이걸 따라하는 사람들은 잘 따라해서 도움이 되었으면 좋겠다.&lt;/p&gt;
-
-&lt;p&gt;그리고 마지막으로, 막상 Window를 설치하고 어떻게 다시 Mac으로 돌아가는지 모르는 사람들이 있던데,&lt;br /&gt;
-이 경우 아래 링크를 참고하면 좋겠다.&lt;br /&gt;
-&lt;a href=&quot;https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html&quot;&gt;https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;5-reference&quot;&gt;5. Reference&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;맥(Mac) 부트캠프 윈도우10 설치 방법 &lt;a href=&quot;https://extrememanual.net/12760&quot;&gt;https://extrememanual.net/12760&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;맥에 윈도우 설치하기 (초보자를 위한 맥라이프 4편) &lt;a href=&quot;https://www.youtube.com/watch?v=YytE1SKavpc&quot;&gt;https://www.youtube.com/watch?v=YytE1SKavpc&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 25 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/install/2020/03/25/Mac_Window10_Install.html</link>
-        <guid isPermaLink="true">http://localhost:4000/install/2020/03/25/Mac_Window10_Install.html</guid>
-        
-        <category>mac</category>
-        
-        <category>window</category>
-        
-        <category>bootcamp</category>
-        
-        <category>window10</category>
-        
-        <category>install</category>
-        
-        
-        <category>Install</category>
-        
-      </item>
-    
-      <item>
-        <title>[Mac/Window] 학생 윈도우10 정품 및 윈도우10 무료 다운</title>
-        <description>&lt;p&gt;본 포스팅에서는 학생들이 윈도우10 정품 Edu 에디션 (Windows10 Edu) 을 무료로 다운 받는 방법을 이야기한다. 하지만 알아둬야 할 것은, 마이크로소프트와 계약이 되어있는 학교만을 대상으로하며, 학생이 아니거나 마이크로소프트와 계약이 되어있지 않은 학교 학생들도 정품 인증은 되지 않지만 윈도우10을 무료로 다운 받을 수 있는 방법을 소개한다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-마이크로소프트와-계약이-되어있는-학교인지-확인&quot;&gt;1. 마이크로소프트와 계약이 되어있는 학교인지 확인&lt;/h2&gt;
-&lt;p&gt;제목에서도 이야기했다싶이 학생들은 Window10, 정확히는 Window10 edu 에디션을 무료로 다운 받을 수 있다.&lt;br /&gt;
-단, 해당 학교가 마이크로소프트와 계약이 되어있는 학교 대상만!&lt;br /&gt;
-학생이 아니고, 학생이더라도 본인 학교가 마이크로소프트와 계약이 되어있지 않는 학생일 경우는 아래에서 다루도록 하겠다.&lt;/p&gt;
-
-&lt;p&gt;먼저, 아래 링크에서 본인 학교가 마이크로소프트와 계약이 되어있는지 확인 해보길 바란다.&lt;br /&gt;
-&lt;a href=&quot;https://onthehub.com/search&quot;&gt;https://onthehub.com/search&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;확인 방법은 아래와 같다.&lt;/p&gt;
-
-&lt;h3 id=&quot;1-홈페이지에-들어가-아래-화면-중-자신에게-해당되는-것을-고른다&quot;&gt;1. 홈페이지에 들어가 아래 화면 중 자신에게 해당되는 것을 고른다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/select.png&quot; alt=&quot;select&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-해당-칸에-자신의-국적과-학교를-검색한다&quot;&gt;2. 해당 칸에 자신의 국적과 학교를 검색한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/search.png&quot; alt=&quot;search&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-아래와-같은-화면이-보여지면-해당-학교는-있는-것이며-학교가-검색되지-않는다면-없는-것이다&quot;&gt;3. 아래와 같은 화면이 보여지면 해당 학교는 있는 것이며, 학교가 검색되지 않는다면 없는 것이다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/result.png&quot; alt=&quot;result&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-본인-학교가-마이크로소프트와-계약이-되어있는-경우&quot;&gt;2. 본인 학교가 마이크로소프트와 계약이 되어있는 경우&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-검색-결과에서-빨간-박스를-클릭한다-가려진-박스에는-본인의-학교가-있다&quot;&gt;1. 검색 결과에서 빨간 박스를 클릭한다. (가려진 박스에는 본인의 학교가 있다)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/1.png&quot; alt=&quot;step1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-아이디가-있다면-로그인을-하고-없다면-등록을-눌러-회원가입을-해준다&quot;&gt;2. 아이디가 있다면 로그인을 하고, 없다면 등록을 눌러 회원가입을 해준다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/2.png&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-로그인을-한-후-windows-10을-클릭한다-만약-메인-페이지에-없을-경우-microsoft-메뉴를-확인&quot;&gt;3. 로그인을 한 후, Windows 10을 클릭한다. (만약 메인 페이지에 없을 경우, Microsoft 메뉴를 확인)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/3.png&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-카트에-추가를-해주고-캡쳐는-하지-못했는데-자신의-이메일과-이름을-서명란에-그대로-입력해준다&quot;&gt;4. 카트에 추가를 해주고, 캡쳐는 하지 못했는데 자신의 이메일과 이름을 서명란에 그대로 입력해준다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/4.png&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;5-제품-키는-한-달-후에-돈을-내고-조회해야-하기-때문에-따로-메모를-해둔다&quot;&gt;5. 제품 키는 한 달 후에 돈을 내고 조회해야 하기 때문에 따로 메모를 해둔다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/5.png&quot; alt=&quot;step5&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이 과정 후에 두 가지로 나뉘는데,&lt;br /&gt;
-Window 컴퓨터에 Window10 운영체제를 설치하는 것과 Mac 컴퓨터에 Window10 운영체제를 설치하기 위해서 ISO 파일을 다운 받는 과정이다.&lt;br /&gt;
-전자를 먼저 설명한 후에, 후자도 이어서 설명하겠다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;a-1-window-컴퓨터에-window10-운영체제를-설치하려면-컴퓨터에서-window-업데이트-설정-을-찾는다&quot;&gt;A-1. Window 컴퓨터에 Window10 운영체제를 설치하려면 컴퓨터에서 ‘Window 업데이트 설정’ 을 찾는다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/A-1.png&quot; alt=&quot;stepA-1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;a-2-정품-인증-메뉴를-누르면-아래와-같은-화면이-보이는데-여기에-아까-메모해-두었던-정품-키를-입력한다&quot;&gt;A-2. ‘정품 인증’ 메뉴를 누르면 아래와 같은 화면이 보이는데 여기에 아까 메모해 두었던 정품 키를 입력한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/A-2.png&quot; alt=&quot;stepA-2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;b-1-mac-컴퓨터에-window10-운영체제를-설치하기-위해서는-iso-파일을-다운-받아야-하기-때문에-아까-정품-키가-나온-페이지-화면에서-get-started-버튼을-클릭한다&quot;&gt;B-1. Mac 컴퓨터에 Window10 운영체제를 설치하기 위해서는 ISO 파일을 다운 받아야 하기 때문에 아까 정품 키가 나온 페이지 화면에서 ‘Get Started’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/B-1.png&quot; alt=&quot;stepB-1&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;b-2-새로-나온-창에서-iso-파일을-다운-받는-사이트로-이동한다&quot;&gt;B-2. 새로 나온 창에서 ISO 파일을 다운 받는 사이트로 이동한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/B-2.png&quot; alt=&quot;stepB-2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;b-3-다운로드-받는-사이트가-나오고-아래로-조금-내리면-언어를-선택해-다운로드-받는-아래와-같은-화면이-나올텐데-언어는-korean-을-찾아-설정하고-confirm-버튼을-클릭한다&quot;&gt;B-3. 다운로드 받는 사이트가 나오고, 아래로 조금 내리면 언어를 선택해 다운로드 받는 아래와 같은 화면이 나올텐데, 언어는 ‘Korean’ 을 찾아 설정하고 ‘Confirm’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/B-3.png&quot; alt=&quot;stepB-3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;b-4-자신이-원하는-비트를-골라-다운로드-받는다-본인은-64비트를-권장하며-64비트를-다운-받았다&quot;&gt;B-4. 자신이 원하는 비트를 골라 다운로드 받는다. 본인은 64비트를 권장하며 64비트를 다운 받았다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/B-4.png&quot; alt=&quot;stepB-4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-본인-학교가-마이크로소프트와-계약이-되어있지-않은-경우--일반인&quot;&gt;3. 본인 학교가 마이크로소프트와 계약이 되어있지 않은 경우 / 일반인&lt;/h2&gt;
-&lt;p&gt;이 경우는 Window10 정품 인증을 하지 않고 사용하는 경우이며, 이와 같은 경우에 어떤 차이가 있는지는 아래 블로그를 참고하길 바란다.&lt;br /&gt;
-&lt;a href=&quot;https://extrememanual.net/12916&quot;&gt;https://extrememanual.net/12916&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;또한 이 과정은 Window 컴퓨터에 Window 운영체제를 설치하는 방법이 아니며,&lt;br /&gt;
-Mac에 Window 운영체제를 설치하기 위한 ISO 파일을 다운 받는 방법에 대해 설명한다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-iso-파일을-다운받기위해-아래-링크로-들어간다&quot;&gt;1. ISO 파일을 다운받기위해 아래 링크로 들어간다.&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/ko-kr/software-download/windows10ISO&quot;&gt;https://www.microsoft.com/ko-kr/software-download/windows10ISO&lt;/a&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-버전을-선택하고-확인-버튼을-클릭한다&quot;&gt;2. 버전을 선택하고 ‘확인’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/6.png&quot; alt=&quot;step2&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-제품의-언어를-선택하고-확인-버튼을-클릭한다&quot;&gt;3. 제품의 언어를 선택하고 ‘확인’ 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/7.png&quot; alt=&quot;step3&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-자신이-원하는-비트를-골라-다운로드-받는다-본인은-64비트를-권장하며-64비트를-다운-받았다&quot;&gt;4. 자신이 원하는 비트를 골라 다운로드 받는다. 본인은 64비트를 권장하며 64비트를 다운 받았다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/8.png&quot; alt=&quot;step4&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-reference&quot;&gt;4. Reference&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;대학생이라면 윈도우10 무료로 쓰자!! 윈도우10 정품 무료로 설치하기(windows 10 edu) &lt;a href=&quot;https://m.blog.naver.com/hisong1105/221667302222&quot;&gt;https://m.blog.naver.com/hisong1105/221667302222&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;맥(Mac) 부트캠프 윈도우10 설치 방법 &lt;a href=&quot;https://extrememanual.net/12760&quot;&gt;https://extrememanual.net/12760&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 24 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/install/2020/03/24/Window10_ISO_download.html</link>
-        <guid isPermaLink="true">http://localhost:4000/install/2020/03/24/Window10_ISO_download.html</guid>
-        
-        <category>mac</category>
-        
-        <category>window</category>
-        
-        <category>window10</category>
-        
-        <category>install</category>
-        
-        
-        <category>Install</category>
-        
-      </item>
-    
-      <item>
-        <title>프로그래머스 코딩테스트 고득점 Kit : [탐욕법] 큰 수 만들기</title>
-        <description>&lt;p&gt;난이도 ★ ★ ☆ ☆ ☆&lt;br /&gt;
-본 문제는 생각보다 빨리 푼 문제였다. 예외 케이스를 질문하기에서 찾아볼 수 있어서 그런지 모르겠지만 처음에 바로 떠올랐던 알고리즘대로 쉽게 풀 수 있었고, 효율성도 나름 괜찮게 풀어서 기분이 좋았다. 근데 string에서 erase() 함수를 어떻게 쓰는지 까먹어서 다시 찾아보았다ㅋㅋ 까먹지 않으려고 항상 블로그에 정리하고 하는건데… 앞으로 더 정신 차리고 열심히 정리해야지!&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
-&lt;p&gt;어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하려 합니다.&lt;/p&gt;
-
-&lt;p&gt;예를 들어, 숫자 1924에서 수 두 개를 제거하면 [19, 12, 14, 92, 94, 24] 를 만들 수 있습니다.&lt;br /&gt;
-이 중 가장 큰 숫자는 94 입니다.&lt;/p&gt;
-
-&lt;p&gt;문자열 형식으로 숫자 number와 제거할 수의 개수 k가 solution 함수의 매개변수로 주어집니다.&lt;br /&gt;
-number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 큰 숫자를 문자열 형태로 return 하도록 solution 함수를 완성하세요.&lt;/p&gt;
-
-&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;number는 1자리 이상, 1,000,000자리 이하인 숫자입니다.&lt;/li&gt;
-  &lt;li&gt;k는 1 이상 &lt;code class=&quot;highlighter-rouge&quot;&gt;number의 자릿수&lt;/code&gt; 미만인 자연수입니다.
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;k 값이 0이 될 때까지 다음을 반복한다.&lt;br /&gt;
-(다음 반복 과정에서 k값을 감소시키면서 제거할 수의 개수가 0이 될 때까지 반복하는 것이다)&lt;/li&gt;
-  &lt;li&gt;해당 문자가 마지막 원소이거나, 뒤의 문자보다 작으면 지우고 k 값을 감소시킨다.&lt;br /&gt;
-(break를 하는 이유는 한 번 비교하면서 제거했으니 다시 처음부터 비교해야하기 때문)&lt;/li&gt;
-  &lt;li&gt;반복이 끝나면 number를 반환한다.&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
-&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;string&amp;gt;
-#include &amp;lt;vector&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; 
-                &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;erase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;string의 문자 지우는 방법&lt;/li&gt;
-  &lt;li&gt;연속적인 같은 숫자가 들어왔을 경우 고려
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;C++ 레퍼런스 - string 의 erase 함수 &lt;a href=&quot;https://modoocode.com/240&quot;&gt;https://modoocode.com/240&lt;/a&gt;&lt;br /&gt;
-string의 문자를 삭제할 때는 erase() 함수 사용, 파라미터로 위치와 갯수가 할당
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sun, 22 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/22/%ED%83%90%EC%9A%95%EB%B2%95_%ED%81%B0%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0_level2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/03/22/%ED%83%90%EC%9A%95%EB%B2%95_%ED%81%B0%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0_level2.html</guid>
-        
-        <category>programmershighscorekit</category>
-        
-        <category>greedy</category>
-        
-        <category>level2</category>
-        
-        <category>algorithm</category>
-        
-        <category>cplusplus</category>
-        
-        
-        <category>프로그래머스고득점Kit</category>
         
       </item>
     
