@@ -6,9 +6,112 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 07 Aug 2020 09:55:58 +0900</pubDate>
-    <lastBuildDate>Fri, 07 Aug 2020 09:55:58 +0900</lastBuildDate>
+    <pubDate>Mon, 10 Aug 2020 14:38:10 +0900</pubDate>
+    <lastBuildDate>Mon, 10 Aug 2020 14:38:10 +0900</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>프로그래머스 코딩테스트 고득점 Kit : [동적계획법] 도둑질</title>
+        <description>&lt;p&gt;난이도 ★ ★ ★ ★ ☆&lt;br /&gt;
+이 문제는 첫 level4 문제이자, 처음으로(?) 내가 푼 문제가 아니다. 처음이 아닐지도 모르지만, 체감상 아닌듯 맞는듯…ㅋㅋㅋㅋ 여튼, 생각할 시간이 충분하지 못해서 이 문제를 푼 친구에게 알고리즘을 듣고 해당 알고리즘대로 내가 다시 풀어보았던 문제이다. 좀 더 생각해보면서 충분히 고민하고 싶었는데 이건 내가 미리미리 문제를 풀지 못한 죄이기 때문에 어쩔 수 없이 패스..ㅠ 근데 문제 풀이를 들으면서 DP 문제에 대해서 조금은 감을 잡은 것 같다. 어떤 문제에 DP 풀이를 써야하는지 조금 감을 잡은 느낌..? 더 많이 연습하면서 익혀야겠지만 이렇게 조금씩 성장한다고 느끼는 것은 정말 좋은 것 같다 (*´︶｀*)&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-문제&quot;&gt;1. 문제&lt;/h2&gt;
+&lt;p&gt;도둑이 어느 마을을 털 계획을 하고 있습니다. 이 마을의 모든 집들은 아래 그림과 같이 동그랗게 배치되어 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://grepp-programmers.s3.amazonaws.com/files/ybm/e7dd4f51c3/a228c73d-1cbe-4d59-bb5d-833fd18d3382.png&quot; alt=&quot;houses&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;각 집들은 서로 인접한 집들과 방범장치가 연결되어 있기 때문에 인접한 두 집을 털면 경보가 울립니다.&lt;/p&gt;
+
+&lt;p&gt;각 집에 있는 돈이 담긴 배열 money가 주어질 때, 도둑이 훔칠 수 있는 돈의 최댓값을 return 하도록 solution 함수를 작성하세요.&lt;/p&gt;
+
+&lt;h3 id=&quot;제한조건&quot;&gt;제한조건&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;이 마을에 있는 집은 3개 이상 1,000,000개 이하입니다.&lt;/li&gt;
+  &lt;li&gt;money 배열의 각 원소는 0 이상 1,000 이하인 정수입니다.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-알고리즘-생각해보자&quot;&gt;2. 알고리즘! 생각해보자&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;첫번째 집을 털 때와 털지 않을 때를 나누어 사이즈가 money 크기인 include/exclude_first 벡터를 0으로 초기화하여 만든다.&lt;/li&gt;
+  &lt;li&gt;include/exclude_first 벡터는 첫번째 집부터 해당 인덱스의 집까지만을 범위로 두고 털수 있는 최댓값이다.&lt;/li&gt;
+  &lt;li&gt;include_first 벡터는 첫번째 집을 터는 경우이기 때문에 인덱스 1에 첫번째 집의 돈을 넣는다.&lt;br /&gt;
+(인덱스 1에 넣는 이유는 이후에 i번째 집을 포함했을 경우 i-2번째 집까지의 최댓값과 더하여 i-1번째 집까지의 최댓값과 비교해야하는데&lt;br /&gt;
+i가 1일 경우 i-2는 out of arr 인덱스가 되므로 0번째 인덱스는 0 값으로 채워주고 인덱스 1부터 넣어줘야 한다)&lt;/li&gt;
+  &lt;li&gt;첫번째 집을 터는 경우, 첫번째 이전 집(= 맨 마지막 집)은 털 수 없으므로 실제로 확인할 부분은 1~(i-1)까지의 범위가 된다.&lt;/li&gt;
+  &lt;li&gt;첫번째 집을 털지 않는 경우, 두번째 집부터 마지막집까지 모두 털 수 있으므로 확인할 부분은 2~i까지의 범위가 된다.&lt;/li&gt;
+  &lt;li&gt;각 범위를 위와 같이 잡고, money의 각 원소를 반복하면서 include_first와 exclude_first 벡터를 채운다.&lt;/li&gt;
+  &lt;li&gt;첫번째 집부터 해당 인덱스의 집까지에서 털 수 있는 최댓값은 해당 인덱스의 집을 털었을 경우와 털지 않았을 경우를 나누어 큰 값을 고르는 것이다.&lt;br /&gt;
+해당(i) 집을 털었을 경우에는, 이전(i-1) 집은 털 수 없으므로 전전(i-2) 집의 최댓값과 현재(i) 집의 돈을 합한 값이 최대가되고,&lt;br /&gt;
+해당(i) 집을 털지 않았을 경우에는, 이전(i-1) 집의 최댓값이 최대가 되므로 두 값을 비교하여 더 큰 값을 해당(i) 집의 최대값에 넣는다.&lt;/li&gt;
+  &lt;li&gt;반복문이 끝나고, include_first 벡터와 exclude_first 벡터의 마지막 값을 비교하여 더 큰 값을 반환한다.&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-해결코드&quot;&gt;3. 해결코드&lt;/h2&gt;
+&lt;h3 id=&quot;c&quot;&gt;[C++]&lt;/h3&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;vector&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exclude_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;include_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;include_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exclude_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exclude_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exclude_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exclude_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exclude_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exclude_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exclude_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;include_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exclude_first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-해결능력up-깊이-생각해보기&quot;&gt;4. 해결능력UP, 깊이 생각해보기&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;어떤 문제에 DP를 적용해야하는지
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-참고해서-문제해결-٩-ᐛ-و&quot;&gt;5. 참고해서 문제해결 ٩( ᐛ )و&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[Algo Rhythm🕺💃] 프로그래머스 고득점 kit 도둑질 &lt;a href=&quot;https://alinew.tistory.com/70&quot;&gt;https://alinew.tistory.com/70&lt;/a&gt;&lt;br /&gt;
+해당 문제의 알고리즘 풀이 설명해준 친구 블로그!
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Mon, 10 Aug 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/10/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%92%E1%85%AC%E1%86%A8%E1%84%87%E1%85%A5%E1%86%B8_%E1%84%83%E1%85%A9%E1%84%83%E1%85%AE%E1%86%A8%E1%84%8C%E1%85%B5%E1%86%AF_level4.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/10/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%92%E1%85%AC%E1%86%A8%E1%84%87%E1%85%A5%E1%86%B8_%E1%84%83%E1%85%A9%E1%84%83%E1%85%AE%E1%86%A8%E1%84%8C%E1%85%B5%E1%86%AF_level4.html</guid>
+        
+        <category>programmershighscorekit</category>
+        
+        <category>dynamicprogramming</category>
+        
+        <category>level4</category>
+        
+        <category>algorithm</category>
+        
+        <category>cplusplus</category>
+        
+        
+        <category>프로그래머스고득점Kit</category>
+        
+      </item>
     
       <item>
         <title>프로그래머스 코딩테스트 고득점 Kit : [동적계획법] 등굣길</title>
@@ -1971,8 +2074,8 @@ dfs() 함수를 사용해서 연결된 컴퓨터들의 값을 전부 0으로 바
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 13 Jul 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/13/%ED%95%B4%EC%8B%9C_%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%95%A8%EB%B2%94_level3.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/13/%ED%95%B4%EC%8B%9C_%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%95%A8%EB%B2%94_level3.html</guid>
+        <link>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/13/%E1%84%92%E1%85%A2%E1%84%89%E1%85%B5_%E1%84%87%E1%85%A6%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A2%E1%86%AF%E1%84%87%E1%85%A5%E1%86%B7_level3.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/13/%E1%84%92%E1%85%A2%E1%84%89%E1%85%B5_%E1%84%87%E1%85%A6%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A2%E1%86%AF%E1%84%87%E1%85%A5%E1%86%B7_level3.html</guid>
         
         <category>programmershighscorekit</category>
         
@@ -3801,53 +3904,6 @@ list를 vector 베이스로 초기화할 때 파라미터로 vector의 범위를
         <category>μvision</category>
         
         <category>install</category>
-        
-        
-        <category>Install</category>
-        
-      </item>
-    
-      <item>
-        <title>[Mac] 맥 Window와 MacOS 간의 전환 방법</title>
-        <description>&lt;p&gt;본 포스팅에서는 Mac에서 BootCamp를 사용해서 Window 운영체제를 설치하고, 다시 MacOS로 돌아가는 방법 혹은 MacOS에서 다시 Window 운영체제로 돌아가는 방법을 모르는 사람들을 위한 포스팅이다. 이 방법은 무척 간단하고 쉽기 때문에 한 번 익히기만하면 언제든 계속해서 사용할 수 있을 것이다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-windows와-macos-간에-전환하는-방법&quot;&gt;1. Windows와 macOS 간에 전환하는 방법&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-mac을-재시동한다&quot;&gt;1. Mac을 재시동한다.&lt;/h3&gt;
-
-&lt;h3 id=&quot;2-mac이-켜지기-전-화면이-꺼졌을-때-키보드의-option또는-alt--키를-길게-누른다&quot;&gt;2. Mac이 켜지기 전 (화면이 꺼졌을 때), 키보드의 option(또는 alt) ⌥ 키를 길게 누른다.&lt;/h3&gt;
-
-&lt;h3 id=&quot;3-그러면-아래와-같이-시동-관리자-창이-나타나게-되는데-이-창이-나타나면-option또는-alt--키를-놓는다&quot;&gt;3. 그러면 아래와 같이 시동 관리자 창이 나타나게 되는데, 이 창이 나타나면 option(또는 alt) ⌥ 키를 놓는다.&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/change.png&quot; alt=&quot;change&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-자신이-사용하고자하는-시동-디스크를-선택하고-녹색-박스-안의-화살표-버튼을-클릭한다&quot;&gt;4. 자신이 사용하고자하는 시동 디스크를 선택하고 녹색 박스 안의 화살표 버튼을 클릭한다.&lt;/h3&gt;
-&lt;p&gt;아래 사진에서는 Boot Camp라고 나와있는데, Windows라고 표기된 사람들도 있을 것이다.&lt;br /&gt;
-Boot Camp를 선택하면 Window로 실행되고, Macintosh HD를 선택하면 MacOS로 실행된다.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/Install/Window10/change-select.png&quot; alt=&quot;change-select&quot; width=&quot;600px&quot; /&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-reference&quot;&gt;2. Reference&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Windows와 macOS 간에 전환하기 &lt;a href=&quot;https://support.apple.com/ko-kr/HT208123&quot;&gt;https://support.apple.com/ko-kr/HT208123&lt;/a&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 25 Mar 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/install/2020/03/25/Mac_Window_change.html</link>
-        <guid isPermaLink="true">http://localhost:4000/install/2020/03/25/Mac_Window_change.html</guid>
-        
-        <category>mac</category>
-        
-        <category>window</category>
-        
-        <category>bootcamp</category>
-        
-        <category>window10</category>
         
         
         <category>Install</category>

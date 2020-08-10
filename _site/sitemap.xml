@@ -9,6 +9,13 @@
             <lastmod>2019-06-07T00:00:00+00:00</lastmod>
             <priority>1.00</priority>
         </url><url>
+                <loc>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/10/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%80%E1%85%A8%E1%84%92%E1%85%AC%E1%86%A8%E1%84%87%E1%85%A5%E1%86%B8_%E1%84%83%E1%85%A9%E1%84%83%E1%85%AE%E1%86%A8%E1%84%8C%E1%85%B5%E1%86%AF_level4.html</loc>
+                <lastmod>2020-08-10T00:00:00+09:00</lastmod>
+                
+                    <changefreq>daily</changefreq>
+                
+                <priority>0.80</priority>
+            </url><url>
                 <loc>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/07/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_%EB%93%B1%EA%B5%A3%EA%B8%B8_level3.html</loc>
                 <lastmod>2020-08-07T00:00:00+09:00</lastmod>
                 
@@ -114,7 +121,7 @@
                 
                 <priority>0.80</priority>
             </url><url>
-                <loc>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/13/%ED%95%B4%EC%8B%9C_%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%95%A8%EB%B2%94_level3.html</loc>
+                <loc>http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/07/13/%E1%84%92%E1%85%A2%E1%84%89%E1%85%B5_%E1%84%87%E1%85%A6%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A2%E1%86%AF%E1%84%87%E1%85%A5%E1%86%B7_level3.html</loc>
                 <lastmod>2020-07-13T00:00:00+09:00</lastmod>
                 
                     <changefreq>daily</changefreq>

@@ -1,0 +1,150 @@
+I"�-<main class="container">
+  <section class="about">
+    <a href="/"><img src="/assets/img/profile//profile.png" alt="YuJin Kim" /></a>
+    <h2 id="title">
+      <a href="/">YuJin Kim</a>
+    </h2>
+    <p class="tagline">SW Engineer</p>
+    <ul class="social"><a href="https://github.com/0pencoding">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul>
+
+    <!--<nav class="navigation">
+        <ul>
+          
+            <li>
+              <a href="/about/">ABOUT</a>
+            </li>
+          
+            <li>
+              <a href="/tags/">TAGS</a>
+            </li>
+          
+        </ul>
+      </nav>-->
+
+    <p>&copy;
+      2020</p>
+  </section>
+  <section class="content">
+    <div class="post-container">
+  <a class="post-link" href="/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/10/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_%EB%8F%84%EB%91%91%EC%A7%88_level3.html">
+    <h2 class="post-title">프로그래머스 코딩테스트 고득점 Kit : [동적계획법] 도둑질</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-tags">
+          <li>프로그래머스 고득점 Kit</li>
+        
+          <li>Dynamic Programming</li>
+        
+          <li>Level 4</li>
+        
+          <li>Algorithm</li>
+        
+          <li>C++</li>
+        </ul>
+    <div class="post-date"><i class="icon-calendar"></i>Aug 10, 2020</div>
+  </div>
+
+  <div class="post">
+    <p>난이도 ★ ★ ★ ★ ☆<br />
+이 문제는 첫 level4 문제이자, 처음으로(?) 내가 푼 문제가 아니다. 처음이 아닐지도 모르지만, 체감상 아닌듯 맞는듯…ㅋㅋㅋㅋ 여튼, 생각할 시간이 충분하지 못해서 이 문제를 푼 친구에게 알고리즘을 듣고 해당 알고리즘대로 내가 다시 풀어보았던 문제이다. 좀 더 생각해보면서 충분히 고민하고 싶었는데 이건 내가 미리미리 문제를 풀지 못한 죄이기 때문에 어쩔 수 없이 패스..ㅠ 근데 문제 풀이를 들으면서 DP 문제에 대해서 조금은 감을 잡은 것 같다. 어떤 문제에 DP 풀이를 써야하는지 조금 감을 잡은 느낌..? 더 많이 연습하면서 익혀야겠지만 이렇게 조금씩 성장한다고 느끼는 것은 정말 좋은 것 같다 (*´︶｀*)<br />
+<br /></p>
+
+<p><br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+<p>도둑이 어느 마을을 털 계획을 하고 있습니다. 이 마을의 모든 집들은 아래 그림과 같이 동그랗게 배치되어 있습니다.</p>
+
+<p><img src="https://grepp-programmers.s3.amazonaws.com/files/ybm/e7dd4f51c3/a228c73d-1cbe-4d59-bb5d-833fd18d3382.png" alt="houses" width="400" /></p>
+
+<p>각 집들은 서로 인접한 집들과 방범장치가 연결되어 있기 때문에 인접한 두 집을 털면 경보가 울립니다.</p>
+
+<p>각 집에 있는 돈이 담긴 배열 money가 주어질 때, 도둑이 훔칠 수 있는 돈의 최댓값을 return 하도록 solution 함수를 작성하세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+<ul>
+  <li>이 마을에 있는 집은 3개 이상 1,000,000개 이하입니다.</li>
+  <li>money 배열의 각 원소는 0 이상 1,000 이하인 정수입니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+<ol>
+  <li>첫번째 집을 훔칠 때와 훔치지 않을 때를 나누어 사이즈가 money의 크기인 include/exclude_first 벡터를 만든다.</li>
+  <li><br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+<h3 id="c">[C++]</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">money</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">include_first</span><span class="p">(</span><span class="n">money</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">exclude_first</span><span class="p">(</span><span class="n">money</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+    
+    <span class="n">include_first</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">money</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">money</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">include_first</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">money</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">include_first</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="n">include_first</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">include_first</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">else</span> <span class="n">include_first</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">money</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">include_first</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="p">}</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">money</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="n">exclude_first</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">money</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">exclude_first</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">money</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">exclude_first</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="n">exclude_first</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">exclude_first</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+        <span class="k">else</span> <span class="n">exclude_first</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">money</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">exclude_first</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">];</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">max</span><span class="p">(</span><span class="n">include_first</span><span class="p">[</span><span class="n">money</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">exclude_first</span><span class="p">[</span><span class="n">money</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+<ul>
+  <li><br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+<ul>
+  <li>[Algo Rhythm🕺💃] 프로그래머스 고득점 kit 도둑질 <a href="https://alinew.tistory.com/70">https://alinew.tistory.com/70</a><br />
+해당 문제의 알고리즘 풀이 설명해준 친구 블로그!
+<br /><br /><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</code></pre></div></div>
+
+  </div><div id="disqus_thread" style="margin-top:25px"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/10/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_%EB%8F%84%EB%91%91%EC%A7%88_level3.html';
+      this.page.identifier = 'http://localhost:4000/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/2020/08/10/%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EB%B2%95_%EB%8F%84%EB%91%91%EC%A7%88_level3.html';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://0pencoding.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+      powered by Disqus.</a></noscript></div>
+
+  </section>
+</main>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-150778693-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'UA-150778693-1');
+</script>
+
+:ET
