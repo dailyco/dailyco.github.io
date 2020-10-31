@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/happy-ending/static/css/main.fc10b520.chunk.css",
-    "main.js": "/happy-ending/static/js/main.17d7db27.chunk.js",
-    "main.js.map": "/happy-ending/static/js/main.17d7db27.chunk.js.map",
+    "main.js": "/happy-ending/static/js/main.90526c0d.chunk.js",
+    "main.js.map": "/happy-ending/static/js/main.90526c0d.chunk.js.map",
     "runtime-main.js": "/happy-ending/static/js/runtime-main.d798fef2.js",
     "runtime-main.js.map": "/happy-ending/static/js/runtime-main.d798fef2.js.map",
     "static/js/2.fd278f41.chunk.js": "/happy-ending/static/js/2.fd278f41.chunk.js",
     "static/js/2.fd278f41.chunk.js.map": "/happy-ending/static/js/2.fd278f41.chunk.js.map",
     "index.html": "/happy-ending/index.html",
-    "precache-manifest.f2ae3b98dcd9417bf920b20da3e69663.js": "/happy-ending/precache-manifest.f2ae3b98dcd9417bf920b20da3e69663.js",
+    "precache-manifest.0c1e39b78dec2a9b7eace9480575c82f.js": "/happy-ending/precache-manifest.0c1e39b78dec2a9b7eace9480575c82f.js",
     "service-worker.js": "/happy-ending/service-worker.js",
     "static/css/main.fc10b520.chunk.css.map": "/happy-ending/static/css/main.fc10b520.chunk.css.map",
     "static/js/2.fd278f41.chunk.js.LICENSE.txt": "/happy-ending/static/js/2.fd278f41.chunk.js.LICENSE.txt",
@@ -59,6 +59,6 @@
     "static/js/runtime-main.d798fef2.js",
     "static/js/2.fd278f41.chunk.js",
     "static/css/main.fc10b520.chunk.css",
-    "static/js/main.17d7db27.chunk.js"
+    "static/js/main.90526c0d.chunk.js"
   ]
 }
