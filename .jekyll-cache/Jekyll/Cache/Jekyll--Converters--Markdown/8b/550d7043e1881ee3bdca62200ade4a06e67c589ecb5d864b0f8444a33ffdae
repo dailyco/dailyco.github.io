@@ -1,0 +1,140 @@
+I"*<p>오늘은 2020 부스트 캠프 1차 온라인 코딩 테스트를 대비해서 실제 시험 환경인 프로그래머스 사이트를 통해 코딩 테스트 준비를 했다. 작년 후기를 통해 문제의 난이도가 그렇게 높지 않다는 것을 듣고 2020, 2019 KAKAO BLIND RECRUITMENT 문제 중 level2 문제 4개를 뽑아 2시간 30분간 시간을 제한해서 문제를 풀었는데, 생각보다 어렵더라… 알고리즘 공부 더 열심히 해야지 o(╥﹏╥)o<br />
+<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+
+<p>데이터 처리 전문가가 되고 싶은 어피치는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다.<br />
+최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데, 문자열에서 같은 값이 연속해서 나타나는 것을 그 문자의 개수와 반복되는 값으로 표현해 더 짧은 문자열로 줄여서 표현하는 알고리즘을 공부하고 있습니다.<br />
+간단한 예로 aabbaccc의 경우 2a2ba3c(문자가 반복되지 않아 한번만 나타난 경우 1은 생략함)와 같이 표현할 수 있는데,<br />
+이러한 방식은 반복되는 문자가 적은 경우 압축률이 낮다는 단점이 있습니다.<br />
+예를 들면, abcabcdede와 같은 문자열은 전혀 압축되지 않습니다.<br />
+어피치는 이러한 단점을 해결하기 위해 문자열을 1개 이상의 단위로 잘라서 압축하여 더 짧은 문자열로 표현할 수 있는지 방법을 찾아보려고 합니다.</p>
+
+<p>예를 들어, ababcdcdababcdcd의 경우 문자를 1개 단위로 자르면 전혀 압축되지 않지만,<br />
+2개 단위로 잘라서 압축한다면 2ab2cd2ab2cd로 표현할 수 있습니다.<br />
+다른 방법으로 8개 단위로 잘라서 압축한다면 2ababcdcd로 표현할 수 있으며, 이때가 가장 짧게 압축하여 표현할 수 있는 방법입니다.</p>
+
+<p>다른 예로, abcabcdede와 같은 경우, 문자를 2개 단위로 잘라서 압축하면 abcabc2de가 되지만,<br />
+3개 단위로 자른다면 2abcdede가 되어 3개 단위가 가장 짧은 압축 방법이 됩니다.<br />
+이때 3개 단위로 자르고 마지막에 남는 문자열은 그대로 붙여주면 됩니다.</p>
+
+<p>압축할 문자열 s가 매개변수로 주어질 때, 위에 설명한 방법으로 1개 이상 단위로 문자열을 잘라 압축하여 표현한 문자열 중 가장 짧은 것의 길이를 return 하도록 solution 함수를 완성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+
+<ul>
+  <li>s의 길이는 1 이상 1,000 이하입니다.</li>
+  <li>s는 알파벳 소문자로만 이루어져 있습니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+
+<ol>
+  <li>answer 값을 문자열 길이로 초기화한다.</li>
+  <li>문자열은 압축하는 단위의 범위를 1~(문자열 길이/2)로 정하여 아래 내용을 반복한다.</li>
+  <li>해당 단위만큼 문자열을 나누어 string_set 벡터에 담는다.<br />
+(마지막에 빈 문자열을 push → 후에 벡터의 마지막 원소의 처리를 위해서)</li>
+  <li>length 값을 해당 단위만큼 문자열을 나누고난 나머지로 초기화한다.</li>
+  <li>string_set 벡터 크기만큼 아래 내용을 반복한다.</li>
+  <li>벡터의 이전 원소와 현재 원소가 같으면 count 값을 증가시킨다.</li>
+  <li>원소가 다르고 count 값이 1보다 크면 length에 count 값을 문자열로 변환시키고 그 길이만큼 더한다.<br />
+(해당 갯수만큼 숫자 뒤에 해당 단위의 문자열이 나오기 때문에)</li>
+  <li>count 값이 그대로 1이면 length에 해당 단위의 길이만큼 더한다.</li>
+  <li>string_set 벡터 반복문이 끝나고 length 값이 answer보다 작으면 answer에 length 값을 할당한다.</li>
+  <li>문자열을 압축하는 단위의 반복문이 끝나고 answer를 반환한다.<br />
+<br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+
+<h3 id="c">[C++]</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td> --><td class="rouge-code"><pre><span class="cp">#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">string_set</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">string_set</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">));</span>
+        <span class="n">string_set</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+
+        <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">%</span> <span class="n">i</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">string_set</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">string_set</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">string_set</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">length</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">to_string</span><span class="p">(</span><span class="n">count</span><span class="p">).</span><span class="n">length</span><span class="p">();</span>
+                <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="n">length</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">&lt;</span> <span class="n">answer</span><span class="p">)</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">length</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+
+<ul>
+  <li>문자열에서 일부 가져오는 방법</li>
+  <li>정수를 string으로 변환하는 방법
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+
+<ul>
+  <li>C++ 레퍼런스 - string의 substr 함수 <a href="https://modoocode.com/235">https://modoocode.com/235</a><br />
+문자열에서 일부 문자열만 가지고 올 때는 string.substr() 사용,<br />
+첫 번째 파라미터는 시작 인덱스, 두 번째 파라미터는 갯수, 두 번째 파라미터는 생략 가능하며 생략시 문자열의 끝까지 반환</li>
+  <li>[C++]to_string 함수에 대해서 (int to string) <a href="https://blockdmask.tistory.com/334">https://blockdmask.tistory.com/334</a><br />
+정수를 string으로 변환할 때는 to_string()을 사용<br />
+<br /><br /><br /></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
