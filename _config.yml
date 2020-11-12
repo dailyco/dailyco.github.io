@@ -14,7 +14,7 @@ description: >- # used by seo meta and the atom feed
 
 url: "https://dailyco.github.io" # Replace with the website url, e.g. 'https://username.github.io'
 author: YuJin Kim # change to your full name
-avatar: /assets/img/sample/avatar.jpg # support internet resources
+avatar: /assets/img/sample/avatar.png # support internet resources
 
 github:
   username: dailyco # change to your github username
