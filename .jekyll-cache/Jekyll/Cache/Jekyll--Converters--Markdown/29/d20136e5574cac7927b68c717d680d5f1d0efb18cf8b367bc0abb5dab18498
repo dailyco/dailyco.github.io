@@ -1,0 +1,99 @@
+I"�	
+<div class="card categories">
+    <!-- top-category -->
+    <div class="card-header d-flex justify-content-between hide-border-bottom" id="h_0">
+      <span>
+      
+        <i class="far fa-folder-open fa-fw"></i>
+      
+        <a href="/categories/programmers/" class="ml-1 mr-2">
+          Programmers
+        </a>
+
+        <!-- content count -->
+        
+        <span class="text-muted small font-weight-light">
+          
+            2
+            categories,
+          
+            29
+            posts
+        </span>
+      </span>
+
+      <!-- arrow -->
+      
+      <a href="#l_0" data-toggle="collapse" aria-expanded="true" aria-label="h_0-trigger" class="category-trigger hide-border-bottom">
+        <i class="fas fa-fw fa-angle-down"></i>
+      </a>
+      
+
+    </div> <!-- .card-header -->
+
+    <!-- Sub-categories -->
+    
+    <div id="l_0" class="collapse show" aria-expanded="true">
+      <ul class="list-group">
+        
+        <li class="list-group-item">
+          <i class="far fa-folder fa-fw"></i>
+          <a href="/categories/highscore-kit/" class="ml-1 mr-2">Highscore Kit</a>
+          
+          <span class="text-muted small font-weight-light">22
+            posts
+          </span>
+        </li>
+        
+        <li class="list-group-item">
+          <i class="far fa-folder fa-fw"></i>
+          <a href="/categories/kakao/" class="ml-1 mr-2">Kakao</a>
+          
+          <span class="text-muted small font-weight-light">7
+            posts
+          </span>
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+<p><!-- .card --></p>
+
+<div class="card categories">
+    <!-- top-category -->
+    <div class="card-header d-flex justify-content-between hide-border-bottom" id="h_1">
+      <span>
+      
+        <i class="far fa-folder fa-fw"></i>
+      
+        <a href="/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%EA%B3%A0%EB%93%9D%EC%A0%90kit/" class="ml-1 mr-2">
+          프로그래머스고득점Kit
+        </a>
+
+        <!-- content count -->
+        
+        <span class="text-muted small font-weight-light">
+          
+            1
+            post
+        </span>
+      </span>
+
+      <!-- arrow -->
+      
+      <span data-toggle="collapse" class="category-trigger hide-border-bottom disabled">
+        <i class="fas fa-fw fa-angle-right"></i>
+      </span>
+      
+
+    </div> <!-- .card-header -->
+
+    <!-- Sub-categories -->
+    
+
+  </div>
+<p><!-- .card --></p>
+
+:ET

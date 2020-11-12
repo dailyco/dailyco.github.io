@@ -1,0 +1,148 @@
+I"�%<p>본 문제를 푸는 데에 큰 어려움은 없었지만 vector를 사용하는 데에 있어서 조금 공부가 필요했다. 아직까지 문제가 많이 어렵지는 않아서 난이도에 있어서나 문제를 푸는 시간에 있어서 그렇게 오래 걸리지는 않지만 C++을 잘 몰라 찾고 공부하는 데에 시간 소요가 있는 것 같다.<br />
+<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+
+<p>배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.<br />
+예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i = 2, j = 5, k = 3이라면 array의 2번째부터 5번째까지 자르면 [5, 2, 6, 3]입니다.<br />
+1에서 나온 배열을 정렬하면 [2, 3, 5, 6]입니다. 2에서 나온 배열의 3번째 숫자는 5입니다.<br />
+배열 array, [i, j, k]를 원소로 가진 2차원 배열 commands가 매개변수로 주어질 때, commands의 모든 원소에 대해 앞서 설명한 연산을 적용했을 때 나온 결과를 배열에 담아 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+
+<ul>
+  <li>array의 길이는 1 이상 100 이하입니다.</li>
+  <li>array의 각 원소는 1 이상 100 이하입니다.</li>
+  <li>commands의 길이는 1 이상 50 이하입니다.</li>
+  <li>commands의 각 원소는 길이가 3입니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+
+<ol>
+  <li>commands 벡터의 원소를 반복하며 각 원소의 i, j, k 값을 받는다.</li>
+  <li>배열 array의 i부터 j까지 잘라 cpVector 벡터에 넣는다.</li>
+  <li>sort함수를 하용해서 cpVector 벡터를 오름차순으로 정렬한다.</li>
+  <li>정렬된 cpVector의 k번째 수를 answer에 넣는다.</li>
+  <li>commands 벡터의 반복이 끝나고 answer를 반환한다.<br />
+<br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+
+<h3 id="c">[C++]</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">array</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">commands</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">answer</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">commands</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">cpVector</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">commands</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+
+        <span class="n">cpVector</span><span class="p">.</span><span class="n">assign</span><span class="p">((</span><span class="n">array</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">j</span><span class="p">));</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">cpVector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">cpVector</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="n">answer</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">cpVector</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="javascript">[Javascript]</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">commands</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="nx">commands</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
+      <span class="nx">array</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]).</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+      <span class="p">})[</span><span class="nx">c</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+
+<ul>
+  <li>vector에서 copy와 assign의 차이점</li>
+  <li>2차원 벡터 사용 방법</li>
+  <li>sorting 방법
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+
+<ul>
+  <li>[STL] vector 복사 <a href="https://terrorjang.tistory.com/85">https://terrorjang.tistory.com/85</a>
+    <blockquote>
+      <ul>
+        <li>vector를 전체 복사, 혹은 부분적으로 복사할 때 copy, assign 사용<br />
+<span style="color: #c70000">※ copy와 assign의 차이점:</span> copy는 vector의 크기가 미리 할당 되어있어야하고, assign은 그러지 않아도 된다.</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>[C++ STL] 동적 2차원 배열 사용법(vector) <a href="https://sunnyholic.com/93">https://sunnyholic.com/93</a><br />
+c++에서 2차원 vector에 접근할 때에는 c, java와 비슷하게 index로 접근</li>
+  <li>[C++] sort algorithm 정리 및 예시 <a href="https://blockdmask.tistory.com/178">https://blockdmask.tistory.com/178</a>
+<br /><br /><br /></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
