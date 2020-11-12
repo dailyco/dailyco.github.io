@@ -1,4 +1,4 @@
-I"�<p>난이도 ★ ★ ☆ ☆ ☆<br />
+I"q<p>난이도 ★ ★ ☆ ☆ ☆<br />
 본 문제는 처음에 문제를 잘 이해하지 못해서 함께 문제를 푸는 언니에게 물어보았다. 처음에는 문제를 잘못 이해했다가 ‘이거 조금 이상한 것 같은데?’ 하는 생각이 들었다가 언니의 설명을 듣고 이해가 되었고, 문제를 이해한 뒤에는 문제를 푸는 데에는 그렇게 오래 걸리지 않았다. 루프를 두 번 돌기 때문에 효율성이 좋다고 말할 수는 없지만 다른 사람들도 비슷하게 푼 것 같아 완전 비효율적으로 문제를 푼건 아니라는 생각이 들었다.<br />
 <br /></p>
 
@@ -26,7 +26,26 @@
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 </span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -45,7 +64,7 @@
     
     <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
@@ -62,6 +81,7 @@
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

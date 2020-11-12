@@ -1,5 +1,4 @@
-I"
-*<p>난이도 ★ ★ ★ ★ ☆<br />
+I"�+<p>난이도 ★ ★ ★ ★ ☆<br />
 이 문제는 첫 level4 문제이자, 처음으로(?) 내가 푼 문제가 아니다. 처음이 아닐지도 모르지만, 체감상 아닌듯 맞는듯…ㅋㅋㅋㅋ 여튼, 생각할 시간이 충분하지 못해서 이 문제를 푼 친구에게 알고리즘을 듣고 해당 알고리즘대로 내가 다시 풀어보았던 문제이다. 좀 더 생각해보면서 충분히 고민하고 싶었는데 이건 내가 미리미리 문제를 풀지 못한 죄이기 때문에 어쩔 수 없이 패스..ㅠ 근데 문제 풀이를 들으면서 DP 문제에 대해서 조금은 감을 잡은 것 같다. 어떤 문제에 DP 풀이를 써야하는지 조금 감을 잡은 느낌..? 더 많이 연습하면서 익혀야겠지만 이렇게 조금씩 성장한다고 느끼는 것은 정말 좋은 것 같다 (*´︶｀*)<br />
 <br /></p>
 
@@ -40,7 +39,29 @@ i가 1일 경우 i-2는 out of arr 인덱스가 되므로 0번째 인덱스는 0
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;vector&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;vector&gt;
 </span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -62,7 +83,7 @@ i가 1일 경우 i-2는 out of arr 인덱스가 되므로 0번째 인덱스는 0
     
     <span class="k">return</span> <span class="n">max</span><span class="p">(</span><span class="n">include_first</span><span class="p">[</span><span class="n">money</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">exclude_first</span><span class="p">[</span><span class="n">money</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
@@ -78,6 +99,7 @@ i가 1일 경우 i-2는 out of arr 인덱스가 되므로 0번째 인덱스는 0
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

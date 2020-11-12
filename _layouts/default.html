@@ -1,64 +1,63 @@
 ---
-layout: header
+layout: compress
+# Default layout
+# v2.0
+# https://github.com/cotes2020/jekyll-theme-chirpy
+# © 2017-2019 Cotes Chung
+# MIT Licensed
 ---
 
-<main class="container">
-  <section class="about">
-    <a href="/"><img src="/assets/img/profile/{{ site.plainwhite.avartar | relative_url }}" alt="{{ site.plainwhite.name }}"></a>
-    <h2 id="title">
-      <a href="/">{{ site.plainwhite.name }}</a>
-    </h2>
-    <p class="tagline">{{ site.plainwhite.tagline }}</p>
-    <ul class="social">
-      {%- if site.plainwhite.social_links.github -%}
-        <a href="https://github.com/{{ site.plainwhite.social_links.github }}">
-          <li>
-            <i class="icon-github-circled"></i>
-          </li>
-        </a>
-      {%- endif -%}
-      {%- if site.plainwhite.social_links.linkedIn -%}
-        <a href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedIn }}">
-          <li>
-            <i class="icon-linkedin-squared"></i>
-          </li>
-        </a>
-      {%- endif -%}
-      {%- if site.plainwhite.social_links.twitter -%}
-        <a href="https://twitter.com/{{ site.plainwhite.social_links.twitter }}">
-          <li>
-            <i class="icon-twitter-squared"></i>
-          </li>
-        </a>
-      {%- endif -%}
-    </ul>
+<!DOCTYPE html>
 
-    <!-- {%- if site.plainwhite.navigation -%}
-      <nav class="navigation">
-        <ul>
-          {% for link in site.plainwhite.navigation %}
-            <li>
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
-    {%- endif -%} -->
+{% if site.lang %}
+  {% assign lang = site.lang | split: "_" | first %}
+{% else %}
+  {% assign lang = 'en' %}
+{% endif %}
 
-    <p>&copy;
-      {{ "now" | date: "%Y" }}</p>
-  </section>
-  <section class="content">
-    {{ content }}
-  </section>
-</main>
-{%- if site.plainwhite.analytics_id -%}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.plainwhite.analytics_id }}"></script>
-  <script>
-window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
-gtag('js', new Date());
+{% capture prefer_mode %}
+  {% if site.theme_mode != "dual" %}
+    mode="{{ site.theme_mode }}"
+  {% endif %}
+{% endcapture %}
 
-gtag('config', '{{ site.plainwhite.analytics_id }}');
-</script>
-{%- endif -%}
+<html lang="{{ lang }}" {{ prefer_mode }} >
+
+  {% include head.html %}
+
+  <body data-spy="scroll" data-target="#toc">
+
+    <div id="sidebar" class="d-flex flex-column">
+      {% include sidebar.html %}
+    </div>
+
+    {% include topbar.html %}
+
+    <div id="main-wrapper">
+      <div id="main">
+
+        {% include refactor-content.html content=content %}
+
+        {% include footer.html %}
+
+      </div>
+
+      {% include search-results.html %}
+
+    </div> <!-- #main-wrapper -->
+
+    <div id="mask"></div>
+
+    <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    {% include search-loader.html %}
+
+    {% if site.google_analytics.id and jekyll.environment == 'production' %}
+      {% include google-analytics.html %}
+    {% endif %}
+
+  </body>
+
+</html>

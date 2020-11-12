@@ -1,4 +1,4 @@
-I"w<p>Difficulty: Easy<br />
+I"�<p>Difficulty: Easy<br />
 Because it was the first time to solve a problem presented in English when studying algorithms, besides the competition, I was a little embarrassed. However the problem was short and the examples were out, so I wasn’t really tired. It was a little hard to figure out the problem by just looking for words that I didn’t know… Well, I think it is okay because I can study English while solving the algorithm problem | ᐕ)੭*⁾⁾<br />
 <br /></p>
 
@@ -47,7 +47,20 @@ A sequence of numbers is called an arithmetic progression if the difference betw
 
 <h2 id="3-solution">3. Solution</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="nl">public:</span>
     <span class="kt">bool</span> <span class="n">canMakeArithmeticProgression</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
@@ -60,7 +73,7 @@ A sequence of numbers is called an arithmetic progression if the difference betw
         <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-to-think-deeper">4. To Think Deeper</h2>
@@ -75,6 +88,7 @@ A sequence of numbers is called an arithmetic progression if the difference betw
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: LeetCode Contest, https://leetcode.com/contest/
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: LeetCode Contest, https://leetcode.com/contest/
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET
