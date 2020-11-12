@@ -1,4 +1,4 @@
-I"�"<p>난이도 ★ ★ ☆ ☆ ☆<br />
+I"�$<p>난이도 ★ ★ ☆ ☆ ☆<br />
 본 문제는 푸는데 시간이 정말 오래걸렸던 문제이다. 하지만 알고리즘 문제 풀기의 정석대로 단계를 거쳤던 것 같아 문제를 풀고나서는 뿌듯하고 내 자신이 자랑스러웠다. 처음에 잘못된 방향으로 고민하다가 점점 정답에 가깝게 생각했다는 것이 정말 기분좋다 :)<br />
 <br /></p>
 
@@ -29,7 +29,30 @@
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
 </span>
@@ -52,11 +75,26 @@
     <span class="k">if</span> <span class="p">(</span><span class="n">answer</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="sc">'0'</span><span class="p">)</span> <span class="k">return</span> <span class="s">"0"</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /></p>
 
 <h3 id="javascript">[Javascript]</h3>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
     
     <span class="nx">numbers</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
@@ -71,7 +109,7 @@
     <span class="k">if</span> <span class="p">(</span><span class="nx">answer</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">))</span> <span class="k">return</span> <span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">;</span>
     <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
@@ -91,6 +129,7 @@ string에서 index로 접근하기 위해서는 string.at() 함수를 사용하�
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

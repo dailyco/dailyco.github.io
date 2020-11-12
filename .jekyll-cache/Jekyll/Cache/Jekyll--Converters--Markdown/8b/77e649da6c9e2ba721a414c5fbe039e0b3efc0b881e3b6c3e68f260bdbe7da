@@ -1,4 +1,4 @@
-I"Y<p>난이도 ★ ★ ☆ ☆ ☆<br />
+I"�<p>난이도 ★ ★ ☆ ☆ ☆<br />
 본 문제는 굉장히 빨리 풀었지만 효율성 때문에 엄청 헤멨다. 효율성 때문에 코드를 엎고, 질문하기를 찾아보면서 어떻게 해야 더 좋은 코드를 짤 수 있는지 굉장히 고민을 많이 했던 문제였다. 정확도는 다 맞았는데 효율성 때문에 통과 못하니 너무 답답하고 스트레스를 받았는데, 알고리즘을 공부하는 이유가 결국 효율성 좋게 문제를 해결하기 위함이므로 좋은 코드를 짤 수 있도록 계속해서 고민하고 노력해야겠다고 생각했다.<br />
 <br /></p>
 
@@ -38,7 +38,26 @@ i는 for문에서 계속해서 감소되기 때문에 건들지 않는다)</li>
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;vector&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;vector&gt;
 #include &lt;algorithm&gt;
 </span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -57,7 +76,7 @@ i는 for문에서 계속해서 감소되기 때문에 건들지 않는다)</li>
     
     <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
@@ -76,6 +95,7 @@ i는 for문에서 계속해서 감소되기 때문에 건들지 않는다)</li>
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

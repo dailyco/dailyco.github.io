@@ -1,4 +1,4 @@
-I"�(<p>Difficulty: Medium<br />
+I"_*<p>Difficulty: Medium<br />
 It was a little hard to understand the problem. I could see and understand the picture of the example, and it didn’t take very long to write the code. As you can see from solving the problem, there is a cute trick hidden in the problem. It’s a tiny trick that gives you the fear of being a complicated problem before you write the code. (*´o`*)<br />
 <br /></p>
 
@@ -75,7 +75,31 @@ increase the anwer by the position of the last ant in each direction.</li>
 
 <h2 id="3-solution">3. Solution</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="nl">public:</span>
     <span class="kt">int</span> <span class="n">getLastMoment</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">left</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -99,7 +123,7 @@ increase the anwer by the position of the last ant in each direction.</li>
         <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-to-think-deeper">4. To Think Deeper</h2>
@@ -115,6 +139,7 @@ increase the anwer by the position of the last ant in each direction.</li>
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: LeetCode Contest, https://leetcode.com/contest/
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: LeetCode Contest, https://leetcode.com/contest/
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

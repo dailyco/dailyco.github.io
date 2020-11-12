@@ -1,4 +1,5 @@
 User-agent: *
-Allow: /
 
-Sitemap: http://0pencoding.github.io/sitemap.xml
+Disallow: /norobots/
+
+Sitemap: http://localhost:4000/sitemap.xml

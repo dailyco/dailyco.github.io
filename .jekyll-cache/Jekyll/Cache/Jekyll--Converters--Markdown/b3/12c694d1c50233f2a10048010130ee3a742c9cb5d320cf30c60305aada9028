@@ -1,4 +1,4 @@
-I"�'<p>난이도 ★ ★ ★ ☆ ☆<br />
+I"V)<p>난이도 ★ ★ ★ ☆ ☆<br />
 이 문제는 예전에 남자친구가 나에게 냈었던 문제였기 때문에 알고리즘 자체는 그 때 풀었던대로 빠르게 세울 수 있었다. 그런데 빨리 풀겠다는 자만심 때문이었는지 알고리즘을 세우는 데에 있어서 조그만 실수를 한 부분 때문에 어디가 잘못되었는지 찾느라고 30분 정도를 소비한 것 같다. 이미 알고있는 문제라고, level3 문제 좀 푼다고 자만하면 안되는데 인간은 정말 끝없이 실수를 반복하는 것 같다 へ[ •́ ‸ •̀ ]ʋ<br />
 <br /></p>
 
@@ -47,7 +47,26 @@
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;vector&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;vector&gt;
 </span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -66,7 +85,7 @@
     
     <span class="k">return</span> <span class="n">mn</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">];</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
@@ -79,10 +98,11 @@
 <h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
 <ul>
   <li>2 차원 std :: vector 초기화 <a href="https://www.it-swarm.dev/ko/c%2B%2B/2-%EC%B0%A8%EC%9B%90-std-vector-%EC%B4%88%EA%B8%B0%ED%99%94/1041384922/">https://www.it-swarm.dev/ko/c%2B%2B/2-%EC%B0%A8%EC%9B%90-std-vector-%EC%B4%88%EA%B8%B0%ED%99%94/1041384922/</a><br />
-2차원 벡터를 생성과 동시에 초기화를 시킬 때는 <code class="highlighter-rouge">vector&lt;vector&lt;data_type&gt;&gt; var_name(row_number, vector&lt;data_type&gt;(col_number, initialize_value))</code> 형태를 사용
+2차원 벡터를 생성과 동시에 초기화를 시킬 때는 <code class="language-plaintext highlighter-rouge">vector&lt;vector&lt;data_type&gt;&gt; var_name(row_number, vector&lt;data_type&gt;(col_number, initialize_value))</code> 형태를 사용
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

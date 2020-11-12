@@ -1,4 +1,4 @@
-I"�&<p>프로젝트의 번외편으로 자바로 MySQL을 연동시키는 방법에 대해 이야기 하려한다. 나도 프로젝트를 진행할 당시에 데이터베이스에 대한 개념이 없어 힘들었던 기억이 있기 때문에… 본 포스팅은 eclipse에서 자바와 MySQL을 연동시킬 수 있는 간단한 방법에 대해 이야기한다. <br />
+I")<p>프로젝트의 번외편으로 자바로 MySQL을 연동시키는 방법에 대해 이야기 하려한다. 나도 프로젝트를 진행할 당시에 데이터베이스에 대한 개념이 없어 힘들었던 기억이 있기 때문에… 본 포스팅은 eclipse에서 자바와 MySQL을 연동시킬 수 있는 간단한 방법에 대해 이야기한다. <br />
 <br /></p>
 
 <h2 id="1-mysql-connectorj-다운로드">1. MySQL connector/J 다운로드</h2>
@@ -33,20 +33,29 @@ MySQL을 다운 받아 압축을 풀었던 폴더로 이동해서 <span style="c
 <p><br />
 Window의 경우 해당 폴더에서 cmd를 실행시켜 아래 명령어를 이용하면 된다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd bin
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>cd bin
 mysql.exe --initialize
 mysqld --console --explicit_defaults_for_timestamp --skip-grant-tables &amp;
 
 // 새로운 cmd를 켜서 다시 bin 폴더로 이동 및 mysql 실행
 cd bin
 mysql -u root mysql
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br />
 macOS의 경우 해당 폴더에서 터미널을 실행시켜 아래 명령어를 이용하면 된다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd bin
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>cd bin
 ./mysql -u root -p
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /></p>
 
 <p>만약 위 과정이 잘 되지 않거나 어렵다면, 아래 블로그를 참고하면 좋을 것 같다.  <br />
@@ -74,7 +83,41 @@ macOS : <a href="https://daimhada.tistory.com/121">https://daimhada.tistory.com/
 
 <p><br /></p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">java.database</span><span class="o">;</span> <span class="c1">// 패키지명 수정</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">java.database</span><span class="o">;</span> <span class="c1">// 패키지명 수정</span>
 
 <span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
@@ -108,6 +151,6 @@ macOS : <a href="https://daimhada.tistory.com/121">https://daimhada.tistory.com/
 		<span class="o">}</span>
 	<span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /></p>
 :ET

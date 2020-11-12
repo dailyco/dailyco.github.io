@@ -1,4 +1,4 @@
-I"�<p>난이도 ★ ★ ★ ☆ ☆<br />
+I"^<p>난이도 ★ ★ ★ ☆ ☆<br />
 이 문제는 엄청 빨리 풀었다. level3라고 생각이 안 들만큼! 문제를 읽고 어떻게 풀어야겠다하는 알고리즘이 바로 생각나서 생각난 알고리즘을 토대로 코드를 작성했는데 한 번에 해결되었다. 그래서 문제가 쉬웠던건지, 아니면 꾸준히 문제를 해결하면서 문제 해결 능력이 길러지고 있는건지 잘은 모르겠지만, 어쨌든 문제가 빨리 풀려서 기분은 무척 좋았다(˵¯̴͒ꇴ¯̴͒˵)<br />
 <br /></p>
 
@@ -36,7 +36,27 @@
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
 </span>
@@ -56,7 +76,7 @@
     
     <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
@@ -71,6 +91,7 @@
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

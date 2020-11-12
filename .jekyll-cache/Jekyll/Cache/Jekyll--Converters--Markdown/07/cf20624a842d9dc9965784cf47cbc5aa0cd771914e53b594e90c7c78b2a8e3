@@ -1,4 +1,4 @@
-I",<p>난이도 ★ ★ ☆ ☆ ☆<br />
+I"/<p>난이도 ★ ★ ☆ ☆ ☆<br />
 본 문제는 문제를 이해하는 데에 무척 오려 걸렸다. 문제를 이해한 후에도 나름의 알고리즘을 세우고 코드를 짰지만 도무지 어느 곳이 잘못된지를 몰라 애를 많이 먹어서 알고리즘을 한 번 뒤엎었던 문제이기도 하다. 처음에 생각했던 알고리즘과 다른 알고리즘으로 문제를 해결한 후에 다른 사람의 코드를 보며 처음 세웠던 알고리즘을 정리해 다시 짜면서 해결코드가 두 가지가 되었는데, 코드를 보면서 알고리즘이 어떻게 다른지 생각해보는 것도 좋은 공부가 될 것 같다 :)<br />
 <br /></p>
 
@@ -41,7 +41,22 @@
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
 <h4 id="초반-알고리즘으로-생각했던-코드-통과x">초반 알고리즘으로 생각했던 코드 (통과X)</h4>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
 </span>
@@ -56,11 +71,26 @@
 
     <span class="k">return</span> <span class="n">citations</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /></p>
 
 <h4 id="뒤엎은-알고리즘으로-해결한-코드-통과-o-1">뒤엎은 알고리즘으로 해결한 코드 (통과 O)</h4>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
 </span>
@@ -75,11 +105,26 @@
 
     <span class="k">return</span> <span class="n">h_index</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /></p>
 
 <h4 id="해결-후-다른-사람-코드를-참고해-수정한-코드-통과-o-1">해결 후 다른 사람 코드를 참고해 수정한 코드 (통과 O)</h4>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;
 </span>
@@ -94,7 +139,7 @@
     
     <span class="k">return</span> <span class="n">citations</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
@@ -116,6 +161,7 @@
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

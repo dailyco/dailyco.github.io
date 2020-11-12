@@ -1,4 +1,4 @@
-I"�5<p>난이도 ★ ★ ★ ☆ ☆<br />
+I"�9<p>난이도 ★ ★ ★ ☆ ☆<br />
 이 문제 진짜 오랫동안 풀었다… 풀 수 있을 것 같은데 계속 안풀려서 스트레스도 엄청 받고ㅠㅠ 끝내 2시간만에 풀어냈지만.. 문제에서 효율성 테스트는 없었지만, 정확도 테스트 케이스 자체에서 효율성까지 함께 채점되는 듯한 느낌이었다. 처음에 세웠던 알고리즘은 시간초과헤서 풀리지 않은 테스트 케이스들이 꽤 많았기 때문에.. 여튼, 끝내 풀어냈지만 더 공부가 많이 필요한 유형인 것 같다.<br />
 <br /></p>
 
@@ -10,10 +10,13 @@
 가장 일반적인 방법은 요청이 들어온 순서대로 처리하는 것입니다.</p>
 
 <p>예를들어,</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 0ms 시점에 3ms가 소요되는 A작업 요청
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>- 0ms 시점에 3ms가 소요되는 A작업 요청
 - 1ms 시점에 9ms가 소요되는 B작업 요청
 - 2ms 시점에 6ms가 소요되는 C작업 요청
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>와 같은 요청이 들어왔습니다. 이를 그림으로 표현하면 아래와 같습니다.<br />
 <img src="https://grepp-programmers.s3.amazonaws.com/files/production/b68eb5cec6/38dc6a53-2d21-4c72-90ac-f059729c51d5.png" alt="disk_controller1" width="600" /></p>
@@ -22,10 +25,13 @@
 
 <p><img src="https://grepp-programmers.s3.amazonaws.com/files/production/5e677b4646/90b91fde-cac4-42c1-98b8-8f8431c52dcf.png" alt="disk_controller2" width="600" /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- A: 3ms 시점에 작업 완료 (요청에서 종료까지 : 3ms)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>- A: 3ms 시점에 작업 완료 (요청에서 종료까지 : 3ms)
 - B: 1ms부터 대기하다가, 3ms 시점에 작업을 시작해서 12ms 시점에 작업 완료(요청에서 종료까지 : 11ms)
 - C: 2ms부터 대기하다가, 12ms 시점에 작업을 시작해서 18ms 시점에 작업 완료(요청에서 종료까지 : 16ms)
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>이 때 각 작업의 요청부터 종료까지 걸린 시간의 평균은 10ms(= (3 + 11 + 16) / 3)가 됩니다.<br />
 <br /></p>
@@ -33,10 +39,13 @@
 <p>하지만 A → C → B 순서대로 처리하면<br />
 <img src="https://grepp-programmers.s3.amazonaws.com/files/production/9eb7c5a6f1/a6cff04d-86bb-4b5b-98bf-6359158940ac.png" alt="disk_controller3" width="600" /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- A: 3ms 시점에 작업 완료(요청에서 종료까지 : 3ms)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>- A: 3ms 시점에 작업 완료(요청에서 종료까지 : 3ms)
 - C: 2ms부터 대기하다가, 3ms 시점에 작업을 시작해서 9ms 시점에 작업 완료(요청에서 종료까지 : 7ms)
 - B: 1ms부터 대기하다가, 9ms 시점에 작업을 시작해서 18ms 시점에 작업 완료(요청에서 종료까지 : 17ms)
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>이렇게 A → C → B의 순서로 처리하면 각 작업의 요청부터 종료까지 걸린 시간의 평균은 9ms(= (3 + 7 + 17) / 3)가 됩니다.<br />
 <br /></p>
@@ -72,7 +81,43 @@
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;algorithm&gt;
 #include &lt;vector&gt;
 #include &lt;queue&gt;
 </span>
@@ -108,7 +153,7 @@
     
     <span class="k">return</span> <span class="n">answer</span><span class="o">/</span><span class="n">i</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
@@ -130,6 +175,7 @@
 
 <p><br /><br /><br /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

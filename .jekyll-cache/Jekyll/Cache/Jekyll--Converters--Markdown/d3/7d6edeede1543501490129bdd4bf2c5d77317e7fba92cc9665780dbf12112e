@@ -1,4 +1,4 @@
-I"�/<p>난이도 ★ ☆ ☆ ☆ ☆<br />
+I"_1<p>난이도 ★ ☆ ☆ ☆ ☆<br />
 이 문제는 해결하는데 시간이 오래 걸리지도 않았고, 디버깅 시간 없이 바로 해결되었다. 난이도가 level인 만큼 쉬웠던 것 같다. 다만 문제의 지문이 조금 길어서 읽는데 시간 소모가 조금 있었다. 이 문제를 풀고, 다른 사람 풀이를 봤는데 굳이 나 처럼 스택 생성해 사용하지 않고도 그냥 매개변수로 주어지는 2차원 벡터 형태 그대로 사용해서 문제를 해결할 수 있다는 사실을 알고 내가 너무 알고리즘 “문제 풀이 = 자료구조 선택”에 집중해 있었다는 생각이 들었다. 문제를 풀 때, 편협한 생각에서 벗어나서 좀 더 자유롭게 사고할 수 있었으면 좋겠다!<br />
 <br /></p>
 
@@ -65,7 +65,42 @@
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;stack&gt;
 </span>
@@ -100,7 +135,7 @@
     
     <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
@@ -117,6 +152,7 @@
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

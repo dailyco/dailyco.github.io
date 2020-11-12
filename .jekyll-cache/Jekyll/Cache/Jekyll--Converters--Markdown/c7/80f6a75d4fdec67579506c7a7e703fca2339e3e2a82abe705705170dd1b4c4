@@ -1,4 +1,4 @@
-I"<p>난이도 ★ ★ ☆ ☆ ☆<br />
+I"�<p>난이도 ★ ★ ☆ ☆ ☆<br />
 본 문제는 풀기 전에 알고리즘을 생각하면서 ‘이렇게하면 될까?’하고 반신반의하며 푼 문제이다. set의 upper_bound에 대해서 제대로 이해하지 못하고 있는 줄 알았는데 막상 이걸 이용해서 문제를 해결하고나니 제대로 이해하고 있었다는 생각이 들었다 :)<br />
 <br /></p>
 
@@ -37,7 +37,28 @@
 
 <h2 id="3-해결코드">3. 해결코드</h2>
 <h3 id="c">[C++]</h3>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;string&gt;
 #include &lt;vector&gt;
 #include &lt;set&gt;
 </span>
@@ -58,7 +79,7 @@
     
     <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p><br /><br /><br /></p>
 
 <h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
@@ -76,6 +97,7 @@ string.find() 함수는 찾고자하는 문자(열)이 해당 문자열에 없�
 <br /><br /><br /></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET
