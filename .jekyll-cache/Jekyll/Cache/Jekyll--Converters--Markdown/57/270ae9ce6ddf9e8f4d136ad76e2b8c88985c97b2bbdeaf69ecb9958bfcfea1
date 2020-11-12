@@ -1,0 +1,178 @@
+I"�(<p>이전 문제에 비해 이 문제는 빨리 끝나서 좋았다. 그런데 처음에 우선순위 큐를 사용해서 풀려고 했다가 망해서 멀티셋을 사용했는데, 멀티셋에서 내가 잘 모르는 부분에 대해서 끙끙대다가 겨우 해결했다. 힘들긴 했지만 새롭게 알게된 것도 있었고, 앞으로 어떻게 사용해야겠다는 생각이 세워져서 많이 배울 수 있는 문제였다 ˘ڡ˘४<br />
+<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+
+<p>이중 우선순위 큐는 다음 연산을 할 수 있는 자료구조를 말합니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>명령어</th>
+      <th>수신 탑 (높이)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I 숫자</td>
+      <td>큐에 주어진 숫자를 삽입합니다.</td>
+    </tr>
+    <tr>
+      <td>D 1</td>
+      <td>큐에서 최댓값을 삭제합니다.</td>
+    </tr>
+    <tr>
+      <td>D -1</td>
+      <td>큐에서 최솟값을 삭제합니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>이중 우선순위 큐가 할 연산 operations가 매개변수로 주어질 때, 모든 연산을 처리한 후 큐가 비어있으면 [0,0] 비어있지 않으면 [최댓값, 최솟값]을 return 하도록 solution 함수를 구현해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+
+<ul>
+  <li>operations는 길이가 1 이상 1,000,000 이하인 문자열 배열입니다.</li>
+  <li>operations의 원소는 큐가 수행할 연산을 나타냅니다.
+    <ul>
+      <li>원소는 “명령어 데이터” 형식으로 주어집니다.- 최댓값/최솟값을 삭제하는 연산에서 최댓값/최솟값이 둘 이상인 경우, 하나만 삭제합니다.</li>
+    </ul>
+  </li>
+  <li>빈 큐에 데이터를 삭제하라는 연산이 주어질 경우, 해당 연산은 무시합니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+
+<ol>
+  <li>우선순위 큐처럼 사용할 멀티셋 <code class="language-plaintext highlighter-rouge">pq</code>를 생성한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">operations</code> 벡터의 원소를 반복한다.</li>
+  <li>명령어가 I일 경우에 뒤 따라오는 숫자를 멀티셋에 넣는다.</li>
+  <li>명령어가 D이고, 삭제할 원소가 멀티셋에 존재하면 뒤 따라오는 명령어를 확인한다.</li>
+  <li>이어지는 명령어가 -이면 최소값인 멀티셋의 맨 앞의 원소를 삭제한다.</li>
+  <li>이어지는 명령어가 -가 아니면 최댓값인 멀티셋의 맨 뒤 원소를 삭제한다.</li>
+  <li>반복이 끝나고 멀티셋을 확인해 원소가 존재하지 않으면 <code class="language-plaintext highlighter-rouge">{0, 0}</code> , 원소가 존재하면 <code class="language-plaintext highlighter-rouge">{최댓값, 최솟값}</code> 를 반환한다.<br />
+<br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+
+<h3 id="c">[C++]</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;sstream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;set&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">getNum</span><span class="p">(</span><span class="n">string</span> <span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">str_num</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="n">stringstream</span> <span class="n">ssInt</span><span class="p">(</span><span class="n">str_num</span><span class="p">);</span>
+    <span class="n">ssInt</span> <span class="o">&gt;&gt;</span> <span class="n">num</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">operations</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">multiset</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pq</span><span class="p">;</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">string</span> <span class="n">op</span> <span class="o">:</span> <span class="n">operations</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'I'</span><span class="p">)</span> <span class="n">pq</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">getNum</span><span class="p">(</span><span class="n">op</span><span class="p">));</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'D'</span> <span class="o">&amp;&amp;</span> <span class="n">pq</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">op</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'-'</span><span class="p">)</span> <span class="n">pq</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">pq</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+            <span class="k">else</span> <span class="n">pq</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="o">--</span><span class="n">pq</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">pq</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">return</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+    <span class="k">return</span> <span class="p">{</span><span class="o">*--</span><span class="n">pq</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="o">*</span><span class="n">pq</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">stringstream</code> 사용하는 방법이 아직 익숙하지 않다</li>
+  <li>문자열의 부분 문자열 추출하는 방법</li>
+  <li>멀티셋에 삽입, 삭제하는 방법 (이터레이터 제대로 사용하기)
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+
+<ul>
+  <li>[C++ 공식문서] std:multiset:erase <a href="https://www.cplusplus.com/reference/set/multiset/erase/">https://www.cplusplus.com/reference/set/multiset/erase/</a>
+    <blockquote>
+      <ul>
+        <li>멀티셋의 원소를 삭제할 때는 iterator를 인자로 받아 해당 iterator가 가르키는 원소 삭제, <code class="language-plaintext highlighter-rouge">multiset.erase(iterator)</code> 형식으로 사용</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>[C++ 공식문서] std:multiset:insert <a href="https://www.cplusplus.com/reference/set/multiset/insert/">https://www.cplusplus.com/reference/set/multiset/insert/</a>
+    <blockquote>
+      <ul>
+        <li>멀티셋에 원소를 삽일할 때는 삽입하고자하는 원소를 바로 인자로 넣어 삽입 가능, <code class="language-plaintext highlighter-rouge">multiset.insert(e)</code> 형식으로 사용</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>C++ string을 int로 변경하는 방법 <a href="https://psychoria.tistory.com/709">https://psychoria.tistory.com/709</a>
+    <blockquote>
+      <ul>
+        <li><code class="language-plaintext highlighter-rouge">stringstream</code> 을 사용해서 문자열을 정수로 변환 가능, stringstream을 생성할 때에 인자로 변환하고자하는 문자열을 함께 초기화하고<br />
+shift연산자(<code class="language-plaintext highlighter-rouge">&gt;&gt;</code>)를 사용하여 정수에 넣는다</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>C++ 레퍼런스 - string 의 substr 함수 <a href="https://modoocode.com/235">https://modoocode.com/235</a>
+    <blockquote>
+      <ul>
+        <li>문자열의 부분 문자열을 추출하기 위해서는 간단하게 하나의 시작 인자만 넣어 해당 위치부터 끝까지 부분 문자열을 추출 가능, <code class="language-plaintext highlighter-rouge">string.substr(idx)</code> 형식으로 사용</li>
+      </ul>
+    </blockquote>
+  </li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

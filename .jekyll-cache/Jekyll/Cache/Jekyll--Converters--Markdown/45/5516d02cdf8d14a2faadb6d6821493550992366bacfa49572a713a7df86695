@@ -1,0 +1,146 @@
+I"(<p>본 문제는 level2인 것 치고는 쉬운 편이었지만 문제를 꼼꼼히 읽어야했던 문제였다. 나는 함께 문제를 푸는 언니가 문제를 자세히 봐야한다고 말해주었기 때문에 금방 찾을 수 있었지만, 만약 몰랐다면 문제를 제대로 안읽고 왜 안되냐며 헛수고를 하고 있었을거라는 생각이 들었다. 그리고 이번 문제에서는 ‘힙’ 이라는 새로운 자료구조(?)를 배웠는데 처음이라서 쓰는 방법에 대해 조금 헤맸던 것 같다.<br />
+<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+
+<p>매운 것을 좋아하는 Leo는 모든 음식의 스코빌 지수를 K 이상으로 만들고 싶습니다.<br />
+모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 Leo는 스코빌 지수가 가장 낮은 두 개의 음식을 아래와 같이 특별한 방법으로 섞어 새로운 음식을 만듭니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>섞은 음식의 스코빌 지수 = 가장 맵지 않은 음식의 스코빌 지수 + (두 번째로 맵지 않은 음식의 스코빌 지수 * 2)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Leo는 모든 음식의 스코빌 지수가 K 이상이 될 때까지 반복하여 섞습니다.<br />
+Leo가 가진 음식의 스코빌 지수를 담은 배열 scoville과 원하는 스코빌 지수 K가 주어질 때, 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+
+<ul>
+  <li>scoville의 길이는 1 이상 1,000,000 이하입니다.</li>
+  <li>K는 0 이상 1,000,000,000 이하입니다.</li>
+  <li>scoville의 원소는 각각 0 이상 1,000,000 이하입니다.</li>
+  <li>모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우에는 -1을 return 합니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+
+<ol>
+  <li>scoville 를 min-heap으로 만든다.</li>
+  <li>가장 작은 스코빌 지수가 K 이하, 음식을 섞어서 스코빌 지수를 높일 수 있기 때문에 벡터의 크기가 2 이상인 동안 다음을 반복한다.</li>
+  <li>가장 작은 스코빌 지수 smallest1과 그 다음으로 작은 스코빌 지수 smallest2를 pop한다.</li>
+  <li>섞은 음식의 스코빌 지수를 다시 heap에 넣고 answer는 증가시킨다.</li>
+  <li>반복문이 끝나고, 가장 작은 스코빌 지수가 K보다 작은 경우에 -1을 반환한다.<br />
+(이 경우는 모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우이다)</li>
+  <li>그렇지 않으면 음식을 섞어 K이상의 스코빌 지수를 만들었기 때문에 섞은 횟수 answer를 반환한다.<br />
+<br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+
+<h3 id="c">[C++]</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">scoville</span><span class="p">,</span> <span class="kt">int</span> <span class="n">K</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">make_heap</span><span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">scoville</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">front</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">K</span> <span class="o">&amp;&amp;</span> <span class="n">scoville</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">pop_heap</span><span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">scoville</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+        <span class="kt">int</span> <span class="n">smallest1</span> <span class="o">=</span> <span class="n">scoville</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+        <span class="n">scoville</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+
+        <span class="n">pop_heap</span><span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">scoville</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+        <span class="kt">int</span> <span class="n">smallest2</span> <span class="o">=</span> <span class="n">scoville</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+        <span class="n">scoville</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+
+        <span class="n">scoville</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">smallest1</span> <span class="o">+</span> <span class="n">smallest2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">push_heap</span><span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">scoville</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+
+        <span class="n">answer</span> <span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">scoville</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">K</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+
+<ul>
+  <li>heap 자료구조를 쓰기위해서 어떻게 해야하나?</li>
+  <li>default는 max-heap, min-heap을 만드려면?</li>
+  <li>heap 자료 구조를 어떻게 사용하는지!</li>
+  <li>다른 사람이 푼 코드를 보니 make_heap() 외에 아예 priority_queue의 자료구조를 사용!
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+
+<ul>
+  <li>[C++ 공식 문서] std:make_heap <a href="http://www.cplusplus.com/reference/algorithm/make_heap/">http://www.cplusplus.com/reference/algorithm/make_heap/</a>
+    <blockquote>
+      <ul>
+        <li><code class="language-plaintext highlighter-rouge">make_heap()</code>, <code class="language-plaintext highlighter-rouge">pop_heap()</code> 등의 관련 함수들을 사용하기 위해서는 <code class="language-plaintext highlighter-rouge">#include &lt;algorithm&gt;</code></li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>STL) Heap 과 관련된 연산들 <a href="https://openmynotepad.tistory.com/35">https://openmynotepad.tistory.com/35</a>
+    <blockquote>
+      <ul>
+        <li><code class="language-plaintext highlighter-rouge">make_heap()</code> 함수는 임의 반복 접근자가 있는 모든 컨테이너를 heap으로 변환</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>[StackOverFlow] Comparator for min-heap in C++<br />
+ <a href="https://stackoverflow.com/questions/14016921/ comparator-for-min-heap-in-c">https://stackoverflow.com/questions/14016921/ comparator-for-min-heap-in-c</a>
+    <blockquote>
+      <ul>
+        <li><code class="language-plaintext highlighter-rouge">make_heap()</code> 함수는 기본적으로 max-heap을 생성, min-heap을 생성하기 위해서는 세 번째 인자로 비교 함수 <code class="language-plaintext highlighter-rouge">greater&lt;int&gt;()</code> 할당</li>
+      </ul>
+    </blockquote>
+  </li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

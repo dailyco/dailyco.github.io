@@ -1,0 +1,245 @@
+I"K<p>오랜만에 알고리즘 문제 풀이였다. 요즘 자격증 시험 때문에 공부하느라고 알고리즘 문제와 웹 공부를 제대로 하지 못했다. 고새 (일주일도 안되는 짧은 시간) 문제 조금 안풀었다고 머리가 굳은건지 열심히 풀려고 생각했는데 잘 안풀리더라…ㅠㅠ 결국 내 나름의 알고리즘을 세워 코드를 작성하였으나 테스트 케이스의 절반만 맞는 참사(…)를 경험하고, 이리저리 머리를 굴려보았으나 시간적인 한계와 더불어 머리가 더 이상 생각을 거부하는 것 같아 다른 사람의 코드를 참고하기로 결정했다 (｡•́-ก̀｡)<br />
+<br />
+<br /></p>
+
+<h2 id="1-문제">1. 문제</h2>
+
+<p>주어진 항공권을 모두 이용하여 여행경로를 짜려고 합니다. 항상 ICN 공항에서 출발합니다.</p>
+
+<p>항공권 정보가 담긴 2차원 배열 tickets가 매개변수로 주어질 때,<br />
+방문하는 공항 경로를 배열에 담아 return 하도록 solution 함수를 작성해주세요.</p>
+
+<h3 id="제한조건">제한조건</h3>
+
+<ul>
+  <li>모든 공항은 알파벳 대문자 3글자로 이루어집니다.</li>
+  <li>주어진 공항 수는 3개 이상 10,000개 이하입니다.</li>
+  <li>tickets의 각 행 [a, b]는 a 공항에서 b 공항으로 가는 항공권이 있다는 의미입니다.</li>
+  <li>주어진 항공권은 모두 사용해야 합니다.</li>
+  <li>만일 가능한 경로가 2개 이상일 경우 알파벳 순서가 앞서는 경로를 return 합니다.</li>
+  <li>모든 도시를 방문할 수 없는 경우는 주어지지 않습니다.
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="2-알고리즘-생각해보자">2. 알고리즘! 생각해보자</h2>
+
+<ol>
+  <li>답을 나타내는 벡터 answer와 답이 나올 때까지 원소들을 하나씩 더해줄 벡터 temp를 생성한다.</li>
+  <li>2차원 벡터 tickets의 방문 여부를 확인해줄 bool타입의 원소 visit을 tickets의 사이즈만큼 초기화하여 생성한다.</li>
+  <li>tickets를 문자열의 오름차순으로 정렬한다. (2차원 벡터의 오름차순 정렬은 1차적으로 첫번째 원소를 기준으로하며,<br />
+첫번째 원소가 같을 경우 두번째 원소, 두번째 원소가 같을 경우 세번째 원소를 기준으로 정렬하는 식으로 적용된다)</li>
+  <li>dfs 함수를 사용해 방문하는 공항의 경로를 구한다.</li>
+  <li>dfs 함수의 인자로 전해지는 값들을 하나씩 보면, 첫번째 인자는 출발 공항 from, 두번째는 처음에 solution에서 인자로 받은 2차원 벡터 tickets, 세번째는 tickets의 방문 여부를 확인하는 visit, 네번째는 재귀함수를 사용해서 계속해서 답을 만드는 벡터 temp, 다음은 정답 벡터 answer, 마지막은 현재 tickets에서 방문한 공항들을 나타내는 cnt 이다.</li>
+  <li>dfs 함수의 자세한 내용을 보면, 먼저 출발 공항을 temp 벡터에 넣고 모든 tickets의 공항들을 방문했으면 temp 벡터가 정답을 다 구했다는 의미이므로 answer에 넘겨주고, true를 반환한다.</li>
+  <li>아직 공항들을 덜 방문했으면 tickets 벡터를 하나씩 돌면서 출발 공항이랑 같은 값을 가지면서 아직 방문하지 않은 공항을 찾고, 해당 공항을 통해서 모든 공항을 방문 가능할 경우 true를 반환한다.</li>
+  <li>아직 tickets의 모든 공항을 방문하지 않았는데 더 이상 갈 수 있는 경로가 없을 경우 temp 벡터에서 처음에 넣었던 출발 공항을 빼고, false를 반환한다.</li>
+  <li>dfs 함수를 모두 돌아 방문하는 공항 경로를 다 구하고 나서 answer 벡터를 반환한다.<br />
+<br /><br /></li>
+</ol>
+
+<h2 id="3-해결코드">3. 해결코드</h2>
+
+<h3 id="c">[C++]</h3>
+
+<h4 id="정확도-50-코드-통과-x">정확도 50 코드 (통과 X)</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;algorithm&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">next_idx</span><span class="p">(</span><span class="n">string</span> <span class="n">city</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">tickets</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tickets</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">tickets</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">city</span><span class="p">)</span> <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">dfs</span><span class="p">(</span><span class="n">string</span> <span class="n">city</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">tickets</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">tickets</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="p">{</span><span class="n">tickets</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]};</span>
+
+    <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">next_idx</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">tickets</span><span class="p">);</span>
+    <span class="n">string</span> <span class="n">next_city</span> <span class="o">=</span> <span class="n">tickets</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">tickets</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">tickets</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">idx</span><span class="p">);</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">next_city</span><span class="p">,</span> <span class="n">tickets</span><span class="p">);</span>
+    <span class="n">answer</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">next_city</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">tickets</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">answer</span><span class="p">;</span>
+
+    <span class="n">sort</span><span class="p">(</span><span class="n">tickets</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">tickets</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="s">"ICN"</span><span class="p">,</span> <span class="n">tickets</span><span class="p">);</span>
+    <span class="n">answer</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"ICN"</span><span class="p">);</span>
+    <span class="n">reverse</span><span class="p">(</span><span class="n">answer</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">answer</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /></p>
+
+<h4 id="다른-사람의-코드-참고-통과-o">다른 사람의 코드 참고 (통과 O)</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre><span class="cp">#include &lt;algorithm&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">bool</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">string</span> <span class="n">from</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;&amp;</span> <span class="n">tickets</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;&amp;</span> <span class="n">visit</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">temp</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">answer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cnt</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">temp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">from</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cnt</span> <span class="o">==</span> <span class="n">tickets</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">tickets</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">tickets</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">from</span> <span class="o">&amp;&amp;</span> <span class="n">visit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">visit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">tickets</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">tickets</span><span class="p">,</span> <span class="n">visit</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">answer</span><span class="p">,</span> <span class="n">cnt</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="n">visit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">temp</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">solution</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">tickets</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">answer</span><span class="p">,</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">visit</span><span class="p">(</span><span class="n">tickets</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="nb">false</span><span class="p">);</span>
+
+    <span class="n">sort</span><span class="p">(</span><span class="n">tickets</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">tickets</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">dfs</span><span class="p">(</span><span class="s">"ICN"</span><span class="p">,</span> <span class="n">tickets</span><span class="p">,</span> <span class="n">visit</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">answer</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="4-해결능력up-깊이-생각해보기">4. 해결능력UP, 깊이 생각해보기</h2>
+
+<ul>
+  <li>사실 조금 더 고민했으면 충분히 풀 수 있는 문제였는데 아쉽다</li>
+  <li>다음부터는 시간에 쫓기지 말고 여유롭게 잘 풀길!</li>
+  <li>vector 두 개를 완전히 합치거나, 부분적으로 합치는 방법</li>
+  <li>벡터의 순서를 역순으로 바꾸는 방법
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="5-참고해서-문제해결-٩-ᐛ-و">5. 참고해서 문제해결 ٩( ᐛ )و</h2>
+
+<ul>
+  <li>[C++ 공식문서] std:vector:erase <a href="https://www.cplusplus.com/reference/vector/vector/erase/">https://www.cplusplus.com/reference/vector/vector/erase/</a>
+    <blockquote>
+      <ul>
+        <li>벡터의 원소를 삭제할 때는 iterator를 사용해서 삭제 가능, <code class="language-plaintext highlighter-rouge">vector.erase(iterator)</code> 형식으로 사용</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>[C++] insert 함수를 이용하여 vector 합치기 / 벡터(vector) 합치는 법 <a href="https://woo-dev.tistory.com/79">https://woo-dev.tistory.com/79</a>
+    <blockquote>
+      <ul>
+        <li>벡터 두 개를 합치거나 벡터의 일정 부분을 다른 벡터에 삽입하기 위해 <code class="language-plaintext highlighter-rouge">insert()</code> 사용,<br />
+‘<code class="language-plaintext highlighter-rouge">vector1.insert(vector1의 삽입하고자하는 위치, vector2의 삽입 시작 원소 iterator, vector2의 삽입 끝 원소 iterator)</code>’ 형식으로 사용</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>vector 안의 원소들의 순서를 역순으로 바꾸는 방법 <a href="https://starrykss.tistory.com/597">https://starrykss.tistory.com/597</a>
+    <blockquote>
+      <ul>
+        <li>벡터의 순서를 역순으로 바꾸기 위해서는 <code class="language-plaintext highlighter-rouge">reverse() 사용</code>, ‘<code class="language-plaintext highlighter-rouge">reverse(vector.begin(), vector.end())</code>’ 형식으로 사용</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>[프로그래머스] 여행경로 <a href="https://dailyheumsi.tistory.com/22">https://dailyheumsi.tistory.com/22</a>
+    <blockquote>
+      <ul>
+        <li>해당 사이트에서 코드를 참고하였다! •͈ᴗ•͈⋆*</li>
+      </ul>
+    </blockquote>
+  </li>
+</ul>
+
+<p><br /><br /><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET
