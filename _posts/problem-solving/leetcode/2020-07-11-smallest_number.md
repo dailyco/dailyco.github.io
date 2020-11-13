@@ -3,7 +3,7 @@ title: "LeetCode Weekly Contest 196 : Minimum Possible Integer After at Most K A
 date: 2020-07-11
 author: YuJin Kim
 categories: [Problem Solving, Leetcode, Weekly Contest]
-tags: [leetcode, codingtest, hard, algorithm, greedy, c++]
+tags: [leetcode, coding test, hard, algorithm, greedy, c++]
 # sitemap:
 #     changefreq: daily
 ---

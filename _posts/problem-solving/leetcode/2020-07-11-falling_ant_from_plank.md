@@ -3,7 +3,7 @@ title: "LeetCode Weekly Contest 196 : Last Moment Before All Ants Fall Out of a 
 date: 2020-07-11
 author: YuJin Kim
 categories: [Problem Solving, Leetcode, Weekly Contest]
-tags: [leetcode, codingtest, medium, algorithm, c++]
+tags: [leetcode, coding test, medium, algorithm, c++]
 # sitemap:
 #     changefreq: daily
 ---

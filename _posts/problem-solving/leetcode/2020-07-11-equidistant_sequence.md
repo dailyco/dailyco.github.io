@@ -3,7 +3,7 @@ title: "LeetCode Weekly Contest 196 : Can Make Arithmetic Progression From Seque
 date: 2020-07-11
 author: YuJin Kim
 categories: [Problem Solving, Leetcode, Weekly Contest]
-tags: [leetcode, codingtest, easy, algorithm, sorting, c++]
+tags: [leetcode, coding test, easy, algorithm, sorting, c++]
 # sitemap:
 #     changefreq: daily
 ---
