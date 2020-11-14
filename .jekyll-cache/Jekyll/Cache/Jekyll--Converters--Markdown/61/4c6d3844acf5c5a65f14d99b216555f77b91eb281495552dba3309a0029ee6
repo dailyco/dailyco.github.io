@@ -1,0 +1,478 @@
+I"4�<p>알고리즘을 공부하다보면 Dynamic Programming Algorithm이라는 것에 대해 배운다.<br />
+한국어로 하면 ‘동적 프로그래밍’인데, 실제로 사용하는 것을 보면 전혀 다이나믹 하지 않다.</p>
+
+<p>이번 포스팅에서는 Dynamic Programming이 어떤 알고리즘 기법인지 보고,<br />
+이 알고리즘이 Recursive 알고리즘과 비교해서 얼마나 효율적인지를 이야기 해보자.
+<br />
+<br /></p>
+
+<h2 id="1-recursive-algorithm">1. Recursive Algorithm</h2>
+
+<p>Dynamic Programming에 대한 이야기를 하기 전에, 먼저 Recursice Algorithm을 알아보자.</p>
+
+<h3 id="1-recursion-이란">1) Recursion 이란?</h3>
+
+<blockquote>
+  <p><strong>Recursion</strong><br />
+자신을 정의할 때 자기 자신을 재참조하는 방법</p>
+</blockquote>
+
+<p>Recursion(재귀)란 위 정의에서 말하는 것과 같다.<br />
+말이 조금 어려울 수 있어 재귀함수(Recursive funtion)를 예로 이야기하면,<br />
+함수를 정의할 때 자신의 함수를 다시 사용하는 함수를 재귀함수라고 한다.
+<br /></p>
+
+<h3 id="2-recursive-algorithm">2) Recursive Algorithm</h3>
+
+<p>위에서 이야기 했듯이, Recursion은 자신을 정의할 때 자기 자신을 재참조 하는 방법이다.<br />
+따라서, Recursive Algorithm은 계속해서 자기 자신을 재참조하는 방식으로 프로그래밍이 이루어진다.<br />
+여기에서 ‘그럼 영원히 끝나지 않는거 아니야?’라는 생각이 떠오를 수 있는데,<br />
+Recursive Algorithm은 기본적으로 ‘base case’와 ‘recursive case’로 나뉜다.<br />
+따라서 recursive case에서 자신을 재참조 하다가 어떤 조건을 만족하는 순간 base case로 들어가 끝이 난다.<br />
+Recursive Algorithm은 보통 ‘Top-Down Approach’ 방식으로 작동한다.
+<br /><br /><br /></p>
+
+<h2 id="2-dynamic-programming-algorithm">2. Dynamic Programming Algorithm</h2>
+
+<p>Dynamic Programming은 실제로 다이나믹 하지 않다.<br />
+또한 여기서 이야기하는 프로그래밍이 컴퓨터 프로그래밍이 아니라 테이블을 만든다는 뜻이다.<br />
+그래서 Dynamic Programming을 ‘동적 프로그래밍’ 대신 ‘기억하기 프로그래밍’이라고도 한다.</p>
+
+<h3 id="1-dynamic-programming-algorithm">1) Dynamic Programming Algorithm</h3>
+
+<p>Dynamic Programming(이하 DP)을 설명하기 위해서는 Memoization에 대해 알아야 한다.<br />
+Memoization은 일종의 테크닉 중 하나로, 계산된 값을 버리지 않고 저장하는 것이다.</p>
+
+<p>DP는 이 Memoization 테크닉을 사용한다.<br />
+따라서 DP를 Memoization과 연관지어 아래와 같이 이야기 할 수 있다.</p>
+
+<blockquote>
+  <p>계산된 값을 저장해 놓고 있다가, 필요한 경우 계산 없이 호출하는 알고리즘 방법</p>
+</blockquote>
+
+<p>DP 알고리즘은 쉽게 말해서 반복적으로 계산되는 것들의 계산 횟수를 줄이기 위해서 이전에 계산했던 값을 저장해 두었다가 나중에 재사용하는 방법이다. 이전에 계산했던 값을 테이블을 만들어 저장하고, 같은 계산을 해야할 때 계산하지 않고 저장했던 값을 사용하기 때문에 기억하기 프로그래밍이라고도 하는 것이다.<br />
+또한 DP 알고리즘은 Recursive Algorithm과는 다르게 보통 ‘Bottom-Up Approach’ 방식으로 작동하는데, ‘Top-Down Approach’ 방식으로 코드를 수정할 수도 있다.
+<br /><br /><br /></p>
+
+<h2 id="3-simple-example">3. Simple Example</h2>
+
+<p>말로 설명하는 것 보다는 직접 코드를 보면서 이해하는 것이 쉽기 때문에 간단한 예제를 보자.<br />
+아래 예제는 피보나치 수열을 구하는 코드를 각각 Recursive Algorithm과 Dynamic Programming Algorithm을 사용해서 프로그래밍한 것이다.</p>
+
+<h3 id="1-recursive-algorithm-example">1) Recursive Algorithm Example</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td> --><td class="rouge-code"><pre><span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">n</span> <span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위의 코드를 보면 알겠지만 base case <code class="language-plaintext highlighter-rouge">if (n &lt; 2)</code>에서는 단순히 n을 리턴하고,<br />
+recursive case <code class="language-plaintext highlighter-rouge">else</code>에서는 자신의 함수를 다시 불러 들임으로써 재귀함수를 완성한다.</p>
+
+<p>n을 2로 예를 들어보면, 처음에 <code class="language-plaintext highlighter-rouge">fib</code>함수에 들어왔을 때 recursive case로 들어간다.<br />
+그러면 <code class="language-plaintext highlighter-rouge">fib(1) + fib(0)</code>을 리턴하게 되므로 <code class="language-plaintext highlighter-rouge">fib(1)</code>부터 다시 함수를 불러들여 계산하면,<br />
+n이 1이기 때문에 base case로 들어가게돼 1을 리턴하고 <code class="language-plaintext highlighter-rouge">fib(0)</code>도 마찬가지로 0을 리턴한다.<br />
+따라서 <code class="language-plaintext highlighter-rouge">fib(1) + fib(0)</code>는 (1 + 0 = 1)이 되어서 2번째 피보나치 수열은 1이 되는 것이다.</p>
+
+<p>Recursive Algorithm을 설명하면서 ‘Top-Down Approach’ 방식을 언급했었는데,<br />
+방금도 설명했듯 큰 수(2)에서 점점 작은 수(1, 0)를 구하는 방식으로 진행되기 때문에 ‘Top-Down Approach’ 이다.
+<br /></p>
+
+<h3 id="2-dynamic-programming-algorithm-example">2) Dynamic Programming Algorithm Example</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td> --><td class="rouge-code"><pre><span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="o">*</span> <span class="n">fib_table</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="p">;</span>
+
+    <span class="n">fib_table</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
+    <span class="n">fib_table</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">fib_table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib_table</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib_table</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">fib_table</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 코드를 보면, Recursive Algorithm과 다른 점은 처음에 계산된 값을 저장할 테이블을 생성한다는 것이다.<br />
+그리고 0번째 피보나치 수열과 1번째 피보나치 수열에 각각 자기 자신을 넣어주는데,<br />
+이 부분이 Recursive Algorithm에서는 base case와 같은 부분이라고 이야기 할 수 있다.<br />
+그 후 2번째 피보나치 수열부터 테이블에 저장된 값을 불러와 더한 값을 다시 테이블에 저장해주는 식으로 계산된다.
+그리고 앞에서도 이야기 했듯이, DP는 보통 ‘Bottom-Up Approach’ 방식(0, 1부터 점점 늘어나는 식)으로 작동한다.
+<br /></p>
+
+<h3 id="3-전체-코드">3) 전체 코드</h3>
+
+<p>피보나치 수열을 구하는 코드를 직접 돌려보고 싶은 분들을 위해 각각 Recursive Algorithm과 Dynamic Programming Algorithm 방법으로 짠 코드를 공유한다.
+각 코드는 C언어로 짠 코드이고, 아래 코드를 그대로 복사해서 c파일을 만들어 컴파일해서 돌려보면 될 것이다.</p>
+
+<h4 id="--recursive-algorithm">- Recursive Algorithm</h4>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td> --><td class="rouge-code"><pre><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">This program is computing Fibonacci number.</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Usage : ./&lt;executable&gt; &lt;n&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"        n is the number which you want to compute Fibonacci number.</span><span class="se">\n\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">"0"</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"err: No command!</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">;</span> <span class="p">}</span>
+
+        <span class="kt">int</span> <span class="n">fib_num</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d's Fibbonacci number : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">fib_num</span><span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="n">printf</span><span class="p">(</span><span class="s">"err: No command!</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">n</span> <span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="--dynamic-programming-algorithm">- Dynamic Programming Algorithm</h4>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre></td> --><td class="rouge-code"><pre><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">This program is computing Fibonacci number.</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Usage : ./&lt;executable&gt; &lt;n&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"        n is the number which you want to compute Fibonacci number.</span><span class="se">\n\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">"0"</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"err: No command!</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">;</span> <span class="p">}</span>
+
+        <span class="kt">int</span> <span class="n">fib_num</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d's Fibbonacci number : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">fib_num</span><span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="n">printf</span><span class="p">(</span><span class="s">"err: No command!</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="o">*</span> <span class="n">fib_table</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="p">;</span>
+
+    <span class="n">fib_table</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
+    <span class="n">fib_table</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">fib_table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib_table</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib_table</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">fib_table</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h2 id="4-efficiency">4. Efficiency</h2>
+
+<p>간단한 피보나치 예제로 각각의 알고리즘이 어떤 방법인지는 대충 감을 잡았을 것이다.<br />
+그럼 여기서 더 나아가 살펴봐야 할 것이 효율성인데, DP 알고리즘에서 계속해서 강조하는 것이 ‘반복되는 계산을 피하기위해서 값을 저장한다’는 것이다. 이 말을 들었을 때 ‘그러면 Recursive 알고리즘은 반복되는 계산이 있나?’하는 의문이 들 수 있는데, 맞다. Recursive 알고리즘은 반복되는 계산이 나올때마다 다시 계산하기 때문에 DP보다 무척 비효율적이다.<br />
+아래 사진을 보면서 이야기 해보자.</p>
+
+<p><img src="/assets/img/post/courses/algorithm/recursive_fib.png" alt="fib" width="450" />
+<em>그림1. 피보나치 수열 7의 Recursive Tree</em></p>
+
+<p>위 사진은 Recursive 알고리즘을 적용했을 때, 피보나치 수열 7의 Recursive Tree이다.<br />
+여러가지 색으로 이루어져있는데, 반복되는 계산끼리 같은 색으로 표현되어 있는 것이다.<br />
+따라서 Recursive 알고리즘은 같은 색의 갯수만큼 반복 계산을 하는 반면에, DP는 계산한 값을 저장해두기 때문에 위와 같은 계산을 반복하지 않는다. 위 사진은 피보나치 수열 7을 예로 든 것인데, 반복 계산은 피보나치 수열의 숫자가 커질 수록 더욱 극명하게 드러난다.
+<br /><br /><br /></p>
+
+<h2 id="5-combination-example">5. Combination Example</h2>
+
+<p>위에서 이론적인 효율성 부분에 대해서 이야기 해보았다.<br />
+하지만 실질적으로 DP 알고리즘이 얼마나 효율적인지 체감하기에는 조금 어려움이 있을 것이다.<br />
+그래서 필자가 확실히 체감할 수 있는 예제를 준비해 보았다.</p>
+
+<p>아래 코드는 조합(Combination)의 경우의 수를 구하는 프로그램이다.<br />
+그리고 Recursive와 DP 알고리즘의 효율성을 비교하기 위해 조합의 경우의 수를 구하는 데에 얼마나 많은 시간이 걸리는지 각 알고리즘 별로 시간을 표시해 보았다.<br />
+직접 코드를 돌려보면서 그 차이를 알고싶은 분들은 아래 코드를 그대로 복사해 컴파일해서 돌려볼 수 있다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+</pre></td> --><td class="rouge-code"><pre><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;time.h&gt;
+</span>
+<span class="kt">void</span> <span class="nf">print_help</span><span class="p">()</span> <span class="p">;</span>
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">recursive_algorithm</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">;</span>
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">dynamic_programming_algorithm</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="n">print_help</span><span class="p">()</span> <span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="o">*</span> <span class="n">option</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">;</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="p">;</span>
+        <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">clock_t</span> <span class="n">start</span><span class="p">,</span> <span class="n">finish</span> <span class="p">;</span>
+            <span class="kt">double</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span> <span class="p">;</span>
+
+            <span class="n">printf</span><span class="p">(</span><span class="s">"Computing %dC%d...</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="s">"-r"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="s">"-b"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">()</span> <span class="p">;</span>
+                <span class="kt">long</span> <span class="kt">long</span> <span class="n">result</span> <span class="o">=</span> <span class="n">recursive_algorithm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">finish</span> <span class="o">=</span> <span class="n">clock</span><span class="p">()</span> <span class="p">;</span>
+                <span class="n">duration</span> <span class="o">=</span> <span class="p">(</span><span class="kt">double</span><span class="p">)(</span><span class="n">finish</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span><span class="o">/</span><span class="n">CLOCKS_PER_SEC</span> <span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">"Recursive Algorithm: %lli | time : %f sec</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span> <span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="s">"-d"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="s">"-b"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">()</span> <span class="p">;</span>
+                <span class="kt">long</span> <span class="kt">long</span> <span class="n">result</span> <span class="o">=</span> <span class="n">dynamic_programming_algorithm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="p">;</span>
+                <span class="n">finish</span> <span class="o">=</span> <span class="n">clock</span><span class="p">()</span> <span class="p">;</span>
+                <span class="n">duration</span> <span class="o">=</span> <span class="p">(</span><span class="kt">double</span><span class="p">)(</span><span class="n">finish</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span><span class="o">/</span><span class="n">CLOCKS_PER_SEC</span> <span class="p">;</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">"Dynamic Programming: %lli | time : %f sec</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span> <span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="n">printf</span><span class="p">(</span><span class="s">"err: n is smaller than k!</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="n">printf</span><span class="p">(</span><span class="s">"err: No command!</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">recursive_algorithm</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="n">n</span> <span class="o">||</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span> <span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="n">recursive_algorithm</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">recursive_algorithm</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">dynamic_programming_algorithm</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="o">**</span> <span class="n">combination</span> <span class="p">;</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">answer</span> <span class="p">;</span>
+
+    <span class="n">combination</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="o">**</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">combination</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span> <span class="o">||</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">combination</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
+            <span class="k">else</span> <span class="n">combination</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">combination</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">combination</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">combination</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">free</span><span class="p">(</span><span class="n">combination</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">;</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">combination</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">answer</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">print_help</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"This program is computing Combination.</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Usage: ./&lt;excutable&gt; &lt;option&gt; &lt;n&gt; &lt;k&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"option:</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"        -r  Recursive Algorithm</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"        -d  Dynamic Programming Algorithm</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"        -b  Both and comparing</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br />
+직접 컴파일해서 돌려보면 아래와 같은 결과를 볼 수 있다.<br />
+아래는 \(\begin{align*} \phantom{}_{n}\mathrm{C}_{r} \end{align*}\)(20개 중 순서에 상관없이 5개를 선택했을 때 경우의 수)일 때의 경우의 수와 계산하는 데 걸리는 시간이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre>Computing 20C5...
+Recursive Algorithm: 15504 | time : 0.000128 sec
+Dynamic Programming: 15504 | time : 0.000028 sec
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br />
+위의 경우에서 시간에 큰 차이를 느끼지 못하신 분들은 아래의 경우도 보자.<br />
+아래는 40C20일 때의 경우의 수와 계산하는 데 걸리는 시간이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td> --><td class="rouge-code"><pre>Computing 40C20...
+Recursive Algorithm: 137846528820 | time : 619.346706 sec
+Dynamic Programming: 137846528820 | time : 0.000108 sec
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 경우를 보면 정말 큰 차이를 느낄 수 있을 것이다.<br />
+Recursive의 경우는 10분이 넘는 시간이 걸리는데, DP의 경우 단 0.001초도 걸리지 않는다.</p>
+
+<p>직접 조합을 예로 들어서 각 알고리즘 별로 돌려보니 효율성 측면에서 확실히 차이가 큰 것을 체감할 수 있었을 것이다.
+그리고 반복되는 계산이 많다면 저장해두고 사용하는 것이 시간적 측면에서 얼마나 많은 비용을 줄여주는지를 알 수 있었을 거라 믿는다.
+<br /><br /><br /></p>
+
+<h2 id="6-github-repository">6. GitHub Repository</h2>
+
+<p>이번 포스팅에서 설명했던 예제 코드들은 깃헙에 올려두었으니 필요하신 분들은 아래 링크를 참고하시길.</p>
+
+<ul>
+  <li><a href="https://github.com/dailyco/algorithm">https://github.com/dailyco/algorithm</a>
+<br /><br /><br /></li>
+</ul>
+
+<h2 id="7-reference">7. Reference</h2>
+
+<ul>
+  <li><a href="https://www.zerocho.com/category/Algorithm/post/584b979a580277001862f182">동적 프로그래밍(Dynamic programming)</a></li>
+  <li><a href="https://softwaretestingtrends.com/blog/understanding-recursion-recursive-functions/">Understanding Recursion &amp; Recursive Functions</a></li>
+</ul>
+:ET

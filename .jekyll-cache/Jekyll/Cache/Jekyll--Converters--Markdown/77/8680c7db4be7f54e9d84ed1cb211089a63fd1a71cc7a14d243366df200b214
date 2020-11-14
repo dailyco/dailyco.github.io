@@ -1,0 +1,199 @@
+I"�+<p><a href="http://localhost:4000/posts/static_analysis">전 포스팅</a> 중 PMD에 대해 간략히 설명했었다. 이번 포스팅에서는 좀 더 나아가 PMD의 Dataflow Anomaly Analysis에 대해서 다뤄보려한다.<br />
+<br />
+<br /></p>
+
+<h2 id="1-dataflow-anomaly-analysis">1. Dataflow Anomaly Analysis</h2>
+
+<h3 id="1-dataflow-anomaly-analysis-란">1) Dataflow Anomaly Analysis 란?</h3>
+
+<p>Dataflow Anomaly Analysis, 한국어로 번역하면 ‘데이터 흐름 이상 분석’이란 무엇인가?<br />
+PMD에서 정의하는 Dataflow Anomaly Analysis의 정의는 다음과 같다.</p>
+
+<blockquote>
+  <p>어떠한 데이터에 정의 되어있는 변수의 흐름을 쫓아가면서 변수의 잘못된 정의나 참조를 분석<br />
+→ 이로부터 다양한 문제(결함) 발견</p>
+</blockquote>
+
+<p>간단히 말해서 변수의 흐름을 쫓으면서 변수가 잘못 정의 되지는 않았는지, 쓸데없는 정의가 존재하지는 않는지 등을 분석하고, 이로부터 결함을 발견하는 분석 방법이다.</p>
+
+<h3 id="2-data의-세-가지-상태">2) data의 세 가지 상태</h3>
+
+<p>이러한 변수들은 각각 세 가지 상태를 가지는데, 그 종류는 아래와 같다.</p>
+
+<ul>
+  <li>
+    <p>Defined (D) : 변수 x에 값이 할당 되면 변수 x가 defined 되었다고 한다.<br />
+ex) x = 5;</p>
+  </li>
+  <li>
+    <p>Undefined (U) : 변수 x의 값이 삭제될 때 변수 x가 undefined 되었다고 한다.<br />
+ex) method의 지역 변수가 method가 종료되고 사라질 때</p>
+  </li>
+  <li>
+    <p>Referenced (R) : 변수 x가 y의 값 혹은 조건문 등에 참조 될 때 referenced 되었다고 한다.<br />
+ex) y = x + 1; or if(x == 1)
+<br />
+<br /></p>
+  </li>
+</ul>
+
+<h2 id="2-anomaly">2. Anomaly</h2>
+
+<p>PMD에서 변수의 흐름을 쫓으면서 분석을 할 때 각 변수(data)의 세 가지 상태 D, U, R에 대해 알아보았는데,<br />
+이제 이 세가지 상태로 나타낸 Anomaly의 종류에 무엇이 있는지를 알아보자.</p>
+
+<h3 id="1-anomaly-종류">1) Anomaly 종류</h3>
+
+<p>Anomaly의 종류에는 UR, DU, DD Anomaly 세 종류가 있다.<br />
+이 세 종류를 자세히 설명하기 전에, Anomaly의 개념이 조금 생소하실 수 있는 분을 위해 조금의 이해를 돕고자 살짝 언급하고 넘어가려한다.<br />
+Anomaly는 한국어로 번역하면 ‘이상’, ‘변칙’이라는 뜻을 가지는데, 여기에서 Anomaly는 단순히 ‘결함’으로 이해하면 좀 더 직관적이고 쉽게 다가오리라 생각한다.</p>
+
+<ul>
+  <li>
+    <p>UR-Anomaly : UR이면 Undefined, Referenced이다.<br />
+이것만 보고 직관적으로 ‘UR-Anomaly가 뭐겠다!’하고 다가오시는 분들도 있으리라 생각한다.<br />
+UR-Anomaly(Undefined, Referenced-Anomaly)는 값이 존재하지 않는 변수를 참조했을 때 발생한다.<br />
+한 가지 상황을 예로 들어보면, y에 (x + 1)라는 값을 할당했는데 이전에 x에 값이 할당되어있지 않으면 이것은 잘못된 코드가 되고 PMD 이것을 UR-Anomaly로 판단하는 것이다.</p>
+  </li>
+  <li>
+    <p>DU-Anomaly : DU면 Defined, Undefined이다.<br />
+이전의 설명을 보고난 후이기 때문에 더 쉽게 이해할 수 있을거라 생각한다.<br />
+DU-Anomaly(Defined, Undefined-Anomaly)는 변수를 사용하지 않고 바로 삭제할 때 발생한다.<br />
+예를 들면, 어떤 method에 지역 변수 x에 5라는 값을 할당하고 이 값을 사용하지 않고 method가 끝나버린 경우이다. 이러한 경우에 사용되지 않은 변수가 생성된 것이기 때문에 PMD는 이것을 DU-Anomaly로 판단한다.</p>
+  </li>
+  <li>
+    <p>DD-Anomaly : DD면 Defined, Defined.<br />
+더 이상의 설명이 필요 없을거라 생각하지만, 설명해보자.<br />
+DD-Anomaly(Defined, Defined-Anomaly)는 변수에 값이 할당되고 다시 할당된 경우에 발생한다.<br />
+예를 들dj, x에 5라는 값을 할당하고 여기에 다시 바로 6이라는 값을 할당하면 5라는 값은 사용되지 않기 때문에 PMD에서는 이것을 결함으로 판단하고 DD-Anomaly로 구분한다.
+<br />
+<br /></p>
+  </li>
+</ul>
+
+<h3 id="2-anomaly-example">2) Anomaly Example</h3>
+
+<p>이번 포스팅에서는 Data Flow Anomaly Analysis가 무엇인지에 대해 공부해 보았다.<br />
+여기에서 마무리하기에는 조금 아쉽기 때문에, 간단한 예시를 보고 한 번 연습을 해보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">MinMax</span><span class="o">(</span><span class="kt">int</span> <span class="n">min</span><span class="o">,</span> <span class="kt">int</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">help</span><span class="o">;</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">min</span> <span class="o">&gt;</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">max</span> <span class="o">=</span> <span class="n">help</span><span class="o">;</span>
+    <span class="n">max</span> <span class="o">=</span> <span class="n">min</span><span class="o">;</span>
+    <span class="n">help</span> <span class="o">=</span> <span class="n">min</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="k">return</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><br />
+위의 자바 코드의 흐름을 처음부터 쭉 따라가보자.<br />
+위 코드에서는 min, max, help 이렇게 세 개의 변수가 존재한다.<br />
+처음 MinMax method를 시작하기 전에는 min, max, help 모두 Undefined 상태일 것이다.<br />
+그리고 method가 시작하면 parameter에 들어온 값이 생성되면서 min, max가 Defined 될 것이다.<br />
+그 다음 if문으로 가면 min과 max가 Referenced되고, if문 안에 들어갈 경우 max는 Defined, help는 Referenced가 될 것이다.
+이런식으로 끝까지 쭉 가다보면 아래와 같이 흐름이 변할 것이다.
+<br /></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>                                   <span class="c1">// min, max, help =&gt; Undefined</span>
+<span class="kt">void</span> <span class="nf">MinMax</span><span class="o">(</span><span class="kt">int</span> <span class="n">min</span><span class="o">,</span> <span class="kt">int</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>    <span class="c1">// min, max =&gt; Defined</span>
+  <span class="kt">int</span> <span class="n">help</span><span class="o">;</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">min</span> <span class="o">&gt;</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>                 <span class="c1">// min, max =&gt; Referenced</span>
+    <span class="n">max</span> <span class="o">=</span> <span class="n">help</span><span class="o">;</span>                    <span class="c1">// max =&gt; Defined, help =&gt; Referenced</span>
+    <span class="n">max</span> <span class="o">=</span> <span class="n">min</span><span class="o">;</span>                     <span class="c1">// max =&gt; Defined, min =&gt; Referenced</span>
+    <span class="n">help</span> <span class="o">=</span> <span class="n">min</span><span class="o">;</span>                    <span class="c1">// help =&gt; Defined, min =&gt; Referenced</span>
+  <span class="o">}</span>
+  <span class="k">return</span><span class="o">;</span>
+<span class="o">}</span>
+                                   <span class="c1">// min, max, help =&gt; Undefined</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><br />
+이것을 표로 보기 좋게 나타내보면 아래와 같이 나타낼 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Variable\Path</th>
+      <th style="text-align: center">start</th>
+      <th style="text-align: center">in</th>
+      <th style="text-align: center">n1</th>
+      <th style="text-align: center">n2</th>
+      <th style="text-align: center">n3</th>
+      <th style="text-align: center">n4</th>
+      <th style="text-align: center">out</th>
+      <th style="text-align: center">finish</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">min</td>
+      <td style="text-align: center">u</td>
+      <td style="text-align: center">d</td>
+      <td style="text-align: center">r</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">r</td>
+      <td style="text-align: center">r</td>
+      <td style="text-align: center">r</td>
+      <td style="text-align: center">u</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">max</td>
+      <td style="text-align: center">u</td>
+      <td style="text-align: center">d</td>
+      <td style="text-align: center">r</td>
+      <td style="text-align: center">d</td>
+      <td style="text-align: center">d</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">r</td>
+      <td style="text-align: center">u</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">help</td>
+      <td style="text-align: center">u</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">r</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">d</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">u</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+위 표와 같이 나타내면 변수별 상태가 한 눈에 들어오기 때문에 변수 별로 어떤 Anomaly에 걸리는지 바로 확인할 수 있다.
+그래서 확인해 보면, min변수와 help변수는 UR, DU, DD Anomaly 모두 해당 되지 않음을 알 수 있고, max 변수는 DD-Anomaly에 걸리는 것을 확인 할 수 있다.</p>
+
+<p>자, 이렇게해서 간단한 예시까지 살펴봄으로써 우리는 PMD의 Data Flow Anomaly에 대해 완전히 이해하게 되었다.
+사실 예제는 loop가 없는 간단한 예제였기 때문에 우리가 쉽게 생각할 수 있었지만 loop가 들어가게 되면 훨씬 복잡해지고 어려워진다.
+혹시나 더 복잡하고 어려운 예제로 공부하고 싶은신 분이 있다면, 아래 Reference를 참고해서 공부해 나가길 바란다.
+<br />
+<br /></p>
+
+<h2 id="3-reference">3. Reference</h2>
+
+<ul>
+  <li>학습 자료 : <a href="http://agde.informatik.uni-kl.de/teaching/sqs/ws2008/material/folien/SQA_07_DFA_4s.pdf">http://agde.informatik.uni-kl.de/teaching/sqs/ws2008/material/folien/SQA_07_DFA_4s.pdf</a></li>
+</ul>
+:ET
