@@ -1,0 +1,236 @@
+I"D6<p>본 포스팅에서는 Mac의 BootCamp를 사용해서 윈도우10 운영체제를 설치하는 방법에 대해서 설명한다. 여러 블로그를 검색하다가 전부 잘 이해가 되지 않아 열심히 검색하고 또 찾아보고 포스팅한다. 나처럼 방법을 잘 몰라 헤메었던 사람들에게 많은 도움이 되길 바라며…ㅠㅠ<br />
+<br />
+<br /></p>
+
+<h2 id="1-window10-iso-파일-다운">1. Window10 ISO 파일 다운</h2>
+
+<p>ISO 파일을 다운 받지 않고 바로 이 포스팅으로 온 사람들을 위해,<br />
+아래 링크에 들어가 나온 순서대로 따라하면 ISO 파일을 다운 받을 수 있을 것이다.<br />
+<a href="http://localhost:4000/posts/window10_download">http://localhost:4000/posts/window10_download</a><br />
+<br /><br /><br /></p>
+
+<h2 id="2-bootcamp로-window-설치">2. BootCamp로 Window 설치</h2>
+
+<h4 id="1-command--space-버튼을-눌러-spotlight-검색창을-띄우고-boot-camp-지원을-검색해-창을-띄워준다">1. ‘command + space’ 버튼을 눌러 spotlight 검색창을 띄우고, ‘Boot Camp 지원’을 검색해 창을 띄워준다.</h4>
+
+<p>꼭 이 방법으로 하지 않아도되고, ‘finder-응용프로그램-Utility-Boot Camp 지원’ 을 통해서 창을 띄워줘도 된다.<br />
+<br /></p>
+
+<h4 id="2-아래와-같은-boot-camp-지원-창을-볼-수-있는데-계속-버튼을-클릭한다">2. 아래와 같은 ‘Boot Camp 지원’ 창을 볼 수 있는데, ‘계속’ 버튼을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/9.png" alt="step9" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="3-이전에위에서-다운받았던-iso-파일을-선택하고-용량을-설정해준다">3. 이전에(위에서) 다운받았던 ISO 파일을 선택하고, 용량을 설정해준다.</h4>
+
+<p>보통의 서류작업은 30~40GB면 충분하고 노란색 바를 드래그해서 용량을 설정할 수 있다.<br />
+<br /></p>
+
+<p><img src="/assets/img/post/etc/10.png" alt="step10" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="4-아래와-같이-설정해주고-설치-버튼을-클릭한다">4. 아래와 같이 설정해주고 ‘설치’ 버튼을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/11.png" alt="step11" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="5-아래와-같은-작업이-끝나고-설치가-완료된다">5. 아래와 같은 작업이 끝나고 설치가 완료된다.</h4>
+
+<p><img src="/assets/img/post/etc/12.png" alt="step12" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="6-설치가-완료되면-아래와-같은-노란창이-뜨는데-암호를-입력하고-확인-버튼을-누르면-컴퓨터가-재부팅된다">6. 설치가 완료되면 아래와 같은 노란창이 뜨는데, 암호를 입력하고 ‘확인’ 버튼을 누르면 컴퓨터가 재부팅된다.</h4>
+
+<p><img src="/assets/img/post/etc/13.png" alt="step13" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="7-재부팅되고-로딩이-되면-아래-화면과-같이-보인다">7. 재부팅되고 로딩이 되면 아래 화면과 같이 보인다.</h4>
+
+<p>이 아래부터는 캡쳐를 하기가 힘들어 핸드폰으로 찍은 사진이라 화질이 좋지않고 프레임이 바르지 않다.<br />
+<br /></p>
+
+<p><img src="/assets/img/post/etc/14.jpeg" alt="step14" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="8-재부팅이-되고나면-아래와-같은-창이-뜨는데-다음-버튼을-클릭한다">8. 재부팅이 되고나면 아래와 같은 창이 뜨는데, ‘다음’ 버튼을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/15.jpeg" alt="step15" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="9-아까-적어두었던-제품-키-번호를-입력하고-다음-버튼을-클릭한다">9. 아까 적어두었던 제품 키 번호를 입력하고, ‘다음’ 버튼을 클릭한다.</h4>
+
+<p>제품 키 번호는 차후에 변경 가능하므로 잘 모르겠다면 그냥 넘아가도 된다.<br />
+<br /></p>
+
+<p><img src="/assets/img/post/etc/16.jpeg" alt="step16" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="10-동의함-에-체크를-하고-다음-버튼을-클릭한다">10. ‘동의함’ 에 체크를 하고 ‘다음’ 버튼을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/17.jpeg" alt="step17" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="11-아래-창과-같이-설치가-되는-창이-보여진다">11. 아래 창과 같이 설치가 되는 창이 보여진다.</h4>
+
+<p><img src="/assets/img/post/etc/18-1.jpeg" alt="step18-1" width="300px" class="normal" />
+<img src="/assets/img/post/etc/18-2.jpeg" alt="step18-2" width="300px" class="normal" /><br />
+<br /></p>
+
+<h4 id="12-설치가-완료되면-컴퓨터가-다시-시작-된다">12. 설치가 완료되면 컴퓨터가 다시 시작 된다.</h4>
+
+<p><img src="/assets/img/post/etc/19.jpeg" alt="step19" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="13-아래와-같이-로딩-화면이-나오고">13. 아래와 같이 로딩 화면이 나오고</h4>
+
+<p><img src="/assets/img/post/etc/20.jpeg" alt="step20" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="14-다시-시작이-되면-아래-화면과-같이-나오는데-한국-으로-설정하고-예-버튼을-클릭한다">14. 다시 시작이 되면 아래 화면과 같이 나오는데, ‘한국’ 으로 설정하고 ‘예’ 버튼을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/21.jpeg" alt="step21" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="15-microsoft-입력기-로-설정하고-예-버튼을-클릭한다">15. ‘Microsoft 입력기’ 로 설정하고 ‘예’ 버튼을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/22.jpeg" alt="step22" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="16-두번째-레이아웃으로-영어를-추가해도되고-건너뛰기를-선택해도된다-본인은-건너뛰었는데-영어-자판에-문제-없었다">16. 두번째 레이아웃으로 영어를 추가해도되고, 건너뛰기를 선택해도된다. (본인은 건너뛰었는데 영어 자판에 문제 없었다)</h4>
+
+<p><img src="/assets/img/post/etc/23.jpeg" alt="step23" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="17-네트워크-설정은-만약-네트워크가-나온다면-해당-네트워크를-설정해주고-아래와-같다면-인터넷이-없음을-선택한다">17. 네트워크 설정은 만약 네트워크가 나온다면 해당 네트워크를 설정해주고, 아래와 같다면 ‘인터넷이 없음’을 선택한다.</h4>
+
+<p>네트워크가 나와 설정하면, 몇 가지 창이 더 나올텐데 그 부분은 아래에서 설명하겠다.<br />
+<br /></p>
+
+<p><img src="/assets/img/post/etc/24.jpeg" alt="step24" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="18-제한된-설치로-계속을-선택한다-네트워크-설정을-해준-사람은-해당x">18. ‘제한된 설치로 계속’을 선택한다. (네트워크 설정을 해준 사람은 해당X)</h4>
+
+<p><img src="/assets/img/post/etc/25.jpeg" alt="step25" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="19-이름과-비밀번호를-설정하고-비밀번호-분실시-질문-답변을-모두-설정한다">19. 이름과 비밀번호를 설정하고 비밀번호 분실시 질문 답변을 모두 설정한다.</h4>
+
+<p><img src="/assets/img/post/etc/26-1.jpeg" alt="step26-1" width="300px" class="normal" />
+<img src="/assets/img/post/etc/26-2.jpeg" alt="step26-2" width="300px" class="normal" /><br />
+<br /></p>
+
+<h4 id="20-예를-클릭한다">20. ‘예’를 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/27.jpeg" alt="step27" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="21-수락을-클릭한다">21. ‘수락’을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/28.jpeg" alt="step28" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="22-아래-화면이-나오면서-조금-기다리면">22. 아래 화면이 나오면서 조금 기다리면</h4>
+
+<p><img src="/assets/img/post/etc/29.jpeg" alt="step29" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="23-이렇게-window-화면이-나온다-하지만-여기에서-끝이-아니다">23. 이렇게 Window 화면이 나온다! 하지만 여기에서 끝이 아니다.</h4>
+
+<p><img src="/assets/img/post/etc/30.png" alt="step30" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="24-내-문서에서-내-pc-osxreservedd-를-클릭한다">24. 내 문서에서 ‘내 PC-OSXRESERVED(D:)’ 를 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/31.png" alt="step31" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="25-bootcamp-를-클릭하고">25. ‘BootCamp’ 를 클릭하고,</h4>
+
+<p><img src="/assets/img/post/etc/32.png" alt="step32" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="26-setup-을-클릭하면">26. ‘Setup’ 을 클릭하면</h4>
+
+<p><img src="/assets/img/post/etc/33.png" alt="step33" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="27-아래와-같은-창이-나온다-예-를-클릭하면">27. 아래와 같은 창이 나온다. ‘예’ 를 클릭하면</h4>
+
+<p><img src="/assets/img/post/etc/34.jpeg" alt="step34" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="28-bootcamp-설치-창이-나온다-window에-bootcamp를-설치하는-과정이다-다음-버튼을-클릭한다">28. ‘BootCamp’ 설치 창이 나온다. Window에 BootCamp를 설치하는 과정이다. ‘다음’ 버튼을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/35.png" alt="step35" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="29-사용-약관에-동의해주고-설치-버튼을-클릭한다">29. 사용 약관에 동의해주고, ‘설치’ 버튼을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/36.png" alt="step36" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="30-아래와-같이-설치되는동안-조금-기다려주고">30. 아래와 같이 설치되는동안 조금 기다려주고</h4>
+
+<p><img src="/assets/img/post/etc/37.png" alt="step37" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="31-설치가-다-되어-아래와-같은-화면이-나오면-마침-버튼을-눌러준다-컴퓨터가-재부팅되고-다시-켜지면-완료">31. 설치가 다 되어 아래와 같은 화면이 나오면 ‘마침’ 버튼을 눌러준다. 컴퓨터가 재부팅되고 다시 켜지면 완료!</h4>
+
+<p><img src="/assets/img/post/etc/38.png" alt="step38" width="500px" class="normal" /><br />
+<br /><br /><br /></p>
+
+<h2 id="3-네트워크-설정">3. 네트워크 설정</h2>
+
+<p>위와 같은 단계를 마무리하고, 실제로 엣지나 크롬 인터넷을 사용하기 위해서는 네트워크를 설정해야한다.<br />
+자신이 사용하는 와이파이를 연결시키고 나면, 나머지 환경설정을 마무리할 수 있다는 화면이 나오게 되는데, 이 부분까지 마무리해보자.</p>
+
+<h4 id="1-설정을-위해-시작-버튼을-클릭한다">1. 설정을 위해 ‘시작’ 버튼을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/39.jpeg" alt="step39" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="2-microsoft-계정으로-로그인을-해준다-없으면-만들도록-하자">2. Microsoft 계정으로 로그인을 해준다. (없으면 만들도록 하자)</h4>
+
+<p><img src="/assets/img/post/etc/40-1.jpeg" alt="step40-1" width="300px" class="normal" />
+<img src="/assets/img/post/etc/40-2.jpeg" alt="step40-2" width="300px" class="normal" /><br />
+<br /></p>
+
+<h4 id="3-사실-여기부터는-원하는대로-설정하면-된다-본인은-넘어가기위해-다음을-클릭">3. 사실 여기부터는 원하는대로 설정하면 된다. (본인은 넘어가기위해 ‘다음’을 클릭)</h4>
+
+<p><img src="/assets/img/post/etc/41.jpeg" alt="step41" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="4-넘어가려면-다음-을-클릭한다">4. 넘어가려면 ‘다음’ 을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/42.jpeg" alt="step42" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="5-본인은-학교에서-제공하는-microsoft-서비스가-있기-때문에-제품키가-있습니다-클릭-그냥-넘어가기-위해-클릭해도-된다">5. 본인은 학교에서 제공하는 Microsoft 서비스가 있기 때문에 ‘제품키가 있습니다’ 클릭 (그냥 넘어가기 위해 클릭해도 된다)</h4>
+
+<p><img src="/assets/img/post/etc/43.jpeg" alt="step43" width="500px" class="normal" /><br />
+<br /></p>
+
+<h4 id="6-드디어-끝이-났다-닫기-버튼을-클릭한다">6. 드디어 끝이 났다! ‘닫기’ 버튼을 클릭한다.</h4>
+
+<p><img src="/assets/img/post/etc/44.jpeg" alt="step44" width="500px" class="normal" /><br />
+<br /><br /><br /></p>
+
+<h2 id="4-마무리">4. 마무리</h2>
+
+<p>드디어 끝이 났다.<br />
+나는 설치하는 데에 정말 오래걸렸는데 이걸 따라하는 사람들은 잘 따라해서 도움이 되었으면 좋겠다.</p>
+
+<p>그리고 마지막으로, 막상 Window를 설치하고 어떻게 다시 Mac으로 돌아가는지 모르는 사람들이 있던데,<br />
+이 경우 아래 링크를 참고하면 좋겠다.<br />
+<a href="https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html">https://0pencoding.github.io/install/2020/03/25/Mac_Window_change.html</a>
+<br /><br /><br /></p>
+
+<h2 id="5-reference">5. Reference</h2>
+
+<ul>
+  <li>맥(Mac) 부트캠프 윈도우10 설치 방법 <a href="https://extrememanual.net/12760">https://extrememanual.net/12760</a></li>
+  <li>맥에 윈도우 설치하기 (초보자를 위한 맥라이프 4편) <a href="https://www.youtube.com/watch?v=YytE1SKavpc">https://www.youtube.com/watch?v=YytE1SKavpc</a>
+<br /><br /><br /></li>
+</ul>
+:ET
