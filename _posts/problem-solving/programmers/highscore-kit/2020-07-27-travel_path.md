@@ -3,7 +3,7 @@ title: "프로그래머스 고득점 Kit : 여행 경로"
 date: 2020-07-27
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
-tags: [programmers, highscore kit, level3, algorithm, dfs/bfs, c++]
+tags: [programmers, highscore kit, level3, algorithm, dfs-bfs, c++]
 # sitemap:
 #     changefreq: daily
 ---

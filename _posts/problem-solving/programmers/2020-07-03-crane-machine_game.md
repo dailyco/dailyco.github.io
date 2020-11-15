@@ -3,7 +3,7 @@ title: "2019 카카오 개발자 겨울 인턴십 : 크레인 인형뽑기 게�
 date: 2020-07-03
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Kakao]
-tags: [programmers, level1, algorithm, stack/queue, c++]
+tags: [programmers, level1, algorithm, stack-queue, c++]
 # sitemap:
 # changefreq: daily
 ---

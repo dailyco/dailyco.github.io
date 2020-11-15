@@ -3,7 +3,7 @@ title: "프로그래머스 고득점 Kit : 타겟 넘버"
 date: 2020-03-11
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
-tags: [programmers, highscore kit, level2, algorithm, dfs/bfs, c++]
+tags: [programmers, highscore kit, level2, algorithm, dfs-bfs, c++]
 # sitemap:
 #     changefreq: daily
 ---

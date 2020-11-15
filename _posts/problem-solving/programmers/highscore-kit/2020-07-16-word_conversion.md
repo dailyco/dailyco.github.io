@@ -3,7 +3,7 @@ title: "프로그래머스 고득점 Kit : 단어 변환"
 date: 2020-07-16
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
-tags: [programmers, highscore kit, level3, algorithm, dfs/bfs, c++]
+tags: [programmers, highscore kit, level3, algorithm, dfs-bfs, c++]
 # sitemap:
 #     changefreq: daily
 ---
