@@ -87,4 +87,4 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 
 ## 6. GitHub
 
-- GitHub: <https://github.com/dailyco/java-camp>
+- GitHub: <https://github.com/{{site.social.name}}/java-camp/tree/main/network-connect6>
