@@ -116,6 +116,6 @@ UML Diagram을 보면 알겠지만, 주요 클래스와 함수들만 설명했�
 
 ## 6. GitHub 및 보고서
 
-- GitHub: <https://github.com/dailyco/java-camp>
+- GitHub: <https://github.com/{{site.social.name}}/java-camp/tree/main/draw-board>
 - Report: <https://drive.google.com/file/d/15mE3ce3AQZ2JYinjSA9cl54PlF53mcJc/view?usp=sharing>  
   보고서는 더 자세한 설명이 필요한 경우 확인해주세요, 무단 배포는 허용하지 않습니다!
