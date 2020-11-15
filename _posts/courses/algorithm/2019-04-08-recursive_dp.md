@@ -321,7 +321,7 @@ Recursive의 경우는 10분이 넘는 시간이 걸리는데, DP의 경우 단 
 
 이번 포스팅에서 설명했던 예제 코드들은 깃헙에 올려두었으니 필요하신 분들은 아래 링크를 참고하시길.
 
-- <https://github.com/dailyco/algorithm>
+- <https://github.com/{{site.social.name}}/algorithm/tree/main/combination>
   <br/><br/><br/>
 
 ## 7. Reference
