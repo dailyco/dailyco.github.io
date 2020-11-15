@@ -3,7 +3,7 @@ title: "2020 카카오 인턴십 : 수식 최대화"
 date: 2020-07-03
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Kakao]
-tags: [programmers, level2, algorithm, bruteforce, dfs/bfs, c++]
+tags: [programmers, level2, algorithm, bruteforce, dfs-bfs, c++]
 # sitemap:
 # changefreq: daily
 ---

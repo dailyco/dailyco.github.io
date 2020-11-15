@@ -3,7 +3,7 @@ title: "프로그래머스 고득점 Kit : 기능개발"
 date: 2020-03-17
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
-tags: [programmers, highscore kit, level2, algorithm, stack/queue, c++]
+tags: [programmers, highscore kit, level2, algorithm, stack-queue, c++]
 # sitemap:
 #     changefreq: daily
 ---

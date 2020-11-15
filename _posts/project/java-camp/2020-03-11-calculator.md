@@ -84,4 +84,4 @@ UML Diagram을 보면 알겠지만, 다른 함수들도 있지만 크게 중요�
 
 ## 6. GitHub
 
-<https://github.com/dailyco/java-camp>
+<https://github.com/{{site.social.name}}/java-camp/tree/main/calculator>
