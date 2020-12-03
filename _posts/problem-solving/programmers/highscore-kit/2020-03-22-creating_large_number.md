@@ -4,8 +4,8 @@ date: 2020-03-22
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
 tags: [programmers, highscore kit, level2, algorithm, greedy, c++]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 본 문제는 생각보다 빨리 푼 문제였다. 예외 케이스를 질문하기에서 찾아볼 수 있어서 그런지 모르겠지만 처음에 바로 떠올랐던 알고리즘대로 쉽게 풀 수 있었고, 효율성도 나름 괜찮게 풀어서 기분이 좋았다. 근데 string에서 erase() 함수를 어떻게 쓰는지 까먹어서 다시 찾아보았다ㅋㅋ 까먹지 않으려고 항상 블로그에 정리하고 하는건데... 앞으로 더 정신 차리고 열심히 정리해야지!  

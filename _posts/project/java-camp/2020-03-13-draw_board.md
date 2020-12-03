@@ -4,8 +4,8 @@ date: 2020-03-13
 author: YuJin Kim
 categories: [Project, Java Camp]
 tags: [project, java camp, java, gui, graphics]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 ### ⏰ 기간 4일 ⏰

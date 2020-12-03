@@ -4,8 +4,8 @@ date: 2020-07-11
 author: YuJin Kim
 categories: [Problem Solving, Leetcode, Weekly Contest]
 tags: [leetcode, coding test, easy, algorithm, sorting, c++]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 Because it was the first time to solve a problem presented in English when studying algorithms, besides the competition, I was a little embarrassed. However the problem was short and the examples were out, so I wasn't really tired. It was a little hard to figure out the problem by just looking for words that I didn't know... Well, I think it is okay because I can study English while solving the algorithm problem | ᐕ)੭\*⁾⁾  

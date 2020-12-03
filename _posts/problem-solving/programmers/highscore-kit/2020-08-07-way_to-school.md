@@ -4,8 +4,8 @@ date: 2020-08-07
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
 tags: [programmers, highscore kit, level3, algorithm, dynamic programming, c++]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 이 문제는 예전에 남자친구가 나에게 냈었던 문제였기 때문에 알고리즘 자체는 그 때 풀었던대로 빠르게 세울 수 있었다. 그런데 빨리 풀겠다는 자만심 때문이었는지 알고리즘을 세우는 데에 있어서 조그만 실수를 한 부분 때문에 어디가 잘못되었는지 찾느라고 30분 정도를 소비한 것 같다. 이미 알고있는 문제라고, level3 문제 좀 푼다고 자만하면 안되는데 인간은 정말 끝없이 실수를 반복하는 것 같다 へ[ •́ ‸ •̀ ]ʋ  

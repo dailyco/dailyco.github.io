@@ -4,8 +4,8 @@ date: 2020-07-15
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
 tags: [programmers, highscore kit, level3, algorithm, greedy, c++]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 이 문제는 엄청 빨리 풀었다. level3라고 생각이 안 들만큼! 문제를 읽고 어떻게 풀어야겠다하는 알고리즘이 바로 생각나서 생각난 알고리즘을 토대로 코드를 작성했는데 한 번에 해결되었다. 그래서 문제가 쉬웠던건지, 아니면 꾸준히 문제를 해결하면서 문제 해결 능력이 늘고 있는건지 잘은 모르겠지만, 어쨌든 문제가 빨리 풀려서 기분은 무척 좋았다(˵¯̴͒ꇴ¯̴͒˵)  

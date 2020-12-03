@@ -4,8 +4,8 @@ date: 2019-03-20
 author: YuJin Kim
 categories: [Project, Capstone, PMD]
 tags: [project, capstone, java, pmd, dataflow anomaly analysis, bug]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 [전 포스팅]({{site.url}}/posts/static_analysis) 중 PMD에 대해 간략히 설명했었다.  
