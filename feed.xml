@@ -9,7 +9,7 @@ layout: compress
 
 {% capture source %}
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <id>{{ site.url }}</id>
   <title>{{ site.title }}</title>
   <subtitle>{{ site.description }}</subtitle>
@@ -27,7 +27,7 @@ layout: compress
 
 {% for post in site.posts limit: 5 %}
   {% assign post_absolute_url = site.url | append: post.url %}
-  <entry>
+  <channel>
     <title>{{ post.title }}</title>
     <link href="{{ post_absolute_url }}" rel="alternate" type="text/html" title="{{ post.title }}" />
     <published>{{ post.date | date_to_xmlschema }}</published>
@@ -57,8 +57,8 @@ layout: compress
       {{ content | strip_html | truncate: 200 }}</summary>
   {% endif %}
 
-  </entry>
+  </channel>
 {% endfor %}
-</feed>
+</rss>
 {% endcapture %}
 {{ source | replace: '&', '&amp;' }}
