@@ -5,8 +5,8 @@ author: YuJin Kim
 categories: [Courses, Algorithm, Recursive&DP]
 tags: [algorithm, study, recursive, dp, c]
 math: true
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 알고리즘을 공부하다보면 Dynamic Programming Algorithm이라는 것에 대해 배운다.  

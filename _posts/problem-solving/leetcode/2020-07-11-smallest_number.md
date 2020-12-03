@@ -4,8 +4,8 @@ date: 2020-07-11
 author: YuJin Kim
 categories: [Problem Solving, Leetcode, Weekly Contest]
 tags: [leetcode, coding test, hard, algorithm, greedy, c++]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 The difficulty of this problem was hard, but when I saw the problem, I thought I could solve. So, I challenged it with curiosity, but the result was a little insufficient. It passed 49 of the total 51 test cases. It's a little lacking, but I hope you focus on the algorithm. And if you know where my code is wrong, please let me know. ´•ﻌ•`  

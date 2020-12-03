@@ -4,8 +4,8 @@ date: 2020-03-28
 author: YuJin Kim
 categories: [Courses, Embeded]
 tags: [embeded, study, install, mdk-arm, stm32f411re]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 본 포스팅은 MDK-ARM IDE Keil μVision을 설치하는 방법을 이야기한다. 임베디드 과제를 하기 위해 세팅을 해야하는데 여기서부터 조금 헤메었던지라 혹시 나와 같은 사람이 있다면 도움이 되고자 포스팅을 작성한다. 처음에는 막막했는데 하나씩 찾아보면서 겨우겨우 설치했던터라 다른 사람들은 그렇지 않았으면 하는 마음에 자세히 적어보았다.  

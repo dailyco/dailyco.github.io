@@ -4,8 +4,8 @@ date: 2020-03-17
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
 tags: [programmers, highscore kit, level2, algorithm, heap, c++]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 본 문제는 풀면서 난이도가 조금 있는 것 같은 문제라고 생각했는데, 생각보다 빨리 그리고 생각보다 잘 푼 것 같아서 기분이 좋았다. 근데 처음 풀고 문제를 제출 했을 때 테스트 케이스 몇 개가 틀렸었는데, 경계값들을 조금씩 바꾸면서 제출하니 통과되었다. 풀 때는 맞추기만하면 되니까 넘겼었는데 지금 블로그를 정리하려고 보니 제한조건이 조금 잘못 나와있는 듯해서 그 부분도 같이 언급하려한다.  

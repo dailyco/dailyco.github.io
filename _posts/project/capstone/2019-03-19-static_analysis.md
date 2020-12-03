@@ -4,8 +4,8 @@ date: 2019-03-19
 author: YuJin Kim
 categories: [Project, Capstone, PMD]
 tags: [project, capstone, java, pmd, static analysis tool, bug]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 정적 분석 기법(Static Analysis)이란 무엇인가?  

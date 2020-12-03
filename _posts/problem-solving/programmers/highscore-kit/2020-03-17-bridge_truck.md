@@ -4,8 +4,8 @@ date: 2020-03-17
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
 tags: [programmers, highscore kit, level2, algorithm, stack-queue, c++]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 오랜만에 프로그래머스 고득점 Kit 문제를 풀어 올린다. 그동안 자바 캠프에 대해서 정리하느라고 알고리즘 문제 푸는 것을 잠시 쉬었더니 금세 감을 잃었는지 이 문제를 푸는데에는 꽤 오래 걸렸다. 문제 자체를 이해하는 데에도 시간을 많이 썼던 탓도 있긴하지만, 그래도 문제를 풀어놓고보니 나름 잘 풀었다는 생각이 들어서 뿌듯했던 문제였다 :)  

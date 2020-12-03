@@ -4,8 +4,8 @@ date: 2020-08-06
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
 tags: [programmers, highscore kit, level3, algorithm, dynamic programming, c++]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 이 문제를 푼지는 꽤 됐는데, 요즘 이래저래 정신이 없다보니까 문제를 풀기만하고 블로그에 정리를 못했다. 덕분에 정리할 문제가 밀린 상태..😅 문제를 풀고 그때그때 정리해야 기억에도 더 오래 남고 공부가 제대로 될텐데 요즘 조금씩 지친건지, 나태해진건지... 다시 한 번 마음을 다잡고 열심히 해야겠다는 생각이 든다. 이 문제는 동적 계획법 문제를 처음 푸는거라 조금 헤맸었는데, 계속해서 알고리즘을 생각해보면서 효율성 좋게 알고리즘을 탄탄히 세워갈 수 있었다. 문제를 풀고 나서는 꽤 뿌듯-(ღ˘⌣˘ღ)  
