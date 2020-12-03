@@ -9,7 +9,7 @@ layout: compress
 
 {% capture source %}
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns:atom="http://www.w3.org/2005/Atom">
   <id>{{ site.url }}</id>
   <title>{{ site.title }}</title>
   <subtitle>{{ site.description }}</subtitle>
