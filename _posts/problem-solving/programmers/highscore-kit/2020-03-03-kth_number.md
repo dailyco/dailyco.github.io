@@ -4,8 +4,8 @@ date: 2020-03-03
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
 tags: [programmers, highscore kit, level1, algorithm, sorting, c++, javascript]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 본 문제를 푸는 데에 큰 어려움은 없었지만 vector를 사용하는 데에 있어서 조금 공부가 필요했다. 아직까지 문제가 많이 어렵지는 않아서 난이도에 있어서나 문제를 푸는 시간에 있어서 그렇게 오래 걸리지는 않지만 C++을 잘 몰라 찾고 공부하는 데에 시간 소요가 있는 것 같다.  

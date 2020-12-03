@@ -4,8 +4,8 @@ date: 2020-07-11
 author: YuJin Kim
 categories: [Problem Solving, Leetcode, Weekly Contest]
 tags: [leetcode, coding test, medium, algorithm, c++]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 It was a little hard to understand the problem. I could see and understand the picture of the example, and it didn't take very long to write the code. As you can see from solving the problem, there is a cute trick hidden in the problem. It's a tiny trick that gives you the fear of being a complicated problem before you write the code. (\*´o`\*)  

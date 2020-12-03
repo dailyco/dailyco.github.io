@@ -4,8 +4,8 @@ date: 2020-07-02
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Kakao]
 tags: [programmers, level2, algorithm, hash, c++]
-# sitemap:
-# changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 이 문제는 처음에 문제를 자세히 읽지 않아서 문제를 풀고 디버깅을 했던 문제이다. 문제가 너무 길어서 읽지 않고 넘어간 부분이 좀 있었는데 제한조건은 꼭 제대로 읽어야겠다는 생각을 했다. 문제의 난이도는 그렇게 어렵지 않았지만, 자료구조를 어떻게 구성해서 문제를 풀지를 조금 고민했던 문제같다. 그리고 문제를 풀고나서 다른 사람 풀이를 봤는데 내 알고리즘과 비슷하지만, 코드를 좀 더 깔끔하게 푼 사람이 있어서 많이 배웠고, 변수의 이름을 좀 더 직관적으로 잘 지어야겠다는 생각을 했다 ; )  
@@ -160,7 +160,7 @@ vector<string> solution(vector<string> record) {
 ## 5. 참고해서 문제해결 ٩( ᐛ )و
 
 - [Stack overflow] <https://stackoverflow.com/questions/289347/using-strtok-with-a-stdstring>
-> - 문자열을 스페이스 기준으로 split 할 때는 `#include <sstream>`
+  > - 문자열을 스페이스 기준으로 split 할 때는 `#include <sstream>`
   > - splite 하고자하는 문자열을 파라미터로 `stringstream` 인스턴스를 생성
   > - `stringstream >> split한 결과 값을 담는 문자열` 명령 사용
 - C++ pair 사용하여 쌍으로 값저장 <https://godog.tistory.com/entry/c-vector-and-pair-%EC%82%AC%EC%9A%A9>

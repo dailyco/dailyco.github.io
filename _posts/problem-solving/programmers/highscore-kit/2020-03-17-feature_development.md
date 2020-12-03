@@ -4,8 +4,8 @@ date: 2020-03-17
 author: YuJin Kim
 categories: [Problem Solving, Programmers, Highscore Kit]
 tags: [programmers, highscore kit, level2, algorithm, stack-queue, c++]
-# sitemap:
-#     changefreq: daily
+sitemap:
+  changefreq: daily
 ---
 
 이 문제도 '[[스택/큐] 탑]({{site.url}}/posts/top)' 문제랑 비슷하게 level2 인것 치고는 쉬운 문제라는 생각이 들었다. 딱 문제를 읽자마자 '어, 이거 금방 풀 수 있을 것 같은데?' 하는 생각이 떠올랐고, 예상대로 문제는 무척 빨리 풀렸다. 비록 while문을 두개로 중첩해서 사용해서 효율성은 떨어지지만... 그리고 풀고나서 다른 사람 풀이를 보다가 내가 전에 이 문제와 비슷한 문제를 더 효율성 좋게 푼적이 있었던 것이 생각나서 내 자신이 정말 바보라고 생각했었다...ㅠㅠ  
