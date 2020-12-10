@@ -10,37 +10,6 @@ type: categories
 
 <!-- > **Note**: Add Markdown syntax content to file `tabs/about.md` and it will show up on this page. -->
 
-<div id="archives" class="pl-xl-2">
-{% for post in site.posts %}
-  {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-  {% capture pre_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
-  {% if forloop.first %}
-    {% assign last_day = "" %}
-    {% assign last_month = "" %}
-  <span class="lead">{{this_year}}</span>
-  <ul class="list-unstyled">
-  {% endif %}
-    <li>
-      <div>
-        {% capture this_day %}{{ post.date | date: "%d" }}{% endcapture %}
-        {% capture this_month %}{{ post.date | date: "%b" }}{% endcapture %}
-        <span class="date day">{{ this_day }}</span>
-        <span class="date month small text-muted">{{ this_month }}</span>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </div>
-    </li>
-  {% if forloop.last %}
-  </ul>
-  {% elsif this_year != pre_year %}
-  </ul>
-  <span class="lead">{{pre_year}}</span>
-  <ul class="list-unstyled">
-    {% assign last_day = "" %}
-    {% assign last_month = "" %}
-  {% endif %}
-{% endfor %}
-</div>
-
 ─────────────── ✧ʕ·͡˔·ོʔ✧ ───────────────
 {: style="text-align: center;"}
 ![my_photo](/assets/img/sample/myphoto.jpeg){: width="300"}
@@ -56,6 +25,7 @@ type: categories
 ---
 
 ## 🙍🏻‍♀️ 경험 🙍🏻‍♀️
+
 {: style="text-align: center;"}
 <br>
 
@@ -84,16 +54,17 @@ type: categories
 ---
 
 ## 💻 프로젝트 💻
+
 {: style="text-align: center;"}
 <br/>
 
-* 김호준 교수님 Java Camp
-* WrongIncrementerChecker Tool
-* 수강신청 도움 웹 Histime
-* 프로젝트 관리 Trello 프로그램 CLI화 프로그램 Drello
-* 지역 선도 사업 대경권 공공기관 Job Gate
-* HAPPY ENDING
-<br/>
-<br/>
+- 김호준 교수님 Java Camp
+- WrongIncrementerChecker Tool
+- 수강신청 도움 웹 Histime
+- 프로젝트 관리 Trello 프로그램 CLI화 프로그램 Drello
+- 지역 선도 사업 대경권 공공기관 Job Gate
+- HAPPY ENDING
+  <br/>
+  <br/>
 
 ---
