@@ -43,7 +43,7 @@ baseurl: ""
 timezone: Asia/Seoul
 
 google_analytics:
-  id: "254979768" # '150778693'          # Fill with your Google Analytics ID
+  id: "184612502" # '150778693'          # Fill with your Google Analytics ID
   pv:
     # The Google Analytics pageviews switch.
     # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
